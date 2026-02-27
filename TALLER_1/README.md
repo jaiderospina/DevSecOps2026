@@ -1,5 +1,5 @@
 # Taller Individual: 
-**Gestión Segura de Repositorios y Autenticación en Git**
+# **Gestión Segura de Repositorios y Autenticación en Git**
 
 **Materia:** Seguridad en DevSecOps
 **Objetivo:** Configurar un entorno de desarrollo seguro mediante la gestión de identidades y el uso de protocolos cifrados para el transporte de código.
@@ -50,3 +50,4 @@ Estas preguntas deben ser respondidas al finalizar el taller para fomentar el pe
 * **Limpieza:** El repositorio no contiene archivos temporales o innecesarios.
 
 * **Calidad de análisis:** Respuestas coherentes a las preguntas orientadoras basadas en estándares de seguridad.
+
