@@ -1,6 +1,6 @@
 #INTEGRANTES
 
-Lady Bautista 
-Vicente Rueda 
-Juan Carlos Murcia
+Lady Bautista  
+Vicente Rueda  
+Juan Carlos Murcia  
 Juan Diaz 
