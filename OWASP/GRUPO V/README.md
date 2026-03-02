@@ -39,3 +39,28 @@ Ocurre cuando los datos sensibles no están correctamente protegidos mediante me
 - Gestionar adecuadamente claves criptográficas y certificados digitales.
 
 ---
+
+## 1. Control de acceso roto (Broken Access Control)
+
+### Descripción
+
+Ocurre cuando una aplicación no impone correctamente las reglas que limitan lo que un usuario puede ver o hacer.
+
+---
+
+### Métodos de Explotación
+
+- Manipulación de URL y parámetros para acceder a recursos de otro usuario.
+- Escalada de privilegios (p.ej., de usuario normal a administrador).
+- Explotar lógica que no verifica roles antes de ejecutar acciones.
+- (Esta vulnerabilidad fue una de las más comunes en pruebas de OWASP.)
+
+---
+
+### Prevención y Mitigación
+
+- Verificar siempre permisos en el backend.
+- Aplicar principio de mínimo privilegio.
+- Uso de roles con control de acceso fuerte y pruebas automatizadas de autorización.
+
+---
