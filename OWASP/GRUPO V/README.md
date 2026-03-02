@@ -40,7 +40,7 @@ Ocurre cuando los datos sensibles no están correctamente protegidos mediante me
 
 ---
 
-## 1. Control de acceso roto (Broken Access Control)
+## 2. Control de acceso roto (Broken Access Control)
 
 ### Descripción
 
