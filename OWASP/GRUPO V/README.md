@@ -12,6 +12,8 @@ Investigar y analizar cada vulnerabilidad del OWASP Top 10.
 Documentar métodos de explotación asociados con cada vulnerabilidad.
 Proporcionar recomendaciones prácticas para prevenir y mitigar los riesgos asociados.
 
+# OWASP Top 10
+
 
 ## 1. Cryptographic Failures (Fallos criptográficos)
 
