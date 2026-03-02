@@ -10,6 +10,11 @@ Michael Giovanny Sierra Leon
 </p>
 
 # A01:2025 Broken Access Control.
+
+<p align="center">
+  <img src="Images/Broken Access Control..png" width="200">
+</p>
+
 Fallas que permiten a usuarios acceder a datos o funciones fuera de sus permisos. Permitiendo a los atacantes o usuarios saltarse la autorización y realizar tareas con privilegiados como los de un administrador. 
 
 ### Métodos de explotación: 
