@@ -21,6 +21,10 @@ Ocurre cuando los datos sensibles no están correctamente protegidos mediante me
 
 ---
 
+<img src="Imagenes/encryption.png" width="400">
+
+---
+
 ### Métodos de Explotación
 
 - Interceptar datos transmitidos sin HTTPS.
