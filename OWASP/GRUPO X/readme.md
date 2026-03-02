@@ -8,6 +8,7 @@ DIEGO ARMANDO HERNANDEZ
 
 DANIEL MAURICIO DAZA BORJA**
 
-# Investigación sobre el OWASP Top 10
+# Análisis de Vulnerabilidades en el OWASP Top 10: Métodos de Explotación y Prevención
+
 
 
