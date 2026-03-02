@@ -15,17 +15,27 @@ Proporcionar recomendaciones prácticas para prevenir y mitigar los riesgos asoc
 
 ## 1 Cryptographic Failures (Fallos criptográficos)
 
-Cuando datos sensibles no están correctamente protegidos.
+### Descripción
 
-Explotación:
+Ocurre cuando los datos sensibles no están correctamente protegidos mediante mecanismos de cifrado adecuados. Esto puede permitir que atacantes accedan a información confidencial como contraseñas, datos personales o información financiera.
 
-* Interceptar datos sin HTTPS
-Base de datos sin cifrar
-Contraseñas almacenadas en texto plano
+---
 
-Prevención:
+### Métodos de Explotación
 
-Usar HTTPS (TLS)
-Hash seguro para contraseñas (bcrypt, Argon2)
-Cifrar datos sensibles en base de datos
-No usar algoritmos obsoletos (MD5, SHA1)
+- Interceptar datos transmitidos sin HTTPS.
+- Acceder a bases de datos sin cifrado.
+- Obtener contraseñas almacenadas en texto plano.
+- Aprovechar el uso de algoritmos criptográficos débiles u obsoletos.
+
+---
+
+### Prevención y Mitigación
+
+- Utilizar HTTPS (TLS) para proteger la comunicación.
+- Implementar hash seguro para contraseñas (bcrypt, Argon2).
+- Cifrar datos sensibles almacenados en bases de datos.
+- Evitar el uso de algoritmos obsoletos como MD5 o SHA1.
+- Gestionar adecuadamente claves criptográficas y certificados digitales.
+
+---
