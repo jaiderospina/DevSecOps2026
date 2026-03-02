@@ -13,13 +13,13 @@ Documentar métodos de explotación asociados con cada vulnerabilidad.
 Proporcionar recomendaciones prácticas para prevenir y mitigar los riesgos asociados.
 
 
-1 . Cryptographic Failures (Fallos criptográficos)
+## 1️⃣ Cryptographic Failures (Fallos criptográficos)
 
 Cuando datos sensibles no están correctamente protegidos.
 
 Explotación:
 
-Interceptar datos sin HTTPS
+* Interceptar datos sin HTTPS
 Base de datos sin cifrar
 Contraseñas almacenadas en texto plano
 
