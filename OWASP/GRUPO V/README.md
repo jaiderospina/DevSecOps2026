@@ -19,8 +19,6 @@ Proporcionar recomendaciones prácticas para prevenir y mitigar los riesgos asoc
 
 Ocurre cuando los datos sensibles no están correctamente protegidos mediante mecanismos de cifrado adecuados. Esto puede permitir que atacantes accedan a información confidencial como contraseñas, datos personales o información financiera.
 
----
-
 <img src="Imagenes/encryption.png" width="400">
 
 ---
