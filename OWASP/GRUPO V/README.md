@@ -1,6 +1,8 @@
 #INTEGRANTES
 
-Jhon Alexander Ariza Ariza
-Milton Beltran
-Juan Mesa
-Daniel Bermúdez
+
+
+1. Milton Beltran
+2. Juan Mesa
+3. Daniel Bermúdez
+4. Jhon Alexander Ariza Ariza
