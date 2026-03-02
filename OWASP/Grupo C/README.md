@@ -27,7 +27,7 @@ Michael Giovanny Sierra Leon
 
 # A08:2025 - Software or Data Integrity Failures 
 
-  #### Naturaleza
+   Naturaleza
       * Actualizaciones de software 
       * Datos críticos y de CI/CD (Continuos Integration and Continuos Delivery) sin verificación.
   
