@@ -117,7 +117,7 @@ Si el servidor no verifica correctamente la firma del token o confía únicament
 ---
 
 ## A02:2025 Security Misconfiguration
-Ocurre cuando los sistemas, frameworks, servidores o aplicaciones están mal configurados generando una vulnerabilidades
+Ocurre cuando los sistemas, frameworks, servidores o aplicaciones están mal configurados generando vulnerabilidades
 
 <p align="center">
   <img src="images/missconfiguration.png" width="600">
@@ -144,7 +144,7 @@ Ocurre cuando los sistemas, frameworks, servidores o aplicaciones están mal con
 Uso de credenciales por defecto
 Ejemplo:
 
-- admin / admin
+admin / admin
 
 ## Acceso a paneles expuestos
 
@@ -175,7 +175,9 @@ Herramientas usadas
 - Deshabilitar servicios innecesarios
 - Implementar Infrastructure as Code segura
 
+---
 
+## A03:2025 Software Supply Chain Failures
 
 
 
