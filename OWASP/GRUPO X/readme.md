@@ -41,6 +41,7 @@ B --> C{"¿Acceso<br/>Restringido<br/>Correctamente?"}
 C -- Sí --> D["Acceso Seguro y Restringido<br/>Función Correcta"]  
   
 C -- No --> E["Acciones de un Atacante<br/><br/>- Acceso a Datos Sensibles<br/>- Modificación/Eliminación de Datos<br/>- Escalada de Privilegios<br/>- Evasión de Controles"]
+
 ## 🧪 Métodos de explotación
 
 ### 👨‍💻 Broken Access Control
@@ -62,6 +63,7 @@ GET /orders?orderId=1002 → 200 OK (acceso sin permisos)
 E --> F["Vulnerabilidades Comunes<br/><br/>• IDOR<br/>• Manipulación de JWT/URLs<br/>• CORS Inseguro<br/>• APIs sin Restricción"]  
   
 F --> G["⚠ Riesgo de Compromiso del Sistema"]
+
 
 
 
