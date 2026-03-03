@@ -259,13 +259,9 @@ F -- Sí --> H[Acceso permitido]
 ----------
 ## 🚨 Ejemplos Reales
 
--   Ataques masivos de **credential stuffing** utilizando millones de credenciales filtradas.
-    
--   Aplicaciones móviles con APIs sin validación de autenticación adecuada.
-    
--   Plataformas en la nube que permitían múltiples intentos de login sin considerar ataques distribuidos.
-    
--   Endpoints administrativos expuestos sin validación de rol.
+⚡ Ejemplo: Facebook “View As”
+Un fallo permitió a atacantes acceder a tokens de acceso de otros usuarios por una falla de control de acceso. Esto expuso millones de cuentas.
+
 
 
 
