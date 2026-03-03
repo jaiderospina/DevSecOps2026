@@ -54,6 +54,8 @@ El propósito del OWASP Top 10 no es solo listar vulnerabilidades, sino **crear 
 
 ---
 
+# 1. A01: Broken Access Control
+---
 El **A01: Broken Access Control** del OWASP Top 10 se refiere a las fallas en los mecanismos de autorización que permiten que un usuario realice acciones o acceda a recursos para los que no tiene permisos.
 
 El control de acceso es el sistema que define qué puede hacer cada usuario dentro de una aplicación, según su rol y privilegios, aplicando principios como el **mínimo privilegio** (solo permitir lo estrictamente necesario). Cuando este mecanismo está mal diseñado, mal configurado o no se valida correctamente en el servidor, se produce una vulnerabilidad de autorización rota. 
@@ -428,6 +430,7 @@ La mitigación de **Broken Access Control** no depende de una sola técnica, sin
 La clave está en aplicar controles centralizados, verificables y auditables, asegurando que cada usuario solo pueda acceder exactamente a lo que le corresponde — ni más, ni menos.
 
 ---
+
 
 
 
