@@ -313,360 +313,122 @@ F -- Sí --> H[Acceso permitido]
 
 ---
 
-## 🏗 1️⃣ Medidas de Prevención en Diseño y Desarrollo
-
-### 🔒 Denegar por defecto
-
-El acceso debe estar **bloqueado por defecto**. Solo debe concederse explícitamente cuando exista una regla clara que lo permita.
-
-### 🖥 Validación del lado del servidor
-
-* Todo control de acceso debe implementarse en el **backend (server-side)**.
-* Nunca confiar en validaciones del lado del cliente.
-* Aplicable también a APIs y arquitecturas serverless.
-
-### 👤 Principio de Mínimo Privilegio (PoLP)
-
-* Cada usuario o servicio debe tener **únicamente los permisos necesarios**.
-* Eliminar cuentas inactivas o innecesarias.
-* Deshabilitar puntos de acceso que no se utilicen.
-
-### 🎭 Control de Acceso Basado en Roles (RBAC)
-
-* Centralizar la gestión de permisos.
-* Asignar roles con privilegios bien definidos.
-* Reutilizar mecanismos de control en toda la aplicación.
-
-### 📂 Protección de recursos sensibles
-
-* Deshabilitar el listado de directorios del servidor web.
-* Proteger archivos sensibles como:
-
-  * `.git`
-  * Archivos de respaldo
-  * Metadatos expuestos en la raíz del sitio
-
-### 🆔 Validación de acceso a recursos
-
-* Verificar que el usuario tenga permiso sobre el recurso solicitado (ejemplo: validar propiedad al acceder a `?id=123`).
-* Aplicar controles a nivel de dato (no solo a nivel de interfaz).
+# 📉 3. Mejores Prácticas de Prevención y Mitigación
 
 ---
 
-## 🔑 2️⃣ Gestión Segura de Sesiones y Autenticación
+## 🔐 3.1 Denegar por Defecto (Deny by Default)
 
-### 🪪 Tokens y sesiones
-
-* Invalidar sesiones en el servidor al cerrar sesión.
-* Utilizar JWT de corta duración.
-* Implementar mecanismos de revocación (ej. estándares OAuth).
-
-### 🔐 Autenticación fuerte
-
-* Implementar autenticación multifactor (MFA).
-* Usar métodos confiables como:
-
-  * OTP
-  * Biométrica
-  * Tokens físicos o virtuales
+Todo recurso debe estar protegido a menos que sea explícitamente público.
 
 ---
 
-## 🛡 3️⃣ Protección Técnica Adicional
+## 🏗 3.2 Centralizar la Lógica de Autorización
 
-### 🚦 Rate Limiting
-
-* Limitar la cantidad de solicitudes a APIs.
-* Reducir impacto de herramientas automatizadas.
-
-### 🔐 Cifrado
-
-* Cifrar datos:
-
-  * En tránsito (TLS/HTTPS)
-  * En reposo (base de datos, backups)
+* No dispersar validaciones
+* Usar RBAC o ABAC
+* Reutilizar módulos de autorización
 
 ---
 
-## 📊 4️⃣ Mitigación Operativa y Monitoreo Continuo
+## 👤 3.3 Validar Propiedad del Recurso
 
-### 📝 Logging y alertas
+No basta validar rol:
 
-* Registrar intentos fallidos de acceso.
-* Alertar ante patrones sospechosos (ej. múltiples fallos repetidos).
-
-### 🔍 Auditorías periódicas
-
-* Revisar roles y permisos regularmente.
-* Evaluar cumplimiento del principio de mínimo privilegio.
-
-### 🧪 Pruebas de seguridad
-
-* Incluir pruebas de control de acceso:
-
-  * Unitarias
-  * Integración
-  * Pruebas de penetración
-
-### 🔄 Mejora continua
-
-* Actualizar políticas y procedimientos de acceso.
-* Adaptarse a nuevas amenazas.
-
----
-
-# 🎯 Conclusión General
-
-La mitigación de **Broken Access Control** no depende de una sola técnica, sino de una combinación de:
-
-* Diseño seguro (deny by default + RBAC + PoLP)
-* Validación estricta en servidor
-* Gestión segura de sesiones
-* Protección de recursos sensibles
-* Monitoreo y auditoría continua
-
-La clave está en aplicar controles centralizados, verificables y auditables, asegurando que cada usuario solo pueda acceder exactamente a lo que le corresponde — ni más, ni menos.
-
----
-
-# 7. A07: Fallos de Autenticación 
-
----
-
-![enter image description here](https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147492532/images/5a0c670-e521-5cad-4fcf-c51f0203b430_ChatGPT_Image_1_feb_2026_03_04_47_a.m..png)
-
-## 📌 1. Descripción de la Vulnerabilidad
-
-Según OWASP, **A07:2025 – Fallos de Autenticación** ocurre cuando un sistema no verifica correctamente la identidad de un usuario, dispositivo o aplicación.
-
-La autenticación es la **puerta de entrada** a cualquier sistema.
-Si falla, todo el entorno queda expuesto.
-
-### 🔎 Naturaleza del Problema
-
-Un fallo de autenticación ocurre cuando:
-
-* Se permiten contraseñas débiles o predeterminadas
-* No existe autenticación multifactor (MFA)
-* Se permite fuerza bruta sin limitación
-* Se reutilizan tokens de sesión
-* Las sesiones no se invalidan correctamente
-* Se almacenan contraseñas en texto plano o con hash débil
-* Existen credenciales hardcodeadas (CWE-259 / CWE-798)
-* Validación incorrecta de certificados (CWE-297)
-
----
-
-### ⚠ Causas Principales
-
-* Políticas de contraseña inadecuadas
-* Ausencia de rate limiting
-* Gestión insegura de sesiones
-* Procesos débiles de recuperación de contraseña
-* Uso de autenticación basada solo en contraseña
-* Implementación incorrecta de SSO
-* Falta de validación de JWT (aud, iss, scope)
-
----
-
-### 🎯 Impacto Potencial
-
-* Acceso no autorizado
-* Secuestro de sesiones
-* Escalada de privilegios
-* Exfiltración de datos
-* Ransomware
-* Fraude financiero
-* Incumplimiento normativo
-* Pérdida de reputación
-
----
-
-## 🧨 2. Métodos de Explotación
-
-### 🔹 2.1 Fuerza Bruta
-
-El atacante prueba múltiples combinaciones hasta acertar.
-
-```mermaid
-flowchart TD
-A[Inicio ataque] --> B[Intento login]
-B --> C{Credenciales válidas?}
-C -- No --> B
-C -- Sí --> D[Acceso no autorizado]
+```pseudo
+if user.id == recurso.owner_id
 ```
 
-Herramientas comunes:
-
-* Hydra
-* Burp Suite Intruder
-* Scripts automatizados
+Siempre validar que el usuario sea dueño del objeto.
 
 ---
 
-### 🔹 2.2 Credential Stuffing
+## 🔒 3.4 Aplicar Control en el Servidor
 
-Uso de listas filtradas de credenciales robadas.
+Nunca confiar en:
 
-```mermaid
-flowchart TD
-A[Base de datos filtrada] --> B[Bot automatizado]
-B --> C[Prueba credenciales en múltiples sitios]
-C --> D{Reutilización exitosa?}
-D -- Sí --> E[Acceso a cuenta]
+* HTML
+* JavaScript
+* Campos ocultos
+
+---
+
+## 🔄 3.5 Gestión Segura de Tokens y Sesiones
+
+* Invalidar sesiones al logout
+* JWT de corta duración
+* Validar claims (aud, iss, role)
+* Implementar refresh tokens seguros
+
+---
+
+## 🌐 3.6 Configuración Segura de CORS
+
+* Definir orígenes específicos
+* No usar wildcard en APIs sensibles
+
+---
+
+## 🚦 3.7 Implementar Rate Limiting
+
+Reduce:
+
+* Enumeración de IDs
+* Automatización de ataques
+
+---
+
+## 📊 3.8 Logging y Monitoreo
+
+Registrar:
+
+* Intentos fallidos
+* Accesos denegados
+* Escaladas sospechosas
+
+---
+
+## 🧪 3.9 Pruebas de Seguridad
+
+* Pentesting
+* Pruebas de navegación forzada
+* Pruebas IDOR
+* SAST y DAST
+* Tests unitarios de autorización
+
+---
+
+## 📋 3.10 Aplicar Principio de Mínimo Privilegio
+
+Cada usuario debe tener:
+
+> Solo los permisos estrictamente necesarios
+
+---
+
+# 🔎 Ejemplo Seguro vs Vulnerable
+
+### ❌ Código Vulnerable
+
+```php
+if(isset($_SESSION['loggedin'])) {
+   cargar_emails();
+}
 ```
 
-Ejemplo real:
-
-* Exposición de contraseñas en Facebook (2019) – almacenamiento en texto plano.
+No valida rol.
 
 ---
 
-### 🔹 2.3 Password Spraying
+### ✅ Código Seguro
 
-Probar una contraseña común contra muchos usuarios.
-
-Ejemplo:
-
-```
-Usuario1 → Password1!
-Usuario2 → Password1!
-Usuario3 → Password1!
+```php
+if(isset($_SESSION['loggedin']) && $_SESSION['isadmin'] == true) {
+   cargar_emails();
+}
 ```
 
-Muy efectivo cuando no hay bloqueo de cuentas.
-
----
-
-### 🔹 2.4 Fijación de Sesión
-
-El atacante fuerza un ID de sesión conocido antes del login.
-
-```mermaid
-flowchart TD
-A[Atacante genera ID sesión] --> B[Envía ID a víctima]
-B --> C[Víctima inicia sesión]
-C --> D[Sesión autenticada con ID conocido]
-D --> E[Atacante reutiliza sesión]
-```
-
----
-
-### 🔹 2.5 Omitir Autenticación
-
-Errores lógicos que permiten:
-
-* Saltar validaciones
-* Manipular parámetros
-* Modificar JWT sin validación adecuada
-
----
-
-### 🔹 2.6 Caso Real – Colonial Pipeline (2021)
-
-Ataque relacionado con credenciales comprometidas en:
-
-Colonial Pipeline
-
-Impacto:
-
-* Ransomware
-* Interrupción del suministro de combustible en EE.UU.
-* Millonarias pérdidas económicas
-
----
-
-## 📉 3. Mejores Prácticas de Prevención y Mitigación
-
-### 🔐 3.1 Implementar Autenticación Multifactor (MFA)
-
-* OTP
-* Aplicaciones autenticadoras
-* Biométricos
-* Hardware tokens
-
-Reduce significativamente:
-
-* Credential stuffing
-* Fuerza bruta
-* Reutilización de contraseñas
-
----
-
-### 🔑 3.2 Políticas Modernas de Contraseñas
-
-Alineadas con:
-
-NIST SP 800-63B
-
-Recomendaciones:
-
-* Mínimo 8-12 caracteres
-* No forzar rotación periódica innecesaria
-* Validar contra listas de contraseñas comprometidas
-* Permitir uso de password managers
-
----
-
-### 🚫 3.3 Protección contra Ataques Automatizados
-
-* Rate limiting
-* Backoff progresivo
-* Bloqueo temporal de cuenta
-* CAPTCHA
-* Monitoreo de IP sospechosas
-
----
-
-### 🔒 3.4 Protección Segura de Contraseñas
-
-* Hash con bcrypt o Argon2
-* Salt único por usuario
-* Nunca almacenar en texto plano
-
----
-
-### 🔁 3.5 Gestión Segura de Sesiones
-
-```mermaid
-flowchart TD
-A[Login exitoso] --> B[Generar nuevo ID sesión]
-B --> C[Cookie HttpOnly + Secure]
-C --> D[Timeout inactividad]
-D --> E[Invalidar sesión]
-```
-
-Buenas prácticas:
-
-* No incluir ID en URL
-* Invalidar sesiones en logout
-* Regenerar sesión tras login
-* Configurar tiempos de expiración
-
----
-
-### 🌐 3.6 Comunicación Segura
-
-* TLS obligatorio
-* Protección contra MITM
-* Validación correcta de certificados
-
----
-
-### 🧪 3.7 Pruebas de Seguridad
-
-* Pentesting periódico
-* Revisión de código
-* Simulación de ataques automatizados
-* Escaneo de dependencias
-
----
-
-### 📚 3.8 Educación y Concientización
-
-* Capacitación contra phishing
-* Uso de gestores de contraseñas
-* Buenas prácticas de higiene digital
+Valida autenticación y autorización.
 
 ---
 
