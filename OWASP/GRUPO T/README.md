@@ -19,6 +19,22 @@ El OWASP Top 10 no es simplemente una lista de vulnerabilidades, sino un reflejo
   <img src="images/OWASPTOP10.png" width="600">
 </p>
 
+# A01:2025 – Broken Access Control
+Es vulnerabilidad se lleva acabo cuando una aplicación no restringe adecuadamente las acciones que un usuario autenticado puede realizar, basicamente nos indica el Broken Access Control el usuario está autenticado, pero puede acceder a recursos o funciones que no debería, como se evidencia en la siguiente imagen.
+<p align="center">
+  <img src="images/access.png" width="600">
+</p>
+
+#Posibles Causas de la vulnerabilidad
+
+- Falta de validación en backend
+- Validaciones solo en frontend
+- Uso incorrecto de roles
+- Ausencia de controles de autorización
+
+
+
+
 #Referencias 
 https://owasp.org/www-project-top-ten/
 https://www.indusface.com/learning/owasp-top-10-vulnerabilities/
