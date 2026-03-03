@@ -42,7 +42,6 @@ C -- Sí --> D["Acceso Seguro y Restringido<br/>Función Correcta"]
   
 C -- No --> E["Acciones de un Atacante<br/><br/>- Acceso a Datos Sensibles<br/>- Modificación/Eliminación de Datos<br/>- Escalada de Privilegios<br/>- Evasión de Controles"]
 
----------
 ## Métodos de Explotación
 
 Los atacantes aprovechan estas fallas mediante distintas técnicas:
@@ -63,7 +62,6 @@ https://examplebank.com/account?acct=99999   (acceso indebido)
 
 Si el servidor no valida que la cuenta pertenece al usuario autenticado, el atacante puede acceder a información financiera sensible.
 
-----------
 
 ### 2️⃣ Force Browsing (Navegación Forzada)
 
@@ -79,8 +77,6 @@ Incluso si el frontend bloquea la opción, el atacante puede usar herramientas e
 
 curl https://example.com/app/admin_getappInfo
 
-----------
-
 ### 3️⃣ Manipulación de Tokens y Cookies
 
 -   Alterar JWT
@@ -93,8 +89,6 @@ curl https://example.com/app/admin_getappInfo
     
 
 Si el servidor no valida correctamente la integridad del token o los privilegios reales del usuario, se produce escalación de privilegios.
-
-----------
 
 ### 4️⃣ Ataques contra mecanismos de autenticación mal protegidos
 
@@ -119,9 +113,6 @@ Los atacantes suelen:
     
 -   Aprovechar sistemas que solo limitan intentos por IP.
     
-
-----------
-
 ## Herramientas Comunes Utilizadas
 
 -   **Burp Suite**
@@ -131,7 +122,7 @@ Los atacantes suelen:
 -   Extensión **Autorize (Burp)** para detectar fallos de autorización automáticamente.
     
 -   `curl` para pruebas manuales de endpoints.
-----------
+
 ## Ejemplos Reales
 
 -   Ataques masivos de **credential stuffing** utilizando millones de credenciales filtradas.
@@ -141,6 +132,7 @@ Los atacantes suelen:
 -   Plataformas en la nube que permitían múltiples intentos de login sin considerar ataques distribuidos.
     
 -   Endpoints administrativos expuestos sin validación de rol.
+
 
 
 
