@@ -184,42 +184,66 @@ F --> G[Registro en logs de intento no autorizado]
 
 ### 3️⃣ Manipulación de Tokens y Cookies
 
--   Alterar JWT
-    
--   Modificar cookies
-    
--   Cambiar valores ocultos (ej. `isAdmin=false` → `true`)
-    
--   Reutilizar sesiones activas (Session Hijacking)
-    
+## 📌 Escenario
 
-Si el servidor no valida correctamente la integridad del token o los privilegios reales del usuario, se produce escalación de privilegios.
+Un atacante intenta:
 
-----------
+* Alterar un **JWT**
+* Modificar cookies
+* Cambiar valores ocultos (`isAdmin=false → true`)
+* Reutilizar una sesión activa (Session Hijacking)
 
-### 4️⃣ Ataques contra mecanismos de autenticación mal protegidos
+Si el servidor **no valida la firma del token ni los privilegios reales en backend**, se produce **escalación de privilegios**.
 
-Cuando la autorización depende de autenticación débil:
+---
 
--   **Credential stuffing**
-    
--   **Password spraying**
-    
--   **Fuerza bruta distribuida**
-    
--   Reutilización de tokens
-    
--   Sesiones no invalidadas
-    
+# 🔴 Flujo Vulnerable – Escalación de Privilegios
 
-Los atacantes suelen:
 
--   Usar botnets para distribuir intentos.
-    
--   Explotar APIs sin rate limiting.
-    
--   Aprovechar sistemas que solo limitan intentos por IP.
-    
+```mermaid
+flowchart TD
+A[Usuario autenticado normal] --> B[Intercepta token o cookie]
+B --> C[Modifica valor isAdmin=false a true]
+C --> D[Envía petición al servidor]
+D --> E{Servidor valida firma y rol en backend?}
+E -- No --> F[Acceso administrativo concedido]
+F --> G[Escalación de privilegios]
+E -- Sí --> H[403 Forbidden]
+```
+
+---
+
+# 🟠 Flujo Específico – Manipulación de JWT
+
+```mermaid
+sequenceDiagram
+participant U as Usuario
+participant A as Atacante
+participant S as Servidor
+
+U->>S: Login correcto
+S-->>U: Devuelve JWT
+
+A->>A: Decodifica JWT
+A->>A: Modifica role:user a role:admin
+A->>S: Envía JWT manipulado
+S-->>A: Acceso concedido (si no valida firma)
+```
+
+---
+
+# 🟢 Flujo Seguro – Validación Correcta
+
+```mermaid
+flowchart TD
+A[Petición con token] --> B[Servidor verifica firma]
+B --> C{Firma válida?}
+C -- No --> D[401 Unauthorized]
+C -- Sí --> E[Consulta rol real en base de datos]
+E --> F{Tiene privilegios admin?}
+F -- No --> G[403 Forbidden]
+F -- Sí --> H[Acceso permitido]
+```
 
 ----------
 
@@ -242,6 +266,7 @@ Los atacantes suelen:
 -   Plataformas en la nube que permitían múltiples intentos de login sin considerar ataques distribuidos.
     
 -   Endpoints administrativos expuestos sin validación de rol.
+
 
 
 
