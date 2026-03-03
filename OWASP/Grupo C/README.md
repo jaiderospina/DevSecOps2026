@@ -155,6 +155,8 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 # A05:2025 - Injection
 
  ### Métodos de explotación: 
+
+ ### Ejemplo ataque real: 
    
  ### Prevención y mitigación:  
 
@@ -162,6 +164,8 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 # A06:2025 - Insecure Design
 
  ### Métodos de explotación: 
+
+ ### Ejemplo ataque real: 
    
  ### Prevención y mitigación:  
 ---
@@ -169,6 +173,8 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 # A07:2025 - Authentication Failures
 
  ### Métodos de explotación: 
+
+ ### Ejemplo ataque real: 
    
  ### Prevención y mitigación:  
 ---
@@ -187,7 +193,7 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
    ### Métodos de explotación: 
      - Denial of Service -> Atacar a un objetivo hasta dejarlos sin recursos (CPU, Memoria)
      - Cache Poisoning -> Ingresar una IP Falsa a las entradas de DNS para resolver cache, se utiliza para usar una pagina legitima y redirigir a una fraudulenta. 
-     - Code injection -> Envio de datos inesperados a un interprete, ocurre generalmente en consultas tipo SQL, NoSQL, Ldap, Xpath 
+     - Code injection -> Envio de datos inesperados a un interprete, ocurre generalmente en consultas tipo SQL, NoSQL, Ldap, Xpath. 
           
    ### Ejemplo ataque real:  
      - Ataque a la cadena de suministro de Solarwinds, el ataque termino atacando 18000 clientes que habian realizado actualizaciones de software.
