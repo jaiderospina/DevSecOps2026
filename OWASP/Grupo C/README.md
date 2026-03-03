@@ -174,20 +174,22 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 ---
 
 # A08:2025 - Software or Data Integrity Failures 
-    * Actualizaciones de software 
-      * Datos críticos y de CI/CD (Continuos Integration and Continuos Delivery) sin verificación.
-
+    - Actualizaciones de software 
+    - Datos críticos y de CI/CD (Continuos Integration and Continuos Delivery) sin verificación.
+    - Fallas en la cadena de suministro de software
 <p align="center">
   <img src="Images/SoftwareorDataIntegrityFailures.JPG" width="600">
 </p>
 
 
    ### Métodos de explotación: 
+     - 
    
    ### Prevención y mitigación:   
+     - Utilizar firmas digitales para verifificar que el software no ha sido alterado
+     - 
   
-  
-
+---
 
 # A09:2025 - Security Logging and Alerting Failures
 
@@ -195,11 +197,15 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
    
  ### Prevención y mitigación:  
 
+---
+
 # A10:2025 - Mishandling of Exceptional Conditions
 
  ### Métodos de explotación: 
    
  ### Prevención y mitigación:  
+
+---
 
 # Referencias:  
 
