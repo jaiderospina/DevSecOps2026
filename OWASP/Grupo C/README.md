@@ -81,17 +81,88 @@ en algunos sitios sitio web o del sistema de administración de contenido (CMS),
 
 ---
 
-3
+# A03:2025  Software Supply Chain Failures. 
 
-4
+<p align="center">
+  <img src="Images/Software Supply Chain Failures.png" width="600">
+</p>
+
+Riesgos en bibliotecas de terceros, herramientas de compilación y pipelines CI/CD.  
+
+### Métodos de explotación:  
+     - Inyección de Código en Componentes de Código Abierto: Los atacantes comprometen bibliotecas populares 
+       (ej. repositorios NPM, PyPI) para incluir código malicioso que luego se descarga automáticamente. 
+
+     - Compromiso de Herramientas de Construcción/Distribución (CI/CD): Hackeo de los sistemas utilizados 
+       por los desarrolladores para crear o distribuir el software, insertando puertas traseras en la 
+       fase de compilación. 
+
+     - Actualizaciones de Software "Troyanizadas": Compromiso del servidor de actualizaciones de un proveedor
+       distribuyendo malware a través de parches legítimos, como ocurrió con SolarWinds Orion. 
+
+     - Ataques de Tipo "Typosquatting": Publicación de paquetes maliciosos con nombres muy similares a bibliotecas
+       populares, esperando que los desarrolladores cometan errores de escritura al instalarlos. 
+
+     - Robo de Credenciales de Desarrolladores: Obtención de acceso a cuentas de desarrolladores con 
+       privilegios para modificar código fuente o lanzar nuevas versiones de productos. 
+
+     - Manipulación de Hardware/Firmware: Inserción de vulnerabilidades en el código 
+       base o componentes físicos durante la fabricación. 
+
+### Prevención y mitigación: 
+
+     - Para garantizar que la integridad de los datos y que las actualizaciones no están en riesgo, los desarrolladores
+       de aplicaciones deben utilizar firmas digitales para verificar las actualizaciones, comprobar sus cadenas de 
+       suministro de software y asegurarse que los canales de integración e implementación continuas (CI/CD) tengan 
+       un control de acceso eficaz y que estén correctamente configurados. 
+
+---
+
+# A04:2025 Cryptographic Failures
+
+<p align="center">
+  <img src="Images/Cryptographic Failures .png" width="600">
+</p>
+
+Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposición de Datos Sensibles), los atacantes pueden acceder a esos datos y venderlos o utilizarlos con fines maliciosos. También pueden robar información confidencial mediante un ataque en ruta. 
+
+### Métodos de explotación:  
+     - Ataques Man-in-the-Middle (MitM): Interceptación de tráfico al no utilizar TLS, usar protocolos 
+       obsoletos (SSL, TLS 1.0/1.1) o aceptar certificados inválidos, permitiendo el robo de sesiones. 
+
+     - Ataques de Fuerza Bruta y Rainbow Tables: Dirigidos a contraseñas cifradas con algoritmos 
+       débiles (MD5, SHA1) o sin el uso de salt (valor aleatorio). 
+
+     - Explotación de Cifrado Débil o Nulo: Uso de algoritmos de cifrado obsoletos o ineficaces 
+       que permiten descifrar datos almacenados. 
+
+     - Mal Manejo de Claves: Robo de claves criptográficas debido a almacenamiento inseguro 
+       (claves hardcoded en el código, expuestas en repositorios) o uso de claves predecibles. 
+
+     - Modos de Operación Inseguros: Uso de modos como ECB (Electronic Codebook) que 
+       revelan patrones en los datos cifrados. 
+
+     - Inyección SQL para Descifrado: Explotación de inyecciones SQL para extraer datos que 
+       se descifran automáticamente al recuperarse de la base de datos. 
+
+### Prevención y mitigación: 
+     - La exposición de los datos se puede minimizar encriptando todos los datos confidenciales
+       autenticando todas las transmisiones y desactivando el almacenamiento en caché de cualquier
+       información confidencial. 
+
+---
 
 5
 
+---
+
 6
+
+---
 
 7
 
-
+---
 
 # A08:2025 - Software or Data Integrity Failures 
 
