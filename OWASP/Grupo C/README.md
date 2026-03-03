@@ -10,7 +10,7 @@ Michael Giovanny Sierra Leon
 </p>
 
 
-<marquee behavior="scroll" direction="left"> DevSecOps</marquee>
+<marquee> DevSecOps</marquee>
 
 # A01:2025 Broken Access Control.
 
