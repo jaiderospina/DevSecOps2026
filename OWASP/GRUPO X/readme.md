@@ -482,6 +482,280 @@ Un control de acceso deficiente puede permitir:
 
 ---
 
+# 7. A07: Fallos de Autenticación
+
+---
+
+## 📌 1. Descripción de la Vulnerabilidad
+
+Según OWASP, **A07 – Fallos de Autenticación** ocurre cuando un sistema no verifica correctamente la identidad de un usuario, dispositivo o aplicación.
+
+La autenticación es la **puerta de entrada** a cualquier sistema.
+Si falla, todo el entorno queda expuesto.
+
+### 🔎 Naturaleza del Problema
+
+Un fallo de autenticación ocurre cuando:
+
+* Se permiten contraseñas débiles o predeterminadas
+* No existe autenticación multifactor (MFA)
+* Se permite fuerza bruta sin limitación
+* Se reutilizan tokens de sesión
+* Las sesiones no se invalidan correctamente
+* Se almacenan contraseñas en texto plano o con hash débil
+* Existen credenciales hardcodeadas (CWE-259 / CWE-798)
+* Validación incorrecta de certificados (CWE-297)
+
+---
+
+### ⚠ Causas Principales
+
+* Políticas de contraseña inadecuadas
+* Ausencia de rate limiting
+* Gestión insegura de sesiones
+* Procesos débiles de recuperación de contraseña
+* Uso de autenticación basada solo en contraseña
+* Implementación incorrecta de SSO
+* Falta de validación de JWT (aud, iss, scope)
+
+---
+
+### 🎯 Impacto Potencial
+
+* Acceso no autorizado
+* Secuestro de sesiones
+* Escalada de privilegios
+* Exfiltración de datos
+* Ransomware
+* Fraude financiero
+* Incumplimiento normativo
+* Pérdida de reputación
+
+---
+
+## 🧨 2. Métodos de Explotación
+
+### 🔹 2.1 Fuerza Bruta
+
+El atacante prueba múltiples combinaciones hasta acertar.
+
+```mermaid
+flowchart TD
+A[Inicio ataque] --> B[Intento login]
+B --> C{Credenciales válidas?}
+C -- No --> B
+C -- Sí --> D[Acceso no autorizado]
+```
+
+Herramientas comunes:
+
+* Hydra
+* Burp Suite Intruder
+* Scripts automatizados
+
+---
+
+### 🔹 2.2 Credential Stuffing
+
+Uso de listas filtradas de credenciales robadas.
+
+```mermaid
+flowchart TD
+A[Base de datos filtrada] --> B[Bot automatizado]
+B --> C[Prueba credenciales en múltiples sitios]
+C --> D{Reutilización exitosa?}
+D -- Sí --> E[Acceso a cuenta]
+```
+
+Ejemplo real:
+
+* Exposición de contraseñas en Facebook (2019) – almacenamiento en texto plano.
+
+---
+
+### 🔹 2.3 Password Spraying
+
+Probar una contraseña común contra muchos usuarios.
+
+Ejemplo:
+
+```
+Usuario1 → Password1!
+Usuario2 → Password1!
+Usuario3 → Password1!
+```
+
+Muy efectivo cuando no hay bloqueo de cuentas.
+
+---
+
+### 🔹 2.4 Fijación de Sesión
+
+El atacante fuerza un ID de sesión conocido antes del login.
+
+```mermaid
+flowchart TD
+A[Atacante genera ID sesión] --> B[Envía ID a víctima]
+B --> C[Víctima inicia sesión]
+C --> D[Sesión autenticada con ID conocido]
+D --> E[Atacante reutiliza sesión]
+```
+
+---
+
+### 🔹 2.5 Omitir Autenticación
+
+Errores lógicos que permiten:
+
+* Saltar validaciones
+* Manipular parámetros
+* Modificar JWT sin validación adecuada
+
+---
+
+### 🔹 2.6 Caso Real – Colonial Pipeline (2021)
+
+Ataque relacionado con credenciales comprometidas en:
+
+Colonial Pipeline
+
+Impacto:
+
+* Ransomware
+* Interrupción del suministro de combustible en EE.UU.
+* Millonarias pérdidas económicas
+
+---
+
+## 📉 3. Mejores Prácticas de Prevención y Mitigación
+
+### 🔐 3.1 Implementar Autenticación Multifactor (MFA)
+
+* OTP
+* Aplicaciones autenticadoras
+* Biométricos
+* Hardware tokens
+
+Reduce significativamente:
+
+* Credential stuffing
+* Fuerza bruta
+* Reutilización de contraseñas
+
+---
+
+### 🔑 3.2 Políticas Modernas de Contraseñas
+
+Alineadas con:
+
+NIST SP 800-63B
+
+Recomendaciones:
+
+* Mínimo 8-12 caracteres
+* No forzar rotación periódica innecesaria
+* Validar contra listas de contraseñas comprometidas
+* Permitir uso de password managers
+
+---
+
+### 🚫 3.3 Protección contra Ataques Automatizados
+
+* Rate limiting
+* Backoff progresivo
+* Bloqueo temporal de cuenta
+* CAPTCHA
+* Monitoreo de IP sospechosas
+
+---
+
+### 🔒 3.4 Protección Segura de Contraseñas
+
+* Hash con bcrypt o Argon2
+* Salt único por usuario
+* Nunca almacenar en texto plano
+
+---
+
+### 🔁 3.5 Gestión Segura de Sesiones
+
+```mermaid
+flowchart TD
+A[Login exitoso] --> B[Generar nuevo ID sesión]
+B --> C[Cookie HttpOnly + Secure]
+C --> D[Timeout inactividad]
+D --> E[Invalidar sesión]
+```
+
+Buenas prácticas:
+
+* No incluir ID en URL
+* Invalidar sesiones en logout
+* Regenerar sesión tras login
+* Configurar tiempos de expiración
+
+---
+
+### 🌐 3.6 Comunicación Segura
+
+* TLS obligatorio
+* Protección contra MITM
+* Validación correcta de certificados
+
+---
+
+### 🧪 3.7 Pruebas de Seguridad
+
+* Pentesting periódico
+* Revisión de código
+* Simulación de ataques automatizados
+* Escaneo de dependencias
+
+---
+
+### 📚 3.8 Educación y Concientización
+
+* Capacitación contra phishing
+* Uso de gestores de contraseñas
+* Buenas prácticas de higiene digital
+
+---
+
+## 🚫 ¿Qué NO es un fallo de autenticación?
+
+| Caso                              | Clasificación Correcta |
+| --------------------------------- | ---------------------- |
+| Usuario ve datos que no debería   | Fallo de autorización  |
+| Phishing externo                  | Robo de credenciales   |
+| Servidor caído                    | Fallo operativo        |
+| Usuario escribe mal la contraseña | Error humano           |
+
+---
+
+# 🏁 Conclusión
+
+Los **Fallos de Autenticación (A07)** siguen siendo una de las vulnerabilidades más críticas del Top 10 de OWASP.
+
+En un mundo donde:
+
+* Las aplicaciones usan APIs
+* Existe SSO
+* Se manejan tokens JWT
+* Los servicios están en la nube
+
+La complejidad aumenta y también el riesgo.
+
+Una autenticación débil puede permitir:
+
+* Secuestro de cuentas
+* Ransomware
+* Exfiltración de datos
+* Daño reputacional severo
+
+🔐 La autenticación no es solo un login.
+Es la base de toda la seguridad del sistema.
+
+---
 
 
 
