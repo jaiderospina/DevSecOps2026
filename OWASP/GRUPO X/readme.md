@@ -123,17 +123,62 @@ S-->>U: Archivo entregado sin validación
 
 ### 2️⃣ Force Browsing (Navegación Forzada)
 
-Acceder directamente a rutas privadas o administrativas:
+## 📌 Escenario
 
-/admin/listar_mails  
-/admin/dashboard  
+Un atacante intenta acceder directamente a rutas administrativas:
+
+```
+/admin/listar_mails
+/admin/dashboard
 /app/admin_getappInfo
+```
 
-Si un usuario no autenticado o sin privilegios administrativos accede correctamente, existe una falla de control de acceso.
+Aunque el frontend o la interfaz gráfica no muestre estos enlaces, el atacante puede acceder manualmente usando navegador, herramientas o línea de comandos:
 
-Incluso si el frontend bloquea la opción, el atacante puede usar herramientas externas como:
-
+```bash
 curl https://example.com/app/admin_getappInfo
+```
+
+---
+
+# 🔴 Diagrama de Flujo – Escenario Vulnerable
+
+```mermaid
+flowchart TD
+A[Usuario sin privilegios] --> B[Intenta acceder a /admin/dashboard]
+B --> C[Servidor recibe solicitud]
+C --> D{¿Valida rol en backend?}
+D -- No --> E[Permite acceso ❌]
+E --> F[Exposición de información administrativa]
+D -- Sí --> G[Devuelve 403 Forbidden]
+```
+
+---
+
+# 🟠 Flujo Detallado del Ataque
+
+```mermaid
+flowchart LR
+A[Atacante] --> B[Descubre ruta admin]
+B --> C[Usa navegador o curl]
+C --> D[Envía petición directa]
+D --> E[Servidor sin validación]
+E --> F[Acceso concedido]
+```
+
+---
+
+# 🟢 Flujo Seguro (Control Correcto)
+
+```mermaid
+flowchart TD
+A[Usuario sin rol admin] --> B[Solicita /admin/dashboard]
+B --> C[Servidor verifica autenticación]
+C --> D{¿Tiene rol ADMIN?}
+D -- Sí --> E[Acceso permitido]
+D -- No --> F[403 Forbidden]
+F --> G[Registro en logs de intento no autorizado]
+```
 
 ----------
 
@@ -197,6 +242,7 @@ Los atacantes suelen:
 -   Plataformas en la nube que permitían múltiples intentos de login sin considerar ataques distribuidos.
     
 -   Endpoints administrativos expuestos sin validación de rol.
+
 
 
 
