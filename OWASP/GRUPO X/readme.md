@@ -54,6 +54,8 @@ El propósito del OWASP Top 10 no es solo listar vulnerabilidades, sino **crear 
 
 # 1. A01: Broken Access Control
 
+## 📌 1. Descripción de la Vulnerabilidad
+
 El **A01: Broken Access Control** del OWASP Top 10 se refiere a las fallas en los mecanismos de autorización que permiten que un usuario realice acciones o acceda a recursos para los que no tiene permisos. 
 
 ![enter image description here](https://miro.medium.com/v2/resize:fit:1400/0*nDZEqAb5PlFW4Nx5.png)
@@ -66,7 +68,7 @@ El control de acceso define:
 
 Cuando estas reglas no se aplican correctamente en el **lado del servidor**, se produce un **Broken Access Control**.
 
-## 🚨 Naturaleza del Problema
+### 🚨 Naturaleza del Problema
 
 Ocurre cuando:
 
@@ -82,7 +84,7 @@ Ocurre cuando:
 
 ---
 
-## 🎯 Impacto Potencial
+### 🎯 Impacto Potencial
 
 * Exposición de datos sensibles
 * Modificación o eliminación de datos
@@ -97,7 +99,7 @@ Ocurre cuando:
 
 ---
 
-# Diagrama de Flujo
+### Diagrama de Flujo
 
 ```mermaid  
 flowchart TD  
@@ -113,11 +115,11 @@ C -- No --> E["Acciones de un Atacante<br/><br/>- Acceso a Datos Sensibles<br/>-
 ```
 ----------
 
-## ⚔️ Métodos de Explotación
+# ⚔️ Métodos de Explotación
 
 Los atacantes aprovechan estas fallas mediante distintas técnicas:
 
-### 1️⃣ Manipulación de URL y Parámetros (IDOR)
+## 1️⃣ Manipulación de URL y Parámetros (IDOR)
 
 Consiste en modificar identificadores en la URL o en los parámetros de una petición para acceder a recursos de otros usuarios.
 
@@ -141,7 +143,7 @@ Si el backend no valida la propiedad del recurso, devolverá datos del usuario 1
 
 ----------
 
-## 📊 Diagrama Vulnerable
+### 📊 Diagrama Vulnerable
 
 ```mermaid
 flowchart LR
@@ -172,7 +174,7 @@ Si no hay validación → descarga de factura de otro usuario.
 
 ----------
 
-## 📊 Diagrama Secuencia
+### 📊 Diagrama Secuencia
 
 ```mermaid
 sequenceDiagram
@@ -189,9 +191,9 @@ S-->>U: Archivo entregado sin validación
 
 ----------
 
-### 2️⃣ Force Browsing (Navegación Forzada)
+## 2️⃣ Force Browsing (Navegación Forzada)
 
-## 📌 Escenario
+### 📌 Escenario
 
 Un atacante intenta acceder directamente a rutas administrativas:
 
@@ -209,7 +211,7 @@ curl https://example.com/app/admin_getappInfo
 
 ---
 
-# 🔴 Diagrama de Flujo – Escenario Vulnerable
+### 🔴 Diagrama de Flujo – Escenario Vulnerable
 
 ```mermaid
 flowchart TD
@@ -223,7 +225,7 @@ D -- Sí --> G[Devuelve 403 Forbidden]
 
 ---
 
-# 🟠 Flujo Detallado del Ataque
+### 🟠 Flujo Detallado del Ataque
 
 ```mermaid
 flowchart LR
@@ -236,7 +238,7 @@ E --> F[Acceso concedido]
 
 ---
 
-# 🟢 Flujo Seguro (Control Correcto)
+### 🟢 Flujo Seguro (Control Correcto)
 
 ```mermaid
 flowchart TD
@@ -250,9 +252,9 @@ F --> G[Registro en logs de intento no autorizado]
 
 ----------
 
-### 3️⃣ Manipulación de Tokens y Cookies
+## 3️⃣ Manipulación de Tokens y Cookies
 
-## 📌 Escenario
+### 📌 Escenario
 
 Un atacante intenta:
 
@@ -265,7 +267,7 @@ Si el servidor **no valida la firma del token ni los privilegios reales en backe
 
 ---
 
-# 🔴 Flujo Vulnerable – Escalación de Privilegios
+### 🔴 Flujo Vulnerable – Escalación de Privilegios
 
 
 ```mermaid
@@ -281,7 +283,7 @@ E -- Sí --> H[403 Forbidden]
 
 ---
 
-# 🟠 Flujo Específico – Manipulación de JWT
+### 🟠 Flujo Específico – Manipulación de JWT
 
 ```mermaid
 sequenceDiagram
@@ -300,7 +302,7 @@ S-->>A: Acceso concedido (si no valida firma)
 
 ---
 
-# 🟢 Flujo Seguro – Validación Correcta
+### 🟢 Flujo Seguro – Validación Correcta
 
 ```mermaid
 flowchart TD
@@ -333,17 +335,17 @@ F -- Sí --> H[Acceso permitido]
 
 ---
 
-# 📉 3. Mejores Prácticas de Prevención y Mitigación
+## 📉 3. Mejores Prácticas de Prevención y Mitigación
 
 ---
 
-## 🔐 3.1 Denegar por Defecto (Deny by Default)
+### 🔐 3.1 Denegar por Defecto (Deny by Default)
 
 Todo recurso debe estar protegido a menos que sea explícitamente público.
 
 ---
 
-## 🏗 3.2 Centralizar la Lógica de Autorización
+### 🏗 3.2 Centralizar la Lógica de Autorización
 
 * No dispersar validaciones
 * Usar RBAC o ABAC
@@ -351,7 +353,7 @@ Todo recurso debe estar protegido a menos que sea explícitamente público.
 
 ---
 
-## 👤 3.3 Validar Propiedad del Recurso
+### 👤 3.3 Validar Propiedad del Recurso
 
 No basta validar rol:
 
@@ -363,7 +365,7 @@ Siempre validar que el usuario sea dueño del objeto.
 
 ---
 
-## 🔒 3.4 Aplicar Control en el Servidor
+### 🔒 3.4 Aplicar Control en el Servidor
 
 Nunca confiar en:
 
@@ -373,7 +375,7 @@ Nunca confiar en:
 
 ---
 
-## 🔄 3.5 Gestión Segura de Tokens y Sesiones
+### 🔄 3.5 Gestión Segura de Tokens y Sesiones
 
 * Invalidar sesiones al logout
 * JWT de corta duración
@@ -382,14 +384,14 @@ Nunca confiar en:
 
 ---
 
-## 🌐 3.6 Configuración Segura de CORS
+### 🌐 3.6 Configuración Segura de CORS
 
 * Definir orígenes específicos
 * No usar wildcard en APIs sensibles
 
 ---
 
-## 🚦 3.7 Implementar Rate Limiting
+### 🚦 3.7 Implementar Rate Limiting
 
 Reduce:
 
@@ -398,7 +400,7 @@ Reduce:
 
 ---
 
-## 📊 3.8 Logging y Monitoreo
+### 📊 3.8 Logging y Monitoreo
 
 Registrar:
 
@@ -408,7 +410,7 @@ Registrar:
 
 ---
 
-## 🧪 3.9 Pruebas de Seguridad
+### 🧪 3.9 Pruebas de Seguridad
 
 * Pentesting
 * Pruebas de navegación forzada
@@ -418,7 +420,7 @@ Registrar:
 
 ---
 
-## 📋 3.10 Aplicar Principio de Mínimo Privilegio
+### 📋 3.10 Aplicar Principio de Mínimo Privilegio
 
 Cada usuario debe tener:
 
@@ -426,7 +428,7 @@ Cada usuario debe tener:
 
 ---
 
-# 🔎 Ejemplo Seguro vs Vulnerable
+## 🔎 Ejemplo Seguro vs Vulnerable
 
 ### ❌ Código Vulnerable
 
@@ -452,7 +454,7 @@ Valida autenticación y autorización.
 
 ---
 
-# 🏁 Conclusión
+## 🏁 Conclusión
 
 **A01:2025 – Broken Access Control** es la vulnerabilidad más crítica del Top 10 de OWASP.
 
