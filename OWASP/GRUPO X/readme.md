@@ -43,7 +43,7 @@ C -- Sí --> D["Acceso Seguro y Restringido<br/>Función Correcta"]
 C -- No --> E["Acciones de un Atacante<br/><br/>- Acceso a Datos Sensibles<br/>- Modificación/Eliminación de Datos<br/>- Escalada de Privilegios<br/>- Evasión de Controles"]
 
 ---------
-## ⚔️ Métodos de Explotación
+## Métodos de Explotación
 
 Los atacantes aprovechan estas fallas mediante distintas técnicas:
 
@@ -122,7 +122,7 @@ Los atacantes suelen:
 
 ----------
 
-## 🛠️ Herramientas Comunes Utilizadas
+## Herramientas Comunes Utilizadas
 
 -   **Burp Suite**
     
@@ -132,7 +132,7 @@ Los atacantes suelen:
     
 -   `curl` para pruebas manuales de endpoints.
 ----------
-## 🚨 Ejemplos Reales
+## Ejemplos Reales
 
 -   Ataques masivos de **credential stuffing** utilizando millones de credenciales filtradas.
     
@@ -141,6 +141,7 @@ Los atacantes suelen:
 -   Plataformas en la nube que permitían múltiples intentos de login sin considerar ataques distribuidos.
     
 -   Endpoints administrativos expuestos sin validación de rol.
+
 
 
 
