@@ -54,28 +54,48 @@ El propósito del OWASP Top 10 no es solo listar vulnerabilidades, sino **crear 
 
 # 1. A01: Broken Access Control
 
-El **A01: Broken Access Control** del OWASP Top 10 se refiere a las fallas en los mecanismos de autorización que permiten que un usuario realice acciones o acceda a recursos para los que no tiene permisos.
-
-El control de acceso es el sistema que define qué puede hacer cada usuario dentro de una aplicación, según su rol y privilegios, aplicando principios como el **mínimo privilegio** (solo permitir lo estrictamente necesario). Cuando este mecanismo está mal diseñado, mal configurado o no se valida correctamente en el servidor, se produce una vulnerabilidad de autorización rota. 
+El **A01: Broken Access Control** del OWASP Top 10 se refiere a las fallas en los mecanismos de autorización que permiten que un usuario realice acciones o acceda a recursos para los que no tiene permisos. 
 
 ![enter image description here](https://miro.medium.com/v2/resize:fit:1400/0*nDZEqAb5PlFW4Nx5.png)
 
-En la práctica, esto puede permitir que un atacante:
+El control de acceso define:
 
--   Acceda a información confidencial de otros usuarios.
-    
--   Modifique o elimine datos sin autorización.
-    
--   Ejecute funciones administrativas sin tener privilegios.
-    
--   Manipule identificadores, parámetros, tokens (como JWT) o URLs para evadir controles.
-    
--   Aproveche configuraciones incorrectas como CORS mal configurado o APIs sin validación adecuada.
-    
+* ✅ Quién puede acceder
+* ✅ A qué recursos puede acceder
+* ✅ Qué acciones puede realizar
 
-Este tipo de vulnerabilidad incluye problemas como IDOR, escalación de privilegios y configuraciones inseguras relacionadas con autorización. Está clasificada en la CWE como CWE-284 (Improper Access Control).
+Cuando estas reglas no se aplican correctamente en el **lado del servidor**, se produce un **Broken Access Control**.
 
-En resumen, **Broken Access Control ocurre cuando una aplicación no restringe correctamente lo que cada usuario puede hacer o ver**, lo que puede comprometer la confidencialidad, integridad y disponibilidad del sistema, siendo una de las vulnerabilidades más críticas y frecuentes en aplicaciones modernas, provocando filtraciones de datos, escalada de privilegios y severos daños reputacionales.
+## 🚨 Naturaleza del Problema
+
+Ocurre cuando:
+
+* No se aplica el principio de mínimo privilegio
+* No existe “deny by default”
+* Se confía en validaciones del frontend
+* No se valida la propiedad del recurso
+* Se exponen identificadores directos (IDOR)
+* Hay mala configuración CORS
+* Se manipulan tokens JWT
+* No se protegen endpoints POST/PUT/DELETE
+* Se permite navegación forzada
+
+---
+
+## 🎯 Impacto Potencial
+
+* Exposición de datos sensibles
+* Modificación o eliminación de datos
+* Escalada de privilegios (horizontal o vertical)
+* Compromiso total del sistema
+* Violaciones regulatorias (RGPD, etc.)
+* Pérdida financiera
+* Daño reputacional
+* Interrupción operativa
+
+📊 OWASP indica que el 100% de las aplicaciones analizadas presentaban algún tipo de fallo de control de acceso.
+
+---
 
 # Diagrama de Flujo
 
@@ -432,39 +452,31 @@ Valida autenticación y autorización.
 
 ---
 
-## 🚫 ¿Qué NO es un fallo de autenticación?
-
-| Caso                              | Clasificación Correcta |
-| --------------------------------- | ---------------------- |
-| Usuario ve datos que no debería   | Fallo de autorización  |
-| Phishing externo                  | Robo de credenciales   |
-| Servidor caído                    | Fallo operativo        |
-| Usuario escribe mal la contraseña | Error humano           |
-
----
-
 # 🏁 Conclusión
 
-Los **Fallos de Autenticación (A07)** siguen siendo una de las vulnerabilidades más críticas del Top 10 de OWASP.
+**A01:2025 – Broken Access Control** es la vulnerabilidad más crítica del Top 10 de OWASP.
 
-En un mundo donde:
+No es un problema superficial.
+Es un problema **arquitectónico**.
 
-* Las aplicaciones usan APIs
-* Existe SSO
-* Se manejan tokens JWT
-* Los servicios están en la nube
+Requiere:
 
-La complejidad aumenta y también el riesgo.
+* Diseño seguro desde el inicio
+* Mentalidad “deny by default”
+* Validaciones del lado del servidor
+* Centralización de la lógica
+* Pruebas rigurosas
+* Monitoreo continuo
 
-Una autenticación débil puede permitir:
+Un control de acceso deficiente puede permitir:
 
-* Secuestro de cuentas
-* Ransomware
-* Exfiltración de datos
-* Daño reputacional severo
+* Robo de información
+* Escalada de privilegios
+* Manipulación del negocio
+* Compromiso total del sistema
 
-🔐 La autenticación no es solo un login.
-Es la base de toda la seguridad del sistema.
+🔐 La autenticación abre la puerta.
+🛑 El control de acceso decide hasta dónde puedes llegar.
 
 ---
 
