@@ -259,8 +259,10 @@ F -- Sí --> H[Acceso permitido]
 ----------
 ## 🚨 Ejemplos Reales
 
-⚡ **Ejemplo:** Facebook “View As”
-Un fallo permitió a atacantes acceder a tokens de acceso de otros usuarios por una falla de control de acceso. Esto expuso millones de cuentas.
+⚡ **Facebook “View As”:** Un fallo permitió a atacantes acceder a tokens de acceso de otros usuarios por una falla de control de acceso. Esto expuso millones de cuentas.
+
+⚡ **Snapchat (2014):**  Hackers explotaron una vulnerabilidad de control de acceso para recopilar una lista de 4.6 millones de nombres de usuario y números de teléfono.
+
 
 
 
