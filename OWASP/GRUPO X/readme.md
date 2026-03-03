@@ -263,6 +263,128 @@ F -- Sí --> H[Acceso permitido]
 
 ⚡ **Snapchat (2014):**  Hackers explotaron una vulnerabilidad de control de acceso para recopilar una lista de 4.6 millones de nombres de usuario y números de teléfono.
 
+Perfecto Diego. Tomando todas las referencias de tu documento , aquí tienes un **resumen unificado y estructurado** con lo más importante de cada sección sobre **prevención y mitigación de A01: Broken Access Control** según OWASP.
+
+---
+
+## 🏗 1️⃣ Medidas de Prevención en Diseño y Desarrollo
+
+### 🔒 Denegar por defecto
+
+El acceso debe estar **bloqueado por defecto**. Solo debe concederse explícitamente cuando exista una regla clara que lo permita.
+
+### 🖥 Validación del lado del servidor
+
+* Todo control de acceso debe implementarse en el **backend (server-side)**.
+* Nunca confiar en validaciones del lado del cliente.
+* Aplicable también a APIs y arquitecturas serverless.
+
+### 👤 Principio de Mínimo Privilegio (PoLP)
+
+* Cada usuario o servicio debe tener **únicamente los permisos necesarios**.
+* Eliminar cuentas inactivas o innecesarias.
+* Deshabilitar puntos de acceso que no se utilicen.
+
+### 🎭 Control de Acceso Basado en Roles (RBAC)
+
+* Centralizar la gestión de permisos.
+* Asignar roles con privilegios bien definidos.
+* Reutilizar mecanismos de control en toda la aplicación.
+
+### 📂 Protección de recursos sensibles
+
+* Deshabilitar el listado de directorios del servidor web.
+* Proteger archivos sensibles como:
+
+  * `.git`
+  * Archivos de respaldo
+  * Metadatos expuestos en la raíz del sitio
+
+### 🆔 Validación de acceso a recursos
+
+* Verificar que el usuario tenga permiso sobre el recurso solicitado (ejemplo: validar propiedad al acceder a `?id=123`).
+* Aplicar controles a nivel de dato (no solo a nivel de interfaz).
+
+---
+
+## 🔑 2️⃣ Gestión Segura de Sesiones y Autenticación
+
+### 🪪 Tokens y sesiones
+
+* Invalidar sesiones en el servidor al cerrar sesión.
+* Utilizar JWT de corta duración.
+* Implementar mecanismos de revocación (ej. estándares OAuth).
+
+### 🔐 Autenticación fuerte
+
+* Implementar autenticación multifactor (MFA).
+* Usar métodos confiables como:
+
+  * OTP
+  * Biométrica
+  * Tokens físicos o virtuales
+
+---
+
+## 🛡 3️⃣ Protección Técnica Adicional
+
+### 🚦 Rate Limiting
+
+* Limitar la cantidad de solicitudes a APIs.
+* Reducir impacto de herramientas automatizadas.
+
+### 🔐 Cifrado
+
+* Cifrar datos:
+
+  * En tránsito (TLS/HTTPS)
+  * En reposo (base de datos, backups)
+
+---
+
+## 📊 4️⃣ Mitigación Operativa y Monitoreo Continuo
+
+### 📝 Logging y alertas
+
+* Registrar intentos fallidos de acceso.
+* Alertar ante patrones sospechosos (ej. múltiples fallos repetidos).
+
+### 🔍 Auditorías periódicas
+
+* Revisar roles y permisos regularmente.
+* Evaluar cumplimiento del principio de mínimo privilegio.
+
+### 🧪 Pruebas de seguridad
+
+* Incluir pruebas de control de acceso:
+
+  * Unitarias
+  * Integración
+  * Pruebas de penetración
+
+### 🔄 Mejora continua
+
+* Actualizar políticas y procedimientos de acceso.
+* Adaptarse a nuevas amenazas.
+
+---
+
+# 🎯 Conclusión General
+
+La mitigación de **Broken Access Control** no depende de una sola técnica, sino de una combinación de:
+
+* Diseño seguro (deny by default + RBAC + PoLP)
+* Validación estricta en servidor
+* Gestión segura de sesiones
+* Protección de recursos sensibles
+* Monitoreo y auditoría continua
+
+La clave está en aplicar controles centralizados, verificables y auditables, asegurando que cada usuario solo pueda acceder exactamente a lo que le corresponde — ni más, ni menos.
+
+---
+
+
+
 
 
 
