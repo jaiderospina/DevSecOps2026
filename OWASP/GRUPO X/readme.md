@@ -492,6 +492,41 @@ Un control de acceso deficiente puede permitir:
 
 ---
 
+# A02 – Security Misconfiguration (Mala configuración de seguridad)
+
+### ¿Qué es?
+Ocurre cuando una aplicación, servidor o servicio está configurado de forma insegura (por ejemplo: credenciales por defecto, permisos abiertos, errores mostrando demasiada información, CORS mal configurado, paneles/admin expuestos, etc.).  
+El problema no es “el código” solamente, sino **cómo se desplegó o configuró** el sistema.
+
+### ¿Cómo se ve en un proyecto real? (Ejemplos comunes)
+- `DEBUG=True` o modo desarrollo activo en producción.
+- Mensajes de error que muestran rutas, versiones o detalles internos (stack trace).
+- CORS abierto: permitir `*` sin necesidad.
+- Archivos sensibles públicos: `.env`, backups, logs, `/admin` sin controles.
+- Permisos muy amplios en roles/usuarios, buckets o carpetas.
+- Configuración TLS/HTTPS débil o inexistente.
+
+### Impacto
+- Filtración de información sensible (rutas, llaves, versiones, estructura interna).
+- Acceso no autorizado a paneles o recursos internos.
+- Aumento de superficie de ataque y explotación de fallas encadenadas.
+
+### Buenas prácticas / mitigación
+- Desactivar debug en producción (ej: `DEBUG=False`).
+- Manejo de errores con páginas genéricas (sin detalles internos).
+- Revisar CORS (permitir solo dominios necesarios).
+- No exponer `.env` ni secretos; usar variables de entorno y secret managers.
+- Aplicar “hardening” del servidor (headers, TLS, permisos, firewall).
+- Revisiones por checklist antes de desplegar (pre-deploy).
+
+### Evidencia en este trabajo
+- Se revisó configuración de entorno (dev vs prod).
+- Se verificó que no se expongan errores con detalles sensibles.
+- Se limitó el acceso a recursos sensibles y se controlaron permisos.
+
+
+
+
 # 7. A07: Authentication Failures (Fallos de Autenticación)
 
 ## 📌 1. Descripción de la Vulnerabilidad
@@ -799,6 +834,7 @@ Ejemplo: instalar paquetes sin verificación, actualizaciones no firmadas, CI/CD
 - Se mantuvieron dependencias fijadas con lockfile.
 - Se revisaron vulnerabilidades de dependencias (SCA).
 - Se propusieron controles en pipeline (revisión, permisos, validación).
+
 
 
 
