@@ -768,6 +768,39 @@ Es la base de toda la seguridad del sistema.
 ---
 
 
+## A08 – Software or Data Integrity Failures (Fallos de integridad de software o datos)
+
+### ¿Qué es?
+Ocurre cuando el sistema **confía en software, actualizaciones, dependencias, datos o pipelines** sin verificar su integridad.  
+Ejemplo: instalar paquetes sin verificación, actualizaciones no firmadas, CI/CD sin controles, o cargar datos/artefactos manipulados.
+
+### ¿Cómo se ve en un proyecto real? (Ejemplos comunes)
+- Dependencias descargadas sin control (sin lockfile, sin hash, sin firma).
+- Actualizaciones automáticas desde fuentes no confiables.
+- Artefactos de CI/CD sin validación o sin control de quién los publica.
+- Scripts que descargan ejecutables “de internet” sin verificación.
+- Modelos, archivos o data importada que puede ser alterada (supply chain).
+
+### Impacto
+- Supply chain attacks: una dependencia comprometida puede ejecutar código malicioso.
+- Alteración de artefactos (builds) o datos críticos sin detección.
+- Pérdida de confianza del sistema y posible control total por atacante.
+
+### Buenas prácticas / mitigación
+- Usar **lockfiles** (ej: `package-lock.json`, `poetry.lock`, `Pipfile.lock`).
+- Verificar integridad (hashes / firmas) en dependencias o artefactos.
+- Repositorios privados / proxies confiables para paquetes si aplica.
+- CI/CD con permisos mínimos, revisiones obligatorias y firmas de artefactos.
+- Auditoría de dependencias (SCA) y actualizaciones controladas.
+- Controlar quién puede publicar releases y configurar “branch protection”.
+
+### Evidencia en este trabajo
+- Se mantuvieron dependencias fijadas con lockfile.
+- Se revisaron vulnerabilidades de dependencias (SCA).
+- Se propusieron controles en pipeline (revisión, permisos, validación).
+
+
+
 
 
 
