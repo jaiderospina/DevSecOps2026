@@ -115,3 +115,189 @@ Los fallos criptográficos abordan los riesgos derivados de una implementación 
 - Utilizar cifrado autenticado y fuentes de aleatoriedad criptográficamente seguras (CSPRNG).
 - Deshabilitar protocolos inseguros (FTP, SMTP sin cifrado, STARTTLS).
 - Revisar periódicamente configuraciones criptográficas con especialistas o herramientas automatizadas.
+
+
+<h1 align="center"><strong>A05:2025 – Inyección</strong></h1>
+
+Una vulnerabilidad de inyección es una falla de la aplicación que permite que una entrada de usuario no confiable se envíe a un intérprete (por ejemplo, un navegador, una base de datos, la línea de comandos) y hace que el intérprete ejecute partes de esa entrada como comandos.
+Una aplicación es vulnerable a ataques cuando:
+<br>
+- La aplicación no valida, filtra ni desinfecta los datos proporcionados por el usuario.
+- Las consultas dinámicas o las llamadas no parametrizadas sin escape consciente del contexto se utilizan directamente en el intérprete.
+- Los datos no desinfectados se utilizan dentro de los parámetros de búsqueda de mapeo relacional de objetos (ORM) para extraer registros confidenciales adicionales.
+- Los datos potencialmente hostiles se utilizan o concatenan directamente. El SQL o comando contiene la estructura y los datos maliciosos en consultas dinámicas, comandos o procedimientos almacenados.
+<br>
+Algunas de las inyecciones más comunes son SQL, NoSQL, comando del sistema operativo, mapeo relacional de objetos (ORM), LDAP e inyección de lenguaje de expresión (EL) o biblioteca de navegación de gráficos de objetos (OGNL). El concepto es idéntico entre todos los intérpretes. La detección se logra mejor mediante una combinación de revisión del código fuente junto con pruebas automatizadas (incluido el fuzzing) de todos los parámetros, encabezados, URL, cookies, JSON, SOAP y entradas de datos XML. La adición de herramientas de prueba de seguridad de aplicaciones estáticas (SAST), dinámicas (DAST) e interactivas (IAST) al flujo de CI/CD también puede ser útil para identificar fallas de inyección antes de la implementación de producción.
+
+<h2 align="center"><strong>Métodos de Explotación</strong></h2> 
+
+#### SQL Injection Clásico
+Manipulación directa de consultas SQL.
+
+Ejemplo: ' OR '1'='1
+Impacto:
+<br>
+- Bypass de autenticación
+- Extracción de bases de datos
+- Modificación de registros
+
+
+#### Blind SQL Injection
+No devuelve resultados visibles, pero se basa en:
+- Respuestas booleanas (TRUE/FALSE)
+- Diferencias en tiempos de respuesta
+Ejemplo: ' AND IF(1=1, SLEEP(5), 0) –
+Impacto:
+- Extracción de información carácter por carácter
+
+#### Command Injection
+El atacante ejecuta comandos del sistema operativo.
+Ejemplo: ; cat /etc/passwd
+Impacto:
+- Ejecución remota de comandos
+- Control total del servidor
+
+
+#### NoSQL Injection
+Manipulación de consultas en bases MongoDB.
+Ejemplo: { "$ne": null }
+
+
+
+<h2 align="center"><strong>RECOMENDACIONES PRÁCTICAS DE PREVENCIÓN Y MITIGACIÓN</strong></h2>
+
+#### Uso de Consultas Parametrizadas (Prepared Statements)
+Separan datos de la lógica SQL.
+
+Ejemplo seguro en Python:
+
+cursor.execute(
+    "SELECT * FROM users WHERE username = %s AND password = %s",
+    (username, password)
+)
+
+#### ORM Seguro
+Frameworks que reducen riesgo si se usan correctamente:
+- Hibernate
+- Entity Framework
+- Sequelize
+- Django ORM
+
+#### Validación Estricta de Entrada
+- Listas blancas
+- Restricción de longitud
+- Validación por tipo
+- Sanitización de caracteres especiales
+
+#### Principio de Mínimo Privilegio
+El usuario de base de datos:
+- No debe tener permisos DROP
+- No debe tener privilegios administrativos
+- Debe estar segmentado por roles
+
+#### Web Application Firewall (WAF)
+Detecta patrones de inyección conocidos.
+ Importante:
+El WAF es una capa adicional, no sustituye el desarrollo seguro.
+
+#### Pruebas Continuas en DevSecOps
+Implementar:
+- SAST (Static Application Security Testing)
+- DAST (Dynamic Testing)
+- SCA (Software Composition Analysis)
+- Pentesting periódico
+
+#### Conclusión 
+Injection sigue siendo una de las vulnerabilidades más explotadas porque depende directamente de malas prácticas de desarrollo.
+La mitigación efectiva requiere un enfoque en múltiples capas:
+- Diseño seguro
+- Desarrollo seguro
+- Configuración adecuada
+- Monitoreo continuo
+- Gobernanza de seguridad
+En un entorno corporativo maduro, la prevención de Injection debe integrarse dentro del SDLC bajo un modelo DevSecOps, combinando controles técnicos, pruebas automatizadas y gestión de riesgos.
+
+
+<h1 align="center"><strong>A06:2025 Diseño inseguro</strong></h1> 
+
+El diseño inseguro es una categoría amplia que representa diferentes debilidades, expresadas como “diseño de control faltante o ineficaz” El diseño inseguro no es la fuente de todas las demás diez categorías de riesgo principales. Tenga en cuenta que existe una diferencia entre diseño inseguro e implementación insegura. Diferenciamos entre fallas de diseño y defectos de implementación por una razón: tienen diferentes causas fundamentales, ocurren en diferentes momentos del proceso de desarrollo y tienen diferentes remediaciones. Un diseño seguro aún puede tener defectos de implementación que generen vulnerabilidades que pueden ser explotadas. Un diseño inseguro no se puede solucionar con una implementación perfecta, ya que nunca se crearon los controles de seguridad necesarios para defenderse de ataques específicos. Uno de los factores que contribuye al diseño inseguro es la falta de perfiles de riesgo empresarial inherentes al software o sistema que se está desarrollando y, por tanto, la imposibilidad de determinar qué nivel de diseño de seguridad se requiere.
+
+Tres partes clave para tener un diseño seguro son:
+- Recopilación de requisitos y gestión de recursos
+- Creando un diseño seguro
+- Tener un ciclo de vida de desarrollo seguro
+ 
+#### Requisitos y gestión de recursos
+Recopilar y negociar los requisitos comerciales para una aplicación con la empresa, incluidos los requisitos de protección relacionados con la confidencialidad, integridad, disponibilidad y autenticidad de todos los activos de datos y la lógica comercial esperada. Tenga en cuenta qué tan expuesta estará su aplicación y si necesita segregación de inquilinos (más allá de los necesarios para el control de acceso). Recopilar los requisitos técnicos, incluidos los requisitos de seguridad funcionales y no funcionales. Planificar y negociar el presupuesto que cubra todo el diseño, construcción, pruebas y operación, incluidas las actividades de seguridad.
+#### Diseño seguro
+El diseño seguro es una cultura y metodología que evalúa constantemente las amenazas y garantiza que el código esté diseñado y probado de manera sólida para prevenir métodos de ataque conocidos. El modelado de amenazas debe integrarse en sesiones de refinamiento (o actividades similares); busque cambios en los flujos de datos y en el control de acceso u otros controles de seguridad. En el desarrollo de la historia del usuario, determine el flujo correcto y los estados de falla, asegúrese de que sean bien comprendidos y acordados por las partes responsables e afectadas. Analizar los supuestos y condiciones de los flujos esperados y de falla para garantizar que sigan siendo precisos y deseables. Determinar cómo validar los supuestos y hacer cumplir las condiciones necesarias para un comportamiento adecuado. Asegúrese de que los resultados estén documentados en la historia del usuario. Aprenda de los errores y ofrezca incentivos positivos para promover mejoras.El diseño seguro no es un complemento ni una herramienta que puedas agregar al software.
+#### Ciclo de vida del desarrollo seguro
+El software seguro requiere un ciclo de vida de desarrollo seguro, un patrón de diseño seguro, una metodología de carreteras pavimentadas, una biblioteca de componentes segura, herramientas apropiadas, modelos de amenazas y autopsias de incidentes que se utilizan para mejorar el proceso. Comuníquese con sus especialistas en seguridad al comienzo de un proyecto de software, durante todo el proyecto y para realizar un mantenimiento continuo del software. Considere aprovechar el Modelo de madurez de garantía de software OWASP (SAMM) para ayudarle a estructurar sus esfuerzos de desarrollo de software seguro.
+
+A menudo se subestima la autorresponsabilidad de los desarrolladores. Fomentar una cultura de concientización, responsabilidad y mitigación proactiva de riesgos. Los intercambios regulares sobre seguridad (por ejemplo, durante las sesiones de modelado de amenazas) pueden generar una mentalidad para incluir la seguridad en todas las decisiones de diseño importantes.
+
+
+<h2 align="center"><strong>Métodos de Explotación</strong></h2> 
+
+#### Abuso de Lógica de Negocio
+El atacante no rompe el sistema, simplemente usa la lógica a su favor.
+
+Ejemplo:
+Una tienda permite aplicar cupones múltiples veces.
+Un atacante automatiza el proceso y obtiene productos gratis.
+Impacto:
+- Pérdidas económicas
+- Fraude masivo
+
+#### Fuerza Bruta por Falta de Rate Limiting
+Si el diseño no contempla:
+- Límite de intentos
+- Bloqueo temporal
+- Captcha
+Un atacante puede automatizar millones de intentos.
+Herramientas usadas:
+- Hydra
+- Burp Intruder
+- Scripts automatizados
+
+#### Escalamiento de Privilegios por Diseño Deficiente
+Ejemplo:
+Un usuario puede modificar el parámetro:
+role=user
+a
+role=admin
+Si el backend confía en ese parámetro, el atacante obtiene privilegios administrativos.
+
+#### Falta de Validación de Flujos Críticos
+Ejemplo:
+Sistema de pago que no valida estado previo.
+Un atacante puede:
+•	Saltarse el paso de pago
+•	Acceder directamente a confirmación
+Esto no es un bug técnico, es un error en el flujo diseñado.
+
+<h2 align="center"><strong>RECOMENDACIONES PRÁCTICAS DE PREVENCIÓN Y MITIGACIÓN</strong></h2>
+
+- Establecer y utilizar un ciclo de vida de desarrollo seguro con profesionales de AppSec para ayudar a evaluar y diseñar controles relacionados con la seguridad y la privacidad
+- Establecer y utilizar una biblioteca de patrones de diseño seguros o componentes de carreteras pavimentadas
+- Utilice modelos de amenazas para partes críticas de la aplicación, como autenticación, control de acceso, lógica empresarial y flujos de claves
+- Modelado de amenazas a usuarios como herramienta educativa para generar una mentalidad de seguridad
+- Integre lenguaje y controles de seguridad en las historias de usuario
+- Integre comprobaciones de plausibilidad en cada nivel de su aplicación (desde el frontend hasta el backend)
+- Escriba pruebas unitarias y de integración para validar que todos los flujos críticos sean resistentes al modelo de amenaza. Compilar casos de uso y casos de mal uso para cada nivel de su aplicación.
+- Segregar capas de niveles en las capas del sistema y de la red, según las necesidades de exposición y protección
+- Segregar a los inquilinos de manera sólida por diseño en todos los niveles
+
+
+#### Conclusión  
+Insecure Design representa una falla estratégica en la concepción del sistema.
+No puede mitigarse únicamente con WAF, parches o actualizaciones.
+Requiere:
+- Cultura de seguridad
+- Gobernanza
+- Arquitectura segura
+- Gestión de riesgos
+- Integración DevSecOps
+
+Desde una perspectiva de especialización en ciberseguridad, esta vulnerabilidad demuestra que la seguridad debe ser un requisito de negocio, no un complemento técnico.
+
