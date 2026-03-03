@@ -701,7 +701,7 @@ Buenas prácticas:
 
 # 🏁 Conclusión
 
-Los **Fallos de Autenticación (A07:2025)** siguen siendo una de las vulnerabilidades más críticas del Top 10 de OWASP.
+Los **Fallos de Autenticación (A07)** siguen siendo una de las vulnerabilidades más críticas del Top 10 de OWASP.
 
 En un mundo donde:
 
@@ -723,6 +723,7 @@ Una autenticación débil puede permitir:
 Es la base de toda la seguridad del sistema.
 
 ---
+
 
 
 
