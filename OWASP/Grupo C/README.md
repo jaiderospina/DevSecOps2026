@@ -174,6 +174,7 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 ---
 
 # A08:2025 - Software or Data Integrity Failures 
+  CWE-829
     - Actualizaciones de software 
     - Datos críticos y de CI/CD (Continuos Integration and Continuos Delivery) sin verificación.
     - Fallas en la cadena de suministro de software
@@ -183,8 +184,12 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 
 
    ### Métodos de explotación: 
-     - 
-   
+     - Denial of Service -> 
+     - Cache Poisoning ->
+     - Code injection ->
+     - Command execution ->
+     
+     
    ### Prevención y mitigación:   
      - Utilizar firmas digitales para verifificar que el software no ha sido alterado
      - 
