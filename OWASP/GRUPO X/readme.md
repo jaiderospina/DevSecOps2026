@@ -309,8 +309,6 @@ F -- Sí --> H[Acceso permitido]
 
 ⚡ **Snapchat (2014):**  Hackers explotaron una vulnerabilidad de control de acceso para recopilar una lista de 4.6 millones de nombres de usuario y números de teléfono.
 
-Perfecto Diego. Tomando todas las referencias de tu documento , aquí tienes un **resumen unificado y estructurado** con lo más importante de cada sección sobre **prevención y mitigación de A01: Broken Access Control** según OWASP.
-
 ---
 
 ## 🏗 1️⃣ Medidas de Prevención en Diseño y Desarrollo
@@ -428,6 +426,7 @@ La mitigación de **Broken Access Control** no depende de una sola técnica, sin
 La clave está en aplicar controles centralizados, verificables y auditables, asegurando que cada usuario solo pueda acceder exactamente a lo que le corresponde — ni más, ni menos.
 
 ---
+
 
 
 
