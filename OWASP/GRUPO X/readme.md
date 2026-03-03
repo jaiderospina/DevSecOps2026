@@ -429,26 +429,6 @@ La clave está en aplicar controles centralizados, verificables y auditables, as
 
 ---
 
-
-Aquí tienes un **archivo completo en Markdown** listo para usar en tu `README.md`, estructurado con:
-
-* ✅ Descripción detallada
-* ✅ Métodos de explotación (con ejemplos reales)
-* ✅ Mejores prácticas de prevención
-* ✅ Diagramas de flujo en Mermaid
-* ✅ Enfoque alineado con OWASP Top 10 2025
-
-Incluye referencias a:
-
-* OWASP
-* NIST SP 800-63B
-* Colonial Pipeline
-* Facebook
-
----
-
-
-
 # 7. A07: Fallos de Autenticación
 
 ---
@@ -723,6 +703,7 @@ Una autenticación débil puede permitir:
 Es la base de toda la seguridad del sistema.
 
 ---
+
 
 
 
