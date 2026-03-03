@@ -179,9 +179,69 @@ Herramientas usadas
 ---
 
 ## A03:2025 Software Supply Chain Failures
+Se refiere a vulnerabilidades introducidas a través de dependencias externas, librerías, paquetes, contenedores o procesos CI/CD comprometidos. O cambios maliciosos en código, herramientas u otras dependencias de terceros de las que depende el sistema.
+
+<p align="center">
+  <img src="images/suministros.png" width="600">
+</p>
+
+## Naturaleza
+- Uso de librerías vulnerables
+- Dependencias maliciosas
+- Ataques de dependency confusion
+- Compromiso de repositorios
+
+## Impacto
+- Ejecución remota de código
+- Robo de credenciales
+- Compromiso de pipelines
+- Distribución de malware a clientes
+
+
+## Métodos de Explotación
+
+## Dependency Confusion
+
+Publicar un paquete malicioso con el mismo nombre que uno interno.
+
+## Compromiso de repositorios
+Ejemplo:
+Ataque a SolarWinds, Cisco, FORTINET
+
+## Inyección en pipeline CI/CD
+- Modificar artefactos antes del despliegue.
+
+ Herramientas utilizadas
+- Snyk
+- OWASP Dependency-Check
+- npm audit
+
+## Casos reales
+- Actualizaciones comprometidas
+- Dependencias vulnerables ampliamente utilizadas
+- Publicación de paquetes maliciosos
+
+---
+
+## Mejores Prácticas de Prevención
+- Inventario de dependencias (SBOM)
+- Escaneo continuo de vulnerabilidades
+- Verificación de integridad (hashes)
+- Firmado de artefactos
+- Uso de repositorios privados
+- Revisión manual de dependencias críticas
+- Implementar DevSecOps en CI/CD
 
 
 
+
+
+
+
+
+
+
+## A07:2021 - Identification and Authentication Failures
 
 
 
@@ -192,7 +252,9 @@ https://owasp.org/www-project-top-ten/
 https://www.indusface.com/learning/owasp-top-10-vulnerabilities/
 https://owasp-org.translate.goog/Top10/2025/A01_2025-Broken_Access_Control/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
 https://owasp-org.translate.goog/Top10/2025/A02_2025-Security_Misconfiguration/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
-
+https://owasp-org.translate.goog/Top10/2025/A03_2025-Software_Supply_Chain_Failures/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
+https://csrc.nist.gov/Projects/ssdf
+https://www.enisa.europa.eu/publications/threat-landscape-for-supply-chain-attacks
 
 
 
