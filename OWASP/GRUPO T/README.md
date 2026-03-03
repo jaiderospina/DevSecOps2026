@@ -100,9 +100,10 @@ Si el servidor no verifica correctamente la firma del token o confía únicament
 - OWASP ZAP
 - Postman
 
-## Caso real 
+## Casos reales 
 
 - Exposición masiva de datos en APIs por falta de validación de permisos en endpoints REST.
+- Un atacante simplemente fuerza a los navegadores a acceder a las URL objetivo. Se requieren derechos de administrador para acceder a la página de administración.
 
 ## Mejores practicas 
 
@@ -113,11 +114,81 @@ Si el servidor no verifica correctamente la firma del token o confía únicament
 - No confiar en datos del cliente (JWT sin validar)
 - Realizar pruebas de autorización automatizadas
 
+---
+
+## A02:2025 Security Misconfiguration
+Ocurre cuando los sistemas, frameworks, servidores o aplicaciones están mal configurados generando una vulnerabilidades
+
+<p align="center">
+  <img src="images/missconfiguration.png" width="600">
+</p>
+
+## Causas comunes
+
+- Credenciales por defecto
+- Puertos abiertos innecesarios
+- Servicios expuestos
+- Headers de seguridad ausentes
+- Directory listing habilitado
+- Errores detallados visibles
+
+## Impacto
+
+- Acceso no autorizado
+- Filtración de información
+- Compromiso del servidor
+- RCE (Remote Code Execution)
+
+## Métodos de Explotación 
+
+Uso de credenciales por defecto
+Ejemplo:
+
+- admin / admin
+
+## Acceso a paneles expuestos
+
+
+/phpmyadmin
+/admin
+
+## Enumeración de directorios
+
+https://site.university.com/uploads/
+
+
+## Exploits conocidos en software sin parches
+Herramientas usadas
+- Nmap
+- Nikto
+
+
+## Casos reales
+- Exposición pública de bases de datos Elasticsearch sin autenticación.
+- Consolas administrativas expuestas en la nube.
+
+
+## Mejores Prácticas de Prevención
+- Hardening de servidores
+- Eliminar credenciales por defecto
+- Aplicar parches regularmente
+- Deshabilitar servicios innecesarios
+- Implementar Infrastructure as Code segura
+
+
+
+
+
+
+
+
 
 
 #Referencias 
 https://owasp.org/www-project-top-ten/
 https://www.indusface.com/learning/owasp-top-10-vulnerabilities/
+https://owasp-org.translate.goog/Top10/2025/A01_2025-Broken_Access_Control/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
+https://owasp-org.translate.goog/Top10/2025/A02_2025-Security_Misconfiguration/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
 
 
 
