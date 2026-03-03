@@ -10,7 +10,6 @@ Michael Giovanny Sierra Leon
 </p>
 
 
-<marquee> DevSecOps</marquee>
 
 # A01:2025 Broken Access Control.
 
@@ -158,7 +157,8 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 # A05:2025 - Injection
 
  ### Métodos de explotación: 
-
+    - XSS 
+    - SQLi 
  ### Ejemplo ataque real: 
    
  ### Prevención y mitigación:  
@@ -184,7 +184,7 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 
 # A08:2025 - Software or Data Integrity Failures 
   CWE-829
-  
+  ### Objetivo del Ataque: 
     - Actualizaciones de software 
     - Datos críticos y de CI/CD (Continuos Integration and Continuos Delivery) sin verificación.
     - Fallas en la cadena de suministro de software
@@ -192,31 +192,47 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
   <img src="Images/SoftwareorDataIntegrityFailures.JPG" width="600">
 </p>
 
-
-   ### Métodos de explotación: 
+### Métodos de explotación: 
      - Denial of Service -> Atacar a un objetivo hasta dejarlos sin recursos (CPU, Memoria)
      - Cache Poisoning -> Ingresar una IP Falsa a las entradas de DNS para resolver cache, se utiliza para usar una pagina legitima y redirigir a una fraudulenta. 
      - Code injection -> Envio de datos inesperados a un interprete, ocurre generalmente en consultas tipo SQL, NoSQL, Ldap, Xpath. 
           
-   ### Ejemplo ataque real:  
+### Ejemplo ataque real:  
      - Ataque a la cadena de suministro de Solarwinds, el ataque termino atacando 18000 clientes que habian realizado actualizaciones de software.
      - Se inyecto codigo malicioso llamado Sunburst en Orion, el cual es un sistema de monitoreo de Solarwinds.
           
-   ### Prevención y mitigación:   
+### Prevención y mitigación:   
      - Utilizar firmas digitales para verifificar que el software no ha sido alterado
-     - 
+     - Controles de acceso y configuración en las tuberias CI/CD
+     - Utilizar repositorios seguros y si es necesario alojar un repositorio interno de confianza verificado. 
   
 ---
 
 # A09:2025 - Security Logging and Alerting Failures
+CWE-117 - CWE-532 - CWE-778
+
+    - Falta de monitoreo y registro permite a los atacantes alcanzar su proposito sin ser detectados. 
+
+<p align="center">
+  <img src="Images/Siem.JPG" width="600">
+</p>
+
+    
 
  ### Métodos de explotación: 
-
- ### Ejemplo ataque real:  
-   
- ### Prevención y mitigación:  
- 
-
+    - Eventos como, login, failed login, y un numero alto de transacciones  que no son logueados.
+    - logs no son almacenados apropiadamente a travez del tiempo (PCI DSS requiere que se mantenga al menos por un año).
+    - logs de aplicaciones y APIs que no son monitoreados.
+    - pruebas de penetración con herramientas como DAST o BURP, no muestran alertas.
+### Ejemplo ataque real:  
+    -  
+    -
+    -
+### Prevención y mitigación:  
+    - Registros de ataques completos y mejorados.
+    - Correlación y agregación de eventos.
+    - Alertas y correos electrónicos basados ​​en infracciones.
+    - Integración con SIEM. 
 ---
 
 # A10:2025 - Mishandling of Exceptional Conditions
