@@ -53,7 +53,7 @@ Los atacantes aprovechan estas fallas mediante distintas técnicas:
 
 Consiste en modificar identificadores en la URL o en los parámetros de una petición para acceder a recursos de otros usuarios.
 
-**Ejemplo:**
+**Ejemplo cambio ID en la URL:**
 
 Solicitud legítima:
 
@@ -84,12 +84,40 @@ D --> E[Exposición de información sensible]
 
 ```
 
-Ejemplo bancario:
+**Ejemplo descarga de archivos:**
 
-https://examplebank.com/account?acct=12345   (válido)  
-https://examplebank.com/account?acct=99999   (acceso indebido)
+Solicitud original:
 
-Si el servidor no valida que la cuenta pertenece al usuario autenticado, el atacante puede acceder a información financiera sensible.
+```
+GET /download?file=invoice_1001.pdf
+
+```
+
+Ataque:
+
+```
+GET /download?file=invoice_1002.pdf
+
+```
+
+Si no hay validación → descarga de factura de otro usuario.
+
+----------
+
+## 📊 Diagrama Secuencia
+
+```mermaid
+sequenceDiagram
+participant U as Usuario
+participant S as Servidor
+
+U->>S: Solicita invoice_1001.pdf
+S-->>U: Archivo correcto
+
+U->>S: Solicita invoice_1002.pdf
+S-->>U: Archivo entregado sin validación
+
+```
 
 ----------
 
@@ -169,6 +197,8 @@ Los atacantes suelen:
 -   Plataformas en la nube que permitían múltiples intentos de login sin considerar ataques distribuidos.
     
 -   Endpoints administrativos expuestos sin validación de rol.
+
+
 
 
 

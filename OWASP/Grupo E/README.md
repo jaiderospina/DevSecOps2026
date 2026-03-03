@@ -8,5 +8,5 @@
 Hello Im Oscar
 
 Linea de actualización MB
-
-Introducción: Estefani
+Linea de actualización Oscar
+Linea de actualización Estefani
