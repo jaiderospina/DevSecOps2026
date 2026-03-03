@@ -55,8 +55,34 @@ Consiste en modificar identificadores en la URL o en los parámetros de una peti
 
 **Ejemplo:**
 
-GET /orders?orderId=1001  → 200 OK  
-GET /orders?orderId=1002  → 200 OK (sin autorización)
+Solicitud legítima:
+
+```
+GET https://app.com/profile?userId=1001
+
+```
+
+El atacante modifica el ID:
+
+```
+GET https://app.com/profile?userId=1002
+
+```
+
+Si el backend no valida la propiedad del recurso, devolverá datos del usuario 1002.
+
+----------
+
+## 📊 Diagrama Vulnerable
+
+```mermaid
+flowchart LR
+A[Usuario 1001 autenticado] --> B[Modifica URL userId=1002]
+B --> C[Servidor recibe petición]
+C --> D[Devuelve datos del usuario 1002]
+D --> E[Exposición de información sensible]
+
+```
 
 Ejemplo bancario:
 
@@ -143,6 +169,7 @@ Los atacantes suelen:
 -   Plataformas en la nube que permitían múltiples intentos de login sin considerar ataques distribuidos.
     
 -   Endpoints administrativos expuestos sin validación de rol.
+
 
 
 
