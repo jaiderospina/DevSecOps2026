@@ -259,8 +259,9 @@ F -- Sí --> H[Acceso permitido]
 ----------
 ## 🚨 Ejemplos Reales
 
-⚡ Ejemplo: Facebook “View As”
+⚡ **Ejemplo:** Facebook “View As”
 Un fallo permitió a atacantes acceder a tokens de acceso de otros usuarios por una falla de control de acceso. Esto expuso millones de cuentas.
+
 
 
 
