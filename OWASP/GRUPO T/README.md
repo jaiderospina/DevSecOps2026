@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  # OWASP TOP 10 
 
 
@@ -206,4 +207,12 @@ https://owasp-org.translate.goog/Top10/2025/A02_2025-Security_Misconfiguration/?
 
 
 
+=======
+Integrantes 
+
+Bernal Arcieri Laura Vanessa
+Reynel Alfonso Cely Gomez
+Bayardo Alejandro Medina Diaz 
+Johanna Ortiz Pacheco
+>>>>>>> 88f8719 (Actualización)
 
