@@ -767,8 +767,9 @@ Es la base de toda la seguridad del sistema.
 
 ---
 
+#  A08 – Software or Data Integrity Failures (Fallos de integridad de software o datos)
 
-## A08 – Software or Data Integrity Failures (Fallos de integridad de software o datos)
+
 
 ### ¿Qué es?
 Ocurre cuando el sistema **confía en software, actualizaciones, dependencias, datos o pipelines** sin verificar su integridad.  
@@ -798,6 +799,7 @@ Ejemplo: instalar paquetes sin verificación, actualizaciones no firmadas, CI/CD
 - Se mantuvieron dependencias fijadas con lockfile.
 - Se revisaron vulnerabilidades de dependencias (SCA).
 - Se propusieron controles en pipeline (revisión, permisos, validación).
+
 
 
 
