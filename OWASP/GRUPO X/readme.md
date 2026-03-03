@@ -337,8 +337,6 @@ F -- Sí --> H[Acceso permitido]
 
 ## 📉 3. Mejores Prácticas de Prevención y Mitigación
 
----
-
 ### 🔐 3.1 Denegar por Defecto (Deny by Default)
 
 Todo recurso debe estar protegido a menos que sea explícitamente público.
