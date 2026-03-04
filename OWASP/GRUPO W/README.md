@@ -12,7 +12,7 @@
   <img src="image/logo.png" width="600">
 </p
 
-# 🔐 LIST OWASP Top 10 (2025) 
+#  LIST OWASP Top 10 (2025) 
 
 # Control de acceso roto
 
