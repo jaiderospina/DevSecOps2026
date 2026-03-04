@@ -62,7 +62,7 @@ Cuando un atacante logra engañar a un sistema para que reconozca a un usuario i
 
 * Permite el uso de procesos de recuperación de credenciales débiles o ineficaces y de contraseña olvidada, como "respuestas basadas en conocimiento", que no se pueden hacer seguras.
 
-* Utiliza almacenes de datos de contraseñas de texto simple, cifradas o con algoritmos hash débiles (consulte A04:2025-Fallas criptográficas ).
+* Utiliza almacenes de datos de contraseñas de texto simple, cifradas o con algoritmos hash débiles (consulte A04:2025-Fallas criptográficas).
 
 * Tiene autenticación multifactor faltante o ineficaz.
 
