@@ -5,8 +5,9 @@
 4. Damian Gonzalez.
 
 # Análisis de Vulnerabilidades en el OWASP Top 10: Métodos de Explotación y Prevención
-<img src="./Imagenes/logoOWASP.png" alt="Alt text" width="150" height="50">
-
+<p align="center">
+<img src="./Imagenes/logoOWASP.png" alt="Alt text" width="150" height="50" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
 ## ¿Qué es OWASP?
 
 OWASP es el acrónimo de Open Worldwide Application Security Project, una fundación sin fines de lucro dedicada a mejorar la seguridad de las aplicaciones web y software mediante recursos abiertos y colaborativos. Se originó en 2001 como un proyecto comunitario y se convirtió en fundación en 2004, promoviendo prácticas seguras en el desarrollo de software.
@@ -17,9 +18,9 @@ OWASP surgió para identificar vulnerabilidades comunes en aplicaciones web y of
 <br>
 
 ## TOP 10 OWASP - 2025
-
-<img src="./Imagenes/top10.jpg" alt="Alt text" width="150" height="50">
-
+<p align="center">
+<img src="./Imagenes/top10.jpg" alt="Alt text" width="150" height="50" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
 1. A01:2025 - Broken Access Control
 2. A02:2025 - Security Misconfiguration
 3. A03:2025 - Software Supply Chain Failures
@@ -32,11 +33,17 @@ OWASP surgió para identificar vulnerabilidades comunes en aplicaciones web y of
 10. A10:2025 - Mishandling of Exceptional Conditions
 
 ## Descripción de Vulnerabilidades TOP 10 OWASP - 2025 
-
-<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjMwaGdiZDhjaGRidWc5c3dqdWo4cHk5cG5xOHpvaW9va2VkaHRjciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SF5MyECNTsEBGm0Hx3/giphy.gif" width=50>
-
+<p align="center">
+<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjMwaGdiZDhjaGRidWc5c3dqdWo4cHk5cG5xOHpvaW9va2VkaHRjciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SF5MyECNTsEBGm0Hx3/giphy.gif" width=100 style="display: block; margin-left: auto; margin-right: auto;">
+</p>
 ### 1. A01:2025 - Broken Access Control
-
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Broken_Access_Control.jpg" alt="Alt text" width="250" height="150" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 Se refiere a debilidades en los mecanismos que regulan los permisos de los usuarios dentro de una aplicación. Estas fallas permiten que una persona acceda a recursos, datos o funcionalidades que no le corresponden, pudiendo visualizar, modificar o ejecutar acciones fuera de los límites establecidos, lo que pone en riesgo la seguridad y la integridad del sistema.
 
 **Métodos de Explotación:**
@@ -63,6 +70,13 @@ Se refiere a debilidades en los mecanismos que regulan los permisos de los usuar
 - Utilizar frameworks o patrones de seguridad reconocidos que faciliten controles de acceso robustos.
 
 ### 2. A02:2025 – Security Misconfiguration
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Security Misconfiguration.jpg" alt="Alt text" width="250" height="200" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 
 Ocurre cuando una aplicación, servidor o servicio está configurado de forma incorrecta o insegura. Incluye configuraciones por defecto, servicios innecesarios habilitados, permisos excesivos, cabeceras de seguridad ausentes o configuraciones inconsistentes entre entornos.
 
@@ -84,7 +98,13 @@ Ocurre cuando una aplicación, servidor o servicio está configurado de forma in
 
 
 ### 3. A03:2025 – Software Supply Chain Failures
-
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Software Supply Chain Failures.png" alt="Alt text" width="400" height="100" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 Riesgos derivados de depender de componentes externos (librerías, paquetes, contenedores, repositorios) que pueden estar comprometidos, desactualizados o manipulados. La cadena de suministro incluye todo lo que la aplicación consume para funcionar.
 
 **Métodos de Explotación:**
@@ -106,7 +126,13 @@ Riesgos derivados de depender de componentes externos (librerías, paquetes, con
 
 
 ### 4. A04:2025 - Cryptographic Failures
-
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Cryptographic Failures.png" alt="Alt text" width="110" height="110" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 Los fallos criptográficos abordan los riesgos derivados de una implementación incorrecta o insuficiente de controles de cifrado para proteger información sensible. Incluye el uso de protocolos inseguros, algoritmos débiles, configuraciones inadecuadas o la ausencia de cifrado en datos críticos. Estas deficiencias pueden facilitar la exposición o alteración de información confidencial, comprometiendo la seguridad de los sistemas y la protección de los datos.
 
 **Métodos de Explotación:**
@@ -132,7 +158,13 @@ Los fallos criptográficos abordan los riesgos derivados de una implementación 
 
 
 ### 5. A05:2025 – Inyección
-
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Inyección.jpg" alt="Alt text" width="110" height="90" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 Una vulnerabilidad de inyección es una falla de la aplicación que permite que una entrada de usuario no confiable se envíe a un intérprete (por ejemplo, un navegador, una base de datos, la línea de comandos) y hace que el intérprete ejecute partes de esa entrada como comandos.
 Una aplicación es vulnerable a ataques cuando:
 
@@ -233,7 +265,13 @@ En un entorno corporativo maduro, la prevención de Injection debe integrarse de
 
 
 ### 6. A06:2025 Diseño inseguro
-
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/DisenoInseguro.png" alt="Alt text" width="200" height="100" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 El diseño inseguro es una categoría amplia que representa diferentes debilidades, expresadas como “diseño de control faltante o ineficaz” El diseño inseguro no es la fuente de todas las demás diez categorías de riesgo principales. Tenga en cuenta que existe una diferencia entre diseño inseguro e implementación insegura. Diferenciamos entre fallas de diseño y defectos de implementación por una razón: tienen diferentes causas fundamentales, ocurren en diferentes momentos del proceso de desarrollo y tienen diferentes remediaciones. Un diseño seguro aún puede tener defectos de implementación que generen vulnerabilidades que pueden ser explotadas. Un diseño inseguro no se puede solucionar con una implementación perfecta, ya que nunca se crearon los controles de seguridad necesarios para defenderse de ataques específicos. Uno de los factores que contribuye al diseño inseguro es la falta de perfiles de riesgo empresarial inherentes al software o sistema que se está desarrollando y, por tanto, la imposibilidad de determinar qué nivel de diseño de seguridad se requiere.
 
 Tres partes clave para tener un diseño seguro son:
@@ -320,6 +358,13 @@ Requiere:
 - Integración DevSecOps
 
 ### 7. A07:2025 – Authentication Failures
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Authentication Failures.png" alt="Alt text" width="250" height="120" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 
 Fallas en los mecanismos de autenticación que permiten a un atacante suplantar identidades o acceder sin autorización. Incluye contraseñas débiles, sesiones inseguras, MFA ausente o validaciones incorrectas.
 
@@ -341,7 +386,13 @@ Fallas en los mecanismos de autenticación que permiten a un atacante suplantar 
 - Monitorear intentos de login sospechosos.
 
 ### 8. A08:2025 – Software or Data Integrity Failures
-
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Software or Data Integrity Failures.png" alt="Alt text" width="250" height="120" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 Fallas que ocurren cuando el software o los datos pueden ser modificados sin autorización. Incluye manipulación de actualizaciones, datos no validados, pipelines inseguros o falta de verificación de integridad.
 
 **Métodos de Explotación:**
@@ -362,7 +413,13 @@ Fallas que ocurren cuando el software o los datos pueden ser modificados sin aut
 - Restringir permisos de escritura en archivos críticos.
 
 ### 9. A09:2025 – Security Logging and Alerting Failures
-
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Security Logging and Alerting Failures.jpeg" alt="Alt text" width="200" height="90" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 Fallas en la generación, almacenamiento o monitoreo de logs que impiden detectar ataques, responder a incidentes o realizar auditorías. Incluye falta de logs, logs incompletos o alertas inexistentes.
 
 **Métodos de Explotación:**
@@ -383,7 +440,13 @@ Fallas en la generación, almacenamiento o monitoreo de logs que impiden detecta
 - Cumplir estándares como ISO 27001 o NIST para logging.
 
 ### 10. A10:2025 – Mishandling of Exceptional Conditions
-
+<br>
+<br>
+<p align="center">
+<img src="./Imagenes/Mishandling of Exceptional Conditions.png" alt="Alt text" width="140" height="90" style="display: block; margin-left: auto; margin-right: auto;">
+</p>
+<br>
+<br>
 Fallas al manejar errores, excepciones o condiciones inesperadas. Cuando una aplicación no controla adecuadamente estos escenarios, puede filtrar información sensible, quedar en estados inseguros o permitir comportamientos no previstos.
 
 **Métodos de Explotación:**
