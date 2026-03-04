@@ -238,7 +238,7 @@ Ataque a SolarWinds, Cisco, FORTINET
   <img src="images/Encripcion.png" width="600">
 </p>
 
-Descripción:  
+## Descripción:  
 Esta vulnerabilidad ocurre cuando los datos no se cifran correctamente en tránsito o en reposo, o cuando se utilizan mecanismos criptográficos débiles. La ausencia de cifrado en la capa de transporte (capa 4) o de protección adicional para información sensible en la capa de aplicación (capa 7) puede permitir que atacantes intercepten, roben o manipulen datos críticos como contraseñas, números de tarjeta o información personal.
 
 El impacto puede incluir fuga de información, incumplimiento normativo (como el Reglamento General de Protección de Datos (RGPD) o PCI DSS) y graves daños financieros y reputacionales para la organización.
@@ -268,7 +268,7 @@ El impacto puede incluir fuga de información, incumplimiento normativo (como el
 
 ## Métodos de Explotación
 
-# Ataques Man-in-the-Middle (MITM)
+## Ataques Man-in-the-Middle (MITM)
 
 - Si el tráfico no está cifrado correctamente, el atacante intercepta la comunicación.
 - Herramientas: Wireshark, Burp Suite
@@ -278,11 +278,11 @@ El impacto puede incluir fuga de información, incumplimiento normativo (como el
 - -Si se almacenan contraseñas con MD5 o SHA1:
 - Herramientas: Hashcat, John the Ripper
 
-##Robo de base de datos mal cifrada
+## Robo de base de datos mal cifrada
 
 Si no hay cifrado en reposo, el atacante obtiene datos en texto plano. Muchas brechas de seguridad han ocurrido porque las empresas almacenaban contraseñas: En texto plano, o Con algoritmos débiles como MD5 o SHA1, Sin aplicar “salt”, Sin funciones de hash adaptativas. 
 
-¿Qué significa esto?
+## ¿Qué significa esto?
 
 Cuando un atacante logra acceder a la base de datos (por ejemplo, mediante SQL Injection), puede encontrar algo así:
 
@@ -302,24 +302,34 @@ Usar algoritmos fuertes
 
 ## A05:2025 - Inyección
 
+La vulnerabilidad de Inyección ocurre cuando una aplicación incorpora datos controlados por el usuario dentro de un comando o consulta que será interpretada por otro sistema, sin validación ni control adecuado.
+
 <p align="center">
   <img src="images/Inyeccion.png" width="600">
 </p>
 
+## Naturaleza 
+Es una vulnerabilidad de manipulación de intérpretes.
 
-La vulnerabilidad de inyección ocurre cuando una aplicación envía datos no validados a un intérprete (SQL, sistema operativo, LDAP, etc.)
+- La entrada del usuario se concatena dinámicamente.
+
+- Se construyen consultas o comandos como cadenas de texto.
+
+- No se usan mecanismos de separación segura (parametrización).
 
 ## Causas
 
 - Concatenación directa en consultas SQL.
 - Falta de validación.
 - Falta de parametrización.
+- Exposición directa del intérprete
 
 ## Impacto
 
 - Acceso no autorizado a base de datos.
 - Modificación o eliminación de datos.
 - Control total del servidor.
+- Confidencialidad, integridad y disponibilidad
 
 
 ## Métodos de Explotación
