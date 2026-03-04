@@ -8,14 +8,16 @@
 * ## Tema del trabajo
 **Investigación sobre el OWASP Top 10**
 <p align="center">
-  <img src="image/logo.png" width="600">
+  <img src="image/images.jfif" width="600">
 </p
 
 # 🔐 LIST OWASP Top 10 (2025) 
 
 # A01:2025 - Control de acceso roto
 
-
+<p align="center">
+  <img src="image/logo.png" width="600">
+</p
 
 A01 – Broken Access Control
 
