@@ -85,6 +85,10 @@ en algunos sitios sitio web o del sistema de administración de contenido (CMS),
        documentación, las características, los marcos y las muestras innecesarias, segmentar la arquitectura de la aplicación 
        y automatizar la efectividad de las configuraciones y los ajustes del entorno web. 
 
+### Ejemplo ataque real: 
+
+Filtración de datos de Capital One en 2019, donde un atacante explotó un firewall de aplicaciones web (WAF) mal configurado en la nube. Esto permitió el acceso a un bucket de Amazon S3, exponiendo datos de 106 millones de clientes. 
+
 ---
 
 # A03:2025  Software Supply Chain Failures. 
@@ -122,6 +126,10 @@ Riesgos en bibliotecas de terceros, herramientas de compilación y pipelines CI/
        suministro de software y asegurarse que los canales de integración e implementación continuas (CI/CD) tengan 
        un control de acceso eficaz y que estén correctamente configurados. 
 
+### Ejemplo ataque real:  
+
+El ataque a ASUS en 2018, según los investigadores de Symantec, aprovechó una función de actualización y afectó hasta 500,000 sistemas. En el ataque, se utilizó una actualización automática para introducir malware en los sistemas de los usuarios. 
+
 ---
 
 # A04:2025 Cryptographic Failures
@@ -155,6 +163,10 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
      - La exposición de los datos se puede minimizar encriptando todos los datos confidenciales
        autenticando todas las transmisiones y desactivando el almacenamiento en caché de cualquier
        información confidencial. 
+
+### Ejemplo ataque real:  
+
+Facebook en 2018 donde se almacenaron millones de contraseñas de usuarios en formato de texto plano (sin cifrar) en sus servidores internos. Esto permitió que empleados y atacantes potenciales accedieran a credenciales sensibles, violando la seguridad y la confidencialidad de la información. 
 
 ---
 
