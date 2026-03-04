@@ -48,7 +48,7 @@ Los obstáculos anteriores, como el rendimiento de la CPU y la gestión de clave
 # Inyección
 
 <p align="center">
-  <img src="image/TOP_10_Icons_Final_Crypto_Failures.png" width="200">
+  <img src="inyeccion.png" width="200">
 </p
 
   
