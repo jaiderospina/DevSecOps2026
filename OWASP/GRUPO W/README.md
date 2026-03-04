@@ -8,7 +8,7 @@
 * ## Tema del trabajo
 **Investigación sobre el OWASP Top 10**
 <p align="center">
-  <img src="Images/logo.png" width="600">
+  <img src="image/logo.png" width="600">
 </p
 
 # 🔐 OWASP Top 10 (2025) – Lista oficial
