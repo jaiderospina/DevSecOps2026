@@ -18,12 +18,24 @@ El Top 10 de OWASP es un documento estándar de concientización para desarrolla
 
 # LIST OWASP Top 10 (2025) 
 
+[A01-Control de acceso roto](Docs/A01-2025.md)
+
+[A02-Configuración incorrecta de seguridad](Docs/A02-2025.md)
+
 [A03-Fallas en la cadena de suministro de software](Docs/A03-2025.md)
 
-[A04 - Diseño Inseguro](Docs/A04-2025.md)
+[A04 - Fallas criptográficas](Docs/A04-2025.md)
 
-[A05 - Configuración Incorrecta](Docs/A05-2025.md)
+[A05 - Inyección](Docs/A05-2025.md)
 
-[A07 - Fallas de Identificación y Autenticación](Docs/A07-2025.md)
+[A06 - Diseño inseguro](Docs/A06-2025.md)
+
+[A07 - Errores de autenticación](Docs/A07-2025.md)
+
+[A08 - Fallas de integridad de software o datos](Docs/A08-2025.md)
+
+[A09 - Fallas de registro y alertas de seguridad](Docs/A09-2025.md)
+
+[A10 - Mal manejo de condiciones excepcionales](Docs/A10-2025.md)
 
 
