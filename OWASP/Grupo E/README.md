@@ -55,3 +55,61 @@ A continuación, se describen las principales vulnerabilidades identificadas en 
 ![Diagrama OWASP](images/owasp-10.png)
 
 *Fuente: OWASP Foundation (2021)*
+
+Ronald
+## 5️⃣ Configuración de Seguridad Incorrecta (Security Misconfiguration)
+**Descripción:**  
+Errores en configuración de servidores o frameworks.
+
+**Prevención:**
+- Hardening del servidor
+- Eliminación de configuraciones por defecto
+- Automatización de despliegues seguros
+
+---
+
+## 6️⃣ Componentes Vulnerables y Desactualizados
+
+**Descripción:**  
+Uso de librerías con vulnerabilidades conocidas.
+
+**Prevención:**
+- Inventario de dependencias
+- Actualizaciones periódicas
+- Uso de herramientas SCA
+
+---
+
+## 7️⃣ Fallos de Identificación y Autenticación
+
+**Descripción:**  
+Problemas en gestión de credenciales y sesiones.
+
+**Prevención:**
+- Autenticación multifactor
+- Políticas de contraseñas robustas
+- Expiración segura de sesiones
+
+---
+
+## 8️⃣ Fallos en Integridad de Software y Datos
+
+**Descripción:**  
+Manipulación de dependencias o pipelines.
+
+**Prevención:**
+- Firmas digitales
+- Verificación de integridad
+- Seguridad en la cadena de suministro
+
+---
+
+## 9️⃣ Registro y Monitoreo Insuficiente
+
+**Descripción:**  
+Falta de logs adecuados para detectar incidentes.
+
+**Prevención:**
+- Registro centralizado
+- Alertas automáticas
+- Integración con SIEM
