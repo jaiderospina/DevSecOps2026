@@ -16,7 +16,7 @@ A02 – Security Misconfiguration
 
 [A04 – Cryptographic Failures](Docs/A04-2025.md)
 
-A05 – Injection
+[A05 – Injection](Docs/A05:2025.md)
 
 A06 – Insecure Design
 
