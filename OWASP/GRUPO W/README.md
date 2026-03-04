@@ -16,58 +16,39 @@
 
 # Control de acceso roto
 
-<p align="center">
-  <img src="image/images.jfif" width="200">
-</p
 
 Aplica políticas que impiden a los usuarios actuar fuera de sus permisos previstos. Las fallas suelen provocar la divulgación no autorizada de información, la modificación o destrucción de todos los datos, o la realización de una función empresarial fuera de los límites del usuario.
 
 # Configuración incorrecta de seguridad
 
-<p align="center">
-  <img src="image/image 2.jfif" width="200">
-</p
+
 
 Una mala configuración de seguridad ocurre cuando un sistema, una aplicación o un servicio en la nube se configura incorrectamente desde una perspectiva de seguridad, lo que crea vulnerabilidades.
 
 # Fallas en la cadena de suministro de software 
 
-<p align="center">
-  <img src="image/sdlc_diag.png" width="200">
-</p
 
 Las fallas en la cadena de suministro de software son averías u otros problemas en el proceso de desarrollo, distribución o actualización de software. Suelen deberse a vulnerabilidades o cambios maliciosos en código, herramientas u otras dependencias de terceros de las que depende el sistema.
 
 # Fallas criptográficas
 
-<p align="center">
-  <img src="image/TOP_10_Icons_Final_Crypto_Failures.png" width="200">
-</p
 
 Los obstáculos anteriores, como el rendimiento de la CPU y la gestión de claves privadas y certificados, ahora se superan mediante CPU con instrucciones diseñadas para acelerar el cifrado (p. ej., compatibilidad con AES )
 
 # Inyección
 
-<p align="center">
-  <img src="imagen2/inyeccion.png" width="200">
-</p
+
 
   
 Falla de la aplicación que permite que una entrada de usuario no confiable se envíe a un intérprete (por ejemplo, un navegador, una base de datos, la línea de comandos) y hace que el intérprete ejecute partes de esa entrada como comandos.
 
 # Diseño inseguro
 
-<p align="center">
-  <img src="design-unsecure-icon-style-free-vector.jpg" width="200">
-</p
-
 categoría amplia que representa diferentes debilidades, expresadas como un diseño de control ineficaz o ausente. No es la causa de las demás diez categorías de riesgo principales.
 
 # Errores de autenticación 
 
-<p align="center">
-  <img src="images.png" width="200">
-</p
+
 
 Cuando un atacante logra engañar a un sistema para que reconozca a un usuario inválido o incorrecto como legítimo, se presenta esta vulnerabilidad. Puede haber vulnerabilidades de autenticación si la aplicación:
 
@@ -97,25 +78,18 @@ Cuando un atacante logra engañar a un sistema para que reconozca a un usuario i
 
 # Fallas de integridad de software o datos 
 
-<p align="center">
-  <img src="images (1).jfif" width="200">
-</p
+
 
 Las fallas de integridad de software y datos se relacionan con código e infraestructura que no protegen contra código o datos no válidos o no confiables que se consideran confiables y válidos. Un ejemplo de esto es cuando una aplicación depende de complementos, bibliotecas o módulos de fuentes, repositorios y redes de entrega de contenido (CDN) no confiables. 
 
 # Fallas de registro y alertas de seguridad
 
-<p align="center">
-  <img src="images (1).png" width="200">
-</p
 
 Sin registro ni monitorización, no se pueden detectar ataques ni infracciones, y sin alertas es muy difícil responder con rapidez y eficacia ante un incidente de seguridad. 
 
 # Mal manejo de condiciones excepcionales 
 
-<p align="center">
-  <img src="Security_GeneralBestPractices_resusable.png" width="200">
-</p
+
 
 La gestión inadecuada de condiciones excepcionales en el software ocurre cuando los programas no logran prevenir, detectar ni responder a situaciones inusuales e impredecibles, lo que provoca fallos, comportamientos inesperados y, en ocasiones, vulnerabilidades. Esto puede implicar una o más de las siguientes tres fallas: la aplicación no previene la ocurrencia de una situación inusual, no la identifica en el momento en que ocurre o responde de forma deficiente o nula a la situación posteriormente.
 
