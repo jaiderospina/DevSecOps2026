@@ -45,9 +45,16 @@ Las fallas en la cadena de suministro de software son averías u otros problemas
 
 Los obstáculos anteriores, como el rendimiento de la CPU y la gestión de claves privadas y certificados, ahora se superan mediante CPU con instrucciones diseñadas para acelerar el cifrado (p. ej., compatibilidad con AES )
 
+<p align="center">
+  <img src="image/3.jfif" width="200">
+</p
+
+
 # Inyección
 
-
+<p align="center">
+  <img src="image/1.png" width="200">
+</p
 
   
 Falla de la aplicación que permite que una entrada de usuario no confiable se envíe a un intérprete (por ejemplo, un navegador, una base de datos, la línea de comandos) y hace que el intérprete ejecute partes de esa entrada como comandos.
