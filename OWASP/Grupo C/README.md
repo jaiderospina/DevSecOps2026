@@ -245,6 +245,11 @@ CWE-209 Generation of Error Message Containing Sensitive Information
 
 CWE-234 Failure to Handle Missing Parameter
 
+<p align="center">
+  <img src="Images/Mishandling.jpg" width="600">
+</p>
+
+
 Ocurre cuando hay fallos a nivel de software, estos fallos ocrren cuando el software no logra manejar eventos inesperados. 
  ### Métodos de explotación: 
        - Injection, al mostrar errores o revelar información confidencial, el atacante puede utilizar inyección de SQL. 
