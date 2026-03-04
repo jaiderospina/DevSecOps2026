@@ -59,12 +59,18 @@ Falla de la aplicación que permite que una entrada de usuario no confiable se e
 
 # Diseño inseguro
 
+<p align="center">
+  <img src="image/9.png" width="200">
+</p
+  
 categoría amplia que representa diferentes debilidades, expresadas como un diseño de control ineficaz o ausente. No es la causa de las demás diez categorías de riesgo principales.
 
 # Errores de autenticación 
 
-
-
+<p align="center">
+  <img src="image/7.png" width="200">
+</p
+  
 Cuando un atacante logra engañar a un sistema para que reconozca a un usuario inválido o incorrecto como legítimo, se presenta esta vulnerabilidad. Puede haber vulnerabilidades de autenticación si la aplicación:
 
 * Permite ataques automatizados como el robo de credenciales, donde el atacante obtiene una lista vulnerada de nombres de usuario y contraseñas válidos. Recientemente, este tipo de ataque se ha ampliado para incluir ataques híbridos de contraseñas (también conocidos como ataques de rociado de contraseñas), donde el atacante utiliza variaciones o incrementos de credenciales robadas para obtener acceso, por ejemplo, probando "Contraseña1!", "Contraseña2!", "Contraseña3!", etc.
