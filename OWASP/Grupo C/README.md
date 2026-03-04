@@ -44,6 +44,10 @@ Fallas que permiten a usuarios acceder a datos o funciones fuera de sus permisos
      - Implementar el concepto de acceso menos privilegiado, auditando regularmente servidores y sitios web, aplicando MFA 
        y eliminando usuarios inactivos y servicios innecesarios de los servidores. 
 
+### Ejemplo ataque real:  
+
+Snapchat en 2014, donde atacantes explotaron fallos de autorización para compilar una lista de 4.6 millones de usuarios, incluyendo números de teléfono y ubicaciones. Este ataque tipo IDOR (Insecure Direct Object Reference) permitió enumerar usuarios mediante la manipulación de parámetros de la API. 
+
 ---
 
 # A02:2025 Security Misconfiguration. 
