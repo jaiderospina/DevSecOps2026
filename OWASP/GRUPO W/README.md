@@ -12,11 +12,14 @@
   <img src="image/logo.png" width="600">
 </p
 
-#  LIST OWASP Top 10 (2025) 
+# LIST OWASP Top 10 (2025) 
 
 # Control de acceso roto
 
-
+<p align="center">
+  <img src="image/logo.png" width="600">
+</p
+  
 Aplica políticas que impiden a los usuarios actuar fuera de sus permisos previstos. Las fallas suelen provocar la divulgación no autorizada de información, la modificación o destrucción de todos los datos, o la realización de una función empresarial fuera de los límites del usuario.
 
 # Configuración incorrecta de seguridad
