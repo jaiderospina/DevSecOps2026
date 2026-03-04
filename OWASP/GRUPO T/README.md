@@ -416,9 +416,12 @@ El impacto suele ser crítico porque afecta la base del sistema.
 ## Métodos de Explotación
 
 - Falta de control de autorización (Broken Access Control por diseño)
+
 Ejemplo:
 /api/usuarios/123
 
+el atacante puede cambiar el ID:
+/api/usuarios/124
 
 - Falta de límites en transacciones
 
@@ -434,18 +437,18 @@ Si el diseño no establece controles como:
 - Manipulación de lógica de negocio
 
 Ejemplo típico:
-
 https://tienda.com/checkout?precio=100
 
-el atacante puede modificarlo: https://tienda.com/checkout?precio=1
+el atacante puede modificarlo: 
+https://tienda.com/checkout?precio=1
 
-- Confianza excesiva en el lado cliente, errores: 
+Confianza excesiva en el lado cliente, errores: 
 
-Validaciones solo en JavaScript
+- Validaciones solo en JavaScript
 
-Restricciones de rol ocultas en frontend
+- Restricciones de rol ocultas en frontend
 
-Controles de acceso visibles pero no aplicados en backend
+- Controles de acceso visibles pero no aplicados en backend
 
 
 ## Mejores Prácticas
