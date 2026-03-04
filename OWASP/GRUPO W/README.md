@@ -60,7 +60,7 @@ Falla de la aplicación que permite que una entrada de usuario no confiable se e
 # Diseño inseguro
 
 <p align="center">
-  <img src="image/1.png" width="200">
+  <img src="image/9.png" width="200">
 </p
 
 categoría amplia que representa diferentes debilidades, expresadas como un diseño de control ineficaz o ausente. No es la causa de las demás diez categorías de riesgo principales.
