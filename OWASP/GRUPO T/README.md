@@ -309,12 +309,11 @@ La vulnerabilidad de Inyección ocurre cuando una aplicación incorpora datos co
 </p>
 
 ## Naturaleza 
+
 Es una vulnerabilidad de manipulación de intérpretes.
 
 - La entrada del usuario se concatena dinámicamente.
-
 - Se construyen consultas o comandos como cadenas de texto.
-
 - No se usan mecanismos de separación segura (parametrización).
 
 ## Causas
@@ -374,11 +373,8 @@ Principio de mínimo privilegio en BD
 
 El Diseño Inseguro no es una vulnerabilidad puntual de código, sino una falla estructural en la forma en que el sistema fue concebido.
 
-
 - La arquitectura no incorpora controles de seguridad desde el inicio.
-
 - La lógica del negocio permite comportamientos abusivos.
-
 - No se anticiparon escenarios de ataque.
 
 ## Naturaleza
@@ -386,13 +382,9 @@ El Diseño Inseguro no es una vulnerabilidad puntual de código, sino una falla 
 Es una vulnerabilidad de arquitectura y lógica de negocio, no técnica aislada relacionada con:
 
 - Diseño de flujos
-
 - Control de acceso
-
 - Procesos transaccionales
-
 - Gestión de estados
-
 - Confianza excesiva en el cliente
 
 ## Impacto
@@ -401,15 +393,10 @@ El impacto suele ser crítico porque afecta la base del sistema.
 
 
 - Bypass de autenticación
-
 - Escalamiento de privilegios
-
 - Exposición masiva de datos
-
 - Fraudes financieros
-
 - Daño reputacional severo
-
 - Sanciones legales
 
 
@@ -428,12 +415,8 @@ el atacante puede cambiar el ID:
 Si el diseño no establece controles como:
 
 - Límite por hora
-
 - Límite por día
-
 - Verificación adicional en operaciones sensibles
-
-
 - Manipulación de lógica de negocio
 
 Ejemplo típico:
@@ -445,9 +428,7 @@ https://tienda.com/checkout?precio=1
 Confianza excesiva en el lado cliente, errores: 
 
 - Validaciones solo en JavaScript
-
 - Restricciones de rol ocultas en frontend
-
 - Controles de acceso visibles pero no aplicados en backend
 
 
