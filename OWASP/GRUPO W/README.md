@@ -6,8 +6,7 @@
 * Juan Diaz
 * Jonathan Garzon
 * ## Tema del trabajo
-Aquí va el desarrollo del tema asignado.
-Puedes escribir el contenido del trabajo, análisis, conclusiones, etc.
+**Investigación sobre el OWASP Top 10**
 
 # 🔐 OWASP Top 10 (2025) – Lista oficial
 
