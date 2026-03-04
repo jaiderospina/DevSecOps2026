@@ -583,6 +583,278 @@ Para prevenir y mitigar la vulnerabilidad es fundamental implementar mecanismos 
 
 También debe existir un proceso formal de revisión de cambios en el código y en la configuración para evitar la introducción de código malicioso. Los pipelines de CI/CD deben contar con controles de acceso adecuados, segregación de funciones y configuraciones seguras que protejan la integridad del proceso de construcción y despliegue.
 
+## A09:2025 – Errores de Registro y Alertas de Seguridad 
+
+ 
+
+La vulnerabilidad A09:2025 se refiere a la ausencia, deficiencia o mala implementación de mecanismos de registro (logging), monitoreo y generación de alertas dentro de una aplicación web. 
+
+En términos técnicos, esta vulnerabilidad impacta directamente la capacidad de detección y respuesta ante incidentes de seguridad. Cuando una aplicación no registra adecuadamente eventos relevantes, se reduce el MTTD (Mean Time To Detect) y aumenta el MTTR (Mean Time To Respond), debilitando la postura defensiva de la organización. 
+
+Esta vulnerabilidad se manifiesta cuando: 
+
+- No se registran intentos fallidos de autenticación. 
+
+- No se monitorean cambios de privilegios. 
+
+- No se registran accesos a recursos sensibles. 
+
+- No se generan alertas ante comportamientos anómalos. 
+
+- Los logs pueden ser modificados o eliminados sin control. 
+
+- Desde una perspectiva de gestión de riesgos, la falta de registros adecuados impide identificar amenazas persistentes avanzadas (APT) y compromete el análisis forense posterior a un incidente. 
+
+<p align="center">
+  <img src="images/OWASP09.jpeg" width="600">
+</p>
+ 
+
+## Naturaleza del problema 
+
+Se produce cuando las aplicaciones no registran eventos críticos o no generan alertas adecuadas ante fallos o ataques. 
+
+Esto incluye: 
+
+- Logs incompletos o inconsistentes. 
+
+- Alertas deshabilitadas, ignoradas o enviadas tarde. 
+
+- Falta de trazabilidad para detectar actividad sospechosa. 
+
+Causa principal: mala configuración, desconocimiento de la importancia del logging o falta de integración con sistemas de monitoreo de seguridad. 
+
+ 
+
+## Impacto potencial 
+
+- Detección tardía de ataques: un atacante puede explotar vulnerabilidades sin ser detectado. 
+
+- Difícil investigación forense: sin logs claros, no se puede reconstruir un incidente de seguridad. 
+
+- Pérdida de datos o exposición de información sensible antes de que se pueda reaccionar. 
+
+- Riesgo reputacional y financiero para la organización si el ataque pasa desapercibido. 
+
+ 
+
+## Métodos de explotación 
+
+A diferencia de otras vulnerabilidades, A09 no suele ser explotada directamente, sino que el atacante se beneficia de su existencia. 
+
+## Ataques “low and slow” 
+
+Un atacante sofisticado puede ejecutar ataques de bajo perfil, distribuidos en el tiempo, evitando generar patrones evidentes. Si no existen mecanismos de correlación de eventos, la actividad maliciosa puede permanecer indetectada durante meses. 
+
+## Fuerza bruta sin detección 
+
+Si el sistema no registra intentos fallidos ni genera alertas automáticas, un atacante puede realizar miles de intentos de autenticación sin ser detectado. 
+
+## Escalada de privilegios silenciosa 
+
+Cuando los cambios de permisos no se registran correctamente, un atacante que obtenga acceso inicial puede elevar privilegios sin dejar evidencia clara. 
+
+## Eliminación o alteración de registros 
+
+Si los logs no están protegidos con mecanismos de integridad (hashing, almacenamiento centralizado), un atacante puede borrar rastros tras comprometer el sistema. 
+
+En ejercicios de Red Team, esta vulnerabilidad suele explotarse como parte de fases posteriores a la intrusión, particularmente durante la etapa de persistencia y movimiento lateral. 
+
+ 
+
+## Caso real 
+
+- Equifax 2017 
+Aunque el ataque se debió a una vulnerabilidad de Apache Struts, una mejor implementación de logging y alertas podría haber detectado actividad inusual antes de que el atacante accediera a millones de registros. 
+Esto demuestra que la falta de monitoreo y alertas agrava la magnitud de un incidente. 
+
+ 
+
+## Mejores prácticas de prevención y mitigación 
+
+Para mitigar A09:2025 se requiere un enfoque integral que combine controles técnicos y procesos organizacionales. 
+
+## Implementación de logging estructurado 
+
+- Registros detallados de autenticación. 
+
+- Cambios de privilegios. 
+
+- Acceso a datos sensibles. 
+
+- Eventos administrativos críticos. 
+
+- Errores del sistema. 
+
+Se recomienda el uso de logs estructurados (por ejemplo, en formato JSON) para facilitar su análisis automatizado. 
+
+## Centralización y correlación 
+
+- Implementación de un SIEM para correlación en tiempo real. 
+
+- Integración con soluciones EDR/XDR. 
+
+- Monitoreo continuo 24/7 en entornos críticos. 
+
+## Protección de la integridad de los logs 
+
+- Almacenamiento en servidores separados. 
+
+- Control de acceso estricto. 
+
+- Verificación de integridad mediante hashing. 
+
+- Políticas de retención alineadas con requisitos regulatorios. 
+
+## Generación de alertas inteligentes 
+
+- Alertas por múltiples intentos fallidos. 
+
+- Alertas por accesos fuera de horario. 
+
+- Detección basada en comportamiento (behavioral analytics). 
+
+Este enfoque se alinea con buenas prácticas descritas por marcos como ISO/IEC 27001 (controles de monitoreo) y NIST SP 800-92 (Log Management).
+
+
+## A10:2025 – Mal Manejo de Condiciones Excepcionales 
+
+La vulnerabilidad A10:2025 se relaciona con la gestión inadecuada de errores y excepciones dentro de aplicaciones web, lo que puede derivar en exposición de información sensible o en estados operativos inseguros. 
+
+Desde una perspectiva arquitectónica, esta vulnerabilidad refleja una falla en la aplicación del principio “Secure by Design”. No se trata únicamente de mostrar mensajes de error detallados, sino de no diseñar el sistema para manejar fallos de forma segura y resiliente. 
+
+Se manifiesta cuando: 
+
+- Se muestran stack traces completos al usuario. 
+
+- Se exponen consultas SQL en mensajes de error. 
+
+- Se revelan rutas internas del sistema. 
+
+- Se mantiene el modo debug activo en producción. 
+
+- No se implementan controladores globales de excepciones. 
+
+- El impacto potencial incluye divulgación de información crítica, facilitación de ataques posteriores, generación de condiciones de denegación de servicio y estados inconsistentes en aplicaciones distribuidas. 
+
+ 
+<p align="center">
+  <img src="images/OWASP10.jpeg" width="600">
+</p>
+ 
+
+## Naturaleza del problema 
+
+Esta vulnerabilidad ocurre cuando las aplicaciones no manejan correctamente los errores o excepciones, dejando información sensible expuesta o permitiendo comportamiento inesperado. 
+
+Puede incluir: 
+
+- Mensajes de error detallados visibles para usuarios finales. 
+
+- Fallos que detienen procesos críticos sin generar logs adecuados. 
+
+- Condiciones excepcionales que no se validan ni controlan, dejando la puerta abierta a ataques. 
+
+- Causa principal: manejo deficiente de excepciones por programación insegura o falta de políticas de control de errores. 
+
+ 
+
+## Impacto potencial 
+
+- Exposición de información sensible 
+
+- Posible escalada de privilegios o ejecución de código no autorizado 
+
+- Interrupción de servicios críticos 
+
+- Riesgo reputacional y financiero 
+
+ 
+
+## Métodos de explotación 
+
+Los atacantes suelen provocar errores deliberadamente para obtener información técnica. 
+
+## Fingerprinting tecnológico 
+
+Mediante la manipulación de entradas (caracteres especiales, datos malformados), el atacante puede generar errores que revelen: 
+
+- Motor de base de datos utilizado. 
+
+- Versión del servidor. 
+
+- Framework empleado. 
+
+- Estructura interna del sistema. 
+
+Esta información permite planificar ataques dirigidos. 
+
+## Generación de fallos en cascada 
+
+En arquitecturas basadas en microservicios, un mal manejo de excepciones puede generar cascading failures, donde el fallo de un servicio impacta a otros, provocando indisponibilidad generalizada. 
+
+## Denegación de servicio 
+
+Si las excepciones no se gestionan eficientemente, un atacante puede enviar múltiples solicitudes diseñadas para provocar errores costosos en recursos, saturando el sistema. 
+
+## Caso real 
+
+GitLab 2018 
+
+Una falla en el manejo de excepciones provocó que ciertos mensajes de error mostraran detalles internos de la aplicación a usuarios no autorizados. 
+
+Este caso muestra cómo un mal manejo de errores puede exponer información crítica incluso sin un ataque directo. 
+
+  
+
+## Mejores prácticas de prevención y mitigación 
+
+La mitigación de A10 requiere controles a nivel de desarrollo, arquitectura y operaciones. 
+
+## Manejo global de excepciones 
+
+- Implementación de controladores centralizados. 
+
+- Captura segura de errores. 
+
+- Registro interno detallado. 
+
+- Mensajes genéricos hacia el usuario final. 
+
+Ejemplo adecuado: 
+“Ha ocurrido un error. Intente nuevamente más tarde.” 
+
+## Separación de entornos 
+
+- Desactivar modo debug en producción. 
+
+- Configuración diferenciada entre desarrollo y producción. 
+
+## Validación y sanitización de entradas 
+
+- Validación estricta del lado del servidor. 
+
+- Uso de listas blancas (whitelisting). 
+
+- Prevención de inyecciones. 
+
+## Diseño resiliente 
+
+- Aplicación del principio Fail Secure. 
+
+- Implementación del patrón Circuit Breaker en arquitecturas distribuidas. 
+
+- Observabilidad completa (logs, métricas y trazas). 
+
+## Integración con Secure SDLC y DevSecOps 
+
+- Análisis estático (SAST). 
+
+- Análisis dinámico (DAST). 
+
+- Pruebas de manejo de errores en fases tempranas del desarrollo. 
+
+Este enfoque fortalece la resiliencia del sistema y reduce significativamente la exposición ante ataques basados en errores controlados.
 
 
 #Referencias 
