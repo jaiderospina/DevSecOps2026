@@ -48,7 +48,7 @@ Los obstáculos anteriores, como el rendimiento de la CPU y la gestión de clave
 # Inyección
 
 <p align="center">
-  <img src="descarga.jfif" width="200">
+  <img src="2.jfif" width="200">
 </p
 
 Falla de la aplicación que permite que una entrada de usuario no confiable se envíe a un intérprete (por ejemplo, un navegador, una base de datos, la línea de comandos) y hace que el intérprete ejecute partes de esa entrada como comandos.
