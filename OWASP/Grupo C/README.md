@@ -246,7 +246,7 @@ CWE-209 Generation of Error Message Containing Sensitive Information
 CWE-234 Failure to Handle Missing Parameter
 
 <p align="center">
-  <img src="Images/Mishandling.jpg" width="600">
+  <img src="Images/Mishandling.JPG" width="600">
 </p>
 
 
