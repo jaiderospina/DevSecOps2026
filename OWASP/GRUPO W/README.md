@@ -35,6 +35,11 @@ Una mala configuración de seguridad ocurre cuando un sistema, una aplicación o
 
 Las fallas en la cadena de suministro de software son averías u otros problemas en el proceso de desarrollo, distribución o actualización de software. Suelen deberse a vulnerabilidades o cambios maliciosos en código, herramientas u otras dependencias de terceros de las que depende el sistema.
 
+<p align="center">
+  <img src="image/8.png" width="200">
+</p
+
+
 # Fallas criptográficas
 
 
