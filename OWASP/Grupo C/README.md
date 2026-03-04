@@ -9,6 +9,8 @@ Michael Giovanny Sierra Leon
   <img src="Images/Intro OSWASP Top 10.png" width="600">
 </p>
 
+
+
 # A01:2025 Broken Access Control.
 
 <p align="center">
@@ -152,36 +154,114 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 
 ---
 
-5
+# A05:2025 - Injection
+
+ ### Métodos de explotación: 
+    - XSS 
+    - SQLi 
+ ### Ejemplo ataque real: 
+   
+ ### Prevención y mitigación:  
 
 ---
+# A06:2025 - Insecure Design
 
-6
+ ### Métodos de explotación: 
 
+ ### Ejemplo ataque real: 
+   
+ ### Prevención y mitigación:  
 ---
 
-7
+# A07:2025 - Authentication Failures
 
+ ### Métodos de explotación: 
+
+ ### Ejemplo ataque real: 
+   
+ ### Prevención y mitigación:  
 ---
 
 # A08:2025 - Software or Data Integrity Failures 
+  CWE-829
+  ### Objetivo del Ataque: 
+    - Actualizaciones de software 
+    - Datos críticos y de CI/CD (Continuos Integration and Continuos Delivery) sin verificación.
+    - Fallas en la cadena de suministro de software
+<p align="center">
+  <img src="Images/SoftwareorDataIntegrityFailures.JPG" width="600">
+</p>
 
-   # Naturaleza
-   
-      * Actualizaciones de software 
-      * Datos críticos y de CI/CD (Continuos Integration and Continuos Delivery) sin verificación.
+### Métodos de explotación: 
+     - Denial of Service -> Atacar a un objetivo hasta dejarlos sin recursos (CPU, Memoria)
+     - Cache Poisoning -> Ingresar una IP Falsa a las entradas de DNS para resolver cache, se utiliza para usar una pagina legitima y redirigir a una fraudulenta. 
+     - Code injection -> Envio de datos inesperados a un interprete, ocurre generalmente en consultas tipo SQL, NoSQL, Ldap, Xpath. 
+
+<p align="center">
+  <img src="Images/dnscachepoison.JPG" width="600">
+</p>
+
+          
+### Ejemplo ataque real:  
+     - Ataque a la cadena de suministro de Solarwinds, el ataque termino atacando 18000 clientes que habian realizado actualizaciones de software.
+     - Se inyecto codigo malicioso llamado Sunburst en Orion, el cual es un sistema de monitoreo de Solarwinds.
+          
+### Prevención y mitigación:   
+     - Utilizar firmas digitales para verifificar que el software no ha sido alterado
+     - Controles de acceso y configuración en las tuberias CI/CD
+     - Utilizar repositorios seguros y si es necesario alojar un repositorio interno de confianza verificado. 
   
-  #### Causas
-  
-  #### Impacto Social
-
-
-![SoftwareorDataIntegrityFailures](https://github.com/user-attachments/assets/f4174a42-566c-4fa5-bcd7-654a0779e5f0)
+---
 
 # A09:2025 - Security Logging and Alerting Failures
+CWE-117 - CWE-532 - CWE-778
 
+    - Falta de monitoreo y registro permite a los atacantes alcanzar su proposito sin ser detectados. 
+
+<p align="center">
+  <img src="Images/Siem.JPG" width="600">
+</p>
+
+    
+
+ ### Métodos de explotación: 
+    - Eventos como login, failed login, y un numero alto de transacciones  que no son logueados.
+    - logs no son almacenados apropiadamente a travez del tiempo (PCI DSS requiere que se mantenga al menos por un año).
+    - logs de aplicaciones y APIs que no son monitoreados.
+    - pruebas de penetración con herramientas como DAST o BURP, no muestran alertas.
+### Ejemplo ataque real:  
+    - Air Indian fue atacado, exponiendo información confidencial de tarjetas de credito de los pasajeros 
+        
+### Prevención y mitigación:  
+    - Registros de ataques completos y mejorados.
+    - Correlación y agregación de eventos.
+    - Alertas y correos electrónicos basados ​​en infracciones.
+    - Integración con SIEM (Security Information and Event Managament)
+    
+---
 
 # A10:2025 - Mishandling of Exceptional Conditions
+CWE-209 Generation of Error Message Containing Sensitive Information
+
+CWE-234 Failure to Handle Missing Parameter
+
+<p align="center">
+  <img src="Images/Mishandling.JPG" width="600">
+</p>
+
+Ocurre cuando hay fallos a nivel de software, estos fallos ocurren cuando el software no logra manejar eventos inesperados. 
+ ### Métodos de explotación: 
+       - Injection, al mostrar errores o revelar información confidencial, el atacante puede utilizar inyección de SQL. 
+       - DoS, si el softwware no cuenta con las excepciones requeridas, puede quedar en un consumo infinito de recursos hasta dejarlos indisponible.
+       - Uso de Fuzzing, el cual es una tecnica para generar datos aleatorios erroneos y asi provocar fallos del software.
+ ### Ejemplo ataque real:
+       - Fornite 2019, un ataque de SQL Injection mostro datos confidenciales de los jugadores
+ 
+ ### Prevención y mitigación:  
+       - Detección y gestion de condicionales anomalas, permite validar que hace el software sobre escenarios desconocidos.
+       - Pruebas de calidad de Software, donde se someta a prueba el software y se busca encontrar vulnerabilidades a nivel de flujo y excepciones
+       
+---
 
 # Referencias:  
 
@@ -189,4 +269,4 @@ Protección inadecuada de datos sensibles en tránsito o en reposo (antes Exposi
 - https://www.fortinet.com/lat/resources/cyberglossary/owasp 
 - https://sucuri.net/guides/what-is-broken-access-control/
 - https://www.geeksforgeeks.org/ethical-hacking/owasp-top-10-vulnerabilities-and-preventions/
-
+- https://my.f5.com/
