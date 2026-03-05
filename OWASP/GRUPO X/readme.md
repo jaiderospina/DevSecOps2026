@@ -529,7 +529,7 @@ El problema no es “el código” solamente, sino **cómo se desplegó o config
 ---
 # A03: Injection
 
-( https://www.google.com/imgres?q=imagen%20de%20sql%20Injection&imgurl=https://www.cloudflare.com/img/learning/security/threats/sql-injection-attack/sql-injection-infographic.png&imgrefurl=https://www.cloudflare.com/es-es/learning/security/threats/sql-injection/&docid=4LUej9E2DFoiVM&tbnid=BKt16X_JjJqDEM&vet=12ahUKEwjWlI-QvoeTAxV9STABHbKZOfsQnPAOegQIERAB..i&w=1459&h=503&hcb=2&ved=2ahUKEwjWlI-QvoeTAxV9STABHbKZOfsQnPAOegQIERAB )
+![enter image description here](https://miro.medium.com/v2/resize:fit:1400/0*BMgMdeS_8XzB5Yt_.png)
 
 ## Descripción de la vulnerabilidad
 
@@ -623,7 +623,7 @@ F --> A
 
 # 🟠 A04: Insecure Design
 
-(https://www.google.com/imgres?q=imagen%20de%20Insecure%20Design&imgurl=https://miro.medium.com/v2/resize:fit:1400/1*V3MCqAeiY2lCOw8Re5lAVw.png&imgrefurl=https://medium.com/@shivamsharma.ss484/owasp-a04-2021-insecure-design-34ef11e83e6f&docid=8YLOpVheSbUvzM&tbnid=tO9x6A8r53wsUM&vet=12ahUKEwixuKHiv4eTAxU_SjABHbxKBekQnPAOegQIGRAB..i&w=1385&h=453&hcb=2&ved=2ahUKEwixuKHiv4eTAxU_SjABHbxKBekQnPAOegQIGRAB)
+![enter image description here](https://miro.medium.com/v2/resize:fit:1400/1*V3MCqAeiY2lCOw8Re5lAVw.png)
 
 “Insecure Design” se refiere a fallos estructurales en la arquitectura del sistema.
 
@@ -1015,7 +1015,7 @@ Ejemplo: instalar paquetes sin verificación, actualizaciones no firmadas, CI/CD
 
 A10: Server-Side Request Forgery (SSRF)
 
-(https://www.google.com/imgres?q=imagen%20de%20Server-Side%20Request%20Forgery%20%28SSRF%29&imgurl=https://media.licdn.com/dms/image/v2/D4D12AQEdv6qTMsDaqg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1731662039422?e=2147483647&v=beta&t=Tz5aBcJ5DjZ6EPj70RACFpBcscEHFoRTtTmCEWGAAmc&imgrefurl=https://www.linkedin.com/pulse/server-side-request-forgery-ssrf-understanding-threat-real-world-wpu1f&docid=pT913o1XIDZ8gM&tbnid=s7AjN0Pa2qAI_M&vet=12ahUKEwjCo4bGwIeTAxXPRDABHaSoE1UQnPAOegQIFhAB..i&w=1280&h=720&hcb=2&ved=2ahUKEwjCo4bGwIeTAxXPRDABHaSoE1UQnPAOegQIFhAB)
+![enter image description here](https://my.f5.com/manage/servlet/rtaImage?eid=ka0Po000000ZEzN&feoid=00N1T00000AOnlF&refid=0EMPo00000VxBIX)
 
 SSRF permite a un atacante forzar al servidor a realizar solicitudes HTTP hacia destinos internos o externos.
 
@@ -1091,6 +1091,7 @@ C --> A
 ✅ Validación estricta de URL
 
 ---
+
 
 
 
