@@ -4,23 +4,28 @@
 3. Miguel Muñoz.
 4. Damian Gonzalez.
 
+
+![header](https://capsule-render.vercel.app/api?type=waving&color=0:2E8B57,100:00CED1&height=200&section=header&text=OWASP%20Top%2010%20Vulnerability%20Analysis&fontSize=45)
+
 # Análisis de Vulnerabilidades en el OWASP Top 10: Métodos de Explotación y Prevención
 <p align="center">
-<img src="./Imagenes/logoOWASP.png" alt="Alt text" width="150" height="50" style="display: block; margin-left: auto; margin-right: auto;">
+<img src="./Imagenes/logoOWASP.png" alt="Alt text" width="150" height="50">
 </p>
-## ¿Qué es OWASP?
 
+#### ¿Qué es OWASP?
+<div align="justify">
 OWASP es el acrónimo de Open Worldwide Application Security Project, una fundación sin fines de lucro dedicada a mejorar la seguridad de las aplicaciones web y software mediante recursos abiertos y colaborativos. Se originó en 2001 como un proyecto comunitario y se convirtió en fundación en 2004, promoviendo prácticas seguras en el desarrollo de software.
-
 OWASP surgió para identificar vulnerabilidades comunes en aplicaciones web y ofrecer herramientas gratuitas a desarrolladores y organizaciones. Su misión principal es fomentar la concienciación, educación y mejores prácticas en ciberseguridad, con una comunidad global de voluntarios y expertos.
+</div>
 <br>
 <br>
 <br>
 
 ## TOP 10 OWASP - 2025
 <p align="center">
-<img src="./Imagenes/top10.jpg" alt="Alt text" width="150" height="50" style="display: block; margin-left: auto; margin-right: auto;">
+<img src="./Imagenes/top10.jpg" alt="Alt text" width="150" height="50" >
 </p>
+
 1. A01:2025 - Broken Access Control
 2. A02:2025 - Security Misconfiguration
 3. A03:2025 - Software Supply Chain Failures
@@ -36,6 +41,7 @@ OWASP surgió para identificar vulnerabilidades comunes en aplicaciones web y of
 <p align="center">
 <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjMwaGdiZDhjaGRidWc5c3dqdWo4cHk5cG5xOHpvaW9va2VkaHRjciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SF5MyECNTsEBGm0Hx3/giphy.gif" width=100 style="display: block; margin-left: auto; margin-right: auto;">
 </p>
+
 ### 1. A01:2025 - Broken Access Control
 <br>
 <br>
@@ -44,6 +50,7 @@ OWASP surgió para identificar vulnerabilidades comunes en aplicaciones web y of
 </p>
 <br>
 <br>
+<div align="justify">
 Se refiere a debilidades en los mecanismos que regulan los permisos de los usuarios dentro de una aplicación. Estas fallas permiten que una persona acceda a recursos, datos o funcionalidades que no le corresponden, pudiendo visualizar, modificar o ejecutar acciones fuera de los límites establecidos, lo que pone en riesgo la seguridad y la integridad del sistema.
 
 **Métodos de Explotación:**
@@ -465,3 +472,5 @@ Fallas al manejar errores, excepciones o condiciones inesperadas. Cuando una apl
 - Validar entradas para evitar excepciones inesperadas.
 - Diseñar la aplicación para fallar de forma segura (fail-safe).
 - Realizar pruebas de estrés, caos y escenarios inesperados.
+
+</div>
