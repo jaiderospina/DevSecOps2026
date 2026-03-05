@@ -80,7 +80,9 @@ Ocurre cuando una aplicación no impone correctamente las reglas que limitan lo 
 
 Cuando el atacante envía datos maliciosos que se interpretan como comandos.
 
----
+<p align="center">
+  <img src="Imagenes/Injection.jpg" width="400">
+</p>
 
 ### Métodos de Explotación
 
@@ -105,7 +107,9 @@ Cuando el atacante envía datos maliciosos que se interpretan como comandos.
 
 Fallas desde el diseño de la aplicación.
 
----
+<p align="center">
+  <img src="Imagenes/Insecure Design.jpg" width="400">
+</p>
 
 ### Métodos de Explotación
 
@@ -129,7 +133,9 @@ Fallas desde el diseño de la aplicación.
 
 Errores en configuraciones del servidor o aplicación.
 
----
+<p align="center">
+  <img src="Imagenes/Security Misconfiguration.jpg" width="400">
+</p>
 
 ### Métodos de Explotación
 
@@ -154,7 +160,9 @@ Errores en configuraciones del servidor o aplicación.
 
 Ocurre cuando una aplicación no controla correctamente qué recursos puede acceder cada usuario. Esto permite que usuarios accedan a información o funciones que no deberían.
 
----
+<p align="center">
+  <img src="Imagenes/Broken Access Control.jpg" width="400">
+</p>
 
 ### Métodos de Explotación
 
@@ -232,7 +240,9 @@ Problemas en los mecanismos de autenticación que permiten el acceso no autoriza
 
 Se produce cuando no se registran ni monitorean eventos de seguridad correctamente.
 
----
+<p align="center">
+  <img src="Imagenes/Logging and Monitoring Failures.png" width="400">
+</p>
 
 ### Métodos de Explotación
 
@@ -251,13 +261,15 @@ Se produce cuando no se registran ni monitorean eventos de seguridad correctamen
 
 ---
 
-## 9.Server Side Request Forgery (SSRF)
+## 10.Server Side Request Forgery (SSRF)
 
 ### Descripción
 
 Permite a un atacante hacer que el servidor realice solicitudes a recursos internos o externos.
 
----
+<p align="center">
+  <img src="Imagenes/Server Side Request Forger.png" width="400">
+</p>
 
 ### Métodos de Explotación
 
@@ -282,5 +294,6 @@ Permite a un atacante hacer que el servidor realice solicitudes a recursos inter
 - https://owasp.org/Top10/
 - https://www.checkpoint.com/cyber-hub/cloud-security/what-is-application-security-appsec/owasp-top-10-vulnerabilities/
 - https://www.akamai.com/blog/security/owasp-top-10-api-security-risks
+
 
 
