@@ -445,6 +445,11 @@ Confianza excesiva en el lado cliente, errores:
 
 # A07:2021 – Identification and Authentication Failures
 
+<p align="center">
+  <img src="images/ErrorDeAutenticacion_A07.png" width="600">
+</p>
+
+
 ## 01 Naturaleza de la vulnerabilidad 
 
 Antes conocida como “Broken Authentication”. Se presenta cuando los mecanismos de autenticación (login, manejo de sesiones, recuperación de contraseña, tokens, etc.) están mal implementados o mal configurados, permitiendo que un atacante suplante la identidad de un usuario.
@@ -510,6 +515,10 @@ Finalmente, se debe implementar una gestión segura de sesiones. Esto incluye ge
 
 
 # A08:2021 – Software and Data Integrity Failures
+
+<p align="center">
+  <img src="images/IntegridadSoftware_A08.png" width="600">
+</p>
 
 ## 01 Naturaleza de la vulnerabilidad 
 
