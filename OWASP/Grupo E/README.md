@@ -178,3 +178,51 @@ Falta de logs adecuados para detectar incidentes.
 - Registro centralizado
 - Alertas automáticas
 - Integración con SIEM
+
+## 🔟 Falsificación de Solicitudes del Lado del Servidor (SSRF)
+
+**Descripción:**  
+El servidor realiza peticiones a destinos no autorizados.
+
+**Prevención:**
+- Listas blancas de URLs
+- Segmentación de red
+- Validación de destinos externos
+
+---
+
+# 🧩 Enfoque DevSecOps
+
+La integración de seguridad dentro del ciclo de vida del desarrollo permite:
+
+- Reducir la superficie de ataque
+- Detectar vulnerabilidades tempranamente
+- Automatizar pruebas de seguridad
+- Mejorar la resiliencia de aplicaciones
+
+---
+
+# ✅ Conclusiones
+
+■ El OWASP Top 10 constituye una guía esencial para comprender los riesgos más relevantes en aplicaciones web. La mayoría de estas vulnerabilidades no dependen únicamente de fallas técnicas, sino de malas prácticas en diseño, configuración y gestión del software.
+
+■ La integración de controles de seguridad en el ciclo DevSecOps permite reducir significativamente la superficie de ataque y mejorar la resiliencia de las aplicaciones.
+
+■ El análisis de las vulnerabilidades del OWASP Top 10 demuestra la necesidad de integrar la seguridad como un componente estratégico dentro de la gobernanza de tecnologías de la información. Las organizaciones deben adoptar marcos de gestión de riesgos y políticas de seguridad que permitan identificar, evaluar y mitigar amenazas de forma continua, asegurando que los controles de seguridad estén alineados con los objetivos del negocio y las regulaciones vigentes.
+
+■ La evolución constante de las amenazas en aplicaciones web requiere que las organizaciones implementen procesos de mejora continua en sus prácticas de seguridad. La adopción de estándares, auditorías periódicas y herramientas de monitoreo permite fortalecer la postura de seguridad, reducir vulnerabilidades y garantizar la confianza de los usuarios en los sistemas y servicios digitales.
+
+![Diagrama OWASP](img/process.png)
+
+*Fuente: OWASP Foundation (2021)*
+
+
+# 📚 Referencias
+
+- https://owasp.org/Top10/es/
+- https://owasp.org/www-project-top-ten/
+- https://www.checkpoint.com/es/cyber-hub/cloud-security/what-is-application-security-appsec/owasp-top-10-vulnerabilities/
+- https://certera.com/blog/mitigating-the-owasp-top-10-vulnerabilities/
+- https://www.akamai.com/es/blog/security/owasp-top-10-api-security-risks-2023-edition
+- https://cloudkul.com/blog/owasp-top-10-2021/
+
