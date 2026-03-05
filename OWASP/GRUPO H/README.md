@@ -283,3 +283,4 @@ Permite a un atacante hacer que el servidor realice solicitudes a recursos inter
 - https://www.checkpoint.com/cyber-hub/cloud-security/what-is-application-security-appsec/owasp-top-10-vulnerabilities/
 - https://www.akamai.com/blog/security/owasp-top-10-api-security-risks
 
+
