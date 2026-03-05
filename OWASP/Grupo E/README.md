@@ -2,7 +2,6 @@
 ### Métodos de Explotación y Prevención
 
 ![Principal](images/encabezado.png)
-![Diagrama OWASP](images/encabezado.png)
 
 ---
 
