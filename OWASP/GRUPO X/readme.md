@@ -707,7 +707,7 @@ D --> E[Cuenta comprometida]
 
 Según OWASP, **A07 – Fallos de Autenticación** ocurre cuando un sistema no verifica correctamente la identidad de un usuario, dispositivo o aplicación.
 
-(https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147492532/images/5a0c670-e521-5cad-4fcf-c51f0203b430_ChatGPT_Image_1_feb_2026_03_04_47_a.m..png)
+![enter image description here](https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147492532/images/5a0c670-e521-5cad-4fcf-c51f0203b430_ChatGPT_Image_1_feb_2026_03_04_47_a.m..png)
 
 La autenticación es la **puerta de entrada** a cualquier sistema.
 Si falla, todo el entorno queda expuesto.
@@ -1089,5 +1089,6 @@ C --> A
 ✅ Validación estricta de URL
 
 ---
+
 
 
