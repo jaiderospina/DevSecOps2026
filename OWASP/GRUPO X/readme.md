@@ -701,7 +701,7 @@ D --> E[Cuenta comprometida]
 
 ---
 
-# 5. A05: Injection (Ineyección)
+# 5. A05: Injection (Inyección)
 Ejecución de comandos maliciosos por datos no validados → ⚠ CRÍTICO
 
 
@@ -711,7 +711,7 @@ Ejecución de comandos maliciosos por datos no validados → ⚠ CRÍTICO
 
 Ocurre cuando datos no confiables son enviados a un intérprete como parte de un comando o consulta. El atacante puede engañar al interprete para que ejecute comandos no intencionados o acceda a datos sin autorización.
 
-<img src="./images/A05_Injection.png" width=500)/>
+<img src="./imagenes/A05_Injection.png" width=500)/>
 
 ### ⚙️ ¿Cómo funciona?
 
@@ -741,7 +741,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 > *SQL Injection · NoSQL Injection (MongoDB \$where) · OS Command Injection · LDAP Injection · Server-Side Template Injection (SSTI) · Log4Shell (JNDI via strings de log)*
 
- <img src="./images/image001.png"/>
+ <img src="./imagenes/image001.png"/>
 
 ## ⚔️ Métodos de Explotación
 
@@ -828,7 +828,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 - Escaneo de IaC: validar Terraform/CloudFormation con Checkov/tfsec
 
-  <img src="./images/image003.png"/>
+  <img src="./imagenes/image003.png"/>
 
 ## ⚙️ Configuraciones Recomendadas
 
@@ -936,7 +936,7 @@ Fallas estructurales de arquitectura desde el origen → ⚠ ALTO
 
 Falla estructural: la arquitectura del sistema no contempla amenazas ni requisitos de seguridad desde el inicio. A diferencia de otras vulnerabilidades, NO puede corregirse con una buena implementación: si el diseño es defectuoso, el sistema es inseguro por naturaleza.
 
-<img src="./images/A06_InsecureDesign.png" width=400)/>
+<img src="./imagenes/A06_InsecureDesign.png" width=400)/>
 
 ### ⚙️ ¿Cómo funciona?
 
@@ -962,7 +962,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 - Fraudes en plataformas Cloud con impacto financiero severo
 
-<img src="./images/image005.png"/>
+<img src="./imagenes/image005.png"/>
 
 ## ⚔️ Métodos de Explotación
 
@@ -1029,7 +1029,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 ## ✅ Buenas Prácticas DevSecOps
 
-<img src="./images/image007.png"/>
+<img src="./imagenes/image007.png"/>
 
 - Security by Design / Security by Default en todas las decisiones arquitectónicas
 
@@ -1087,7 +1087,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 </tbody>
 </table>
 
-<img src="./images/image009.png"/>
+<img src="./imagenes/image009.png"/>
 
 ## 🔒 Controles de Seguridad
 
@@ -1470,7 +1470,7 @@ El silencio es la peor respuesta ante un ataque → ⚠ MEDIO-ALTO
 
 Ausencia o insuficiencia de logs de seguridad, monitoreo de eventos críticos y alertas ante comportamientos anómalos. Sin visibilidad, los atacantes pueden operar durante meses sin ser detectados.
 
-<img src="./images/A09-SecurityLogging_Alerting Failures.png" width=400)/>
+<img src="./imagenes/A09-SecurityLogging_Alerting Failures.png" width=400)/>
 
 ### ⚙️ ¿Cómo funciona?
 
@@ -1500,7 +1500,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
 - Mayor daño financiero y reputacional acumulado por detección tardía
 
-  <img src="./images/image010.png"/>
+  <img src="./imagenes/image010.png"/>
 
 ## ⚔️ Métodos de Explotación
 
@@ -1587,7 +1587,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
 - Sincronización NTP en todos los sistemas para correlación correcta de eventos
 
-  <img src="./images/image012.png"/>
+  <img src="./imagenes/image012.png"/>
 
 ## ⚙️ Configuraciones Recomendadas
 
@@ -1769,6 +1769,7 @@ C --> A
 ✅ Validación estricta de URL
 
 ---
+
 
 
 
