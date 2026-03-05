@@ -52,7 +52,9 @@ Ocurre cuando los datos sensibles no están correctamente protegidos mediante me
 
 Ocurre cuando una aplicación no impone correctamente las reglas que limitan lo que un usuario puede ver o hacer.
 
----
+<p align="center">
+  <img src="Imagenes/Broken Access Control.jpg" width="400">
+</p>
 
 ### Métodos de Explotación
 
@@ -280,3 +282,4 @@ Permite a un atacante hacer que el servidor realice solicitudes a recursos inter
 - https://owasp.org/Top10/
 - https://www.checkpoint.com/cyber-hub/cloud-security/what-is-application-security-appsec/owasp-top-10-vulnerabilities/
 - https://www.akamai.com/blog/security/owasp-top-10-api-security-risks
+
