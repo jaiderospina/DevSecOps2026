@@ -36,7 +36,7 @@ Ocurre cuando los datos sensibles no están correctamente protegidos mediante me
 
 ---
 
-### Prevención y Mitigación
+### Prevención
 
 - Utilizar HTTPS (TLS) para proteger la comunicación.
 - Implementar hash seguro para contraseñas (bcrypt, Argon2).
@@ -63,7 +63,7 @@ Ocurre cuando una aplicación no impone correctamente las reglas que limitan lo 
 
 ---
 
-### Prevención y Mitigación
+### Prevención
 
 - Verificar siempre permisos en el backend.
 - Aplicar principio de mínimo privilegio.
@@ -72,6 +72,211 @@ Ocurre cuando una aplicación no impone correctamente las reglas que limitan lo 
 ---
 
 
+## 3.Injection (Inyección)
+
+### Descripción
+
+Cuando el atacante envía datos maliciosos que se interpretan como comandos.
+
+---
+
+### Métodos de Explotación
+
+- SQL Injection
+- Command Injection
+- LDAP Injection
+
+---
+
+### Prevención
+
+- Consultas preparadas (Prepared Statements)
+- Validación y sanitización de entradas
+- ORM seguro
+- WAF (Web Application Firewall)
+
+---
+
+## 4.Insecure Design (Diseño inseguro)
+
+### Descripción
+
+Fallas desde el diseño de la aplicación.
+
+---
+
+### Métodos de Explotación
+
+- No limitar intentos de login
+- No validar procesos críticos
+
+---
+
+### Prevención
+
+- Modelado de amenazas
+- Revisiones de arquitectura
+- Diseño seguro desde el inicio (Security by Design)
 
 
+---
 
+## 5.Security Misconfiguration (Mala configuración)
+
+### Descripción
+
+Errores en configuraciones del servidor o aplicación.
+
+---
+
+### Métodos de Explotación
+
+- Directorios abiertos
+- Credenciales por defecto
+- Mensajes de error detallados
+
+---
+
+### Prevención y mitigacion 
+
+- Hardening del servidor
+- Eliminar configuraciones por defecto
+- Revisiones periódicas
+
+
+---
+
+## 6.Broken Access Control
+
+### Descripción
+
+Ocurre cuando una aplicación no controla correctamente qué recursos puede acceder cada usuario. Esto permite que usuarios accedan a información o funciones que no deberían.
+
+---
+
+### Métodos de Explotación
+
+- Modificar parámetros en la URL (IDOR).
+- Escalación de privilegios.
+- Acceso a funciones administrativas sin autorización.
+- Manipulación de cookies o tokens.
+
+---
+
+### Prevención y mitigacion 
+
+- Implementar control de acceso basado en roles (RBAC).
+- Validar permisos en el servidor.
+- Aplicar principio de mínimo privilegio.
+- Realizar pruebas de autorización.
+
+
+---
+
+## 7.Injection
+
+### Descripción
+
+Se produce cuando una aplicación ejecuta código malicioso enviado por un atacante.
+
+---
+
+### Métodos de Explotación
+
+- SQL Injection.
+- Command Injection.
+- LDAP Injection.
+- Cross-site scripting (XSS).
+
+---
+
+### Prevención y mitigacion 
+
+- Validación de entradas.
+- Uso de consultas parametrizadas.
+- Sanitización de datos.
+- Implementación de WAF.
+
+---
+
+## 8.Authentication Failures
+
+### Descripción
+
+Problemas en los mecanismos de autenticación que permiten el acceso no autorizado.
+
+---
+
+### Métodos de Explotación
+
+- Ataques de fuerza bruta.
+- Robo de sesiones.
+- Credential stuffing.
+
+---
+
+### Prevención y mitigacion 
+
+- Implementar autenticación multifactor (MFA).
+- Políticas de contraseñas seguras.
+- Bloqueo tras múltiples intentos fallidos.
+- Gestión segura de sesiones.
+
+---
+
+## 9.Logging and Monitoring Failures
+
+### Descripción
+
+Se produce cuando no se registran ni monitorean eventos de seguridad correctamente.
+
+---
+
+### Métodos de Explotación
+
+- Ataques sin detección.
+- Falta de alertas de seguridad.
+- Actividades maliciosas sin registro.
+
+---
+
+### Prevención y mitigacion 
+
+- Implementar registros de seguridad.
+- Sistemas SIEM.
+- Monitoreo continuo.
+- Alertas en tiempo real.
+
+---
+
+## 9.Server Side Request Forgery (SSRF)
+
+### Descripción
+
+Permite a un atacante hacer que el servidor realice solicitudes a recursos internos o externos.
+
+---
+
+### Métodos de Explotación
+
+- Acceso a servicios internos.
+- Acceso a metadata de nube.
+- Manipulación de URLs.
+
+---
+
+### Prevención y mitigacion 
+
+- Validación de URLs.
+- Bloqueo de direcciones internas.
+- Uso de listas blancas.
+- Firewalls de red.
+
+---
+
+## Referencias
+
+- https://owasp.org/www-project-top-ten/
+- https://owasp.org/Top10/
+- https://www.checkpoint.com/cyber-hub/cloud-security/what-is-application-security-appsec/owasp-top-10-vulnerabilities/
+- https://www.akamai.com/blog/security/owasp-top-10-api-security-risks
