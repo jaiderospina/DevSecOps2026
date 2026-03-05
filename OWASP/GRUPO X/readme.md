@@ -1013,7 +1013,7 @@ Ejemplo: instalar paquetes sin verificación, actualizaciones no firmadas, CI/CD
 
 ---
 
-A10: Server-Side Request Forgery (SSRF)
+# A10: Server-Side Request Forgery (SSRF)
 
 ![enter image description here](https://my.f5.com/manage/servlet/rtaImage?eid=ka0Po000000ZEzN&feoid=00N1T00000AOnlF&refid=0EMPo00000VxBIX)
 
@@ -1091,6 +1091,7 @@ C --> A
 ✅ Validación estricta de URL
 
 ---
+
 
 
 
