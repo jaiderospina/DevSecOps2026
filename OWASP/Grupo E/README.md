@@ -8,7 +8,7 @@
 - Ing. Argel Ochoa Ronald David  
 - Ing. Baquero Soto Mauricio  
 - Ing. Buitrago Guiot Oscar Javier  
-- Ing. Estefania Naranjo Novoa  
+- Ing. Estefanía Naranjo Novoa  
 
 ---
 
@@ -52,9 +52,6 @@ A continuación, se describen las principales vulnerabilidades identificadas en 
 
 ---
 
-![Diagrama OWASP](img/owasp-10.png)
-
-*Fuente: OWASP Foundation (2021)*
 ![Diagrama OWASP](images/owasp-10.png)
 
 *Fuente: OWASP Foundation (2021)*
@@ -191,7 +188,7 @@ El servidor realiza peticiones a destinos no autorizados.
 
 ---
 
-# 🧩 Enfoque DevSecOps
+## 🧩 Enfoque DevSecOps
 
 La integración de seguridad dentro del ciclo de vida del desarrollo permite:
 
@@ -202,7 +199,7 @@ La integración de seguridad dentro del ciclo de vida del desarrollo permite:
 
 ---
 
-# ✅ Conclusiones
+## ✅ Conclusiones
 
 ■ El OWASP Top 10 constituye una guía esencial para comprender los riesgos más relevantes en aplicaciones web. La mayoría de estas vulnerabilidades no dependen únicamente de fallas técnicas, sino de malas prácticas en diseño, configuración y gestión del software.
 
@@ -212,7 +209,7 @@ La integración de seguridad dentro del ciclo de vida del desarrollo permite:
 
 ■ La evolución constante de las amenazas en aplicaciones web requiere que las organizaciones implementen procesos de mejora continua en sus prácticas de seguridad. La adopción de estándares, auditorías periódicas y herramientas de monitoreo permite fortalecer la postura de seguridad, reducir vulnerabilidades y garantizar la confianza de los usuarios en los sistemas y servicios digitales.
 
-![Diagrama OWASP](img/process.png)
+![Diagrama OWASP](images/process.png)
 
 *Fuente: OWASP Foundation (2021)*
 
