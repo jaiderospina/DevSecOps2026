@@ -134,7 +134,7 @@ Fallas desde el diseño de la aplicación.
 Errores en configuraciones del servidor o aplicación.
 
 <p align="center">
-  <img src="Imagenes/Security Misconfiguration.jpg" width="400">
+  <img src="Imagenes/Security Misconfiguration.png" width="400">
 </p>
 
 ### Métodos de Explotación
@@ -294,6 +294,7 @@ Permite a un atacante hacer que el servidor realice solicitudes a recursos inter
 - https://owasp.org/Top10/
 - https://www.checkpoint.com/cyber-hub/cloud-security/what-is-application-security-appsec/owasp-top-10-vulnerabilities/
 - https://www.akamai.com/blog/security/owasp-top-10-api-security-risks
+
 
 
 
