@@ -6,7 +6,7 @@
 ## 👥 Integrantes
 
 - Ing. Argel Ochoa Ronald David  
-- Ing. Baquero Soto Mauricio  
+- <a href="https://www.linkedin.com/in/mauricio-baquero-soto-449624133" target="_blank">Ing. Baquero Soto Mauricio</a>
 - Ing. Buitrago Guiot Oscar Javier  
 - Ing. Estefanía Naranjo Novoa  
 
