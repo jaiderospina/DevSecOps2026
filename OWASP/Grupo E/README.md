@@ -214,6 +214,8 @@ La integración de seguridad dentro del ciclo de vida del desarrollo permite:
 
 ■ La evolución constante de las amenazas en aplicaciones web requiere que las organizaciones implementen procesos de mejora continua en sus prácticas de seguridad. La adopción de estándares, auditorías periódicas y herramientas de monitoreo permite fortalecer la postura de seguridad, reducir vulnerabilidades y garantizar la confianza de los usuarios en los sistemas y servicios digitales.
 
+■ Una de las principales categorias mas criticas del OWASP se presenta al momento de realizar la implementación de principios como el mínimo privilegio, la autenticación multifactor y la correcta validación de permisos con el fin de reducir significativamente el riesgo de accesos no autorizados y la exposición de información sensible.
+
 ![Diagrama OWASP](images/process.png)
 
 *Fuente: OWASP Foundation (2021)*
