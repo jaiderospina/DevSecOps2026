@@ -23,7 +23,7 @@ La edición 2025 representa una actualización basada en:
 
 ---
 
-## 🎯 ¿Por qué es importante?
+## ¿Por qué es importante?
 
 El OWASP Top 10:
 
@@ -34,7 +34,7 @@ El OWASP Top 10:
 
 ---
 
-## 🌍 Enfoque de la edición 2025
+## Enfoque de la edición 2025
 
 La versión 2025 enfatiza especialmente:
 
@@ -46,7 +46,7 @@ La versión 2025 enfatiza especialmente:
 
 ---
 
-## 🚀 Objetivo principal
+## Objetivo principal
 
 El propósito del OWASP Top 10 no es solo listar vulnerabilidades, sino **crear conciencia y promover mejores prácticas de seguridad desde el diseño hasta la implementación y operación de las aplicaciones.**
 
@@ -64,9 +64,9 @@ El propósito del OWASP Top 10 no es solo listar vulnerabilidades, sino **crear 
 10. A10 - Mishandling of Exceptional Conditions
 ---
 
-# 1. A01: Broken Access Control (Control de Acceso Roto)
+# A01: Broken Access Control (Control de Acceso Roto)
 
-## 📌 1. Descripción de la Vulnerabilidad
+## 1. Descripción de la Vulnerabilidad
 
 El **A01: Broken Access Control** del OWASP Top 10 se refiere a las fallas en los mecanismos de autorización que permiten que un usuario realice acciones o acceda a recursos para los que no tiene permisos. 
 
@@ -74,13 +74,13 @@ El **A01: Broken Access Control** del OWASP Top 10 se refiere a las fallas en lo
 
 El control de acceso define:
 
-* ✅ Quién puede acceder
-* ✅ A qué recursos puede acceder
-* ✅ Qué acciones puede realizar
+* Quién puede acceder
+* A qué recursos puede acceder
+* Qué acciones puede realizar
 
 Cuando estas reglas no se aplican correctamente en el **lado del servidor**, se produce un **Broken Access Control**.
 
-### 🚨 Naturaleza del Problema
+### Naturaleza del Problema
 
 Ocurre cuando:
 
@@ -96,7 +96,7 @@ Ocurre cuando:
 
 ---
 
-### 🎯 Impacto Potencial
+### Impacto Potencial
 
 * Exposición de datos sensibles
 * Modificación o eliminación de datos
@@ -107,7 +107,7 @@ Ocurre cuando:
 * Daño reputacional
 * Interrupción operativa
 
-📊 OWASP indica que el 100% de las aplicaciones analizadas presentaban algún tipo de fallo de control de acceso.
+OWASP indica que el 100% de las aplicaciones analizadas presentaban algún tipo de fallo de control de acceso.
 
 ---
 
@@ -127,11 +127,11 @@ C -- No --> E["Acciones de un Atacante<br/><br/>- Acceso a Datos Sensibles<br/>-
 ```
 ----------
 
-## ⚔️ 2. Métodos de Explotación
+## 2. Métodos de Explotación
 
 Los atacantes aprovechan estas fallas mediante distintas técnicas:
 
-### 1️⃣ Manipulación de URL y Parámetros (IDOR)
+### Manipulación de URL y Parámetros (IDOR)
 
 Consiste en modificar identificadores en la URL o en los parámetros de una petición para acceder a recursos de otros usuarios.
 
@@ -155,7 +155,7 @@ Si el backend no valida la propiedad del recurso, devolverá datos del usuario 1
 
 ----------
 
-### 📊 Diagrama Vulnerable
+### Diagrama Vulnerable
 
 ```mermaid
 flowchart LR
@@ -186,7 +186,7 @@ Si no hay validación → descarga de factura de otro usuario.
 
 ----------
 
-### 📊 Diagrama Secuencia
+### Diagrama Secuencia
 
 ```mermaid
 sequenceDiagram
@@ -203,9 +203,9 @@ S-->>U: Archivo entregado sin validación
 
 ----------
 
-### 2️⃣ Force Browsing (Navegación Forzada)
+### Force Browsing (Navegación Forzada)
 
-### 📌 Escenario
+### Escenario
 
 Un atacante intenta acceder directamente a rutas administrativas:
 
@@ -223,7 +223,7 @@ curl https://example.com/app/admin_getappInfo
 
 ---
 
-### 🔴 Diagrama de Flujo – Escenario Vulnerable
+### Diagrama de Flujo – Escenario Vulnerable
 
 ```mermaid
 flowchart TD
@@ -237,7 +237,7 @@ D -- Sí --> G[Devuelve 403 Forbidden]
 
 ---
 
-### 🟠 Flujo Detallado del Ataque
+### Flujo Detallado del Ataque
 
 ```mermaid
 flowchart LR
@@ -250,7 +250,7 @@ E --> F[Acceso concedido]
 
 ---
 
-### 🟢 Flujo Seguro (Control Correcto)
+### Flujo Seguro (Control Correcto)
 
 ```mermaid
 flowchart TD
@@ -264,9 +264,9 @@ F --> G[Registro en logs de intento no autorizado]
 
 ----------
 
-### 3️⃣ Manipulación de Tokens y Cookies
+### Manipulación de Tokens y Cookies
 
-### 📌 Escenario
+### Escenario
 
 Un atacante intenta:
 
@@ -279,7 +279,7 @@ Si el servidor **no valida la firma del token ni los privilegios reales en backe
 
 ---
 
-### 🔴 Flujo Vulnerable – Escalación de Privilegios
+### Flujo Vulnerable – Escalación de Privilegios
 
 
 ```mermaid
@@ -295,7 +295,7 @@ E -- Sí --> H[403 Forbidden]
 
 ---
 
-### 🟠 Flujo Específico – Manipulación de JWT
+### Flujo Específico – Manipulación de JWT
 
 ```mermaid
 sequenceDiagram
@@ -314,7 +314,7 @@ S-->>A: Acceso concedido (si no valida firma)
 
 ---
 
-### 🟢 Flujo Seguro – Validación Correcta
+### Flujo Seguro – Validación Correcta
 
 ```mermaid
 flowchart TD
@@ -329,7 +329,7 @@ F -- Sí --> H[Acceso permitido]
 
 ----------
 
-## 🛠️ Herramientas Comunes Utilizadas
+## Herramientas Comunes Utilizadas
 
 -   **[Burp Suite Professional](https://www.google.com/search?q=Burp+Suite+Professional&oq=Herramientas+Comunes+Utilizadas+para+A01%3A+Broken+Access+Control&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTc2OTIxajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&mstk=AUtExfATjnT5AHVjJJoehzKWOmL67AiPCf4MNQ3krtoVDaW07zGrlV03ZJhpdQVk4_TTTreg5Ln8P5gr51X6D5Af3AMt-4kTxbqgKXVIC6ksbQnXE60QOJdr-i1lMDdupnHFNZ8kfssE0t3u23M0vURgvYnsjIzeekLNRpAbj0O6kWTniws&csui=3&ved=2ahUKEwjP6v2XzoKTAxWUezABHWxbPQQQgK4QegQIAhAB)/Community**: La herramienta principal para interceptar, analizar y modificar peticiones HTTP/HTTPS (manipulación de parámetros, cookies, JWT) para probar IDOR (Insecure Direct Object Reference) y elevación de privilegios.
 -   **[OWASP ZAP](https://www.google.com/search?q=OWASP+ZAP&oq=Herramientas+Comunes+Utilizadas+para+A01%3A+Broken+Access+Control&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTc2OTIxajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&mstk=AUtExfATjnT5AHVjJJoehzKWOmL67AiPCf4MNQ3krtoVDaW07zGrlV03ZJhpdQVk4_TTTreg5Ln8P5gr51X6D5Af3AMt-4kTxbqgKXVIC6ksbQnXE60QOJdr-i1lMDdupnHFNZ8kfssE0t3u23M0vURgvYnsjIzeekLNRpAbj0O6kWTniws&csui=3&ved=2ahUKEwjP6v2XzoKTAxWUezABHWxbPQQQgK4QegQIAhAD)  (Zed Attack Proxy)**: Escáner de seguridad web de código abierto, ideal para encontrar accesos no protegidos y fallos de autorización automatizados.
@@ -339,23 +339,23 @@ F -- Sí --> H[Acceso permitido]
 -   **[Postman](https://www.google.com/search?q=Postman&oq=Herramientas+Comunes+Utilizadas+para+A01%3A+Broken+Access+Control&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTc2OTIxajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&mstk=AUtExfATjnT5AHVjJJoehzKWOmL67AiPCf4MNQ3krtoVDaW07zGrlV03ZJhpdQVk4_TTTreg5Ln8P5gr51X6D5Af3AMt-4kTxbqgKXVIC6ksbQnXE60QOJdr-i1lMDdupnHFNZ8kfssE0t3u23M0vURgvYnsjIzeekLNRpAbj0O6kWTniws&csui=3&ved=2ahUKEwjP6v2XzoKTAxWUezABHWxbPQQQgK4QegQIAhAL)**: Muy utilizada para probar API endpoints, permitiendo enviar peticiones con diferentes roles de usuario para verificar si un usuario sin privilegios puede ejecutar POST, PUT o DELETE.
 -   **[SQLMap](https://www.google.com/search?q=SQLMap&oq=Herramientas+Comunes+Utilizadas+para+A01%3A+Broken+Access+Control&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTc2OTIxajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&mstk=AUtExfATjnT5AHVjJJoehzKWOmL67AiPCf4MNQ3krtoVDaW07zGrlV03ZJhpdQVk4_TTTreg5Ln8P5gr51X6D5Af3AMt-4kTxbqgKXVIC6ksbQnXE60QOJdr-i1lMDdupnHFNZ8kfssE0t3u23M0vURgvYnsjIzeekLNRpAbj0O6kWTniws&csui=3&ved=2ahUKEwjP6v2XzoKTAxWUezABHWxbPQQQgK4QegQIAhAN)**: Aunque es para SQL Injection, a menudo revela accesos de administrador o fugas de datos que ocurren por controles de acceso defectuosos.
 ----------
-## 🚨 Ejemplos Reales
+## Ejemplos Reales
 
-⚡ **Facebook “View As”:** Un fallo permitió a atacantes acceder a tokens de acceso de otros usuarios por una falla de control de acceso. Esto expuso millones de cuentas.
+**Facebook “View As”:** Un fallo permitió a atacantes acceder a tokens de acceso de otros usuarios por una falla de control de acceso. Esto expuso millones de cuentas.
 
-⚡ **Snapchat (2014):**  Hackers explotaron una vulnerabilidad de control de acceso para recopilar una lista de 4.6 millones de nombres de usuario y números de teléfono.
+**Snapchat (2014):**  Hackers explotaron una vulnerabilidad de control de acceso para recopilar una lista de 4.6 millones de nombres de usuario y números de teléfono.
 
 ---
 
-## 📉 3. Mejores Prácticas de Prevención y Mitigación
+## 3. Mejores Prácticas de Prevención y Mitigación
 
-### 🔐 3.1 Denegar por Defecto (Deny by Default)
+### 3.1 Denegar por Defecto (Deny by Default)
 
 Todo recurso debe estar protegido a menos que sea explícitamente público.
 
 ---
 
-### 🏗 3.2 Centralizar la Lógica de Autorización
+### 3.2 Centralizar la Lógica de Autorización
 
 * No dispersar validaciones
 * Usar RBAC o ABAC
@@ -363,7 +363,7 @@ Todo recurso debe estar protegido a menos que sea explícitamente público.
 
 ---
 
-### 👤 3.3 Validar Propiedad del Recurso
+### 3.3 Validar Propiedad del Recurso
 
 No basta validar rol:
 
@@ -375,7 +375,7 @@ Siempre validar que el usuario sea dueño del objeto.
 
 ---
 
-### 🔒 3.4 Aplicar Control en el Servidor
+### 3.4 Aplicar Control en el Servidor
 
 Nunca confiar en:
 
@@ -385,7 +385,7 @@ Nunca confiar en:
 
 ---
 
-### 🔄 3.5 Gestión Segura de Tokens y Sesiones
+### 3.5 Gestión Segura de Tokens y Sesiones
 
 * Invalidar sesiones al logout
 * JWT de corta duración
@@ -394,14 +394,14 @@ Nunca confiar en:
 
 ---
 
-### 🌐 3.6 Configuración Segura de CORS
+### 3.6 Configuración Segura de CORS
 
 * Definir orígenes específicos
 * No usar wildcard en APIs sensibles
 
 ---
 
-### 🚦 3.7 Implementar Rate Limiting
+### 3.7 Implementar Rate Limiting
 
 Reduce:
 
@@ -410,7 +410,7 @@ Reduce:
 
 ---
 
-### 📊 3.8 Logging y Monitoreo
+### 3.8 Logging y Monitoreo
 
 Registrar:
 
@@ -420,7 +420,7 @@ Registrar:
 
 ---
 
-### 🧪 3.9 Pruebas de Seguridad
+### 3.9 Pruebas de Seguridad
 
 * Pentesting
 * Pruebas de navegación forzada
@@ -430,7 +430,7 @@ Registrar:
 
 ---
 
-### 📋 3.10 Aplicar Principio de Mínimo Privilegio
+### 3.10 Aplicar Principio de Mínimo Privilegio
 
 Cada usuario debe tener:
 
@@ -438,9 +438,9 @@ Cada usuario debe tener:
 
 ---
 
-## 🔎 Ejemplo Seguro vs Vulnerable
+## Ejemplo Seguro vs Vulnerable
 
-### ❌ Código Vulnerable
+### Código Vulnerable
 
 ```php
 if(isset($_SESSION['loggedin'])) {
@@ -452,7 +452,7 @@ No valida rol.
 
 ---
 
-### ✅ Código Seguro
+### Código Seguro
 
 ```php
 if(isset($_SESSION['loggedin']) && $_SESSION['isadmin'] == true) {
@@ -487,8 +487,8 @@ Un control de acceso deficiente puede permitir:
 * Manipulación del negocio
 * Compromiso total del sistema
 
-🔐 La autenticación abre la puerta.
-🛑 El control de acceso decide hasta dónde puedes llegar.
+La autenticación abre la puerta.
+El control de acceso decide hasta dónde puedes llegar.
 
 ---
 
@@ -527,197 +527,202 @@ El problema no es “el código” solamente, sino **cómo se desplegó o config
 - Se limitó el acceso a recursos sensibles y se controlaron permisos.
 
 ---
-# A03: Injection
 
-![enter image description here](https://miro.medium.com/v2/resize:fit:1400/0*BMgMdeS_8XzB5Yt_.png)
+# A03 Software Supply Chain Failures
 
-## Descripción de la vulnerabilidad
 
-La vulnerabilidad **Injection** ocurre cuando una aplicación envía datos no confiables a un intérprete como parte de un comando o consulta.
 
-Incluye:
 
-* SQL Injection (SQLi)
-* Cross-Site Scripting (XSS)
-* Command Injection
-* LDAP Injection
-* NoSQL Injection
 
-### 🔎 Naturaleza
 
-El problema ocurre cuando:
 
-* No hay validación de entrada
-* No se utilizan consultas parametrizadas
-* Se construyen consultas dinámicamente
-* No hay sanitización adecuada
 
-### 🎯 Impacto Potencial
 
-* Robo de bases de datos completas
-* Bypass de autenticación
-* Ejecución remota de comandos
-* Escalada de privilegios
-* Compromiso total del sistema
 
----
 
-## Métodos de Explotación
 
-### SQL Injection (Ejemplo real)
 
-Input vulnerable:
 
-```sql
-SELECT * FROM users WHERE username = '$user' AND password = '$pass';
-```
 
-Ataque:
 
-```sql
-' OR '1'='1
-```
 
-Consulta resultante:
+# A04: Cryptographic Failures
 
-```sql
-SELECT * FROM users WHERE username = '' OR '1'='1';
-```
+## 1. Descripción
 
-➡ Permite login sin credenciales válidas.
+Las **Cryptographic Failures** ocurren cuando una aplicación **no protege correctamente la información sensible mediante criptografía**.
+
+Esto puede exponer datos como:
+
+- contraseñas
+- datos personales
+- tarjetas de crédito
+- tokens de autenticación
+
+### Causas comunes
+
+- Uso de **HTTP en lugar de HTTPS**
+- Contraseñas guardadas **en texto plano**
+- Algoritmos débiles (**MD5, SHA1, DES**)
+- Mala gestión de **claves criptográficas**
+- Datos sensibles sin cifrar en bases de datos
 
 ---
 
-### 🛠 Herramientas utilizadas
-
-* SQLmap
-* Burp Suite
-* Metasploit
-
----
-
-## 📊 Diagrama de Flujo – SQL Injection
+## 2. Flujo de la vulnerabilidad
 
 ```mermaid
 flowchart TD
-A[Usuario malicioso] --> B[Envía input manipulado]
-B --> C[Aplicación vulnerable]
-C --> D[Base de datos]
-D --> E[Ejecuta consulta manipulada]
-E --> F[Devuelve datos sensibles]
-F --> A
+A[Usuario envía datos] --> B{¿Datos cifrados?}
+B -->|No| C[Datos en texto plano]
+C --> D[Atacante intercepta]
+D --> E[Exposición de datos]
+B -->|Sí| F[Datos protegidos]
+````
+---
+
+# 3. Métodos de explotación
+
+### 1. Man-in-the-Middle (MITM)
+
+El atacante intercepta la comunicación si se usa **HTTP**.
+
+```mermaid
+flowchart LR
+U[Usuario] --> A[Atacante]
+A --> S[Servidor]
+A --> D[Roba credenciales]
 ```
 
----
+Herramientas usadas:
 
-## Mejores Prácticas de Prevención
-
-✅ Usar consultas parametrizadas (Prepared Statements)
-✅ ORM seguros
-✅ Validación estricta de entradas
-✅ Escapar caracteres especiales
-✅ Principio de mínimo privilegio en base de datos
-✅ WAF (Web Application Firewall)
+* Wireshark
+* Burp Suite
+* MITMProxy
 
 ---
 
-# 🟠 A04: Insecure Design
+### 2. Cracking de hashes débiles
 
-![enter image description here](https://miro.medium.com/v2/resize:fit:1400/1*V3MCqAeiY2lCOw8Re5lAVw.png)
-
-“Insecure Design” se refiere a fallos estructurales en la arquitectura del sistema.
-
-⚠ No es un bug de código.
-⚠ Es un error conceptual en el diseño.
-
-Ejemplos:
-
-* Falta de control de tasa (rate limiting)
-* No aplicar separación de privilegios
-* Ausencia de validación de negocio
-* Confianza implícita entre servicios
-
----
-
-## 🔎 Naturaleza
-
-Ocurre cuando:
-
-* No se aplica modelado de amenazas
-* No se usa arquitectura Zero Trust
-* No se evalúan riesgos en fase de diseño
-* No se realizan revisiones de seguridad tempranas
-
----
-
-## 🎯 Impacto
-
-* Exposición masiva de datos
-* Escalamiento horizontal de ataques
-* Ataques automatizados
-* Fraude financiero
-
----
-
-## 2️⃣ Métodos de Explotación
-
-### 🔥 Ejemplo real: Falta de Rate Limiting
-
-Si un login no limita intentos:
-
-Ataque:
-
-* Fuerza bruta
-* Credential stuffing
+Si se usan hashes como **MD5**, pueden romperse fácilmente.
 
 Herramientas:
 
-* Hydra
-* Burp Suite
+* Hashcat
+* John the Ripper
+
+Ejemplo:
+
+```
+MD5("password") = 5f4dcc3b5aa765d61d8327deb882cf99
+```
+---
+
+### 3. Robo de base de datos
+
+Si la base de datos guarda datos sin cifrar, un atacante puede robar:
+
+* contraseñas
+* información personal
+* tarjetas de crédito
 
 ---
 
-## 📊 Diagrama – Insecure Design (Fuerza Bruta)
+# 4. Prevención y mitigación
 
-```mermaid
-flowchart TD
-A[Atacante] --> B[Envía miles de intentos]
-B --> C[Aplicación sin Rate Limit]
-C --> D[Autenticación exitosa]
-D --> E[Cuenta comprometida]
+### 1. Usar HTTPS
+
+Implementar:
+
+```
+TLS 1.2 o TLS 1.3
+HSTS
+```
+---
+
+### 2. Usar criptografía fuerte
+
+Recomendado:
+
+```
+AES-256
+SHA-256
+RSA-2048
 ```
 
+Evitar:
+
+```
+MD5
+SHA1
+DES
+```
 ---
 
-## 3️⃣ Prevención y Mitigación
+### 3. Hash seguro de contraseñas
 
-✅ Modelado de amenazas (STRIDE)
-✅ Arquitectura Zero Trust
-✅ Rate Limiting
-✅ Control de acceso basado en roles (RBAC)
-✅ Validación de reglas de negocio
-✅ Security by Design
-✅ DevSecOps desde CI/CD
+Usar:
+
+```
+bcrypt
+Argon2
+PBKDF2
+```
+Nunca guardar contraseñas en texto plano.
 
 ---
 
-# 5. A05: Injection (Inyección)
+### 4. Gestión segura de claves
+
+No guardar claves en:
+
+* código fuente
+* repositorios públicos
+
+Usar gestores de secretos como:
+
+* Vault
+* AWS Secrets Manager
+
+---
+
+# 5. Conclusión
+
+Las **Cryptographic Failures** permiten que atacantes accedan a información sensible.
+El uso correcto de **HTTPS, cifrado fuerte y gestión segura de claves** reduce significativamente este riesgo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+# A05: Injection (Inyección)
 Ejecución de comandos maliciosos por datos no validados → ⚠ CRÍTICO
 
 
-## 📋 Descripción de la Vulnerabilidad
+## Descripción de la Vulnerabilidad
 
-### 🎯 ¿Qué es?
+### ¿Qué es?
 
 Ocurre cuando datos no confiables son enviados a un intérprete como parte de un comando o consulta. El atacante puede engañar al interprete para que ejecute comandos no intencionados o acceda a datos sin autorización.
 
 <img src="./imagenes/A05_Injection.png" width=500)/>
 
-### ⚙️ ¿Cómo funciona?
+### ¿Cómo funciona?
 
 El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP o expresiones XPath sin sanitización. El payload malicioso manipula la lógica del interprete para ejecutar acciones no autorizadas.
 
-### 🔥 Causas
+### Causas
 
 - Falta de validación y sanitización de entradas de usuario
 
@@ -727,7 +732,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 - Ausencia del principio de mínimo privilegio en cuentas de BD
 
-### 💥 Impacto
+### Impacto
 
 - Robo masivo y exfiltración de datos confidenciales
 
@@ -743,7 +748,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
  <img src="./imagenes/image001.png"/>
 
-## ⚔️ Métodos de Explotación
+## Métodos de Explotación
 
 ### ¿Cómo la explotan los atacantes?
 
@@ -755,7 +760,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 - Variables de entorno en contenedores y scripts de IaC
 
-### 🔴 Ejemplos Reales
+### Ejemplos Reales
 
 <table style="width:67%;">
 <colgroup>
@@ -790,7 +795,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 ### 
 
-### 🛠 Herramientas Comunes del Atacante
+### Herramientas Comunes del Atacante
 
 |  SQLMap   | Burp Suite | Metasploit | Havij  |
 |:---------:|:----------:|:----------:|:------:|
@@ -798,11 +803,11 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 ### Código Vulnerable vs. Seguro
 
-> ' -- ❌ VULNERABLE: SQL Injection clásico query = "SELECT \* FROM users WHERE name='" + userInput + "'" -- Payload: ' OR '1'='1' -- -- Resultado: acceso a TODA la tabla //
+> ' -- VULNERABLE: SQL Injection clásico query = "SELECT \* FROM users WHERE name='" + userInput + "'" -- Payload: ' OR '1'='1' -- -- Resultado: acceso a TODA la tabla //
 >
-> ❌ VULNERABLE: OS Command Injection exec("git clone " + repoUrl) // repoUrl = "repo; rm -rf /"
+>  VULNERABLE: OS Command Injection exec("git clone " + repoUrl) // repoUrl = "repo; rm -rf /"
 
-## 🛡️ Prevención y Mitigación
+## Prevención y Mitigación
 
 - Usar consultas parametrizadas / prepared statements en TODAS las operaciones de BD
 
@@ -816,7 +821,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 - Usar WAF con reglas anti-inyección en Cloud (AWS WAF, Cloudflare, ModSecurity)
 
-## ✅ Buenas Prácticas DevSecOps
+## Buenas Prácticas DevSecOps
 
 - Shift-Left Security: integrar pruebas de seguridad desde el primer commit
 
@@ -830,7 +835,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
   <img src="./imagenes/image003.png"/>
 
-## ⚙️ Configuraciones Recomendadas
+## Configuraciones Recomendadas
 
 <table style="width:67%;">
 <colgroup>
@@ -865,7 +870,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 ## 
 
-## 🔒 Controles de Seguridad
+## Controles de Seguridad
 
 <table style="width:67%;">
 <colgroup>
@@ -926,23 +931,23 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 ---
 
-# 6. A06 Insecure Design (Diseño Inseguro)
+# A06 Insecure Design (Diseño Inseguro)
 Fallas estructurales de arquitectura desde el origen → ⚠ ALTO
 
 
-## 📋 Descripción de la Vulnerabilidad
+## Descripción de la Vulnerabilidad
 
-### 🎯 ¿Qué es?
+### ¿Qué es?
 
 Falla estructural: la arquitectura del sistema no contempla amenazas ni requisitos de seguridad desde el inicio. A diferencia de otras vulnerabilidades, NO puede corregirse con una buena implementación: si el diseño es defectuoso, el sistema es inseguro por naturaleza.
 
 <img src="./imagenes/A06_InsecureDesign.png" width=400)/>
 
-### ⚙️ ¿Cómo funciona?
+### ¿Cómo funciona?
 
 El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de negocio o arquitecturas sin defensa en profundidad para ejecutar acciones no autorizadas SIN vulnerar técnicamente el sistema.
 
-### 🔥 Causas
+### Causas
 
 - Ausencia de Threat Modeling en la fase de diseño del producto
 
@@ -952,7 +957,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 - Deuda técnica acumulada y falta de revisiones de arquitectura
 
-### 💥 Impacto
+### Impacto
 
 - Vulnerabilidades sistémicas difíciles de corregir
 
@@ -964,7 +969,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 <img src="./imagenes/image005.png"/>
 
-## ⚔️ Métodos de Explotación
+## Métodos de Explotación
 
 ### Vectores de Ataque
 
@@ -1013,7 +1018,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 ### 
 
-## 🛡️ Prevención y Mitigación
+## Prevención y Mitigación
 
 - Integrar Threat Modeling (STRIDE, PASTA) en fases de diseño de cada sprint
 
@@ -1027,7 +1032,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 - Configurar rate limiting y cuotas en todas las APIs públicas e internas
 
-## ✅ Buenas Prácticas DevSecOps
+## Buenas Prácticas DevSecOps
 
 <img src="./imagenes/image007.png"/>
 
@@ -1041,20 +1046,20 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 - Pruebas de abuso (misuse cases) definidas junto a los casos de uso funcionales
 
-> **✅ Checklist Threat Modeling en Definition of Ready (DoR):**\
-> · ☑ ¿Se identificaron activos y flujos de datos?
+> ** Checklist Threat Modeling en Definition of Ready (DoR):**\
+> · ¿Se identificaron activos y flujos de datos?
 >
-> · ☑ ¿Se aplicó STRIDE a cada componente?
+> · ¿Se aplicó STRIDE a cada componente?
 >
-> · ☑ ¿Existe autenticación inter-servicio (mTLS/JWT)?
+> · ¿Existe autenticación inter-servicio (mTLS/JWT)?
 >
-> · ☑ ¿Rate limiting definido en APIs?
+> · ¿Rate limiting definido en APIs?
 >
-> · ☑ ¿Principio de mínimo privilegio en IAM roles?
+> · ¿Principio de mínimo privilegio en IAM roles?
 >
-> · ☑ ¿Segmentación de red (VPC/subnets) documentada?
+> · ¿Segmentación de red (VPC/subnets) documentada?
 
-## ⚙️ Configuraciones Recomendadas
+## Configuraciones Recomendadas
 
 <table style="width:96%;">
 <colgroup>
@@ -1089,7 +1094,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 <img src="./imagenes/image009.png"/>
 
-## 🔒 Controles de Seguridad
+## Controles de Seguridad
 
 <table style="width:68%;">
 <colgroup>
@@ -1150,9 +1155,9 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 ---
 
-# 7. A07: Authentication Failures (Fallos de Autenticación)
+# A07: Authentication Failures (Fallos de Autenticación)
 
-## 📌 1. Descripción de la Vulnerabilidad
+##  1. Descripción de la Vulnerabilidad
 
 Según OWASP, **A07 – Fallos de Autenticación** ocurre cuando un sistema no verifica correctamente la identidad de un usuario, dispositivo o aplicación
 
@@ -1161,7 +1166,7 @@ Según OWASP, **A07 – Fallos de Autenticación** ocurre cuando un sistema no v
 La autenticación es la **puerta de entrada** a cualquier sistema.
 Si falla, todo el entorno queda expuesto.
 
-### 🔎 Naturaleza del Problema
+### Naturaleza del Problema
 
 Un fallo de autenticación ocurre cuando:
 
@@ -1176,7 +1181,7 @@ Un fallo de autenticación ocurre cuando:
 
 ---
 
-### ⚠ Causas Principales
+### Causas Principales
 
 * Políticas de contraseña inadecuadas
 * Ausencia de rate limiting
@@ -1188,7 +1193,7 @@ Un fallo de autenticación ocurre cuando:
 
 ---
 
-### 🎯 Impacto Potencial
+### Impacto Potencial
 
 * Acceso no autorizado
 * Secuestro de sesiones
@@ -1201,9 +1206,9 @@ Un fallo de autenticación ocurre cuando:
 
 ---
 
-## 🧨 2. Métodos de Explotación
+## 2. Métodos de Explotación
 
-### 🔹 2.1 Fuerza Bruta
+### 2.1 Fuerza Bruta
 
 El atacante prueba múltiples combinaciones hasta acertar.
 
@@ -1223,7 +1228,7 @@ Herramientas comunes:
 
 ---
 
-### 🔹 2.2 Credential Stuffing
+### 2.2 Credential Stuffing
 
 Uso de listas filtradas de credenciales robadas.
 
@@ -1241,7 +1246,7 @@ Ejemplo real:
 
 ---
 
-### 🔹 2.3 Password Spraying
+### 2.3 Password Spraying
 
 Probar una contraseña común contra muchos usuarios.
 
@@ -1257,7 +1262,7 @@ Muy efectivo cuando no hay bloqueo de cuentas.
 
 ---
 
-### 🔹 2.4 Fijación de Sesión
+### 2.4 Fijación de Sesión
 
 El atacante fuerza un ID de sesión conocido antes del login.
 
@@ -1271,7 +1276,7 @@ D --> E[Atacante reutiliza sesión]
 
 ---
 
-### 🔹 2.5 Omitir Autenticación
+### 2.5 Omitir Autenticación
 
 Errores lógicos que permiten:
 
@@ -1281,7 +1286,7 @@ Errores lógicos que permiten:
 
 ---
 
-### 🔹 2.6 Caso Real – Colonial Pipeline (2021)
+### 2.6 Caso Real – Colonial Pipeline (2021)
 
 Ataque relacionado con credenciales comprometidas en:
 
@@ -1295,9 +1300,9 @@ Impacto:
 
 ---
 
-## 📉 3. Mejores Prácticas de Prevención y Mitigación
+## 3. Mejores Prácticas de Prevención y Mitigación
 
-### 🔐 3.1 Implementar Autenticación Multifactor (MFA)
+### 3.1 Implementar Autenticación Multifactor (MFA)
 
 * OTP
 * Aplicaciones autenticadoras
@@ -1312,7 +1317,7 @@ Reduce significativamente:
 
 ---
 
-### 🔑 3.2 Políticas Modernas de Contraseñas
+### 3.2 Políticas Modernas de Contraseñas
 
 Alineadas con:
 
@@ -1327,7 +1332,7 @@ Recomendaciones:
 
 ---
 
-### 🚫 3.3 Protección contra Ataques Automatizados
+### 3.3 Protección contra Ataques Automatizados
 
 * Rate limiting
 * Backoff progresivo
@@ -1337,7 +1342,7 @@ Recomendaciones:
 
 ---
 
-### 🔒 3.4 Protección Segura de Contraseñas
+### 3.4 Protección Segura de Contraseñas
 
 * Hash con bcrypt o Argon2
 * Salt único por usuario
@@ -1345,7 +1350,7 @@ Recomendaciones:
 
 ---
 
-### 🔁 3.5 Gestión Segura de Sesiones
+### 3.5 Gestión Segura de Sesiones
 
 ```mermaid
 flowchart TD
@@ -1364,7 +1369,7 @@ Buenas prácticas:
 
 ---
 
-### 🌐 3.6 Comunicación Segura
+### 3.6 Comunicación Segura
 
 * TLS obligatorio
 * Protección contra MITM
@@ -1372,7 +1377,7 @@ Buenas prácticas:
 
 ---
 
-### 🧪 3.7 Pruebas de Seguridad
+### 3.7 Pruebas de Seguridad
 
 * Pentesting periódico
 * Revisión de código
@@ -1381,7 +1386,7 @@ Buenas prácticas:
 
 ---
 
-### 📚 3.8 Educación y Concientización
+### 3.8 Educación y Concientización
 
 * Capacitación contra phishing
 * Uso de gestores de contraseñas
@@ -1389,7 +1394,7 @@ Buenas prácticas:
 
 ---
 
-## 🚫 ¿Qué NO es un fallo de autenticación?
+## ¿Qué NO es un fallo de autenticación?
 
 | Caso                              | Clasificación Correcta |
 | --------------------------------- | ---------------------- |
@@ -1400,7 +1405,7 @@ Buenas prácticas:
 
 ---
 
-## 🏁 Conclusión
+## Conclusión
 
 Los **Fallos de Autenticación (A07)** siguen siendo una de las vulnerabilidades más críticas del Top 10 de OWASP.
 
@@ -1420,7 +1425,7 @@ Una autenticación débil puede permitir:
 * Exfiltración de datos
 * Daño reputacional severo
 
-🔐 La autenticación no es solo un login.
+ La autenticación no es solo un login.
 Es la base de toda la seguridad del sistema.
 
 ---
@@ -1460,23 +1465,23 @@ Ejemplo: instalar paquetes sin verificación, actualizaciones no firmadas, CI/CD
 
 ---
 
-# 9. A09 Security Logging & Alerting Failures (Fallos en el registro y las alertas de seguridad)
+# A09 Security Logging & Alerting Failures (Fallos en el registro y las alertas de seguridad)
 El silencio es la peor respuesta ante un ataque → ⚠ MEDIO-ALTO
 
 
-## 📋 Descripción de la Vulnerabilidad
+## Descripción de la Vulnerabilidad
 
-### 🎯 ¿Qué es?
+### ¿Qué es?
 
 Ausencia o insuficiencia de logs de seguridad, monitoreo de eventos críticos y alertas ante comportamientos anómalos. Sin visibilidad, los atacantes pueden operar durante meses sin ser detectados.
 
 <img src="./imagenes/A09-SecurityLogging_Alerting Failures.png" width=400)/>
 
-### ⚙️ ¿Cómo funciona?
+### ¿Cómo funciona?
 
 El atacante explota el sistema sin que se generen registros auditables ni alertas. Logs incompletos, no centralizados o sin monitoreo crean zonas ciegas que permiten la persistencia extendida en el entorno comprometido.
 
-### 🔥 Causas
+### Causas
 
 - Logs deshabilitados, incompletos o con granularidad insuficiente
 
@@ -1502,7 +1507,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
   <img src="./imagenes/image010.png"/>
 
-## ⚔️ Métodos de Explotación
+## Métodos de Explotación
 
 ### Técnicas de Evasión
 
@@ -1557,7 +1562,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 |:------:|:---------:|:--------------:|:---------:|
 | Wazuh  |  Graylog  |    Grafana     | PagerDuty |
 
-## 🛡️ Prevención y Mitigación
+## Prevención y Mitigación
 
 - Implementar logging centralizado con ELK Stack, Splunk o SIEM cloud-native
 
@@ -1573,9 +1578,9 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
 ### CÓdigo â€” Structured Logging (Python)
 
-> \# ✅ Structured Logging (Python) – Buena práctica import structlog log = structlog.get_logger() log.info("auth.login_attempt", user_id=user.id, ip_address=request.remote_addr, success=False, reason="invalid_password", timestamp=datetime.utcnow().isoformat() ) \# ❌ NUNCA loguear: passwords, tokens, PII en claro log.info("login", password=user_password) \# NUNCA hacer esto
+> \# Structured Logging (Python) – Buena práctica import structlog log = structlog.get_logger() log.info("auth.login_attempt", user_id=user.id, ip_address=request.remote_addr, success=False, reason="invalid_password", timestamp=datetime.utcnow().isoformat() ) \# NUNCA loguear: passwords, tokens, PII en claro log.info("login", password=user_password) \# NUNCA hacer esto
 
-## ✅ Buenas Prácticas DevSecOps
+## Buenas Prácticas DevSecOps
 
 - Registrar eventos críticos: autenticaciones, errores de autorización, cambios de configuración
 
@@ -1589,7 +1594,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
   <img src="./imagenes/image012.png"/>
 
-## ⚙️ Configuraciones Recomendadas
+## Configuraciones Recomendadas
 
 <table style="width:72%;">
 <colgroup>
@@ -1624,7 +1629,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
 ## 
 
-## 🔒 Controles de Seguridad
+## Controles de Seguridad
 
 <table style="width:62%;">
 <colgroup>
@@ -1691,91 +1696,4 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
 ---
 
-# A10: Server-Side Request Forgery (SSRF)
-
-![enter image description here](https://my.f5.com/manage/servlet/rtaImage?eid=ka0Po000000ZEzN&feoid=00N1T00000AOnlF&refid=0EMPo00000VxBIX)
-
-SSRF permite a un atacante forzar al servidor a realizar solicitudes HTTP hacia destinos internos o externos.
-
-El atacante controla una URL que el servidor consulta.
-
----
-
-## Naturaleza
-
-Sucede cuando:
-
-* La aplicación permite enviar URLs arbitrarias
-* No se validan direcciones IP internas
-* No hay filtrado de protocolos
-
----
-
-## 🎯 Impacto
-
-* Acceso a servicios internos
-* Robo de credenciales cloud
-* Escaneo interno de red
-* Compromiso de infraestructura
-
-En entornos cloud es crítico.
-
----
-
-## Métodos de Explotación
-
-### Ejemplo en Cloud (Metadata Service)
-
-En AWS:
-
-```
-http://169.254.169.254/latest/meta-data/
-```
-
-Un atacante puede obtener credenciales IAM si la aplicación consulta esa URL.
-
----
-
-### 🛠 Herramientas
-
-* Burp Suite
-* Nmap
-* SSRFmap
-
----
-
-## 📊 Diagrama – SSRF
-
-```mermaid
-flowchart TD
-A[Atacante] --> B[Envía URL maliciosa]
-B --> C[Servidor vulnerable]
-C --> D[Servicio interno]
-D --> E[Datos sensibles]
-E --> C
-C --> A
-```
-
----
-
-## Prevención y Mitigación
-
-✅ Lista blanca de dominios permitidos
-✅ Bloqueo de IPs internas (169.254.169.254)
-✅ Deshabilitar protocolos innecesarios (file://, gopher://)
-✅ Implementar firewall de salida
-✅ Separación de redes
-✅ Tokens de metadata protegidos (IMDSv2 en AWS)
-✅ Validación estricta de URL
-
----
-
-
-
-
-
-
-
-
-
-
+# A10: Mishandling of Exceptional Conditions
