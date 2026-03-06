@@ -1180,7 +1180,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 - Escaneo de IaC: validar Terraform/CloudFormation con Checkov/tfsec
 
   <img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A05.3Injection.png"/>
-
+  
 ## Configuraciones Recomendadas
 
 <table style="width:67%;">
@@ -1287,7 +1287,7 @@ Fallas estructurales de arquitectura desde el origen → ⚠ ALTO
 
 Falla estructural: la arquitectura del sistema no contempla amenazas ni requisitos de seguridad desde el inicio. A diferencia de otras vulnerabilidades, NO puede corregirse con una buena implementación: si el diseño es defectuoso, el sistema es inseguro por naturaleza.
 
-<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A06.1InsDesign.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO X/Imagenes/A06.1InsDesign.png"/>
 
 ### ¿Cómo funciona?
 
@@ -4035,5 +4035,6 @@ A10:2025 - Mishandling of Exceptional Conditions es una vulnerabilidad crítica 
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 ```
+
 
 
