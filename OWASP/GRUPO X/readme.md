@@ -53,16 +53,17 @@ El propósito del OWASP Top 10 no es solo listar vulnerabilidades, sino **crear 
 
 ## Lista del TOP 10 - 2025
 
-1. A01 - Broken Access Control
-2. A02 - Security Misconfiguration
-3. A03 - Software Supply Chain Failures
-4. A04 - Cryptographic Failures
-5. A05 - Injection
-6. A06 - Insecure Design
-7. A07 - Authentication Failures
-8. A08 - Software or Data Integrity Failures
-9. A09 - Security Logging and Alerting Failures
-10. A10 - Mishandling of Exceptional Conditions
+1. [A01 - Broken Access Control](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a01-broken-access-control-control-de-acceso-roto)
+2. [A02 - Security Misconfiguration](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a02--security-misconfiguration-mala-configuraci%C3%B3n-de-seguridad)
+3. [A03 - Software Supply Chain Failures](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a03-software-supply-chain-failures)
+4. [A04 - Cryptographic Failures](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a04-cryptographic-failures)
+5. [A05 - Injection](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a05-injection-inyecci%C3%B3n)
+6. [A06 - Insecure Design](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a06-insecure-design-dise%C3%B1o-inseguro)
+7. [A07 - Authentication Failures](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a07-authentication-failures-fallos-de-autenticaci%C3%B3n)
+8. [A08 - Software or Data Integrity Failures](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a08--software-or-data-integrity-failures-fallos-de-integridad-de-software-o-datos)
+9. [A09 - Security Logging and Alerting Failures](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a09-security-logging--alerting-failures-fallos-en-el-registro-y-las-alertas-de-seguridad)
+10. [A10 - Mishandling of Exceptional Conditions](https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/readme.md#a10-mishandling-of-exceptional-conditions)
+    
 ---
 
 # A01: Broken Access Control (Control de Acceso Roto)
@@ -4034,3 +4035,4 @@ A10:2025 - Mishandling of Exceptional Conditions es una vulnerabilidad crítica 
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 ```
+

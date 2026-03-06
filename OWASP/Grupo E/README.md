@@ -44,8 +44,11 @@ Analizar las vulnerabilidades incluidas en el OWASP Top 10, identificando sus me
 
 OWASP (Open Web Application Security Project) es una organización sin fines de lucro cuyo objetivo principal es mejorar la seguridad del software mediante proyectos de código abierto, documentación técnica, estándares y educación en seguridad informática.
 
+OWASP ofrece una amplia gama de recursos, herramientas y pautas para ayudar a las organizaciones a proteger sus aplicaciones web de amenazas y vulnerabilidades.
+
 Más información:  
-https://owasp.org/www-project-top-ten/
+https://owasp.org/www-project-top-ten
+https://www.arsys.es/blog/owasp
 
 [Ver historia de OWASP](historia_owasp.md)
 
@@ -54,6 +57,8 @@ https://owasp.org/www-project-top-ten/
 # 🛡 OWASP Top 10 (Edición 2021)
 
 A continuación, se describen las principales vulnerabilidades identificadas en la edición 2021:
+
+La edición 2021 introduce cambios importantes respecto a versiones anteriores, incorporando nuevas categorías como **Insecure Design y Software and Data Integrity Failures**, además de reorganizar vulnerabilidades existentes para reflejar mejor el panorama actual de amenazas. Lo cual nos muestra la evolución constante de los riesgos en aplicaciones web y la necesidad en la s compañias de adoptar enfoques de seguridad más integrales dentro del ciclo de vida del desarrollo de software.
 
 ---
 
@@ -213,6 +218,12 @@ La integración de seguridad dentro del ciclo de vida del desarrollo permite:
 ■ El análisis de las vulnerabilidades del OWASP Top 10 demuestra la necesidad de integrar la seguridad como un componente estratégico dentro de la gobernanza de tecnologías de la información. Las organizaciones deben adoptar marcos de gestión de riesgos y políticas de seguridad que permitan identificar, evaluar y mitigar amenazas de forma continua, asegurando que los controles de seguridad estén alineados con los objetivos del negocio y las regulaciones vigentes.
 
 ■ La evolución constante de las amenazas en aplicaciones web requiere que las organizaciones implementen procesos de mejora continua en sus prácticas de seguridad. La adopción de estándares, auditorías periódicas y herramientas de monitoreo permite fortalecer la postura de seguridad, reducir vulnerabilidades y garantizar la confianza de los usuarios en los sistemas y servicios digitales.
+
+■ Una de las principales categorias mas criticas del OWASP se presenta al momento de realizar la implementación de principios como el mínimo privilegio, la autenticación multifactor y la correcta validación de permisos con el fin de reducir significativamente el riesgo de accesos no autorizados y la exposición de información sensible.
+
+■ La protección de los datos y la correcta configuración de los sistemas son elementos clave para evitar posibles fallos.
+Esto se peude evitar implementando buenas prácticas de cifrado, gestión segura de claves, actualizaciones constantes y configuraciones de buenas practicas para garantizar que la infraestructura y las aplicaciones mantengan niveles adecuados de protección frente a posibles ataques.
+
 
 ![Diagrama OWASP](images/process.png)
 
