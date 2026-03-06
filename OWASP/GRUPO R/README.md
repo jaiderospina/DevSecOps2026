@@ -19,6 +19,7 @@ La seguridad en las aplicaciones web es esencial para prevenir riesgos de seguri
 <p align="center">
 <img src="IMAGENES/36a9afea-47c9-4f78-8a64-ab3c7e8fbec2.png" width="600">
 </p>
+
 - **Descripción** : Las vulnerabilidades de inyección ocurren cuando los datos proporcionados por el usuario no se validan correctamente y son insertados directamente en una consulta SQL.
 - **Métodos de Explotación**: Inyección SQL, donde el atacante puede modificar una consulta SQL para acceder a la base de datos.
 - **Herramientas Comunes**: [SQLmap](https://github.com/sqlmapproject/sqlmap), Burp Suite.
