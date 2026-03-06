@@ -33,7 +33,7 @@ La seguridad en las aplicaciones web es esencial para prevenir riesgos de seguri
 <p align="center">
 <img src="IMAGENES/authentication-session-management.png" width="600">
 </p>
- - **Descripción**: La falta de mecanismos robustos de autenticación permite que un atacante secuestre o adivine credenciales de usuario.
+  **Descripción**: La falta de mecanismos robustos de autenticación permite que un atacante secuestre o adivine credenciales de usuario.
  - **Métodos de Explotación**: Ataques de **fuerza bruta** o **robo de sesión**.
  - **Herramientas Comunes**: Hydra, Burp Suite.
  - **Recomendaciones**:
