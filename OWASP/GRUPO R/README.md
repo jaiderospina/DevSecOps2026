@@ -122,5 +122,5 @@ El **OWASP Top 10** es un marco fundamental para proteger aplicaciones web contr
 - [CloudKul - OWASP Top 10 2021](https://cloudkul.com/blog/owasp-top-10-2021/)
  
 **Integrantes del grupo**:
-- Juan Pérez
-- Ana Gómez
+- Juan Lara
+- Angel Ahumada
