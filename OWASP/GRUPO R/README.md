@@ -41,7 +41,7 @@ La seguridad en las aplicaciones web es esencial para prevenir riesgos de seguri
   - Tokens de sesión seguros.
   - Revocar sesiones tras cambios críticos.
  
-
+---
  
 ### 🟢 Vulnerabilidad 3: **A3 - Exposición de datos sensibles**
 <p align="center">
@@ -53,7 +53,7 @@ La seguridad en las aplicaciones web es esencial para prevenir riesgos de seguri
   - Cifrar datos en reposo y tránsito con TLS/SSL.
   - Uso exclusivo de HTTPS para comunicación segura.
  
-
+---
  
 ### 🟡 Vulnerabilidad 4: **A4 - Entidades externas XML (XXE)**
 <p align="center">
