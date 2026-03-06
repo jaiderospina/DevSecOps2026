@@ -1,7 +1,7 @@
 # 🌐 Análisis de Vulnerabilidades en el OWASP Top 10: Métodos de Explotación y Prevención
  
 <p align="center">
-<img src="IMAGENES/owasp-top-ten-logo.svg" width="600">
+<img src="IMAGENES/owasp-top-ten-logo.png" width="600">
 </p>
  
 ## 📖 Descripción del trabajo:
