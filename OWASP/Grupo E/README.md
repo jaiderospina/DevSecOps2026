@@ -47,7 +47,7 @@ OWASP (Open Web Application Security Project) es una organización sin fines de 
 OWASP ofrece una amplia gama de recursos, herramientas y pautas para ayudar a las organizaciones a proteger sus aplicaciones web de amenazas y vulnerabilidades.
 
 Más información:  
-https://owasp.org/www-project-top-ten/
+https://owasp.org/www-project-top-ten
 https://www.arsys.es/blog/owasp
 
 [Ver historia de OWASP](historia_owasp.md)
