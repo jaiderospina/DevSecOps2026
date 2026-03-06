@@ -1,7 +1,7 @@
 # 🔐 Taller: Análisis de Vulnerabilidades en el OWASP Top 10  
 ### Métodos de Explotación y Prevención
 
-[Principal](images/encabezado.jpg)
+![Principal](images/encabezado.jpg)
 
 ---
 
