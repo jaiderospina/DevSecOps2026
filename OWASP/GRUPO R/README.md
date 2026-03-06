@@ -86,7 +86,7 @@ La seguridad en las aplicaciones web es esencial para prevenir riesgos de seguri
  
 ### 🟣 Vulnerabilidad 6: **A6 - Configuración de seguridad incorrecta**
 <p align="center">
-<img src="IMAGENES/security-configuration.png" width="600">
+<img src="IMAGENES/security-configuration.jpg" width="600">
 </p>
 
 - **Descripción**: Configuraciones inseguras o desactualizadas en servidores, bases de datos o aplicaciones.
@@ -99,7 +99,7 @@ La seguridad en las aplicaciones web es esencial para prevenir riesgos de seguri
  
 ### 🟤 Vulnerabilidad 7: **A7 - Cross-Site Scripting (XSS)**
 <p align="center">
-<img src="IMAGENES/xss.png" width="600">
+<img src="IMAGENES/xss.jpg" width="600">
 </p>
 
 - **Descripción**: Inyección de scripts maliciosos en páginas web que afectan a otros usuarios.
