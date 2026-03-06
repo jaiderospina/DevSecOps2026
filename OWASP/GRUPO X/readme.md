@@ -2048,7 +2048,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
 # A10: Mishandling of Exceptional Conditions
 
-<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A10.1MOEC.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A10.1MOEC.png" width="60%">
 
 ## 1. Descripción Breve de la Vulnerabilidad
 
@@ -4040,6 +4040,7 @@ A10:2025 - Mishandling of Exceptional Conditions es una vulnerabilidad crítica 
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 ```
+
 
 
 
