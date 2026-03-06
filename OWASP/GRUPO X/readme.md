@@ -532,6 +532,8 @@ El problema no es “el código” solamente, sino **cómo se desplegó o config
 
 # A03 Software Supply Chain Failures
 
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A03.1SSCF.jpg"/>
+
 ## Introducción
 
 La vulnerabilidad **A03:2025 – Software Supply Chain Failures** del **OWASP** describe los riesgos de seguridad que ocurren cuando una aplicación depende de **componentes externos inseguros o comprometidos** dentro de su cadena de suministro de software.
@@ -906,6 +908,8 @@ Las organizaciones que implementan estas prácticas reducen significativamente l
 ---
 
 # A04: Cryptographic Failures
+
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A04.1CF.jpg"/>
 
 ## 1. Descripción
 
@@ -2043,7 +2047,8 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 ---
 
 # A10: Mishandling of Exceptional Conditions
----
+
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A10.1MOEC.png"/>
 
 ## 1. Descripción Breve de la Vulnerabilidad
 
@@ -4035,6 +4040,7 @@ A10:2025 - Mishandling of Exceptional Conditions es una vulnerabilidad crítica 
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 ```
+
 
 
 
