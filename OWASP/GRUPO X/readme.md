@@ -1062,7 +1062,7 @@ Ejecución de comandos maliciosos por datos no validados → ⚠ CRÍTICO
 
 Ocurre cuando datos no confiables son enviados a un intérprete como parte de un comando o consulta. El atacante puede engañar al interprete para que ejecute comandos no intencionados o acceda a datos sin autorización.
 
-<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A05.1Injection.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A05.1Injection.png" width=500/>
 
 ### ¿Cómo funciona?
 
@@ -1287,7 +1287,7 @@ Fallas estructurales de arquitectura desde el origen → ⚠ ALTO
 
 Falla estructural: la arquitectura del sistema no contempla amenazas ni requisitos de seguridad desde el inicio. A diferencia de otras vulnerabilidades, NO puede corregirse con una buena implementación: si el diseño es defectuoso, el sistema es inseguro por naturaleza.
 
-<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO X/Imagenes/A06.1InsDesign.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO X/Imagenes/A06.1InsDesign.png" width=500/>
 
 ### ¿Cómo funciona?
 
@@ -1821,7 +1821,7 @@ El silencio es la peor respuesta ante un ataque → ⚠ MEDIO-ALTO
 
 Ausencia o insuficiencia de logs de seguridad, monitoreo de eventos críticos y alertas ante comportamientos anómalos. Sin visibilidad, los atacantes pueden operar durante meses sin ser detectados.
 
-<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A09.1SeLog_Alert.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A09.1SeLog_Alert.png" width=400/>
 
 ### ¿Cómo funciona?
 
@@ -4035,6 +4035,7 @@ A10:2025 - Mishandling of Exceptional Conditions es una vulnerabilidad crítica 
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 ```
+
 
 
 
