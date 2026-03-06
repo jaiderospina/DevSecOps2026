@@ -72,7 +72,7 @@ El propósito del OWASP Top 10 no es solo listar vulnerabilidades, sino **crear 
 
 El **A01: Broken Access Control** del OWASP Top 10 se refiere a las fallas en los mecanismos de autorización que permiten que un usuario realice acciones o acceda a recursos para los que no tiene permisos. 
 
-![enter image description here](https://miro.medium.com/v2/resize:fit:1400/0*nDZEqAb5PlFW4Nx5.png)
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A01.1BAC.png"/>
 
 El control de acceso define:
 
@@ -496,7 +496,7 @@ El control de acceso decide hasta dónde puedes llegar.
 
 # A02 – Security Misconfiguration (Mala configuración de seguridad)
 
-![enter image description here](https://cheapsslsecurity.com/blog/wp-content/uploads/2022/06/security-misconfiguration-example.png)
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A02.1SMis.png"/>
 
 ### ¿Qué es?
 Ocurre cuando una aplicación, servidor o servicio está configurado de forma insegura (por ejemplo: credenciales por defecto, permisos abiertos, errores mostrando demasiada información, CORS mal configurado, paneles/admin expuestos, etc.).  
@@ -1062,7 +1062,7 @@ Ejecución de comandos maliciosos por datos no validados → ⚠ CRÍTICO
 
 Ocurre cuando datos no confiables son enviados a un intérprete como parte de un comando o consulta. El atacante puede engañar al interprete para que ejecute comandos no intencionados o acceda a datos sin autorización.
 
-<img src="./imagenes/A05_Injection.png" width=500)/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A05.1Injection.png"/>
 
 ### ¿Cómo funciona?
 
@@ -1092,7 +1092,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 > *SQL Injection · NoSQL Injection (MongoDB \$where) · OS Command Injection · LDAP Injection · Server-Side Template Injection (SSTI) · Log4Shell (JNDI via strings de log)*
 
- <img src="./imagenes/image001.png"/>
+ <img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A05.2Injection.png"/>
 
 ## Métodos de Explotación
 
@@ -1179,7 +1179,7 @@ El input del usuario se concatena directamente en queries SQL, comandos OS, LDAP
 
 - Escaneo de IaC: validar Terraform/CloudFormation con Checkov/tfsec
 
-  <img src="./imagenes/image003.png"/>
+  <img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A05.3Injection.png"/>
 
 ## Configuraciones Recomendadas
 
@@ -1287,7 +1287,7 @@ Fallas estructurales de arquitectura desde el origen → ⚠ ALTO
 
 Falla estructural: la arquitectura del sistema no contempla amenazas ni requisitos de seguridad desde el inicio. A diferencia de otras vulnerabilidades, NO puede corregirse con una buena implementación: si el diseño es defectuoso, el sistema es inseguro por naturaleza.
 
-<img src="./imagenes/A06_InsecureDesign.png" width=400)/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A06.1InsDesign.png"/>
 
 ### ¿Cómo funciona?
 
@@ -1313,7 +1313,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 - Fraudes en plataformas Cloud con impacto financiero severo
 
-<img src="./imagenes/image005.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A06.2InsDesign.png"/>
 
 ## Métodos de Explotación
 
@@ -1380,7 +1380,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 ## Buenas Prácticas DevSecOps
 
-<img src="./imagenes/image007.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A06.3InsDesign.png"/>
 
 - Security by Design / Security by Default en todas las decisiones arquitectónicas
 
@@ -1507,7 +1507,7 @@ El atacante aprovecha flujos lógicos incorrectos, ausencia de controles de nego
 
 Según OWASP, **A07 – Fallos de Autenticación** ocurre cuando un sistema no verifica correctamente la identidad de un usuario, dispositivo o aplicación
 
-![enter image description here](https://miro.medium.com/v2/resize:fit:1400/1*yWn8ahHQAmk2ebdwRoIq3Q.png)
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A07.1AuthFail.png"/>
 
 La autenticación es la **puerta de entrada** a cualquier sistema.
 Si falla, todo el entorno queda expuesto.
@@ -1778,7 +1778,7 @@ Es la base de toda la seguridad del sistema.
 
 #  A08 – Software or Data Integrity Failures (Fallos de integridad de software o datos)
 
-![enter image description here](https://miro.medium.com/v2/resize:fit:1400/1*iW1BhEBNeucfA-SbHNUT4w.png)
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A08.1SoftDataIntFail.png"/>
 
 ### ¿Qué es?
 Ocurre cuando el sistema **confía en software, actualizaciones, dependencias, datos o pipelines** sin verificar su integridad.  
@@ -1821,7 +1821,7 @@ El silencio es la peor respuesta ante un ataque → ⚠ MEDIO-ALTO
 
 Ausencia o insuficiencia de logs de seguridad, monitoreo de eventos críticos y alertas ante comportamientos anómalos. Sin visibilidad, los atacantes pueden operar durante meses sin ser detectados.
 
-<img src="./imagenes/A09-SecurityLogging_Alerting Failures.png" width=400)/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A09.1SeLog_Alert.png"/>
 
 ### ¿Cómo funciona?
 
@@ -1851,7 +1851,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
 - Mayor daño financiero y reputacional acumulado por detección tardía
 
-  <img src="./imagenes/image010.png"/>
+  <img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A09.2SeLog_Alert.png"/>
 
 ## Métodos de Explotación
 
@@ -1938,7 +1938,7 @@ El atacante explota el sistema sin que se generen registros auditables ni alerta
 
 - Sincronización NTP en todos los sistemas para correlación correcta de eventos
 
-  <img src="./imagenes/image012.png"/>
+  <img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A09.3SeLog_Alert.png"/>
 
 ## Configuraciones Recomendadas
 
@@ -4035,4 +4035,5 @@ A10:2025 - Mishandling of Exceptional Conditions es una vulnerabilidad crítica 
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 ```
+
 
