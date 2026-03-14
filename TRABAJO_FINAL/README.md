@@ -42,7 +42,7 @@ El equipo puede proponer cualquier aplicación de utilidad real, siempre que sat
 - Aplicación de análisis forense básico de logs y eventos de seguridad
 - Panel de control de cumplimiento normativo (ISO 27001, NIST, CIS Controls)
 
-> La propuesta debe ser presentada por escrito durante la primera semana de trabajo para validación por parte del docente.
+> La propuesta debe ser presentada por escrito para validación.
 
 ---
 
@@ -127,7 +127,7 @@ Este es el **núcleo evaluativo** del trabajo. El pipeline debe automatizar las 
 
 ### 3.5 Restricciones de Herramientas
 
-Queda **prohibido el uso de herramientas propietarias o con licencia comercial**. Toda la cadena de herramientas debe ser de código abierto o de libre uso. GitHub Actions es aceptado como servidor de CI/CD en reemplazo de GitLab CI/CD.
+Toda la cadena de herramientas debe ser de código abierto o de libre uso. GitHub Actions es aceptado como servidor de CI/CD o GitLab CI/CD.
 
 ---
 
@@ -196,10 +196,10 @@ Guía de uso de la aplicación orientada al usuario final, con capturas de panta
 
 | Entregable | Descripción | Obligatorio |
 |---|---|---|
-| Repositorio GitHub público | Código fuente completo, pipeline, IaC y documentación | ✅ Sí |
-| Imágenes en Docker Hub | Todas las imágenes publicadas y versionadas | ✅ Sí |
-| Informe técnico en PDF | Documento estructurado según sección 6 | ✅ Sí |
-| Video-demostración | 10–15 minutos mostrando el ciclo completo | ⭐ Opcional (bonificación) |
+| Repositorio GitHub público | Código fuente completo, pipeline, IaC y documentación | Sí |
+| Imágenes en Docker Hub | Todas las imágenes publicadas y versionadas | Sí |
+| Informe técnico en PDF | Documento estructurado según sección 6 | Sí |
+| Video-demostración | 10–15 minutos mostrando el ciclo completo | Sí |
 
 ---
 
