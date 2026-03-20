@@ -7,7 +7,7 @@ Desarrollar taller 2 del repo docker.
 - https://github.com/jaiderospina/Docker20242/blob/main/taller-docker-master/taller2-acceso-puertos.md
 
 
-## Dedesarrollo.
+## Desarrollo.
 Bienvenido a este taller, en este taller aprenderás como manejar los puertos en los containers y cómo permitir que tengan acceso público a través de los mismos. Esto lo lograremos a través de crear un container con Apache instalado en el puerto 80, el cual saldrá por el puerto 8001 del host que tiene instalado Docker
 
 ## Paso 1: Crear container y exponer los puertos
