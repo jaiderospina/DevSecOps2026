@@ -63,7 +63,9 @@ En algunos casos, como prueba local podrás acceder al IP del container, ya sea 
 docker inspect apache | grep IPAddress
 ```
 
-**Reto en Clase 1: Ampliación “Acceso Público Avanzado con Múltiples Puertos y Servicios”**  
+------
+
+#  **Reto en Clase: Ampliación “Acceso Público Avanzado con Múltiples Puertos y Servicios”**  
 
 
 **¡Bienvenidos al primer Reto en Clase del curso!**  
