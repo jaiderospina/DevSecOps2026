@@ -33,4 +33,10 @@ Esta cadena se lee de izquierda a derecha como un "túnel":
 
 2. Investigar el comando docker port <nombre> y cómo se interpreta su salida.
 
+El comando docker port <nombre_contenedor> se utiliza para mostrar los puertos que un contenedor tiene publicados hacia el host. Permite identificar la relación entre el puerto interno del contenedor (donde escucha la aplicación) y el puerto externo del host (por donde los usuarios pueden acceder al servicio).
+La salida del comando indica:
+El puerto y protocolo dentro del contenedor (por ejemplo, 80/tcp).
+La dirección IP y el puerto del host al que está mapeado (por ejemplo, 0.0.0.0:8080).
+Este comando es útil para verificar configuraciones de red, solucionar problemas de conectividad y confirmar qué puerto se debe utilizar para acceder a un servicio ejecutándose en un contenedor Docker.
+
 3. Buscar imágenes oficiales que expongan puertos (nginx, httpd, tomcat, etc.).
