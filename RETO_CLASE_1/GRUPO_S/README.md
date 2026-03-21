@@ -47,8 +47,26 @@ Para demostrar el uso de la opción `-P`, se creó un contenedor adicional con e
 
 <img width="527" height="155" alt="image" src="https://github.com/user-attachments/assets/18bd6559-b4c1-4f1e-8c5d-5aeaf4b780ac" />
 
+### Figura 5. Acceso al servicio Apache desde el navegador
 
+Se verificó el funcionamiento del contenedor `apache-reto` accediendo desde el navegador al puerto 8080 del host.
 
+**URL utilizada:**
+<img width="1318" height="387" alt="image" src="https://github.com/user-attachments/assets/4fdf921a-5925-4b73-b1e4-e06047bf8ee2" />
+  
+### Figura 6. Acceso al servicio Nginx desde el navegador
+
+Se comprobó el funcionamiento del contenedor `nginx-reto` accediendo al puerto 8081 del host desde el navegador.
+
+**URL utilizada:**
+<img width="1435" height="563" alt="image" src="https://github.com/user-attachments/assets/01d38878-f3f2-4eb7-9fce-91ba7675f20d" />
+
+### Figura 7. Acceso al contenedor publicado automáticamente
+
+Se accedió al contenedor `nginx-auto` utilizando el puerto asignado automáticamente por Docker.
+
+**URL utilizada:**
+<img width="1399" height="589" alt="image" src="https://github.com/user-attachments/assets/2219509d-3c15-44e2-bb20-fdd6fc68adb8" />
 
 
 
