@@ -129,12 +129,14 @@ echo "Servidor 1" > /usr/share/nginx/html/index.html
 ```bash
 docker exec -it web2 bash
 echo "Servidor 2" > /usr/share/nginx/html/index.html
-```
 
+```
+![servidor1](img/servidor1.jpg)
 ---
 
 ### 📸 Evidencia 7: Diferenciación de servicios
-(INSERTAR IMAGEN AQUÍ - navegador mostrando “Servidor 1” y “Servidor 2”)
+
+![servidor](img/servidor.jpg)
 
 ---
 
@@ -153,3 +155,7 @@ echo "Servidor 2" > /usr/share/nginx/html/index.html
 - Inspección de puertos
 - Validación de servicios concurrentes
 - Documentación técnica
+
+## ✅ Bibliografía:
+
+- Documentación GitHub Repo https://github.com/jaiderospina/DevSecOps2026/
