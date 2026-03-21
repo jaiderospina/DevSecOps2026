@@ -101,8 +101,7 @@ docker port web2
 ---
 
 ### 📸 Evidencia 6: Inspección con docker port
-(INSERTAR IMAGEN AQUÍ - resultado de docker port web2)
-
+![inspeccion](img/inspeccion.jpg)
 ---
 
 ## ⚔️ Resultado final
