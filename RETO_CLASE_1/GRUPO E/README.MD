@@ -31,7 +31,7 @@ Configurar y acceder a dos servicios web en contenedores Docker de forma concurr
 ```bash
 docker run -d --name web1 -p 8080:80 nginx
 ```
-
+![Iniciar](img/iniciar.jpg)
 
 
 ### 🔎 Explicación
@@ -59,6 +59,7 @@ http://localhost:8080
 ```bash
 docker run -d --name web2 -P nginx
 ```
+![Iniciar2](img/iniciar2.jpg)
 
 ### 🔎 Explicación
 Docker asigna automáticamente un puerto disponible en el host.
