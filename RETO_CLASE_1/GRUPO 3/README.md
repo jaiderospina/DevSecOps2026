@@ -12,11 +12,14 @@
 
 
 # Objetivo del reto.
+Configurar y acceder a dos contenedores web diferentes al mismo tiempo usando distintas estrategias de mapeo de puertos
+
 
 # Tabla comparativa: -p vs -P (con lo que investigaron).
 
 
 ## Investigacion de mediana complejidad: publicacion de puertos en Docker
+
 
 ## Objetivo
 Analizar como funciona la publicacion de puertos en Docker y comparar el uso de `-p` y `-P`, interpretar la salida de `docker ps`, revisar el comando `docker port` y verificar imagenes oficiales que exponen puertos.
