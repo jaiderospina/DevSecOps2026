@@ -1,5 +1,14 @@
 # 🐳 Reto en Clase: Acceso Público Avanzado con Múltiples Puertos y Servicios
 
+## 👥 Integrantes
+
+- Ing. Argel Ochoa Ronald David  
+- Ing. Baquero Soto Mauricio  
+- Ing. Buitrago Guiot Oscar Javier  
+- Ing. Estefania Naranjo Novoa  
+
+---
+
 ## 📌 Descripción
 En este reto se implementa la ejecución simultánea de dos contenedores web en una misma máquina, utilizando diferentes estrategias de mapeo de puertos (`-p` y `-P`), evitando conflictos y validando su acceso desde el navegador.
 
