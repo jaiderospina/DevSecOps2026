@@ -41,6 +41,12 @@ Se creó un segundo contenedor utilizando la imagen oficial de Nginx con el sigu
 
 <img width="516" height="130" alt="image" src="https://github.com/user-attachments/assets/5276dc20-435e-41d9-a8cb-45829bc21ad5" />
 
+### Figura 4. Verificación de publicación automática con `-P`
+
+Para demostrar el uso de la opción `-P`, se creó un contenedor adicional con el siguiente comando:
+
+<img width="527" height="155" alt="image" src="https://github.com/user-attachments/assets/18bd6559-b4c1-4f1e-8c5d-5aeaf4b780ac" />
+
 
 
 
