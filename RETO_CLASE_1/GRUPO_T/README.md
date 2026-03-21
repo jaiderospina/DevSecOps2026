@@ -45,9 +45,11 @@ las imágenes oficiales más comunes en Docker Hub que ya vienen configuradas pa
 
 magen	Puerto por Defecto	Tipo de Servicio
 
-\nginx			80			Servidor web y proxy inverso (muy ligero).
-\tomcat			8080		Servidor de aplicaciones para Java Servlets.
-\mysql/mariadb	3306		Bases de datos SQL relacionales.
-\postgres		5432		Base de datos relacional avanzada.
-\mongodb			27017		Base de datos NoSQL orientada a documentos.
+| Imagen | Puerto por Defecto | Tipo de Servicio |
+| :--- | :--- | :--- |
+| **nginx** | 80 | Servidor web y proxy inverso (muy ligero). |
+| **tomcat** | 8080 | Servidor de aplicaciones para Java Servlets. |
+| **mysql/mariadb** | 3306 | Bases de datos SQL relacionales. |
+| **postgres** | 5432 | Base de datos relacional avanzada. |
+| **mongodb** | 27017 | Base de datos NoSQL orientada a documentos. |
 
