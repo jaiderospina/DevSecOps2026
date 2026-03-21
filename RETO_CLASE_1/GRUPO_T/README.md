@@ -1,4 +1,4 @@
-##Grupo T##
+## Grupo T
 
 Reynel Cely
 
