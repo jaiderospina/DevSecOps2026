@@ -35,6 +35,13 @@ Durante la práctica se utilizó el siguiente comando para crear el contenedor A
 
 <img width="509" height="130" alt="image" src="https://github.com/user-attachments/assets/9cf46fd1-04ea-4fc3-a086-8f1e382af606" />
 
+### Figura 3. Verificación del contenedor Nginx
+
+Se creó un segundo contenedor utilizando la imagen oficial de Nginx con el siguiente comando:
+
+<img width="516" height="130" alt="image" src="https://github.com/user-attachments/assets/5276dc20-435e-41d9-a8cb-45829bc21ad5" />
+
+
 
 
 
