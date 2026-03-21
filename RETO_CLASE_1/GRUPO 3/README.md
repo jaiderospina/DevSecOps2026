@@ -131,8 +131,6 @@ Se realiza despliegue de dos servidores (ngnix y apache), se valida los puertos 
 
 Se valida via web que el servicio apache se encuentre en funcionamiento por el puerto configurado en el paso anterior. 
 
-
-Se realiza despliegue de dos servidores (ngnix y apache), se valida los puertos que fueron configurados en escucha. 
 <p align="center">
   <img src="Images/3.png" width="600">
 </p>
@@ -143,6 +141,7 @@ Se valida via web que el servicio ngnix se encuentre en funcionamiento por el pu
   <img src="Images/4.png" width="600">
 </p>
 
+Se valida via web que el servicio ngnix se encuentre en funcionamiento por el puerto configurado en el paso anterior. 
 
 <p align="center">
   <img src="Images/5.png" width="600">
