@@ -1,7 +1,7 @@
 
 # GRUPO 3
 
-
+**Ultima actualización:** 20 de marzo 2026
 
 |#|Integrantes|
 |---|--------|
