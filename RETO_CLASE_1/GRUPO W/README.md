@@ -14,3 +14,5 @@
 - [Buscar imágenes oficiales que expongan puertos ginx, httpd, tomcat, etc.](./Preguntas/Pregunta%204/)
 
 
+# Pasos que deben realizar (indicaciones claras)
+
