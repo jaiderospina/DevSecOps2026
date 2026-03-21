@@ -20,6 +20,8 @@ http://localhost:8080
 Se obtiene la siguiente respuesta:
 "It works!"
 
-
+<p align="center">
+  <img src="image/1.png" width="600">
+</p
 
 
