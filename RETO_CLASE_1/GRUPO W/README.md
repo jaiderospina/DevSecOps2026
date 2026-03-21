@@ -6,4 +6,4 @@
     Juan Diaz
     Jonathan Garzon
 
-[¿Qué diferencia hay entre -p 8080:80 y -P?](preguntas/Pregunta 1.md)
+[¿Qué diferencia hay entre -p 8080:80 y -P?](Preguntas/Pregunta 1.md)
