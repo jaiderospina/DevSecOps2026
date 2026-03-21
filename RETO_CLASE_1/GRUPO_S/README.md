@@ -5,7 +5,6 @@
 - Damian Gonzalez
 - Marcelo Desalvador
 - Roger Cardenas
-- ...
 
 ## Objetivo del reto
 

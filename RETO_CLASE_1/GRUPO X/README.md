@@ -9,20 +9,11 @@
 
 
 
-<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/A01.1BAC.png"/>
+
+
 
 
 #Reto en Clase 1 – Acceso Público Avanzado con Múltiples Puertos y Servicios
-
-##Integrantes
-
-* Carlos Alberto González Bravo
-* (Agrega aquí tus compañeros)
-
-##Fecha
-
-* (Coloca la fecha de entrega)
-
 ---
 
 ##Objetivo del reto
@@ -95,7 +86,7 @@ Se utilizó el siguiente comando:
 docker ps
 ```
 
-**Captura 1:** Lista de contenedores en ejecución
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/IMAGENES%20DOCKER/IMAGEN%201.png"/>
 
 ---
 
@@ -108,11 +99,6 @@ docker port apache-reto
 docker port nginx-reto
 docker port nginx-auto
 ```
-
-**Captura 2:** docker port apache-reto
-**Captura 3:** docker port nginx-reto
-**Captura 4:** docker port nginx-auto
-
 ---
 
 ##Pruebas en navegador
@@ -123,9 +109,9 @@ Se comprobó el acceso a cada servicio:
 * Nginx → http://localhost:8081
 * Nginx automático → http://localhost:32768
 
-**Captura 5:** Apache funcionando
-**Captura 6:** Nginx funcionando
-**Captura 7:** Nginx automático funcionando
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/IMAGENES%20DOCKER/APACHE_FUNCIONANDO.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/IMAGENES%20DOCKER/NGINX_FUNCIONANDO.png"/>
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/IMAGENES%20DOCKER/NGINX_AUTOMATICO_FUNCIONANDO.png"/>
 
 ---
 
@@ -148,7 +134,7 @@ Resultado:
 * Apache detenido X
 * Nginx funcionando
 
-**Captura 8:** docker ps después de detener Apache
+<img src="https://github.com/jaiderospina/DevSecOps2026/blob/main/OWASP/GRUPO%20X/Imagenes/IMAGENES%20DOCKER/IMAGEN_8.png"/>
 
 ---
 
