@@ -27,7 +27,14 @@ Además, se comprobó el acceso a los servicios desde el navegador y se validó 
 
 # Figura 1 — Contenedores activos
 <img width="1691" height="342" alt="image" src="https://github.com/user-attachments/assets/e1da0bf8-58cd-4fb6-ba9d-75f57cfbf38b" />
-Se utilizó el comando `docker ps` para verificar los contenedores en ejecución dentro del host.
+Se utilizó el comando `docker ps`para verificar los contenedores en ejecución dentro del host.
+
+### Figura 2. Verificación del contenedor Apache
+
+Durante la práctica se utilizó el siguiente comando para crear el contenedor Apache:
+
+```bash
+docker run -d --name apache-reto -p 8080:80 httpd
 
 
 
