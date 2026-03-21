@@ -30,9 +30,5 @@ Además, se comprobó el acceso a los servicios desde el navegador y se validó 
 Se utilizó el comando `docker ps` para verificar los contenedores en ejecución dentro del host.
 
 
-```bash
-docker run -d --name nginx-auto -P nginx
-<img width="512" height="141" alt="image" src="https://github.com/user-attachments/assets/20a90d36-09c1-410d-928f-f58c3da95f0f" />
-
 
 
