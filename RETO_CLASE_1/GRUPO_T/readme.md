@@ -1,4 +1,4 @@
-# \##Grupo T
+##Grupo T
 
 Reynel Cely
 Laura Bernal
@@ -29,9 +29,9 @@ Uso: Útil cuando corres muchos contenedores del mismo tipo y no quieres que cho
 
 ¿Qué significa cuando ves 0.0.0.0:8080->80/tcp en docker ps?
 Esta cadena se lee de izquierda a derecha como un "túnel":
-0.0.0.0: Significa que el puerto está escuchando en todas las interfaces de red de tu máquina (Wi-Fi, Ethernet, localhost).
-:8080 Es el puerto en tu computadora por el cual vas a entrar.
-->80/tcp: Indica que todo el tráfico que entre por el 8080 será redirigido al puerto 80 interno del contenedor usando el protocolo TCP.
+\0.0.0.0: Significa que el puerto está escuchando en todas las interfaces de red de tu máquina (Wi-Fi, Ethernet, localhost).
+\:8080 Es el puerto en tu computadora por el cual vas a entrar.
+\->80/tcp: Indica que todo el tráfico que entre por el 8080 será redirigido al puerto 80 interno del contenedor usando el protocolo TCP.
 
 
 2\. Investigar el comando docker port <nombre> y cómo se interpreta su salida.
