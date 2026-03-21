@@ -13,4 +13,4 @@
 - [¿Qué hace docker port?](./Preguntas/Pregunta%203/)
 - [Buscar imágenes oficiales que expongan puertos (nginx, httpd, tomcat, etc.)](./Preguntas/Pregunta%204/)
 
-Buscar imágenes oficiales que expongan puertos (nginx, httpd, tomcat, etc.).
+
