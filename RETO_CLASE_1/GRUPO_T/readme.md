@@ -1,0 +1,7 @@
+INTEGRANTES 
+* Reynel Cely 
+* Laura Bernal 
+* Johanna Ortiz
+* Bayardo Medina y
+
+ 
