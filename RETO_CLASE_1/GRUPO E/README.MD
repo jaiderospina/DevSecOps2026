@@ -66,7 +66,7 @@ Docker asigna automáticamente un puerto disponible en el host.
 ---
 
 ### 📸 Evidencia 3: Contenedor web2 en ejecución
-(INSERTAR IMAGEN AQUÍ - docker ps mostrando web2 con puerto dinámico)
+![Evidencia](img/Evidencia3.png)
 
 ---
 
