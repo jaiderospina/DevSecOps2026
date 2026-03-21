@@ -66,7 +66,7 @@ Docker asigna automáticamente un puerto disponible en el host.
 ---
 
 ### 📸 Evidencia 3: Contenedor web2 en ejecución
-![Evidencia](img/Evidencia3.png)
+
 
 ---
 
@@ -82,7 +82,7 @@ Ejemplo de salida:
 ---
 
 ### 📸 Evidencia 4: Puerto asignado automáticamente
-(INSERTAR IMAGEN AQUÍ - salida de docker ps resaltando puerto)
+![Evidencia4](img/Evidencia4.png)
 
 ---
 
