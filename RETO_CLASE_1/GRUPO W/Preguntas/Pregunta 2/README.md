@@ -21,7 +21,7 @@ Se obtiene la siguiente respuesta:
 "It works!"
 
 <p align="center">
-  <img src="../../image/1.png" width="800">
+  <img src="../../image/1.png" width="900">
 </p
 
 
