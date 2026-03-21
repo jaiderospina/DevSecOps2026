@@ -2,8 +2,13 @@
 
 ## Portada
 
+<<<<<<< HEAD:RETO_CLASE_1/MiguelMuñoz/README.md
 - **Nombre del grupo:** MV  
 - **Integrante:** Miguel Muñoz, Vicente Rueda 
+=======
+- **Nombre del grupo:** MV
+- **Integrantes:** Miguel Muñoz, Vicente Rueda
+>>>>>>> 59d6d08 (Cambiando el archivo Readme):RETO_CLASE_1/GRUPO_MV/README.md
 - **Fecha:** 20/03/2026  
 
 ---
