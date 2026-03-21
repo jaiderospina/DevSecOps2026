@@ -66,32 +66,32 @@ Puerto del host.
 Está redirigiendo al puerto 80 del contenedor, usando protocolo TCP.
 
 
-![Imagenes Docker](./images/docker-images.png)
+<!-- ![Imagenes Docker](./images/docker-images.png)-->
 <p align="center"><img src="./images/docker-images.png" width="600"><br><em>docker-images.png</em></p>
 
-![Contenedores Docker](./images/docker-ps.png)
+<!-- ![Contenedores Docker](./images/docker-ps.png)-->
 <p align="center"><img src="./images/docker-ps.png" width="600"><br><em>docker-ps.png</em></p>
 
-![Docker port apache](./images/docker-port-apache.png)
+<!-- ![Docker port apache](./images/docker-port-apache.png)-->
 <p align="center"><img src="./images/docker-port-apache.png" width="600"><br><em>docker-port-apache.png</em></p>
 
-![Docker port nginx](./images/docker-port-nginx.png)
+<!-- ![Docker port nginx](./images/docker-port-nginx.png)-->
 <p align="center"><img src="./images/docker-port-nginx.png" width="600"><br><em>docker-port-nginx.png</em></p>
 
-![Docker port tomcat](./images/docker-port-tomcat.png)
+<!-- ![Docker port tomcat](./images/docker-port-tomcat.png)-->
 <p align="center"><img src="./images/docker-port-tomcat.png" width="600"><br><em>docker-port-tomcat.png</em></p>
 
-![Navegador apache](./images/navegador-apache.png)
+<!-- ![Navegador apache](./images/navegador-apache.png)-->
 <p align="center"><img src="./images/navegador-apache.png" width="600"><br><em>navegador-apache.png</em></p>
 
-![Navegador nginx](./images/navegador-nginx.png)
+<!-- ![Navegador nginx](./images/navegador-nginx.png)-->
 <p align="center"><img src="./images/navegador-nginx.png" width="600"><br><em>navegador-nginx.png</em></p>
 
-![Navegador tomcat](./images/navegador-tomcat.png)
+<!-- ![Navegador tomcat](./images/navegador-tomcat.png)-->
 <p align="center"><img src="./images/navegador-tomcat.png" width="600"><br><em>navegador-tomcat.png</em></p>
 
-![Docker stop tomcat](./images/docker-stop-tomcat.png)
+<!-- ![Docker stop tomcat](./images/docker-stop-tomcat.png)-->
 <p align="center"><img src="./images/docker-stop-tomcat.png" width="600"><br><em>docker-stop-tomcat.png</em></p>
 
-![Nuevos Contenedores Docker](./images/docker-ps-contenedor-detenido.png)
+<!-- ![Nuevos Contenedores Docker](./images/docker-ps-contenedor-detenido.png)-->
 <p align="center"><img src="./images/docker-ps-contenedor-detenido.png" width="600"><br><em>docker-ps-contenedor-detenido.png</em></p>
