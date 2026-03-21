@@ -1,4 +1,4 @@
-## Grupo T
+# Grupo T
 
 Reynel Cely
 
@@ -10,7 +10,7 @@ Bayardo Medina
 
 
 
-# 1. Leer la sección oficial: https://docs.docker.com/reference/cli/docker/container/run/#publish
+## 1. Leer la sección oficial: https://docs.docker.com/reference/cli/docker/container/run/#publish
 
 ¿Qué diferencia hay entre -p 8080:80 y -P?
 
@@ -31,7 +31,7 @@ Esta cadena se lee de izquierda a derecha como un "túnel":
 ->80/tcp: Indica que todo el tráfico que entre por el 8080 será redirigido al puerto 80 interno del contenedor usando el protocolo TCP.
 
 
-# 2. Investigar el comando docker port <nombre> y cómo se interpreta su salida.
+## 2. Investigar el comando docker port <nombre> y cómo se interpreta su salida.
 
 El comando docker port <nombre_contenedor> se utiliza para mostrar los puertos que un contenedor tiene publicados hacia el host. Permite identificar la relación entre el puerto interno del contenedor (donde escucha la aplicación) y el puerto externo del host (por donde los usuarios pueden acceder al servicio).
 La salida del comando indica:
@@ -39,7 +39,7 @@ El puerto y protocolo dentro del contenedor (por ejemplo, 80/tcp).
 La dirección IP y el puerto del host al que está mapeado (por ejemplo, 0.0.0.0:8080).
 Este comando es útil para verificar configuraciones de red, solucionar problemas de conectividad y confirmar qué puerto se debe utilizar para acceder a un servicio ejecutándose en un contenedor Docker.
 
-# 3. Buscar imágenes oficiales que expongan puertos (nginx, httpd, tomcat, etc.).
+## 3. Buscar imágenes oficiales que expongan puertos (nginx, httpd, tomcat, etc.).
 
 las imágenes oficiales más comunes en Docker Hub que ya vienen configuradas para "escuchar" en puertos específicos por defecto.
 
