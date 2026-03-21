@@ -16,3 +16,6 @@
 
 # Pasos que deben realizar (indicaciones claras)
 
+- Inicia un contenedor Apache (puedes usar la misma forma del Taller 2 o la imagen oficial httpd – tú decides y lo justificas en el README).
+Mapear el puerto 8080 del host al 80 del contenedor. Usa nombre --name apache-reto.
+
