@@ -33,8 +33,6 @@ Se utilizó el comando `docker ps`para verificar los contenedores en ejecución 
 
 Durante la práctica se utilizó el siguiente comando para crear el contenedor Apache:
 
-```bash
-docker run -d --name apache-reto -p 8080:80 httpd
 
 
 
