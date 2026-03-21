@@ -25,5 +25,5 @@ Además, se comprobó el acceso a los servicios desde el navegador y se validó 
 | `-p` | Permite publicar manualmente un puerto del host hacia el puerto de un contenedor |
 | `-P` | Docker publica automáticamente todos los puertos expuestos del contenedor en puertos aleatorios del host |
 
-
+# Figura 1 — Contenedores activos
 
