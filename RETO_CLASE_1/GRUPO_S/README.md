@@ -18,6 +18,16 @@ Se utilizaron diferentes estrategias de publicación de puertos mediante las opc
 
 Además, se comprobó el acceso a los servicios desde el navegador y se validó la independencia entre contenedores al detener uno de ellos.
 
+## Diferencia entre -p y -P
 
+| Opción | Descripción |
+|------|------|
+| `-p` | Permite publicar manualmente un puerto del host hacia el puerto de un contenedor |
+| `-P` | Docker publica automáticamente todos los puertos expuestos del contenedor en puertos aleatorios del host |
+
+### Ejemplo con -p
+
+```bash
+docker run -d --name apache-reto -p 8080:80 httpd
 
 
