@@ -68,6 +68,32 @@ Se accedió al contenedor `nginx-auto` utilizando el puerto asignado automática
 **URL utilizada:**
 <img width="1399" height="589" alt="image" src="https://github.com/user-attachments/assets/2219509d-3c15-44e2-bb20-fdd6fc68adb8" />
 
+### Figura 8. Detención del contenedor Apache
+
+Con el fin de comprobar la independencia entre servicios, se detuvo el contenedor `apache-reto` mediante el siguiente comando:
+<img width="536" height="284" alt="image" src="https://github.com/user-attachments/assets/4355a9ce-8718-4d75-8953-067176914e7b" />
+
+### Figura 9. Verificación posterior a la detención de Apache
+
+Después de detener el contenedor Apache, se volvió a ejecutar el comando `docker ps` para validar el estado de los demás servicios.
+<img width="1695" height="312" alt="image" src="https://github.com/user-attachments/assets/eade8f76-3501-489d-b18c-fa02bea4bcac" />
+
+### Figura 10. Validación de independencia entre contenedores
+
+Finalmente, se comprobó desde el navegador que el contenedor `nginx-reto` seguía respondiendo correctamente aun después de detener el contenedor Apache.
+
+**URL utilizada:**
+<img width="1446" height="574" alt="image" src="https://github.com/user-attachments/assets/9e585a78-e032-4a1a-9127-90c22cd0d6d2" />
+
+## Dificultades encontradas
+
+Durante la práctica se presentaron conflictos de nombre al intentar crear contenedores que ya existían previamente, como `apache-reto` y `nginx-auto`. La situación se resolvió verificando los contenedores existentes mediante `docker ps` y reutilizando los contenedores ya desplegados, evitando así duplicidad de nombres.
+
+## Conclusión
+
+En esta actividad se aprendió a desplegar múltiples servicios web en contenedores Docker dentro de una misma máquina, utilizando tanto publicación manual de puertos con `-p` como publicación automática mediante `-P`.
+
+Asimismo, se verificó el funcionamiento de los servicios con `docker ps`, `docker port` y pruebas desde navegador, comprobando que diferentes contenedores pueden operar simultáneamente sin interferencia si cada uno usa puertos distintos en el host.
 
 
 
