@@ -123,7 +123,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
   <img src="Images/1.png" width="600">
 </p>
 
-Se realiza despliegue de dos servidores (ngnix y apache), se valida los puertos que fueron configurados para poder ser accesibles.
+##Se realiza despliegue de dos servidores (ngnix y apache), se valida los puertos que fueron configurados para poder ser accesibles.
 
 <p align="center">
   <img src="Images/2.png" width="600">
