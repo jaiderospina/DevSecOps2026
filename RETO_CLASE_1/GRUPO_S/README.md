@@ -26,4 +26,9 @@ Además, se comprobó el acceso a los servicios desde el navegador y se validó 
 | `-P` | Docker publica automáticamente todos los puertos expuestos del contenedor en puertos aleatorios del host |
 
 # Figura 1 — Contenedores activos
+<img width="1691" height="342" alt="image" src="https://github.com/user-attachments/assets/e1da0bf8-58cd-4fb6-ba9d-75f57cfbf38b" />
+Se utilizó el comando `docker ps` para verificar los contenedores en ejecución dentro del host.
+
+
+
 
