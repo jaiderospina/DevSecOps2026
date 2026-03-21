@@ -33,6 +33,9 @@ Se utilizó el comando `docker ps`para verificar los contenedores en ejecución 
 
 Durante la práctica se utilizó el siguiente comando para crear el contenedor Apache:
 
+<img width="509" height="130" alt="image" src="https://github.com/user-attachments/assets/9cf46fd1-04ea-4fc3-a086-8f1e382af606" />
+
+
 
 
 
