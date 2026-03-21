@@ -22,6 +22,8 @@ Configurar y acceder a dos servicios web en contenedores Docker de forma concurr
 ```bash
 docker run -d --name web1 -p 8080:80 nginx
 ```
+![Paso1](img/Paso1.png)
+
 
 ### 🔎 Explicación
 Se mapea el puerto 8080 del host al puerto 80 del contenedor.
