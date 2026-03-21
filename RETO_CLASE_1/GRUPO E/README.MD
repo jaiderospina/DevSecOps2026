@@ -76,8 +76,7 @@ Docker asigna automáticamente un puerto disponible en el host.
 docker ps
 ```
 
-Ejemplo de salida:
-0.0.0.0:32768->80/tcp
+![Evidencia5](img/Evidencia5.png)
 
 ---
 
@@ -88,14 +87,10 @@ Ejemplo de salida:
 
 ## 🌐 Acceso al segundo contenedor
 
-http://localhost:PUERTO_ASIGNADO
+[http://localhost:32768]
 
 ---
 
-### 📸 Evidencia 5: Acceso a web2 desde navegador
-(INSERTAR IMAGEN AQUÍ - navegador mostrando nginx en puerto dinámico)
-
----
 
 ## 🕵️ Inspección de puertos
 
