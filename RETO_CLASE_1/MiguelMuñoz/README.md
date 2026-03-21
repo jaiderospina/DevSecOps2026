@@ -2,8 +2,8 @@
 
 ## Portada
 
-- **Nombre del grupo:** Miguel-Muñoz  
-- **Integrante:** Miguel Muñoz  
+- **Nombre del grupo:** MV  
+- **Integrante:** Miguel Muñoz, Vicente Rueda 
 - **Fecha:** 20/03/2026  
 
 ---
