@@ -113,6 +113,10 @@ docker port web2
 
 Ambos servicios funcionan simultáneamente sin conflictos de puertos.
 
+![comparacion](img/comparacion.jpg)
+
+![comparacion2](img/comparacion2.jpg)
+
 ---
 
 ## 🧩 Prueba adicional (opcional)
