@@ -125,29 +125,32 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 - `docker ps` completo  
 
 <p align="center">
+   <figure>
   <img src="Images/6.JPG" width="600">
+     <figcaption>lista los contenedores que se encuentran corriendo.</figcaption>
+   </figure>
 </p>
-   lista los contenedores que se encuentran corriendo.
+   
       
 ---
 
 - Salida de `docker port` de cada contenedor  
 
 <p align="center">
-  <img src="Images/7.JPG" width="600">
-   lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.      
+  <figure>
+   <img src="Images/7.JPG" width="600">
+     <figcaption>lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.</figcaption>
+   </figure>
 </p>
       
-
 ---
 
 - Navegador mostrando Apache  
 
-
 <p align="center">
-  </figure>
+  <figure>
    <img src="Images/2.png" width="600">
-  <figcaption>Validación del servicio apache via web</figcaption>
+     <figcaption>Validación del servicio apache via web</figcaption>
    </figure>
 </p>
 
@@ -157,7 +160,11 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
  - Navegador mostrando Nginx  
 
 <p align="center">
+<figure>
   <img src="Images/3.png" width="600">
+       <figcaption>Validación del servicio apache via web</figcaption>
+   </figure>
+
 </p>
 
 <p align="center">
