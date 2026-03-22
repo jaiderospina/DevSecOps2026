@@ -124,9 +124,10 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 ##Se realiza despliegue de dos servidores (ngnix y apache), se valida los puertos que fueron configurados para poder ser accesibles.
 
 
+##- Salida de `docker port` de cada contenedor  
 
 <p align="center">
-  <img src="Images/1.png" width="600">
+  <img src="Images/7.JPG" width="600">
 </p>
 
 ##Se realiza despliegue de dos servidores (ngnix y apache), se valida los puertos que fueron configurados para poder ser accesibles.
@@ -154,8 +155,7 @@ Se valida via web que el servicio ngnix se encuentre en funcionamiento por el pu
 </p>
 
 
-- `docker ps` completo  
-  - Salida de `docker port` de cada contenedor  
+  
   - Navegador mostrando Apache  
   - Navegador mostrando Nginx  
   - Salida de `docker ps` después de detener uno  
