@@ -121,12 +121,13 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 
 # Al menos 8-10 capturas de pantalla numeradas y con pie de foto:
 
+---
 - `docker ps` completo  
 
 <p align="center">
   <img src="Images/6.JPG" width="600">
 </p>
-      -- Lista los contenedores que se encuentran corriendo.
+       lista los contenedores que se encuentran corriendo.
 ---
 
 - Salida de `docker port` de cada contenedor  
@@ -134,11 +135,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <img src="Images/7.JPG" width="600">
 </p>
-
----
-
-- Lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.
-
+      Lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.      
 ---
 - Navegador mostrando Apache  
 
