@@ -127,7 +127,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
    <figure>
   <img src="Images/6.JPG" width="600">
-     <figcaption>lista los contenedores que se encuentran corriendo.</figcaption>
+     <figcaption>Lista los contenedores que se encuentran corriendo.</figcaption>
    </figure>
 </p>
    
@@ -139,7 +139,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <figure>
    <img src="Images/7.JPG" width="600">
-     <figcaption>lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.</figcaption>
+     <figcaption>Lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.</figcaption>
    </figure>
 </p>
       
@@ -161,13 +161,16 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
 <figure>
   <img src="Images/3.png" width="600">
-       <figcaption>Validación del servicio apache via web</figcaption>
+       <figcaption>Validación del servicio ngnix via web</figcaption>
    </figure>
 
 </p>
 
 <p align="center">
+   <figure>
   <img src="Images/4.png" width="600">
+      <figcaption>Validación de ambos servicios corriendo simultaneamente</figcaption>
+   </figure>
 </p>
 
 ---
@@ -175,12 +178,13 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 - Salida de `docker ps` después de detener uno  
 
 <p align="center">
+   <figure>
   <img src="Images/1.png" width="600">
-   test
+   <figcaption>Lista los contenedores que se encuentran corriendo.</figcaption>
+   </figure>
 </p>
 
 ---
-
 
  
 - Explicación detallada de cada paso que hicieron (¿por qué eligieron `-p` o `-P` en cada caso?).
@@ -194,7 +198,3 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 - Conclusión: ¿Qué aprendieron que no estaba en el Taller 2?
 
 
-##Se realiza despliegue de dos servidores (ngnix y apache), se valida los puertos que fueron configurados para poder ser accesibles.
-Se valida via web que el servicio ngnix se encuentre en funcionamiento por el puerto configurado en el paso anterior. 
-Se valida via web que el servicio ngnix se encuentre en funcionamiento por el puerto configurado en el paso anterior. 
-Se valida via web que el servicio apache se encuentre en funcionamiento por el puerto configurado en el paso anterior.
