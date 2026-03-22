@@ -143,11 +143,13 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 
 - Navegador mostrando Apache  
 
-<figure>
+
 <p align="center">
   <img src="Images/2.png" width="600">
+  <figcaption>Validación del servicio apache via web</figcaption>
 </p>
-</figure>
+
+
 ---
 
  - Navegador mostrando Nginx  
