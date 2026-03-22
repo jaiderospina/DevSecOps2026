@@ -145,8 +145,10 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 
 
 <p align="center">
-  <img src="Images/2.png" width="600">
+  </figure>
+   <img src="Images/2.png" width="600">
   <figcaption>Validación del servicio apache via web</figcaption>
+   </figure>
 </p>
 
 
