@@ -10,9 +10,13 @@
 |  3  |Michael Giovanny Sierra Leon|
 | 4 |John Edilvar Gutierrez Rojas|
 
+---
 
-# Objetivo del reto.
+## 📌 Objetivo del reto.
 Configurar y acceder a dos contenedores web diferentes al mismo tiempo usando distintas estrategias de mapeo de puertos
+
+---
+
 
 
 # Tabla comparativa: -p vs -P (con lo que investigaron).
