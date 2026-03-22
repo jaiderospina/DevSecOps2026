@@ -189,12 +189,14 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
  
 - Explicación detallada de cada paso que hicieron (¿por qué eligieron `-p` o `-P` en cada caso?).
 
-- - `-p` permite definir exactamente como se publica un puerto.
-- `-P` publica todos los puertos expuestos a puertos dinamicos del host.
+   * En ambos casos se eligio la opción `-p` ya que como se indico en el enunciado anterior, esta opción permite definir un puerto en especifico para realizar la publicación, esto con el fin de que cada servicio pueda correr en la misma maquina pero con diferente puerto.
+
 - Dificultades encontradas y cómo las resolvieron.
    - Contenedor ejecutandose en un puerto en uso
-   - servicios detenido
-   - 
+     Debido a que no se definio un puerto al inicio de la instalación, el tomo el puerto por default, razon por la cual no permitia levantar el servicio, se realizaron los ajustes de configuración ajustando el puerto por el cual debe ser consumido el servicio, mostrando conectividad exitosa.
+   - Servicios detenidos
+     para el segundo servidor (ngnix) no se valido si el servicio estaba en ejecución, razon por la cual no permitia la validación via web, se ejecuto 
+     
 - Conclusión: ¿Qué aprendieron que no estaba en el Taller 2?
-
+   - Para
 
