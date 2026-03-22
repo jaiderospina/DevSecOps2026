@@ -100,23 +100,6 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 4. `docker port` permite consultar y verificar mapeos publicados, especialmente util con `-P`.
 5. Imagenes oficiales como `nginx`, `httpd` y `tomcat` muestran patrones tipicos de exposicion/publicacion de puertos para servicios web.
 
-## Fuentes de investigacion (oficiales)
-
-1. Docker Docs - docker container run (Publish y Publish all exposed ports)
-   https://docs.docker.com/reference/cli/docker/container/run/#publish
-
-2. Docker Docs - docker container port
-   https://docs.docker.com/reference/cli/docker/container/port/
-
-3. Docker Hub Official Image - nginx
-   https://hub.docker.com/_/nginx
-
-4. Docker Hub Official Image - httpd
-   https://hub.docker.com/_/httpd
-
-5. Docker Hub Official Image - tomcat
-   https://hub.docker.com/_/tomcat
-
 ---
 
 ## Al menos 8-10 capturas de pantalla numeradas y con pie de foto:
@@ -185,7 +168,6 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 </p>
 
 ---
-
  
 - Explicación detallada de cada paso que hicieron (¿por qué eligieron `-p` o `-P` en cada caso?).
 
@@ -193,10 +175,29 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 
 - Dificultades encontradas y cómo las resolvieron.
    - Contenedor ejecutandose en un puerto en uso
-     Debido a que no se definio un puerto al inicio de la instalación, el tomo el puerto por default, razon por la cual no permitia levantar el servicio, se realizaron los ajustes de configuración ajustando el puerto por el cual debe ser consumido el servicio, mostrando conectividad exitosa.
+        - Debido a que no se definio un puerto al inicio de la instalación, el tomo el puerto por default, razon por la cual no permitia levantar el servicio, se realizaron los ajustes de configuración ajustando el puerto por el cual debe ser consumido el servicio, mostrando conectividad exitosa.
    - Servicios detenidos
-     para el segundo servidor (ngnix) no se valido si el servicio estaba en ejecución, razon por la cual no permitia la validación via web, se ejecuto 
+        - para el segundo servidor (ngnix) no se valido si el servicio estaba en ejecución, razon por la cual no permitia la validación via web, se ejecuto 
      
 - Conclusión: ¿Qué aprendieron que no estaba en el Taller 2?
-   - Para
+   - Es necesario definir el puerto por el cual va hacer consumido el servicio para que no genere conflictos con otras aplicaciones.
+   - en la misma maquina se pueden realizar despliegues de distintos servicios siempre y cuando se tenga definido los puertos. 
+
+
+## Fuentes de investigacion (oficiales)
+
+1. Docker Docs - docker container run (Publish y Publish all exposed ports)
+   https://docs.docker.com/reference/cli/docker/container/run/#publish
+
+2. Docker Docs - docker container port
+   https://docs.docker.com/reference/cli/docker/container/port/
+
+3. Docker Hub Official Image - nginx
+   https://hub.docker.com/_/nginx
+
+4. Docker Hub Official Image - httpd
+   https://hub.docker.com/_/httpd
+
+5. Docker Hub Official Image - tomcat
+   https://hub.docker.com/_/tomcat
 
