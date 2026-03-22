@@ -177,7 +177,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
    - Contenedor ejecutandose en un puerto en uso
         - Debido a que no se definio un puerto al inicio de la instalación, el tomo el puerto por default, razon por la cual no permitia levantar el servicio, se realizaron los ajustes de configuración ajustando el puerto por el cual debe ser consumido el servicio, mostrando conectividad exitosa.
    - Servicios detenidos
-        - para el segundo servidor (ngnix) no se valido si el servicio estaba en ejecución, razon por la cual no permitia la validación via web, se ejecuto 
+        - para el segundo servidor (ngnix) no se valido si el servicio estaba en ejecución, razon por la cual no permitia la validación via web, se inicio el servicio permitiendo el acceso via web.
      
 - Conclusión: ¿Qué aprendieron que no estaba en el Taller 2?
    - Es necesario definir el puerto por el cual va hacer consumido el servicio para que no genere conflictos con otras aplicaciones.
