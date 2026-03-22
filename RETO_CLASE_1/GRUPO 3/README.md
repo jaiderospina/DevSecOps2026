@@ -137,7 +137,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
   <img src="Images/7.JPG" width="600">
    lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.      
 </p>
-      lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.      
+      
 
 ---
 
