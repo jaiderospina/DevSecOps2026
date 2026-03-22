@@ -121,14 +121,14 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <img src="Images/6.JPG" width="600">
 </p>
-
+- Lista los contenedores que se encuentran corriendo.
 
 - Salida de `docker port` de cada contenedor  
 
 <p align="center">
   <img src="Images/7.JPG" width="600">
 </p>
-
+- Lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.
 
 - Navegador mostrando Apache  
 
@@ -151,18 +151,25 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 </p>
 
 
+- Salida de `docker ps` después de detener uno  
 
 <p align="center">
-  <img src="Images/5.png" width="600">
+  <img src="Images/1.png" width="600">
 </p>
 
 
   
   
  
- - Salida de `docker ps` después de detener uno  
-- Explicación detallada de cada paso que hicieron (¿por qué eligieron `-p` o `-P` en cada caso?).  
-- Dificultades encontradas y cómo las resolvieron.  
+ 
+- Explicación detallada de cada paso que hicieron (¿por qué eligieron `-p` o `-P` en cada caso?).
+
+- - `-p` permite definir exactamente como se publica un puerto.
+- `-P` publica todos los puertos expuestos a puertos dinamicos del host.
+- Dificultades encontradas y cómo las resolvieron.
+   - Contenedor ejecutandose en un puerto en uso
+   - servicios detenido
+   - 
 - Conclusión: ¿Qué aprendieron que no estaba en el Taller 2?
 
 
