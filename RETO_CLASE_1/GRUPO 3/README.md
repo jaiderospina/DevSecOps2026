@@ -118,6 +118,8 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 
 # Al menos 8-10 capturas de pantalla numeradas y con pie de foto:
 
+##- `docker ps` completo  
+
 
 <p align="center">
   <img src="Images/1.png" width="600">
@@ -148,16 +150,15 @@ Se valida via web que el servicio ngnix se encuentre en funcionamiento por el pu
 </p>
 
 
+- `docker ps` completo  
+  - Salida de `docker port` de cada contenedor  
+  - Navegador mostrando Apache  
+  - Navegador mostrando Nginx  
+  - Salida de `docker ps` después de detener uno  
+- Explicación detallada de cada paso que hicieron (¿por qué eligieron `-p` o `-P` en cada caso?).  
+- Dificultades encontradas y cómo las resolvieron.  
+- Conclusión: ¿Qué aprendieron que no estaba en el Taller 2?
 
 
 
 
-
-# docker ps completo
-Salida de docker port de cada contenedor
-Navegador mostrando Apache
-Navegador mostrando Nginx
-Salida de docker ps después de detener uno
-Explicación detallada de cada paso que hicieron (¿por qué eligieron -p o -P en cada caso?).
-Dificultades encontradas y cómo las resolvieron.
-Conclusión: ¿Qué aprendieron que no estaba en el Taller 2?
