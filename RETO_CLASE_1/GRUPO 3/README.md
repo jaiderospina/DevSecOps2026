@@ -114,11 +114,15 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
    https://hub.docker.com/_/tomcat
 
 
-
-
 # Al menos 8-10 capturas de pantalla numeradas y con pie de foto:
 
 ##- `docker ps` completo  
+
+<p align="center">
+  <img src="Images/6.jpg" width="600">
+</p>
+
+
 
 
 <p align="center">
