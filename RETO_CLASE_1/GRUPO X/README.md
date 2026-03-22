@@ -154,7 +154,7 @@ Resultado:
 
 ###¿Qué significa 0.0.0.0:8080->80/tcp?
 
-* `0.0.0.0` → доступible desde cualquier IP
+* `0.0.0.0` → accesible desde cualquier IP
 * `8080` → puerto del host
 * `80` → puerto del contenedor
 
