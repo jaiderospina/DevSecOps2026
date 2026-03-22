@@ -169,9 +169,6 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 ---
 
 
-  
-  
- 
  
 - Explicación detallada de cada paso que hicieron (¿por qué eligieron `-p` o `-P` en cada caso?).
 
