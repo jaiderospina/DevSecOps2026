@@ -119,7 +119,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 
 ---
 
-# Al menos 8-10 capturas de pantalla numeradas y con pie de foto:
+## Al menos 8-10 capturas de pantalla numeradas y con pie de foto:
 
 ---
 - `docker ps` completo  
@@ -137,7 +137,9 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
   <img src="Images/7.JPG" width="600">
 </p>
       Lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.      
+
 ---
+
 - Navegador mostrando Apache  
 
 <p align="center">
@@ -145,6 +147,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 </p>
 
 ---
+
  - Navegador mostrando Nginx  
 
 <p align="center">
@@ -162,6 +165,8 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <img src="Images/1.png" width="600">
 </p>
+
+---
 
 
   
