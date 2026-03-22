@@ -117,6 +117,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 5. Docker Hub Official Image - tomcat
    https://hub.docker.com/_/tomcat
 
+---
 
 # Al menos 8-10 capturas de pantalla numeradas y con pie de foto:
 
@@ -126,34 +127,37 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
   <img src="Images/6.JPG" width="600">
 </p>
       -- Lista los contenedores que se encuentran corriendo.
+---
 
 - Salida de `docker port` de cada contenedor  
 
 <p align="center">
   <img src="Images/7.JPG" width="600">
 </p>
+
+---
+
 - Lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.
 
+---
 - Navegador mostrando Apache  
 
 <p align="center">
   <img src="Images/2.png" width="600">
 </p>
 
-
-
+---
  - Navegador mostrando Nginx  
 
 <p align="center">
   <img src="Images/3.png" width="600">
 </p>
 
-
-
 <p align="center">
   <img src="Images/4.png" width="600">
 </p>
 
+---
 
 - Salida de `docker ps` después de detener uno  
 
