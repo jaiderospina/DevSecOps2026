@@ -154,7 +154,6 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
    </figure>
 </p>
 
-
 ---
 
  - Navegador mostrando Nginx  
