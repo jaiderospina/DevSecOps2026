@@ -119,9 +119,9 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 ##- `docker ps` completo  
 
 <p align="center">
-  <img src="Images/6.jpg" width="600">
+  <img src="Images/6.JPG" width="600">
 </p>
-
+##Se realiza despliegue de dos servidores (ngnix y apache), se valida los puertos que fueron configurados para poder ser accesibles.
 
 
 
