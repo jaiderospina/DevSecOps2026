@@ -25,7 +25,7 @@ Configurar y acceder a dos contenedores web diferentes al mismo tiempo usando di
 ## Investigacion de mediana complejidad: publicacion de puertos en Docker
 
 
-## Objetivo
+## 🎯 Objetivo
 Analizar como funciona la publicacion de puertos en Docker y comparar el uso de `-p` y `-P`, interpretar la salida de `docker ps`, revisar el comando `docker port` y verificar imagenes oficiales que exponen puertos.
 
 ## 1) Diferencia entre `-p 8080:80` y `-P`
@@ -127,8 +127,8 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <img src="Images/6.JPG" width="600">
 </p>
-
-             lista los contenedores que se encuentran corriendo.
+   lista los contenedores que se encuentran corriendo.
+      
 ---
 
 - Salida de `docker port` de cada contenedor  
