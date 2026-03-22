@@ -127,6 +127,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <img src="Images/6.JPG" width="600">
 </p>
+
        ```
           lista los contenedores que se encuentran corriendo.
        ```
