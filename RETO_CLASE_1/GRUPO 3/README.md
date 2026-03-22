@@ -135,17 +135,19 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 
 <p align="center">
   <img src="Images/7.JPG" width="600">
+   lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.      
 </p>
-      Lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.      
+      lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.      
 
 ---
 
 - Navegador mostrando Apache  
 
+<figure>
 <p align="center">
   <img src="Images/2.png" width="600">
 </p>
-
+</figure>
 ---
 
  - Navegador mostrando Nginx  
