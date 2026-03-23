@@ -29,7 +29,7 @@ Configurar y acceder a dos servicios web en contenedores Docker de forma concurr
 
 ## ⚙️ Tecnologías utilizadas
 - Docker
-- Imagen `nginx`
+- Imagen `nginx` y `Apache`
 - Navegador web
 
 ---
@@ -86,32 +86,26 @@ Indica que el puerto 80 del contenedor está expuesto en el puerto 8080 del host
 ---
 
 ## 🚀 Paso 1: Levantar primer contenedor con puerto fijo (`-p`)
-### Paso 1: Creación del contenedor web1
+### Paso 1: Creación del contenedor web1 
 Se utilizó la imagen oficial de nginx porque es ligera y rápida
 
 Se usó
 ```bash
 docker run -d --name web1 -p 8080:80 nginx
 ```
+📸 Evidencia 1. Creación del contenedor nginx
 ![Iniciar](img/iniciar.jpg)
 
 
 ### 🔎 Explicación
 Se mapea el puerto 8080 del host al puerto 80 del contenedor.
-
-### Paso 1.1: Creación del Contenedor Apache Reto
-
-Se usó
-```bash
-docker run -d --name apache-reto -p 8080:80 httpd
-```
-
-![apachereto](img/apachereto.jpg)
+✔ Se utilizó -p para controlar el puerto 8080.
 
 ---
 
-### 📸 Evidencia 1: Contenedor web1 en ejecución
+### 📸 Evidencia 2: Verificación del Contenedor web1 en ejecución 
 ![Evidencia1](img/Evidencia1.jpg)
+
 ---
 
 ### 🌐 Acceso
@@ -119,8 +113,9 @@ http://localhost:8080
 
 ---
 
-### 📸 Evidencia 2: Acceso a web1 desde navegador
+### 📸 Evidencia 3: Acceso a web1 desde navegador
 ![Paso1](img/Paso1.png)
+
 Se eligió -p para tener control total del puerto y acceder fácilmente desde el navegador.
 ---
 
@@ -129,6 +124,7 @@ Se eligió -p para tener control total del puerto y acceder fácilmente desde el
 ```bash
 docker run -d --name web2 -P nginx
 ```
+#### 📸 Evidencia 4: Ejecución por comando del contenedor web2 con asignación automática de puertos
 ![Iniciar2](img/iniciar2.jpg)
 
 ### 🔎 Explicación
@@ -137,7 +133,7 @@ Docker asigna automáticamente un puerto disponible en el host.
 Se utilizó -P para observar cómo Docker asigna puertos automáticamente.
 ---
 
-### 📸 Evidencia 3: Contenedor web2 en ejecución
+### 📸 Evidencia 5: Contenedor web2 en ejecución
 ![Evidencia3](img/Evidencia3.jpg)
 
 ---
@@ -147,12 +143,13 @@ Se utilizó -P para observar cómo Docker asigna puertos automáticamente.
 ```bash
 docker ps
 ```
+### 📸 Evidencia 6: Visualización del puerto dinámico asignado con docker ps
 
 ![Evidencia5](img/Evidencia5.png)
 
 ---
 
-### 📸 Evidencia 4: Puerto asignado automáticamente
+### 📸 Evidencia 7: Detalle del Puerto asignado automáticamente
 ![Evidencia4](img/Evidencia4.png)
 
 ---
@@ -164,7 +161,7 @@ docker ps
 ---
 
 
-## 🕵️ Inspección de puertos
+## 🕵️ Paso 4:  Inspección de puertos
 
 ```bash
 docker port web2
@@ -172,7 +169,7 @@ docker port web2
 
 ---
 
-### 📸 Evidencia 6: Inspección con docker port
+### 📸 Evidencia 8: Inspección del puerto del contenedor web2 con docker port
 ![inspeccion](img/inspeccion.jpg)
 ---
 
@@ -185,7 +182,11 @@ docker port web2
 
 Ambos servicios funcionan simultáneamente sin conflictos de puertos.
 
+### 📸 Evidencia 09. Verificación de los contenedores activos web
+
 ![comparacion](img/comparacion.jpg)
+
+### 📸 Evidencia 11. Verificación de los contenedores activos web por Docker Desktop
 
 ![comparacion2](img/comparacion2.jpg)
 
@@ -195,11 +196,11 @@ Se accedió a:
 
 http://localhost:8080
 
-Confirmando que ambos servicios funcionan correctamente.
+#### Confirmando que ambos servicios funcionan correctamente.
 ---
 
 ---
-## 🧩 TERCER CONTENEDOR (-P)
+## 🧩 Paso 5: TERCER CONTENEDOR (-P)
 
 ## 🧪 Prueba con tercer contenedor (-P)
 
@@ -207,6 +208,7 @@ Confirmando que ambos servicios funcionan correctamente.
 docker run -d --name web3 -P nginx
 ```
 ---
+### 📸 Evidencia 12. Creación del contenedor web3 con puerto dinámico
 ![evidencia8](img/evidencia8.jpg)
 ---
 Luego 
@@ -215,33 +217,33 @@ Luego
 docker ps
 docker port web3
 ```
+---
+### 📸 Evidencia 13. Verificación de contenedores y puertos
+![web3](img/web3.jpg)
+---
+
 
 Esto permitió observar el puerto dinámico asignado automáticamente.
 
-📸 Evidencia 8: Contenedor web3 con puerto dinámico
+### 📸 Evidencia 14: Verificación en ejecución
+![eviden9](img/eviden9.jpg)
 
-### Descripción:
 Se muestra la ejecución del contenedor web3 con asignación automática de puertos usando la opción -P.
 
-📸 Evidencia 9: Inspección con docker port
-
-Descripción:
 Se verifica el puerto asignado dinámicamente mediante el comando docker port web3.
 
-![eviden9](img/eviden9.jpg)
-📸 Evidencia 10: Verificación en ejecución
+### 📸 Evidencia 14: Verificación en ejecución
+![eviden10](img/eviden10.jpg)
+
 
 Descripción:
 Se observa el estado de los contenedores en ejecución utilizando docker ps.
 
-![eviden10](img/eviden10.jpg)
-
-📸 Evidencia 11: Acceso al servicio
+### 📸 Evidencia 15: Acceso al servicio
+![eviden11](img/eviden11.jpg)
 
 Descripción:
 Se accede desde el navegador al puerto asignado dinámicamente validando el servicio.
-
-![eviden11](img/eviden11.jpg)
 
 ## 🧩 Prueba adicional 
 
@@ -255,10 +257,11 @@ docker exec -it web2 bash
 echo "Servidor 2" > /usr/share/nginx/html/index.html
 
 ```
+#### 📸 Evidencia 16: Comparación de ambos servicios
 ![servidor1](img/servidor1.jpg)
 ---
 
-### 📸 Evidencia 7: Diferenciación de servicios
+### 📸 Evidencia 17: Diferenciación de servicios
 
 ![servidor](img/servidor.jpg)
 
