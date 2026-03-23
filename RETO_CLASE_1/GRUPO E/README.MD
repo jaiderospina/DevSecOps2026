@@ -254,11 +254,11 @@ Se accede desde el navegador al puerto asignado dinámicamente validando el serv
 docker stop web1
 docker ps
 ```
-#### 📸 Evidencia 17. Verificación tras detener un contenedor comando
+#### 📸 Evidencia 16. Verificación tras detener un contenedor comando
 
 ![stop1](img/stop1.jpg)
 
-#### 📸 Evidencia 18. Verificación tras detener un contenedor en docker desktop
+#### 📸 Evidencia 17. Verificación tras detener un contenedor en docker desktop
 
 ![stop2](img/stop2.jpg)
 ---
@@ -275,11 +275,11 @@ docker exec -it web2 bash
 echo "Servidor 2" > /usr/share/nginx/html/index.html
 
 ```
-#### 📸 Evidencia 19: Comparación de ambos servicios
+#### 📸 Evidencia 18: Comparación de ambos servicios
 ![servidor1](img/servidor1.jpg)
 ---
 
-### 📸 Evidencia 20: Diferenciación de servicios
+### 📸 Evidencia 19: Diferenciación de servicios
 
 ![servidor](img/servidor.jpg)
 
