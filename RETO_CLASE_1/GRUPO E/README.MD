@@ -112,7 +112,6 @@ http://localhost:8080
 
 ### 📸 Evidencia 2: Acceso a web1 desde navegador
 ![Paso1](img/Paso1.png)
-
 Se eligió -p para tener control total del puerto y acceder fácilmente desde el navegador.
 ---
 
@@ -197,7 +196,7 @@ Confirmando que ambos servicios funcionan correctamente.
 
 ```bash
 docker run -d --name web3 -P nginx
-
+```
 ---
 ![evidencia8](img/evidencia8.jpg)
 ---
@@ -206,14 +205,32 @@ Luego
 ```bash
 docker ps
 docker port web3
+```
 
 Esto permitió observar el puerto dinámico asignado automáticamente.
 
 📸 Evidencia 8: Contenedor web3 con puerto dinámico
 
+### Descripción:
+Se muestra la ejecución del contenedor web3 con asignación automática de puertos usando la opción -P.
+
+📸 Evidencia 9: Inspección con docker port
+
+Descripción:
+Se verifica el puerto asignado dinámicamente mediante el comando docker port web3.
+
 ![eviden9](img/eviden9.jpg)
+📸 Evidencia 10: Verificación en ejecución
+
+Descripción:
+Se observa el estado de los contenedores en ejecución utilizando docker ps.
 
 ![eviden10](img/eviden10.jpg)
+
+📸 Evidencia 11: Acceso al servicio
+
+Descripción:
+Se accede desde el navegador al puerto asignado dinámicamente validando el servicio.
 
 ![eviden11](img/eviden11.jpg)
 
