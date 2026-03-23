@@ -99,6 +99,15 @@ docker run -d --name web1 -p 8080:80 nginx
 ### 🔎 Explicación
 Se mapea el puerto 8080 del host al puerto 80 del contenedor.
 
+### Paso 1.1: Creación del Contenedor Apache Reto
+
+Se usó
+```bash
+docker run -d --name apache-reto -p 8080:80 httpd
+```
+
+![apachereto](img/apachereto.jpg)
+
 ---
 
 ### 📸 Evidencia 1: Contenedor web1 en ejecución
