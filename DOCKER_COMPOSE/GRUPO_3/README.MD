@@ -87,7 +87,7 @@ Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wor
   [http://localhost:88](http://localhost:88)
 
  <p align="center">
-     <img src="IMAGES/5.compose.png" width="600">
+     <img src="IMAGES/6.compose.png" width="600">
 </p>
 
 
@@ -96,7 +96,9 @@ Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wor
 * Accede a **phpMyAdmin**:
   [http://localhost:81](http://localhost:81)
 
-
+ <p align="center">
+     <img src="IMAGES/7.compose.png" width="600">
+</p>
 
   Usa las credenciales:
 
