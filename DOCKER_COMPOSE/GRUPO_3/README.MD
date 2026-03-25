@@ -44,8 +44,7 @@ D:\
 # Crear carpeta base
 
 <p align="center">
-     <img src="IMAGES/1.compose.PNG" width="600">
-  
+     <img src="IMAGES/1.compose.png" width="600">
 </p>
 
 ## ⚙️ **Paso 2: Crear archivo `.env`**
