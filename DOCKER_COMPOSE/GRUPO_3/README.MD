@@ -61,13 +61,20 @@ D:\
 ---
 
 ## **Paso 3: Crear archivo `docker-compose.yml` (opción B - volúmenes locales)**
-
+ <p align="center">
+     <img src="IMAGES/3.compose.png" width="600">
+</p>
 
 ---
 
 ## **Paso 4: Construcción y despliegue**
 
 Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wordpress`, y `phpmyadmin`.
+
+ <p align="center">
+     <img src="IMAGES/4.compose.png" width="600">
+</p>
+
 
 ---
 
