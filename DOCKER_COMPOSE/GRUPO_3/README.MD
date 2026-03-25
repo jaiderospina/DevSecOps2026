@@ -119,24 +119,29 @@ Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wor
    Esto confirma que los datos se guardan en `D:\DevSecOps\data`.
 
    ```
+D:\DevSecOps\data\db
 <p align="center">
      <img src="IMAGES/9.compose.png" width="600">
 </p>
+
+D:\DevSecOps\data\wp
+<p align="center">
+     <img src="IMAGES/10.compose.png" width="600">
+</p>
+
+---
+
+**Backup de la base de datos:**
+## **Resultado esperado**
 
 <p align="center">
      <img src="IMAGES/10.compose.png" width="600">
 </p>
 
 
----
-
-**Backup de la base de datos:**
-
-## **Resultado esperado**
-
 ```
-D:\DevSecOps\data\db
-D:\DevSecOps\data\wp
+
+
 ```
 
 ---
