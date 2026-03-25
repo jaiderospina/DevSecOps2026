@@ -44,10 +44,8 @@ D:\
 # Crear carpeta base
 
 <p align="center">
-   <figure>
-  <img src="IMAGES/1.compose.PNG" width="600">
-     <figcaption>Lista los contenedores que se encuentran corriendo.</figcaption>
-   </figure>
+     <img src="IMAGES/1.compose.PNG" width="600">
+  
 </p>
 
 ## ⚙️ **Paso 2: Crear archivo `.env`**
