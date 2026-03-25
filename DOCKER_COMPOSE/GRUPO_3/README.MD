@@ -11,6 +11,8 @@
 
 
 
+
+
 LABORATORIO: Implementación de entorno WordPress + MySQL + phpMyAdmin con Docker Compose en Windows
 
 Objetivo del laboratorio
@@ -37,8 +39,6 @@ D:\
     ├── backups\
     └── logs\
 ```
-
-
 
 # Crear carpeta base
 
