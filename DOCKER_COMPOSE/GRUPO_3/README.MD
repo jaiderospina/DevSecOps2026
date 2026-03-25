@@ -47,12 +47,21 @@ D:\
      <img src="IMAGES/1.compose.png" width="600">
 </p>
 
+<p align="center">
+     <img src="IMAGES/2.compose.png" width="600">
+</p>
+
+
 ## ⚙️ **Paso 2: Crear archivo `.env`**
 
+<p align="center">
+     <img src="IMAGES/3.compose.png" width="600">
+</p>
 
 ---
 
 ## **Paso 3: Crear archivo `docker-compose.yml` (opción B - volúmenes locales)**
+
 
 ---
 
