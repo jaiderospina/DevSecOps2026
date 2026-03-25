@@ -103,6 +103,12 @@ Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wor
   ---
 ## **Paso 6: Validación de persistencia**
 1. Crear una publicación o cambia un tema en WordPress.
+
+<p align="center">
+     <img src="IMAGES/12.compose.png" width="600">
+</p>
+
+
 2. Ejecutar:
 
    ```powershell
