@@ -118,6 +118,7 @@ Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wor
 3. Comprobar que los cambios siguen presentes.
    Esto confirma que los datos se guardan en `D:\DevSecOps\data`.
 
+
 <p align="center">
      <img src="IMAGES/9.compose.png" width="600">
 </p>
