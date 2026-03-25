@@ -75,6 +75,9 @@ Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wor
      <img src="IMAGES/4.compose.png" width="600">
 </p>
 
+ <p align="center">
+     <img src="IMAGES/5.compose.png" width="600">
+</p>
 
 ---
 
@@ -82,6 +85,11 @@ Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wor
 
 * Acceder a **WordPress**:
   [http://localhost:88](http://localhost:88)
+
+ <p align="center">
+     <img src="IMAGES/5.compose.png" width="600">
+</p>
+
 
   Completar el asistente de instalación de WordPress.
 
