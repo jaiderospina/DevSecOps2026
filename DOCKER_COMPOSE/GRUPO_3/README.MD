@@ -135,7 +135,7 @@ D:\DevSecOps\data\wp
 ## **Resultado esperado**
 
 <p align="center">
-     <img src="IMAGES/10.compose.png" width="600">
+     <img src="IMAGES/11.compose.png" width="600">
 </p>
 
 
