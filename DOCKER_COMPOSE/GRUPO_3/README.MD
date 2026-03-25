@@ -96,6 +96,8 @@ Si todo es correcto, se deberá ver los tres servicios en ejecución: `db`, `wor
 * Accede a **phpMyAdmin**:
   [http://localhost:81](http://localhost:81)
 
+
+
   Usa las credenciales:
 
   * **Usuario:** root
