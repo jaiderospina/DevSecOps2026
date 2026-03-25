@@ -45,7 +45,7 @@ D:\
 
 <p align="center">
    <figure>
-  <img src="Images/1.compose.JPG" width="600">
+  <img src="IMAGES/1.compose.PNG" width="600">
      <figcaption>Lista los contenedores que se encuentran corriendo.</figcaption>
    </figure>
 </p>
