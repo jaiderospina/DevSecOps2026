@@ -16,7 +16,7 @@
 
 LABORATORIO: Implementación de entorno WordPress + MySQL + phpMyAdmin con Docker Compose en Windows
 
-Objetivo del laboratorio
+🎯 Objetivo del laboratorio
 Implementar un entorno funcional de desarrollo WordPress utilizando Docker Compose, con los siguientes componentes:
 
 WordPress: CMS (Content Management System) para crear sitios web.
@@ -43,7 +43,12 @@ D:\
 
 # Crear carpeta base
 
-
+<p align="center">
+   <figure>
+  <img src="Images/1.compose.JPG" width="600">
+     <figcaption>Lista los contenedores que se encuentran corriendo.</figcaption>
+   </figure>
+</p>
 
 ## ⚙️ **Paso 2: Crear archivo `.env`**
 
