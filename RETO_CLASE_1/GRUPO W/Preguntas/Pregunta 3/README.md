@@ -1,4 +1,4 @@
-# Reto: Contenedores Apache y Nginx
+# Reto: Contenedores Apache, Nginx y Tomcat
 
 ## 1. Contenedor Apache
 
@@ -45,3 +45,22 @@ Por esta razón:
 - No es necesario realizar instalaciones adicionales.
 - Se reduce el tiempo de configuración.
 - Se facilita una puesta en marcha rápida del servicio.
+
+## 3 Tomcat
+Probar la opción automática -P (publicar todos los puertos expuestos) con un tercer contenedor (puedes usar la misma imagen nginx o httpd). Observa qué puerto aleatorio te asigna Docker.
+
+### Ejecución con Docker
+
+<img src="../../image/docker-run-tomcat.png" width="600" height="500">
+
+### Justificación
+
+Se realiza un `docker pull` para descargar la imagen oficial de **Tomcat**. A diferencia del caso de Apache, esta imagen ya viene preconfigurada con todos los componentes necesarios para su ejecución.
+
+- Pero la manera en la cual se ejecuta no permite inicializar el tomcat por lo que se debe ingresara la imagen ya contenida y subir el tomcat.
+
+<img src="../../image/run-tomcat.png" width="600" height="500">
+
+- Esto dando como resultado que ya sea posible ver la ejecución del tomcat
+
+<img src="../../image/tomcat-local.png" width="600" height="500">
