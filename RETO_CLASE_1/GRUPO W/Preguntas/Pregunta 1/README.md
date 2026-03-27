@@ -37,4 +37,4 @@ Aquí Docker asigna automáticamente un puerto disponible del host para el puert
 #Durante la práctica, se evidenció que el puerto asignado mediante la opción `-P ` es dinámico, ya que Docker selecciona automáticamente un puerto disponible en el host.    
 Por esta razón, es necesario consultar el puerto asignado en cada ejecución utilizando el comando: `docker ps `.
 
-<img src="../../image/docker ps.png">
+<img src="../../image/docker-apache-star.png">
