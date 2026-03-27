@@ -16,6 +16,7 @@ Configurar varios contenedores web (Apache y Nginx) para que funcionen al mismo 
 
 - [¿Diferencia entre -p y -P?](./Preguntas/Pregunta%201/)
 - [¿Qué significa 0.0.0.0:8080->80/tcp?](./Preguntas/Pregunta%202/)
+- [Actividad](./Preguntas/Pregunta%204/)
 
 
 # Pasos que deben realizar (indicaciones claras)
