@@ -113,7 +113,7 @@ Se procede a realizar la instalación de apache por medio de una imagen de Ubunt
 docker run -it -d -p 8080:80 --name=apache-reto ubuntu:18.04 /bin/bash
 docker exec -it apache-reto /bin/bash
 apt update
-(img/1.Docker_Run_Apache.png)
+![Evidencia1](img/1.Docker_Run_Apache.png)
 
 apt install apache2
 /etc/init.d/apache2 start
