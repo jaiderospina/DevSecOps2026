@@ -134,8 +134,9 @@ http://localhost:8080
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Apache.png" width="600">
 </p>
+<p align="center">
 Captura 4. Navegador mostrando Apache en http://localhost:8080.
-
+</p>
 ---
 
 ### Creación del contenedor Nginx
@@ -147,5 +148,32 @@ El comando ejecutado fue:
 ```bash
 docker run -d -p 8081:80 --name nginx-reto nginx
 ```
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Creacion de Docker Nginx.png" width="600">
+</p>
+<p align="center">
+Captura 1. Creación del contenedor nginx-reto.
+</p>
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Nginx.png" width="600">
+</p>
+<p align="center">
+Captura 2. Ingreso al contenedor nginx-reto.
+</p>
 
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Nginx-reto.png" width="600">
+</p>
+<p align="center">
+Captura 3. Inspección de puertos con docker port al contenedor nginx-reto.
+</p>
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Nginx.png" width="600">
+</p>
+<p align="center">
+Captura 4. Navegador mostrando nginx en http://localhost:8081.
+</p>
+
+
+### Creación del contenedor Httpd
 
