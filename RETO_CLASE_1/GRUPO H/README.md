@@ -97,6 +97,8 @@ Finalmente se probó la opción automática -P con un tercer contenedor Nginx, e
   <img src="imagenes/Nginx.jpg" width="500">
 </p>
 
+## Accede desde el navegador a la imagenes
+
 
 tabla comparativa
 Aquí tienes una tabla comparativa clara entre `-p` y `-P` en Docker, con lo que investigamos:  
