@@ -242,7 +242,7 @@ http://localhost:32768
 <img src="../../OWASP/GRUPO R/IMAGENES/Docker ps Nginx auto.png" width="600">
 </p>
 <p align="center">  
-<strong>Captura 10.</strong>Salida de `docker ps` mostrando el puerto automático asignado al tercer contenedor.
+<strong>Captura 10.</strong>Salida de <strong>docker ps</strong> mostrando el puerto automático asignado al tercer contenedor.
 </p>
 
 
@@ -268,7 +268,7 @@ Esto confirmó que los tres servicios estaban activos simultáneamente y sin con
 <img src="../../OWASP/GRUPO R/IMAGENES/Docker ps Todos los contenedores.png" width="600">
 </p>
 <p align="center">  
-<strong>Captura 10.</strong>Salida completa de <strong>docker ps</strong> con los tres contenedores en ejecución.
+<strong>Captura 11.</strong>Salida completa de <strong>docker ps</strong> con los tres contenedores en ejecución.
 </p>
 
 
@@ -287,7 +287,7 @@ docker port apache-reto
 <img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Apache-reto.png" width="600">
 </p>
 <p align="center">
-<strong>Captura .</strong> Inspección de puertos con docker port al contenedor apache-reto.
+<strong>Captura 12.</strong> Inspección de puertos con docker port al contenedor apache-reto.
 </p>
 
 Salida esperada:
@@ -305,7 +305,7 @@ docker port nginx-reto
 <img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Nginx-reto.png" width="600">
 </p>
 <p align="center">
-<strong>Captura .</strong> Inspección de puertos con docker port al contenedor nginx-reto.
+<strong>Captura 13.</strong> Inspección de puertos con docker port al contenedor nginx-reto.
 </p>
 
 Salida esperada:
@@ -319,6 +319,12 @@ Salida esperada:
 ```bash
 docker port nginx-auto
 ```
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Nginx auto.png" width="600">
+</p>
+<p align="center">
+<strong>Captura 14.</strong> Inspección de puertos con docker port al contenedor nginx-auto.
+</p>
 
 Salida esperada:
 
