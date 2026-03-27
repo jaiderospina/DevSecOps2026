@@ -195,6 +195,13 @@ Para probar la publicación automática de puertos se creó un tercer contenedor
 docker run -d -P --name nginx-auto nginx
 ```
 
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Creacion de Docker Nginx auto.png" width="600">
+</p>
+<p align="center">  
+<strong>Captura 7.</strong> Creación del contenedor nginx-reto.
+</p>
+
 #### Explicación
 
 - `-P`: publica automáticamente todos los puertos expuestos por la imagen
