@@ -75,3 +75,18 @@ En resumen, docker port <nombre> es una herramienta práctica para inspeccionar 
   <img src="imagenes/Puerto.png" width="900">
 </p>
 
+
+
+
+
+tabla comparativa
+Aquí tienes una tabla comparativa clara entre `-p` y `-P` en Docker, con lo que investigamos:  
+
+| Opción | Significado | Comportamiento | Ejemplo de salida en `docker ps` | Uso típico |
+|--------|-------------|----------------|----------------------------------|------------|
+| `-p host:contenedor` | Publicación **manual y explícita** de puertos | El puerto del host que indiques se conecta directamente al puerto interno del contenedor | `0.0.0.0:8080->80/tcp` (host 8080 enlazado al contenedor 80) | Cuando necesitas controlar exactamente qué puerto usar en tu máquina, por ejemplo `docker run -d -p 8080:80 nginx` |
+| `-P` | Publicación **automática** de todos los puertos expuestos en el Dockerfile | Docker asigna un puerto aleatorio disponible en el host para cada puerto expuesto | `0.0.0.0:32768->80/tcp` (host 32768 enlazado al contenedor 80) | Cuando quieres rapidez o no importa qué puerto se use en el host, por ejemplo `docker run -d -P nginx` |
+
+👉 En resumen: `-p` te da control manual y preciso sobre el mapeo, mientras que `-P` lo hace de forma automática y aleatoria.  
+
+¿Quieres que arme también un ejemplo paso a paso con `nginx` mostrando el comando, la salida de `docker ps` y cómo se vería el acceso desde el navegador para que lo uses como evidencia en tu README del reto?
