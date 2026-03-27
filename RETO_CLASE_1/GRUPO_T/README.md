@@ -2,7 +2,7 @@
 
 ---
 
-##  Grupo
+##  Grupo T
 **Grupo X**
 
 ### ‍ Integrantes
