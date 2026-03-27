@@ -1,5 +1,11 @@
 [Regresar al inicio](../../../GRUPO%20W/README.md)
 
+# Docker Port?
+Docker Port o puertos docker es un comando que cumple la función de obtener un listado de los puertos expuestos de un contenedor de Docker determinado, es decir, se encarga de enlistar las llamadas asignaciones de puerto o una asignación de tipo específica para un container.
+
+Docker Port puede utilizarse también con el objetivo de contribuir al proceso donde se muestra la totalidad de los puertos mapeados o se realiza un mapeo específico, sin necesidad de especificar un PRIVATE_PORT o puerto privado.
+
+
 # ¿Qué significa 0.0.0.0:8080->80/tcp en docker ps?
 
 **Significa:**
@@ -20,6 +26,7 @@ Indica que el servicio se encuentra disponible a través del puerto 8080 del hos
 
 <p align="center">
 <img src="../../image/docker_run_ngnix.png">
+*Imagen del Contenedor ngnix*
 </p
 
 # Al acceder a la URL:
@@ -32,6 +39,7 @@ Se realizó el acceso al servicio a través del navegador web mediante la URL
 
 <p align="center">
 <img src="../../image/nginx-local.png">
+*Imagen del Contenedor URL ngnix*
 </p
 
 Validación de respuesta del servicio:
@@ -41,6 +49,7 @@ Al acceder a la URL http://localhost:8080
 
 <p align="center">
   <img src="../../image/1.png" width="900">
+*Imagen del Contenedor Apache*
 </p
 
 
