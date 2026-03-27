@@ -28,19 +28,25 @@ El comando docker port <nombre> sirve para mostrar los puertos publicados de un 
 Sintaxis básica:
 
 bash
+
 docker port <nombre_del_contenedor>
+
 <nombre_del_contenedor> puede ser el nombre o el ID del contenedor.
 
 Opcionalmente puedes especificar un puerto interno para ver solo ese mapeo:
 
 bash
+
 docker port <nombre_del_contenedor> 80
+
 📌 Interpretación de la salida
 
 Ejemplo:
 
 bash
+
 80/tcp -> 0.0.0.0:8080
+
 80/tcp → el puerto expuesto dentro del contenedor.
 
 0.0.0.0:8080 → el puerto del host al que está mapeado, accesible desde cualquier interfaz de red.
@@ -55,6 +61,7 @@ bash
 Aquí el puerto interno 9876 está disponible en el host en el 1234, y el 7890 en el 4321.
 
 📌 Para qué sirve
+
 Verificación rápida: comprobar qué puertos están publicados sin necesidad de revisar toda la salida de docker ps.
 
 Depuración: útil cuando tienes varios contenedores y no recuerdas qué puerto del host corresponde a cada servicio.
