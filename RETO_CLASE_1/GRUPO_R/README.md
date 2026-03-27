@@ -154,9 +154,9 @@ docker run -d -p 8081:80 --name nginx-reto nginx
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Creacion de Docker Nginx.png" width="600">
 </p>
-<p align="center">
-  
-**Captura 5.** Creación del contenedor nginx-reto.
+<p align="center">  
+<strong>Captura 5.</strong> Creación del contenedor nginx-reto.
+</p>
 
 #### Explicación
 
@@ -173,13 +173,12 @@ El contenedor quedó funcionando correctamente y el servicio Nginx fue accesible
 ```bash
 http://localhost:8081
 ```
-</p>
+
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Nginx.png" width="600">
 </p>
-<p align="center">
-  
-**Captura 6.** Ingreso al contenedor nginx-reto.
+<p align="center">  
+<strong>Captura 6.</strong> Ingreso al contenedor nginx-reto.
 </p>
 
 <p align="center">
