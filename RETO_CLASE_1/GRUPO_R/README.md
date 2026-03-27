@@ -113,7 +113,16 @@ Captura 1. Creación del contenedor apache-reto.
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Apache .png" width="600">
 </p>
+<p align="center">
 Captura 2. Ingreso al contenedor apache-reto.
+</p>
+
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Apache-reto.png" width="600">
+</p>
+<p align="center">
+Captura 3. Inspección de puertos con docker port al contenedor apache-reto.
+</p>
 
 
 Resultado
@@ -125,7 +134,7 @@ http://localhost:8080
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Apache.png" width="600">
 </p>
-Captura 3. Navegador mostrando Apache en http://localhost:8080.
+Captura 4. Navegador mostrando Apache en http://localhost:8080.
 
 ---
 
