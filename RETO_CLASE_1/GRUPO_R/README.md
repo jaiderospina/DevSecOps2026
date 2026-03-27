@@ -147,7 +147,7 @@ docker run -d -p 8081:80 --name nginx-reto nginx
 <img src="../../OWASP/GRUPO R/IMAGENES/Creacion de Docker Nginx.png" width="600">
 </p>
 <p align="center">  
-<strong>Captura 5.</strong> Creación del contenedor nginx-reto.
+<strong>Captura 4.</strong> Creación del contenedor nginx-reto.
 </p>
 
 #### Explicación
@@ -157,6 +157,13 @@ docker run -d -p 8081:80 --name nginx-reto nginx
 - `-p 8081:80`: publica el puerto 80 del contenedor en el puerto 8081 del host
 - `--name nginx-reto`: asigna el nombre solicitado
 - `nginx`: imagen oficial del servidor web Nginx
+  
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Nginx.png" width="600">
+</p>
+<p align="center">  
+<strong>Captura 5.</strong> Ingreso al contenedor nginx-reto.
+</p>
 
 ##### Resultado
 
@@ -165,22 +172,6 @@ El contenedor quedó funcionando correctamente y el servicio Nginx fue accesible
 ```bash
 http://localhost:8081
 ```
-
-<p align="center">
-<img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Nginx.png" width="600">
-</p>
-<p align="center">  
-<strong>Captura 6.</strong> Ingreso al contenedor nginx-reto.
-</p>
-
-<p align="center">
-<img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Nginx-reto.png" width="600">
-</p>
-<p align="center">
-  
-**Captura 7.** Inspección de puertos con docker port al contenedor nginx-reto.
-
-</p>
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Nginx.png" width="600">
 </p>
@@ -277,6 +268,12 @@ Salida esperada:
 ```bash
 docker port nginx-reto
 ```
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Nginx-reto.png" width="600">
+</p>
+<p align="center">
+<strong>Captura .</strong> Inspección de puertos con docker port al contenedor nginx-reto.
+</p>
 
 Salida esperada:
 
