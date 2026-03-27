@@ -264,7 +264,13 @@ La salida permitió comprobar que:
 
 Esto confirmó que los tres servicios estaban activos simultáneamente y sin conflicto de puertos.
 
-**Captura 7.** Salida completa de `docker ps` con los tres contenedores en ejecución.
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Docker ps Todos los contenedores.png" width="600">
+</p>
+<p align="center">  
+<strong>Captura 10.</strong>Salida completa de <strong>docker ps</strong> con los tres contenedores en ejecución.
+</p>
+
 
 ---
 
