@@ -40,3 +40,5 @@ Por esta razón, es necesario consultar el puerto asignado en cada ejecución ut
 <p align="center">
 <img src="../../image/docker-apache-star.png">
 </p>
+
+*Imagen de Verificación Contenedores*
