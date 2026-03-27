@@ -21,7 +21,17 @@ Configurar y acceder a múltiples contenedores web al mismo tiempo usando distin
 ---
 
 ## 1. Introducción
-En este reto se implementaron tres contenedores web sobre la misma máquina host. El primero fue un contenedor Apache publicado manualmente con `-p 8080:80`, el segundo un contenedor Nginx publicado con `-p 8081:80`, y el tercero un contenedor adicional desplegado con `-P`, lo que permitió a Docker asignar un puerto aleatorio del host al puerto expuesto por la imagen.
+
+En este reto se trabajó el acceso público a servicios web desplegados en contenedores Docker, ampliando lo aprendido en el Taller 2. En lugar de publicar un solo servicio, se configuraron varios contenedores web dentro de la misma máquina host, utilizando diferentes estrategias de mapeo de puertos.
+
+Para el desarrollo de la actividad se implementaron tres contenedores:
+
+- Un contenedor **Apache**, publicado manualmente con `-p 8080:80`
+- Un contenedor **Nginx**, publicado manualmente con `-p 8081:80`
+- Un tercer contenedor **Nginx**, desplegado con `-P`, permitiendo que Docker asignara automáticamente un puerto del host
+
+De esta manera, se comprobó cómo Docker permite ejecutar varios servicios web de forma simultánea sin conflictos de puertos, y cómo se pueden inspeccionar las publicaciones realizadas con los comandos `docker ps` y `docker port`.
+
 
 ---
 
@@ -38,7 +48,19 @@ Cuando `docker ps` muestra una salida como `0.0.0.0:8080->80/tcp`, significa que
 
 ### 2.3 ¿Para qué sirve `docker port <nombre>`?
 
-El comando `docker port <contenedor>` permite listar los mapeos de puertos publicados de un contenedor. Es decir, muestra qué puerto interno del contenedor fue asociado a qué puerto del host. También puede consultarse un puerto específico, por ejemplo `docker port apache-reto 80/tcp`.
+El comando `docker port <contenedor>` sirve para listar los puertos publicados de un contenedor y mostrar cómo están mapeados entre el contenedor y el host.
+
+Por ejemplo, al ejecutar:
+
+```bash
+docker port apache-reto
+```
+se puede obtener una salida como:
+
+80/tcp -> 0.0.0.0:8080
+
+Esto indica que el puerto 80/tcp del contenedor fue publicado hacia el puerto 8080 del host. La documentación oficial también permite consultar un puerto específico, por ejemplo docker port apache-reto 80/tcp.
+
 
 ### 2.4 Imágenes oficiales investigadas
 
