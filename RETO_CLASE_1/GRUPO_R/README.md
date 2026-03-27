@@ -131,6 +131,8 @@ http://localhost:8080
 <p align="center">
 <strong>Captura 3.</strong> Navegador mostrando Apache en http://localhost:8080
 </p>
+
+
 ---
 
 ### 4.2 Creación del contenedor Nginx
@@ -175,11 +177,10 @@ http://localhost:8081
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Nginx.png" width="600">
 </p>
-<p align="center">
-  
-**Captura 8.** Navegador mostrando nginx en http://localhost:8081.
-
+<p align="center">  
+<strong>Captura 6.</strong>Navegador mostrando nginx en http://localhost:8081.
 </p>
+
 
 ---
 
