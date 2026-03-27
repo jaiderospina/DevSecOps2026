@@ -120,7 +120,7 @@ Finalmente se probó la opción automática -P con un tercer contenedor Nginx, e
 
 
 <p align="center">
-  <img src="imagenes/docker" width="500">
+  <img src="imagenes/docker.png" width="500">
 </p>
 
 
