@@ -125,8 +125,16 @@ apt update
 
 apt install apache2
 /etc/init.d/apache2 start
-![Evidencia2](img/2.Start_Apache.png)
 exit
+<p align="center">
+  <img src="img/2.Start_Apache.png" width="600"/>
+</p>
+
+<p align="center">
+  <b>Figura 2.</b> Instalacion apache2. <code></code>.
+</p>
+
+
 
 Iniciar un segundo contenedor Nginx (imagen oficial recomendada).
 Mapea el puerto 8081 del host al 80 del contenedor. Usa nombre --name nginx-reto.
