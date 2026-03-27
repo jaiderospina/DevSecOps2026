@@ -25,32 +25,20 @@ Cuando en la salida de `docker ps` ves algo como `0.0.0.0:8080->80/tcp`, signifi
 El comando docker port <nombre> sirve para mostrar los puertos publicados de un contenedor y su correspondencia con los puertos del host; su salida indica qué puerto interno del contenedor está enlazado a qué puerto externo en la máquina anfitriona.
 
 📌 Uso del comando
+
 Sintaxis básica:
-
-bash
-
-docker port <nombre_del_contenedor>
-
+bash  docker port <nombre_del_contenedor>
 <nombre_del_contenedor> puede ser el nombre o el ID del contenedor.
-
 Opcionalmente puedes especificar un puerto interno para ver solo ese mapeo:
-
-bash
-
-docker port <nombre_del_contenedor> 80
+bash  docker port <nombre_del_contenedor> 80
 
 📌 Interpretación de la salida
 
 Ejemplo:
 
-bash
-
-80/tcp -> 0.0.0.0:8080 80/tcp → el puerto expuesto dentro del contenedor.
-
+bash  80/tcp -> 0.0.0.0:8080 80/tcp → el puerto expuesto dentro del contenedor.
 0.0.0.0:8080 → el puerto del host al que está mapeado, accesible desde cualquier interfaz de red.
-
 Esto significa que si accedes a http://localhost:8080, realmente estás llegando al servicio que corre en el puerto 80 dentro del contenedor.
-
 Si el contenedor tiene varios puertos publicados, verás varias líneas, por ejemplo:
 
 bash
@@ -61,11 +49,8 @@ Aquí el puerto interno 9876 está disponible en el host en el 1234, y el 7890 e
 📌 Para qué sirve
 
 Verificación rápida: comprobar qué puertos están publicados sin necesidad de revisar toda la salida de docker ps.
-
 Depuración: útil cuando tienes varios contenedores y no recuerdas qué puerto del host corresponde a cada servicio.
-
 Automatización: puede integrarse en scripts para obtener dinámicamente los puertos asignados, especialmente cuando usas -P y Docker asigna puertos aleatorios.
-
 En resumen, docker port <nombre> es una herramienta práctica para inspeccionar y confirmar los mapeos de red de un contenedor, asegurando que sabes exactamente cómo acceder a sus servicios desde el host o desde fuera.
 
 ## 1.3 Imágenes de los puertos
