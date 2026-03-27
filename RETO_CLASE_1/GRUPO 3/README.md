@@ -122,7 +122,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <figure>
    <img src="Images/7.JPG" width="600">
-     <figcaption>Lista los puertos por los que los contenedores se encuentran configurados para ser accedidos.</figcaption>
+     <figcaption>Mapeo de puertos contenedores en ejecución, se muestran los puertos del host que están conectados a  puertos internos del contenedor.</figcaption>
    </figure>
 </p>
       
