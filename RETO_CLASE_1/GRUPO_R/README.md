@@ -371,7 +371,7 @@ Después se validó en el navegador que:
 <img src="../../OWASP/GRUPO R/IMAGENES/Contenedores creados .png" width="600">
 </p>
 <p align="center">
-<strong>Captura 16.</strong>Evidencia de que `nginx-reto` sigue funcionando aun después de detener Apache.
+<strong>Captura 16.</strong>Evidencia de que <strong>nginx-reto</strong> sigue funcionando aun después de detener Apache.
 </p>
 
 
