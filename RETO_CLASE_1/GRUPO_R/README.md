@@ -360,9 +360,20 @@ Después se validó en el navegador que:
 - `http://localhost:8081` seguía funcionando correctamente
 - `http://localhost:32768` seguía funcionando correctamente
 
-**Captura 14.** Detención del contenedor `apache-reto`.  
-**Captura 15.** Salida de `docker ps` después de detener uno de los contenedores.  
-**Captura 16.** Evidencia de que `nginx-reto` sigue funcionando aun después de detener Apache.
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Detención pache-reto.png" width="600">
+</p>
+<p align="center">
+<strong>Captura 15.</strong> Detención del contenedor apache-reto. 
+</p>
+
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Contenedores creados .png" width="600">
+</p>
+<p align="center">
+<strong>Captura 16.</strong>Evidencia de que `nginx-reto` sigue funcionando aun después de detener Apache.
+</p>
+
 
 ---
 
