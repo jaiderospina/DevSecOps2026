@@ -238,8 +238,13 @@ http://localhost:32768
 <strong>Captura 9.</strong>Navegador mostrando nginx-auto.
 </p>
 
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Docker ps Nginx auto.png" width="600">
+</p>
+<p align="center">  
+<strong>Captura 10.</strong>Salida de `docker ps` mostrando el puerto automático asignado al tercer contenedor.
+</p>
 
-**Captura 6.** Salida de `docker ps` mostrando el puerto automático asignado al tercer contenedor.
 
 ---
 
