@@ -221,11 +221,21 @@ http://localhost:8080 → debe mostrar Apache → http://192.168.249.128:8080
 
 http://localhost:8081 → debe mostrar Nginx →  http://192.168.249.128:8081
 
-![Evidencia10](img/10.nginx_iniciado.png)
+<p align="center">
+  <img src="img/10.nginx_iniciado.png " width="600"/>
+</p>
+<p align="center">
+  <b>Figura 10</b> Acceso NGINX <code></code>.
+</p>
 
 debe mostrar Nginx con el puerto que fue automatico →  http://192.168.249.128:32768
 
-![Evidencia11](img/11.Nginx_Auto.png)
+<p align="center">
+  <img src="img/11.Nginx_Auto.png " width="600"/>
+</p>
+<p align="center">
+  <b>Figura 11</b> Configuracion de puerto TCP automático <code></code>.
+</p>
 
 Detener solo uno de los contenedores y verificar que el otro sigue funcionando.
 
