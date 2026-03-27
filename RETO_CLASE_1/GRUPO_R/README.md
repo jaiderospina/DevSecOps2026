@@ -99,9 +99,10 @@ docker run -d -p 8080:80 --name apache-reto httpd
 ```
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Creacion de Docker Apache .png" width="600">
-  Captura 1. Creación del contenedor apache-reto.
 </p>
-
+<p align="center">
+Captura 1. Creación del contenedor apache-reto.
+</p>
 
 #### Explicacion
 - `docker run`: crea y ejecuta un contenedor
