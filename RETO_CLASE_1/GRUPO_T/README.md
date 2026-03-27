@@ -160,9 +160,18 @@ Accede desde el navegador a:
 
 La IP asignada por mi MV fue la siguiente
 
-![Evidencia8](img/08.IP_Asignada.png)
+#![Evidencia8](img/08.IP_Asignada.png)
 
-**Figura 8.** Puerto asignado automáticamente al contenedor usando `-P`.
+<h3 align="center">🔹 Evidencia 8: Asignación automática de puertos con Docker</h3>
+
+<p align="center">
+  <img src="img/08.IP_Asignada.png" width="600"/>
+</p>
+
+<p align="center">
+  <b>Figura 8.</b> IP Asignada por la maquina virtual <code>-P</code>.
+</p>
+
 
 Luego con esta misma 192.168.249.128 procedemos a cargar la pagina web por defecto.
 
