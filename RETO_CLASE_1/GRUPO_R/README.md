@@ -100,6 +100,7 @@ docker run -d -p 8080:80 --name apache-reto httpd
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Creacion de Docker Apache .png" width="600">
 </p>
+Captura 1. Creación del contenedor apache-reto.
 
 #### Explicacion
 - `docker run`: crea y ejecuta un contenedor
@@ -110,6 +111,7 @@ docker run -d -p 8080:80 --name apache-reto httpd
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Apache .png" width="600">
 </p>
+Captura 2. Ingreso al contenedor apache-reto.
 
 Resultado
 
@@ -117,10 +119,10 @@ El contenedor quedó ejecutándose correctamente y el servicio Apache se hizo ac
 
 http://localhost:8080
 
-Captura 1. Creación del contenedor apache-reto.
-
-
-Captura 2. Navegador mostrando Apache en http://localhost:8080.
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Apache.png" width="600">
+</p>
+Captura 3. Navegador mostrando Apache en http://localhost:8080.
 
 ---
 
