@@ -26,7 +26,8 @@ Indica que el servicio se encuentra disponible a través del puerto 8080 del hos
 
 <p align="center">
 <img src="../../image/docker_run_ngnix.png">
-*Imagen del Contenedor ngnix*
+
+ *Imagen del Contenedor Ngnix*
 </p
 
 # Al acceder a la URL:
@@ -39,6 +40,7 @@ Se realizó el acceso al servicio a través del navegador web mediante la URL
 
 <p align="center">
 <img src="../../image/nginx-local.png">
+  
 *Imagen del Contenedor URL ngnix*
 </p
 
@@ -49,6 +51,7 @@ Al acceder a la URL http://localhost:8080
 
 <p align="center">
   <img src="../../image/1.png" width="900">
+  
 *Imagen del Contenedor Apache*
 </p
 
