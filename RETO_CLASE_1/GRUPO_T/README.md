@@ -1,12 +1,63 @@
-# Grupo T
+#  Reto Clase 1 - Acceso Público Avanzado con Docker
 
-Reynel Cely
+---
 
-Laura Bernal
+##  Grupo
+**Grupo X**
 
-Johanna Ortiz
+### ‍ Integrantes
 
-Bayardo Medina
+- Reynel Cely
+  
+- Laura Bernal
+  
+- Johanna Ortiz
+  
+- Bayardo Medina
+
+  
+
+###  Fecha
+26 de marzo de 2026  
+
+---
+
+##  Objetivo del reto
+
+El objetivo de este reto es configurar y acceder a múltiples contenedores web de manera simultánea, utilizando diferentes estrategias de mapeo de puertos en Docker.  
+
+Se busca comprender el funcionamiento de los parámetros `-p` y `-P`, así como validar la exposición de servicios web (Apache y Nginx) desde el navegador, asegurando que no existan conflictos de puertos y que los servicios sean accesibles correctamente.
+
+---
+
+##  Tabla comparativa: `-p` vs `-P`
+
+| Característica | `-p` (publish) | `-P` (publish all) |
+|--------------|----------------|--------------------|
+| Tipo de asignación | Manual | Automática |
+| Control del puerto | Total (defines el puerto) | Ninguno (Docker asigna uno aleatorio) |
+| Ejemplo | `-p 8080:80` | `-P` |
+| Uso recomendado | Producción o cuando necesitas un puerto específico | Pruebas rápidas o entornos de laboratorio |
+| Visibilidad | Fácil de recordar | Requiere usar `docker port` para saber el puerto |
+| Riesgo de conflictos | Bajo (si eliges bien) | Bajo (Docker gestiona automáticamente) |
+
+---
+
+##  Conclusión
+
+En este reto aprendimos a exponer múltiples servicios web usando Docker, diferenciando claramente entre la asignación manual y automática de puertos.  
+
+El uso de `-p` es ideal cuando se necesita control total, mientras que `-P` facilita pruebas rápidas sin preocuparse por conflictos. Además, herramientas como `docker ps` y `docker port` son esenciales para validar la conectividad de los servicios.
+
+
+
+
+
+
+
+
+
+
 
 
 
