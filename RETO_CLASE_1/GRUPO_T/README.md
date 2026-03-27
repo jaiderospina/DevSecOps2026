@@ -188,7 +188,12 @@ Evidenciamos que los puertos asignados estan configurados de manera correcta par
 Para nginx 80/tcp -> 0.0.0.0:8081 para IPv4 y 80/tcp -> [::]:8081 para IPv6. 
 Para el contenedor nginx con puerto automatico asignado 80/tcp -> 0.0.0.0:32768 Para IPv4 y 80/tcp -> [::]:32768 para IPv6.
 
-![Evidencia7](img/07.DockerPort.png)
+<p align="center">
+  <img src="img/07.DockerPort.png " width="600"/>
+</p>
+<p align="center">
+  <b>Figura 7</b> Configuration puerto TCP 80 <code></code>.
+</p>
 
 Accede desde el navegador a:
 
@@ -207,7 +212,12 @@ Luego con esta misma 192.168.249.128 procedemos a cargar la pagina web por defec
 
 http://localhost:8080 → debe mostrar Apache → http://192.168.249.128:8080
 
-![Evidencia9](img/09.ApacheIniciado.png)
+<p align="center">
+  <img src="img/09.ApacheIniciado.png " width="600"/>
+</p>
+<p align="center">
+  <b>Figura 9</b> Confirmacion de servicio activo apache <code></code>.
+</p>
 
 http://localhost:8081 → debe mostrar Nginx →  http://192.168.249.128:8081
 
