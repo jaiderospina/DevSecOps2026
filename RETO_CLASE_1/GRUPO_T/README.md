@@ -104,3 +104,88 @@ magen	Puerto por Defecto	Tipo de Servicio
 | **postgres** | 5432 | Base de datos relacional avanzada. |
 | **mongodb** | 27017 | Base de datos NoSQL orientada a documentos. |
 
+
+## 1. Inicia un contenedor Apache (puedes usar la misma forma del Taller 2 o la imagen oficial httpd – tú decides y lo justificas en el README).
+
+Mapear el puerto 8080 del host al 80 del contenedor. Usa nombre --name apache-reto.
+Se procede a realizar la instalación de apache por medio de una imagen de Ubuntu ejecutando los siguientes comandos:
+
+docker run -it -d -p 8080:80 --name=apache-reto ubuntu:18.04 /bin/bash
+docker exec -it apache-reto /bin/bash
+apt update
+(img/1.Docker_Run_Apache.png)
+
+apt install apache2
+/etc/init.d/apache2 start
+(img/2.Start_Apache.png)
+exit
+
+Iniciar un segundo contenedor Nginx (imagen oficial recomendada).
+Mapea el puerto 8081 del host al 80 del contenedor. Usa nombre --name nginx-reto.
+
+Realizamos la instalación de nginx con el comando:
+docker run -d -p 8081:80 --name nginx-reto nginx
+
+(img/3.nginx.png)
+
+Después de la instalación vemos dos contenedores activos:
+
+(img/04.img_reto.png)
+
+Probar la opción automática -P (publicar todos los puertos expuestos) con un tercer contenedor (puedes usar la misma imagen nginx o httpd). Observa qué puerto aleatorio te asigna Docker.
+
+ejecutamos el siguiente comando donde asignamos el nombre nginx-auto por el puerto automatico 
+
+docker run -d -P --name nginx-auto nginx
+
+(img/05.Puerto_Auto.png)
+
+Verifica todo con:
+
+docker ps
+
+(img/06.DockerPs.png)
+
+docker port apache-reto
+docker port nginx-reto
+docker port <tercer-contenedor>  ---  docker port nginx-auto
+
+Evidenciamos que los puertos asignados estan configurados de manera correcta para el apache con 80/tcp -> 0.0.0.0:8080 para IPv4 y 80/tcp -> [::]:8080 y para IPv6. 
+Para nginx 80/tcp -> 0.0.0.0:8081 para IPv4 y 80/tcp -> [::]:8081 para IPv6. 
+Para el contenedor nginx con puerto automatico asignado 80/tcp -> 0.0.0.0:32768 Para IPv4 y 80/tcp -> [::]:32768 para IPv6.
+
+(img/07.DockerPort.png)
+
+Accede desde el navegador a:
+
+La IP asignada por mi MV fue la siguiente
+
+(img/08.IP_Asignada.png)
+
+Luego con esta misma 192.168.249.128 procedemos a cargar la pagina web por defecto.
+
+http://localhost:8080 → debe mostrar Apache → http://192.168.249.128:8080
+
+(img/09.ApacheIniciado.png)
+
+http://localhost:8081 → debe mostrar Nginx →  http://192.168.249.128:8081
+
+(img/10.nginx_iniciado.png)
+
+debe mostrar Nginx con el puerto que fue automatico →  http://192.168.249.128:32768
+
+(img/11.Nginx_Auto.png)
+
+Detener solo uno de los contenedores y verificar que el otro sigue funcionando.
+
+Ejecutamos el comando 
+
+docker stop nginx-auto
+
+vemos con docker ps -a que nginx-auto se encuentra en estado Exited y las demas maquinas en estado update
+
+(img/12.NginxAutoStop.png)
+
+Estado de nginx-auto desde la pagina web http://192.168.249.128:32768 con error ERR_CONNECTION_REFUSED
+
+(img/12.NginxAutoStopWeb.png)
