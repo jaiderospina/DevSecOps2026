@@ -162,6 +162,8 @@ La IP asignada por mi MV fue la siguiente
 
 ![Evidencia8](img/08.IP_Asignada.png)
 
+**Figura 8.** Puerto asignado automáticamente al contenedor usando `-P`.
+
 Luego con esta misma 192.168.249.128 procedemos a cargar la pagina web por defecto.
 
 http://localhost:8080 → debe mostrar Apache → http://192.168.249.128:8080
