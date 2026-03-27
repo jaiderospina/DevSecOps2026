@@ -162,13 +162,23 @@ ejecutamos el siguiente comando donde asignamos el nombre nginx-auto por el puer
 
 docker run -d -P --name nginx-auto nginx
 
-![Evidencia5](img/05.Puerto_Auto.png)
+<p align="center">
+  <img src="img/05.Puerto_Auto.png " width="600"/>
+</p>
+<p align="center">
+  <b>Figura 5</b> Comando puerto automático <code></code>.
+</p>
 
 Verifica todo con:
 
 docker ps
 
-![Evidencia6](img/06.DockerPs.png)
+<p align="center">
+  <img src="img/06.DockerPs.png " width="600"/>
+</p>
+<p align="center">
+  <b>Figura 6</b> Estado contenedores <code></code>.
+</p>
 
 docker port apache-reto
 docker port nginx-reto
