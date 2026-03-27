@@ -150,10 +150,10 @@ docker run -d -p 8081:80 --name nginx-reto nginx
 Después de la instalación vemos dos contenedores activos:
 
 <p align="center">
-  <img src="img/04.img_reto.png windth="600"/>
+  <img src="img/04.img_reto.png " width="600"/>
 </p>
 <p align="center">
-  <b>Figura 4.</b> contenedores activos. <code></code>.
+  <b>Figura 4.</b> Estado de contenedores <code></code>.
 </p>
 
 Probar la opción automática -P (publicar todos los puertos expuestos) con un tercer contenedor (puedes usar la misma imagen nginx o httpd). Observa qué puerto aleatorio te asigna Docker.
