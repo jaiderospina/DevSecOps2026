@@ -245,8 +245,19 @@ docker stop nginx-auto
 
 vemos con docker ps -a que nginx-auto se encuentra en estado Exited y las demas maquinas en estado update
 
-![Evidencia12](img/12.NginxAutoStop.png)
+<p align="center">
+  <img src="img/12.NginxAutoStop.png " width="600"/>
+</p>
+<p align="center">
+  <b>Figura 12</b> Estado de maquina <code></code>.
+</p>
 
 Estado de nginx-auto desde la pagina web http://192.168.249.128:32768 con error ERR_CONNECTION_REFUSED
 
-![Evidencia13](img/13.NginxAutoStopWeb.png)
+<p align="center">
+  <img src="img/13.NginxAutoStopWeb.png " width="600"/>
+</p>
+<p align="center">
+  <b>Figura 13</b> Error de connexion <code></code>.
+</p>
+
