@@ -88,13 +88,21 @@ En este reto se utilizaron ambas opciones para demostrar que el estudiante compr
 
 ---
 
-## Desarrollo del reto
+## 4. Desarrollo del reto
 
-### 1. Creación del contenedor Apache
+### Creación del contenedor Apache
 Se creó el contenedor Apache con la imagen oficial `httpd`, usando publicación manual del puerto:
 
+El comando ejecutado fue:
 ```bash
 docker run -d -p 8080:80 --name apache-reto httpd
+```
+#### Explicacion
+- `docker run`: crea y ejecuta un contenedor
+- `-d`: ejecuta el contenedor en segundo plano
+- `-p 8080:80`: enlaza el puerto 8080 del host con el puerto 80 del contenedor
+- `--name apache-reto`: asigna el nombre solicitado en el ejercicio
+- `httpd`: imagen oficial de Apache
 
 
 
