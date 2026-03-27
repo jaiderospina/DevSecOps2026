@@ -43,7 +43,6 @@ Se busca comprender el funcionamiento de los parámetros `-p` y `-P`, así como 
 
 ---
 
-##  Conclusión
 
 En este reto aprendimos a exponer múltiples servicios web usando Docker, diferenciando claramente entre la asignación manual y automática de puertos.  
 
@@ -113,7 +112,16 @@ Se procede a realizar la instalación de apache por medio de una imagen de Ubunt
 docker run -it -d -p 8080:80 --name=apache-reto ubuntu:18.04 /bin/bash
 docker exec -it apache-reto /bin/bash
 apt update
-![Evidencia1](img/1.Docker_Run_Apache.png)
+
+<p align="center">
+  <img src="img/1.Docker_Run_Apache.png" width="600"/>
+</p>
+
+<p align="center">
+  <b>Figura 1.</b> Mapear puerto 8080 del host a TCP 80 del contenedor. <code></code>.
+</p>
+
+
 
 apt install apache2
 /etc/init.d/apache2 start
