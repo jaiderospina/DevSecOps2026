@@ -119,8 +119,14 @@ Finalmente se probó la opción automática -P con un tercer contenedor Nginx, e
 </p>
 
 
+<p align="center">
+  <img src="imagenes/docker" width="500">
+</p>
+
+
 tabla comparativa
 Aquí tienes una tabla comparativa clara entre `-p` y `-P` en Docker, con lo que investigamos:  
+
 
 | Opción | Significado | Comportamiento | Ejemplo de salida en `docker ps` | Uso típico |
 |--------|-------------|----------------|----------------------------------|------------|
