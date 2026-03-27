@@ -3,7 +3,7 @@
 ---
 
 ##  Grupo T
-**Grupo X**
+
 
 ### ‍ Integrantes
 
@@ -261,3 +261,50 @@ Estado de nginx-auto desde la pagina web http://192.168.249.128:32768 con error 
   <b>Figura 13</b> Error de connexion <code></code>.
 </p>
 
+
+---
+##Dificultades encontradas y solución
+ 
+1. Puertos ocupados 
+En algunos casos, el puerto definido (ej: 8081) podía estar en uso. 
+Solución: 
+Cambiar el puerto manualmente (8082, 8083, etc.) 
+O usar -P para asignación automática 
+ 
+2. Confusión con puertos aleatorios 
+Al usar -P, no era evidente a qué puerto acceder. 
+Solución: 
+Usar: 
+docker ps 
+o 
+docker port nginx-auto 
+ 
+3. Verificación de acceso 
+Inicialmente no se sabía si el contenedor estaba funcionando correctamente. 
+Solución:
+Acceso vía navegador 
+Uso de curl 
+Validación del estado con docker ps 
+ 
+4. Organización de evidencias en README 
+Dificultad para documentar imágenes con formato profesional. 
+Solución: 
+Uso de estructura con títulos + figuras numeradas 
+Aplicación de Markdown y HTML para mejorar presentación 
+ 
+Conclusión 
+Durante este laboratorio se adquirieron conocimientos prácticos que complementan y amplían lo aprendido en el Taller 2. 
+Aprendizajes clave nuevos: 
+Diferencia real entre -p y -P 
+-p: control manual 
+-P: asignación automática 
+Comprensión del mapeo de puertos en Docker  
+Relación host ↔ contenedor 
+Aislamiento de contenedores  
+Un contenedor puede detenerse sin afectar a otros 
+Importancia de la verificación  
+Uso de comandos como docker ps, docker port 
+Documentación técnica  
+Organización de evidencias en README con formato profesional 
+ 
+Se logró entender cómo Docker gestiona la exposición de servicios, lo cual es fundamental para despliegues reales, balanceadores de carga y arquitecturas basadas en microservicios. 
