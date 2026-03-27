@@ -199,7 +199,7 @@ docker run -d -P --name nginx-auto nginx
 <img src="../../OWASP/GRUPO R/IMAGENES/Creacion de Docker Nginx auto.png" width="600">
 </p>
 <p align="center">  
-<strong>Captura 7.</strong> Creación del contenedor nginx-reto.
+<strong>Captura 7.</strong> Creación del contenedor nginx-auto.
 </p>
 
 #### Explicación
@@ -207,6 +207,13 @@ docker run -d -P --name nginx-auto nginx
 - `-P`: publica automáticamente todos los puertos expuestos por la imagen
 - Docker selecciona un puerto disponible del host sin necesidad de indicarlo manualmente
 - En este caso, la imagen `nginx` expone el puerto `80/tcp`, por lo tanto Docker asignó un puerto aleatorio del host hacia ese puerto interno
+
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Nginx auto.png" width="600">
+</p>
+<p align="center">
+<strong>Captura 8.</strong> Ingreso al contenedor Nginx-auto.
+</p>
 
 ##### Resultado
 
@@ -224,7 +231,14 @@ Por lo tanto, el contenedor pudo ser accedido desde el navegador usando:
 http://localhost:32768
 ```
 
-**Captura 5.** Creación del contenedor `nginx-auto` usando `-P`.  
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Nginx auto.png" width="600">
+</p>
+<p align="center">  
+<strong>Captura 9.</strong>Navegador mostrando nginx-auto.
+</p>
+
+
 **Captura 6.** Salida de `docker ps` mostrando el puerto automático asignado al tercer contenedor.
 
 ---
