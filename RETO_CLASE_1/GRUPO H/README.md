@@ -109,7 +109,7 @@ Finalmente se probó la opción automática -P con un tercer contenedor Nginx, e
 </p>
 
 
-tabla comparativa
+## Tabla comparativa
 Aquí tienes una tabla comparativa clara entre `-p` y `-P` en Docker, con lo que investigamos:  
 
 
