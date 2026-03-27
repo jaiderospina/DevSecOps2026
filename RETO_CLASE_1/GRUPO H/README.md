@@ -118,12 +118,11 @@ Aquí tienes una tabla comparativa clara entre `-p` y `-P` en Docker, con lo que
 | `-p host:contenedor` | Publicación **manual y explícita** de puertos | El puerto del host que indiques se conecta directamente al puerto interno del contenedor | `0.0.0.0:8080->80/tcp` (host 8080 enlazado al contenedor 80) | Cuando necesitas controlar exactamente qué puerto usar en tu máquina, por ejemplo `docker run -d -p 8080:80 nginx` |
 | `-P` | Publicación **automática** de todos los puertos expuestos en el Dockerfile | Docker asigna un puerto aleatorio disponible en el host para cada puerto expuesto | `0.0.0.0:32768->80/tcp` (host 32768 enlazado al contenedor 80) | Cuando quieres rapidez o no importa qué puerto se use en el host, por ejemplo `docker run -d -P nginx` |
 
-
-
-
-
-
+## Dificultades encontradas y cómo las resolvieron
 
 Durante la ejecución del reto se presentaron algunas dificultades relacionadas con la asignación de puertos. Al intentar iniciar un contenedor Nginx con el mapeo -p 8080:80, Docker arrojó un error indicando que el puerto 8080 ya estaba en uso, pues previamente había sido asignado al contenedor Apache. Esta situación se resolvió identificando el conflicto en la salida de docker ps y utilizando un puerto diferente para Nginx, en este caso el 8081, lo que permitió que ambos contenedores funcionaran de manera simultánea sin interferencias.
 
-En conclusión, se aprendió que además de los conceptos vistos en el Taller 2, es fundamental comprender cómo Docker gestiona los puertos y qué ocurre cuando se emplea la opción automática -P. Se evidenció que -p ofrece control manual y preciso sobre el mapeo de puertos, mientras que -P asigna puertos aleatorios disponibles en el host, lo cual puede ser útil para pruebas rápidas pero requiere verificar con docker ps o docker port cuál fue el puerto asignado. Este conocimiento adicional permite administrar mejor los contenedores, evitar conflictos de red y documentar con mayor claridad las evidencias de ejecución.
+
+##  Conclusión 
+
+Se aprendió que además de los conceptos vistos en el Taller 2, es fundamental comprender cómo Docker gestiona los puertos y qué ocurre cuando se emplea la opción automática -P. Se evidenció que -p ofrece control manual y preciso sobre el mapeo de puertos, mientras que -P asigna puertos aleatorios disponibles en el host, lo cual puede ser útil para pruebas rápidas pero requiere verificar con docker ps o docker port cuál fue el puerto asignado. Este conocimiento adicional permite administrar mejor los contenedores, evitar conflictos de red y documentar con mayor claridad las evidencias de ejecución.
