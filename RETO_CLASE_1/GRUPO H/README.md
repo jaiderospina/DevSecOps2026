@@ -94,7 +94,7 @@ Finalmente se probó la opción automática -P con un tercer contenedor Nginx, e
 
 
 <p align="center">
-  <img src="imagenes/Apache.png" width="900">
+  <img src="imagenes/Nginx.jpg" width="900">
 </p>
 
 
