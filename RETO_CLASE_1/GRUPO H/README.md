@@ -16,6 +16,6 @@ La diferencia entre usar -p 8080:80 y -P en Docker es que con -p 8080:80 defines
 
 
 
-¿Qué significa cuando ves 0.0.0.0:8080->80/tcp en docker ps?
+## ¿Qué significa cuando ves 0.0.0.0:8080->80/tcp en docker ps?
 
 Cuando en la salida de `docker ps` ves algo como `0.0.0.0:8080->80/tcp`, significa que el contenedor tiene su puerto interno **80/tcp** publicado hacia el host en el puerto **8080**, y que está accesible desde todas las interfaces de red del host (`0.0.0.0` indica “todas las direcciones disponibles”); en otras palabras, cualquier conexión que llegue al puerto 8080 de tu máquina (por ejemplo, `http://localhost:8080` o desde otra máquina apuntando a la IP de tu host en el puerto 8080) será redirigida al puerto 80 dentro del contenedor, donde está corriendo el servicio.
