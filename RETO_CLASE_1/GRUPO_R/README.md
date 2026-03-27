@@ -104,5 +104,27 @@ docker run -d -p 8080:80 --name apache-reto httpd
 - `--name apache-reto`: asigna el nombre solicitado en el ejercicio
 - `httpd`: imagen oficial de Apache
 
+Resultado
+
+El contenedor quedó ejecutándose correctamente y el servicio Apache se hizo accesible desde el navegador mediante:
+
+http://localhost:8080
+
+Captura 1. Creación del contenedor apache-reto.
+
+
+Captura 2. Navegador mostrando Apache en http://localhost:8080.
+
+---
+
+### Creación del contenedor Nginx
+
+Para el segundo servicio se utilizó la imagen oficial nginx, publicando manualmente el puerto 8081 del host hacia el puerto 80 del contenedor.
+
+El comando ejecutado fue:
+
+```bash
+docker run -d -p 8081:80 --name nginx-reto nginx
+```
 
 
