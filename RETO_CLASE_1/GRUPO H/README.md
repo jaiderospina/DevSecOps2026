@@ -75,9 +75,9 @@ En resumen, docker port <nombre> es una herramienta práctica para inspeccionar 
   <img src="imagenes/Puerto.png" width="900">
 </p>
 
-------------------------
 
-IMAGEN CON RECUADRO ROJO 
+
+## Contenedor
 
 Primero se inició un contenedor Apache utilizando la imagen oficial httpd, ya que esta garantiza estabilidad y soporte directo de la comunidad. El comando empleado fue docker run -d -p 8080:80 --name apache-reto httpd, lo que permitió mapear el puerto 8080 del host al puerto 80 del contenedor. En la salida de docker ps se evidenció el mapeo 0.0.0.0:8080->80/tcp bajo el nombre apache-reto.
 
@@ -86,7 +86,11 @@ Posteriormente se levantó un segundo contenedor Nginx con la imagen oficial ngi
 Finalmente se probó la opción automática -P con un tercer contenedor Nginx, ejecutando docker run -d -P --name nginx-auto nginx. En este caso Docker asignó un puerto aleatorio del host al puerto 80 del contenedor, lo cual se reflejó en la salida de docker ps como 0.0.0.0:32766->80/tcp bajo el nombre nginx-auto. Esta evidencia demuestra la diferencia entre el mapeo manual con -p, que ofrece control preciso sobre los puertos, y el mapeo automático con -P, que asigna puertos aleatorios disponibles en el host.
 
 
-------------------------
+<p align="center">
+  <img src="imagenes/Apache.png" width="900">
+</p>
+
+
 
 
 
