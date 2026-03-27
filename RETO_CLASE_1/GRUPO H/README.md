@@ -71,5 +71,7 @@ En resumen, docker port <nombre> es una herramienta práctica para inspeccionar 
 ## Buscar imágenes oficiales que expongan puertos
 
 
-
+<p align="center">
+  <img src="Imagenes/Puerto.png" width="400">
+</p>
 
