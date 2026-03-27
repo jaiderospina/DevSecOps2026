@@ -292,7 +292,8 @@ Solución:
 Uso de estructura con títulos + figuras numeradas 
 Aplicación de Markdown y HTML para mejorar presentación 
  
-Conclusión 
+#Conclusión 
+
 Durante este laboratorio se adquirieron conocimientos prácticos que complementan y amplían lo aprendido en el Taller 2. 
 Aprendizajes clave nuevos: 
 Diferencia real entre -p y -P 
