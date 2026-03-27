@@ -141,7 +141,7 @@ Realizamos la instalación de nginx con el comando:
 docker run -d -p 8081:80 --name nginx-reto nginx
 
 <p align="center">
-  <img src="img/3.nginx.png="600"/>
+  <img src="img/3.nginx.png width="600"/>
 </p>
 <p align="center">
   <b>Figura 3.</b> instalación de nginx. <code></code>.
