@@ -110,7 +110,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
    <figure>
   <img src="Images/6.JPG" width="600">
-     <figcaption>Listado de contenedores en ejecución, se muestra en pantalla información del ID, la imagen usada, comando en ejecución, tiempo de actividad, estado y puertos expuestos.</figcaption>
+     <figcaption>Figura # 1: Listado de contenedores en ejecución, se muestra en pantalla información del ID, la imagen usada, comando en ejecución, tiempo de actividad, estado y puertos expuestos.</figcaption>
    </figure>
 </p>
    
@@ -122,7 +122,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <figure>
    <img src="Images/7.JPG" width="600">
-     <figcaption>Mapeo de puertos contenedores en ejecución, se muestran los puertos del host que están conectados a  puertos internos del contenedor.</figcaption>
+     <figcaption>Figura # 2: Mapeo de puertos contenedores en ejecución, se muestran los puertos del host que están conectados a  puertos internos del contenedor.</figcaption>
    </figure>
 </p>
       
@@ -133,7 +133,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
   <figure>
    <img src="Images/2.png" width="600">
-     <figcaption>Validación del servicio apache via web</figcaption>
+     <figcaption>Figura # 3:Apertura en el navegador del servicio http://localhost:8080 Apache2 Ubuntu el cual está corriendo de forma local y escuchando por el puerto 8080.</figcaption>
    </figure>
 </p>
 
@@ -144,7 +144,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
 <figure>
   <img src="Images/3.png" width="600">
-       <figcaption>Validación del servicio ngnix via web</figcaption>
+       <figcaption>Figura # 4: Apertura en el navegador del servicio http://localhost:8081 Nginx el cual está corriendo de forma local y escuchando por el puerto 8081.</figcaption>
    </figure>
 
 </p>
@@ -152,7 +152,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
    <figure>
   <img src="Images/4.png" width="600">
-      <figcaption>Validación de ambos servicios corriendo simultaneamente</figcaption>
+      <figcaption>Figura # 5: Validación de ambos servicios corriendo simultaneamente</figcaption>
    </figure>
 </p>
 
@@ -163,7 +163,7 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 <p align="center">
    <figure>
   <img src="Images/1.png" width="600">
-   <figcaption>Lista los contenedores que se encuentran corriendo.</figcaption>
+   <figcaption>Figura # 6: Listado de contenedores en ejecución, se muestra en pantalla información del ID, la imagen usada, comando en ejecución, tiempo de actividad, estado y puertos expuestos.</figcaption>
    </figure>
 </p>
 
