@@ -68,7 +68,7 @@ Automatización: puede integrarse en scripts para obtener dinámicamente los pue
 
 En resumen, docker port <nombre> es una herramienta práctica para inspeccionar y confirmar los mapeos de red de un contenedor, asegurando que sabes exactamente cómo acceder a sus servicios desde el host o desde fuera.
 
-## Buscar imágenes oficiales que expongan puertos
+## Imágenes oficiales que expongan puertos
 
 
 <p align="center">
