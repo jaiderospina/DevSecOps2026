@@ -107,6 +107,9 @@ docker run -d -p 8080:80 --name apache-reto httpd
 - `-p 8080:80`: enlaza el puerto 8080 del host con el puerto 80 del contenedor
 - `--name apache-reto`: asigna el nombre solicitado en el ejercicio
 - `httpd`: imagen oficial de Apache
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Apache .png" width="600">
+</p>
 
 Resultado
 
