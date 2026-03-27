@@ -160,8 +160,6 @@ Accede desde el navegador a:
 
 La IP asignada por mi MV fue la siguiente
 
-<h3 align="center">🔹 Evidencia 8: Asignación automática de puertos con Docker</h3>
-
 <p align="center">
   <img src="img/08.IP_Asignada.png" width="600"/>
 </p>
