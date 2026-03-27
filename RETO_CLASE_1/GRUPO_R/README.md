@@ -1,5 +1,10 @@
-## Portada
-**Integrantes:** Miguel Angel Ahumada, Juan Sebastian Lara  
+## Portada  
+
+**Integrantes:**  
+- Miguel Angel Ahumada Duarte  
+- Juan Sebastian Lara Suarez
+  
+**Grupo:** R    
 **Fecha:** 26/03/2026 
 
 
@@ -71,28 +76,3 @@ docker run -d -p 8080:80 --name apache-reto httpd
 
 
 
-# Creamos Nginx en el puerto 8081
-
-< docker run -d -p 8081:80 --name nginx-reto nginx >
-
-
-# Creamos contenedor puerto automatico -P
-
-< docker run -d -P --name nginx-auto nginx >
-
-
-# Verificamos
-
-## Ver todos los contenedores y puertos
-
-< docker ps >
-
-## Ver el mapeo del Apache
-
-< docker port apache-reto >
-
-## Ver el mapeo del Nginx
-
-< docker port nginx-reto >
-
-##
