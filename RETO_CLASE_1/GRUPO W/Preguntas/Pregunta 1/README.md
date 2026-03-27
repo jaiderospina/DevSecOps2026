@@ -1,4 +1,4 @@
-[Regresar al inicio](README.md)
+[Regresar al inicio](../README.md)
 
 # ¿Diferencia entre -p y -P?
 

@@ -1,4 +1,4 @@
-[Regresar al inicio](README.md)
+[Regresar al inicio](../README.md)
 
 # Reto: Contenedores Apache, Nginx y Tomcat
 
@@ -28,7 +28,7 @@ Este enfoque permite:
 
 ### En el navegador
 
-<img src="../../image/1.png" width="400" height="400">
+<img src="../../image/apache-local.png" width="400" height="400">
 
 ---
 
@@ -52,7 +52,9 @@ Por esta razón:
 - Se reduce el tiempo de configuración.
 - Se facilita una puesta en marcha rápida del servicio.
 
-<img src="../../image/nginx-up.png" width="600" height="400">
+### Navegador
+
+<img src="../../image/nginx-local.png" width="600" height="400">
 
 ---
 
@@ -73,4 +75,16 @@ Se realiza un `docker pull` para descargar la imagen oficial de **Tomcat**. A di
 
 - Esto dando como resultado que ya sea posible ver la ejecución del tomcat
 
+### Navegador
+
 <img src="../../image/tomcat-local.png" width="600" height="500">
+
+## Comparacion
+
+| Característica         | -p (manual)             | -P (automático)           |
+|------------------------|------------------------|--------------------------|
+| Asignación de puerto   | Definida por el usuario | Asignada por Docker      |
+| Control del puerto     | Alto                   | Bajo                     |
+| Riesgo de conflicto    | Puede existir          | No hay conflicto         |
+| Facilidad de uso       | Media                  | Alta                     |
+| Uso recomendado        | Producción             | Pruebas / laboratorio    |

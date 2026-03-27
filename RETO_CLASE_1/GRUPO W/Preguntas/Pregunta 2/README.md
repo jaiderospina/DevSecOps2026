@@ -1,4 +1,4 @@
-[Regresar al inicio](README.md)
+[Regresar al inicio](../README.md)
 
 # ¿Qué significa 0.0.0.0:8080->80/tcp en docker ps?
 
