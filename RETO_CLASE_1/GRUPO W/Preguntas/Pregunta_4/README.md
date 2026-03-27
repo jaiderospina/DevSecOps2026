@@ -1,7 +1,7 @@
 
 [Regresar al inicio](../../../GRUPO%20W/README.md)
 
-# Reto: Contenedores Apache, Nginx y Tomcat
+# Reto: Actividad 
 
 ## 1. Contenedor Apache
 
