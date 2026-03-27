@@ -45,9 +45,7 @@ Ejemplo:
 
 bash
 
-80/tcp -> 0.0.0.0:8080
-
-80/tcp → el puerto expuesto dentro del contenedor.
+80/tcp -> 0.0.0.0:8080 80/tcp → el puerto expuesto dentro del contenedor.
 
 0.0.0.0:8080 → el puerto del host al que está mapeado, accesible desde cualquier interfaz de red.
 
