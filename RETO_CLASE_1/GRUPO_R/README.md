@@ -113,6 +113,7 @@ Captura 1. Creación del contenedor apache-reto.
 </p>
 Captura 2. Ingreso al contenedor apache-reto.
 
+
 Resultado
 
 El contenedor quedó ejecutándose correctamente y el servicio Apache se hizo accesible desde el navegador mediante:
