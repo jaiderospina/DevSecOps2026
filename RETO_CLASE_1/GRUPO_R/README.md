@@ -98,8 +98,9 @@ El comando ejecutado fue:
 docker run -d -p 8080:80 --name apache-reto httpd
 ```
 <p align="center">
-<img src="OWASP/GRUPO R/IMAGENES/Creacion de Docker Apache .png" width="600">
+<img src="../../OWASP/GRUPO R/IMAGENES/Creacion de Docker Apache .png" width="600">
 </p>
+
 #### Explicacion
 - `docker run`: crea y ejecuta un contenedor
 - `-d`: ejecuta el contenedor en segundo plano
