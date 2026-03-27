@@ -102,7 +102,7 @@ docker run -d -p 8080:80 --name apache-reto httpd
 </p>
 <p align="center">
   
-**Captura 1.** Creación del contenedor apache-reto.
+  **Captura 1.** Creación del contenedor apache-reto.
 </p>
 
 #### Explicacion
