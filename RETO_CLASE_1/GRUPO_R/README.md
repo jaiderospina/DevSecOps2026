@@ -114,16 +114,14 @@ docker run -d -p 8080:80 --name apache-reto httpd
 <img src="../../OWASP/GRUPO R/IMAGENES/Ingreso de Docker Apache .png" width="600">
 </p>
 <p align="center">
-  
-**Captura 2.** Ingreso al contenedor apache-reto.
+<strong>Captura 2.</strong> Ingreso al contenedor apache-reto.
 </p>
 
 <p align="center">
 <img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Apache-reto.png" width="600">
 </p>
 <p align="center">
-  
-**Captura 3.** Inspección de puertos con docker port al contenedor apache-reto.
+<strong>Captura 3.</strong> Inspección de puertos con docker port al contenedor apache-reto.
 </p>
 
 
@@ -139,9 +137,7 @@ http://localhost:8080
 <img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Apache.png" width="600">
 </p>
 <p align="center">
-  
-**Captura 4.** Navegador mostrando Apache en http://localhost:8080
-
+<strong>Captura 4.</strong> Navegador mostrando Apache en http://localhost:8080
 </p>
 ---
 
