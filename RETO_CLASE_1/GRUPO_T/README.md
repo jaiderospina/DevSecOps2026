@@ -158,7 +158,7 @@ Para el contenedor nginx con puerto automatico asignado 80/tcp -> 0.0.0.0:32768 
 
 Accede desde el navegador a:
 
-La IP asignada por mi MV fue la siguiente
+La IP asignada por nuestra MV fue la siguiente
 
 <p align="center">
   <img src="img/08.IP_Asignada.png" width="600"/>
