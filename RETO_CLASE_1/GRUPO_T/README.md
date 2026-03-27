@@ -117,7 +117,7 @@ apt update
 
 apt install apache2
 /etc/init.d/apache2 start
-(img/2.Start_Apache.png)
+![Evidencia2](img/2.Start_Apache.png)
 exit
 
 Iniciar un segundo contenedor Nginx (imagen oficial recomendada).
@@ -126,11 +126,11 @@ Mapea el puerto 8081 del host al 80 del contenedor. Usa nombre --name nginx-reto
 Realizamos la instalación de nginx con el comando:
 docker run -d -p 8081:80 --name nginx-reto nginx
 
-(img/3.nginx.png)
+![Evidencia3](img/3.nginx.png)
 
 Después de la instalación vemos dos contenedores activos:
 
-(img/04.img_reto.png)
+![Evidencia4](img/04.img_reto.png)
 
 Probar la opción automática -P (publicar todos los puertos expuestos) con un tercer contenedor (puedes usar la misma imagen nginx o httpd). Observa qué puerto aleatorio te asigna Docker.
 
@@ -138,13 +138,13 @@ ejecutamos el siguiente comando donde asignamos el nombre nginx-auto por el puer
 
 docker run -d -P --name nginx-auto nginx
 
-(img/05.Puerto_Auto.png)
+![Evidencia5](img/05.Puerto_Auto.png)
 
 Verifica todo con:
 
 docker ps
 
-(img/06.DockerPs.png)
+![Evidencia6](img/06.DockerPs.png)
 
 docker port apache-reto
 docker port nginx-reto
@@ -154,27 +154,27 @@ Evidenciamos que los puertos asignados estan configurados de manera correcta par
 Para nginx 80/tcp -> 0.0.0.0:8081 para IPv4 y 80/tcp -> [::]:8081 para IPv6. 
 Para el contenedor nginx con puerto automatico asignado 80/tcp -> 0.0.0.0:32768 Para IPv4 y 80/tcp -> [::]:32768 para IPv6.
 
-(img/07.DockerPort.png)
+![Evidencia7](img/07.DockerPort.png)
 
 Accede desde el navegador a:
 
 La IP asignada por mi MV fue la siguiente
 
-(img/08.IP_Asignada.png)
+![Evidencia8](img/08.IP_Asignada.png)
 
 Luego con esta misma 192.168.249.128 procedemos a cargar la pagina web por defecto.
 
 http://localhost:8080 → debe mostrar Apache → http://192.168.249.128:8080
 
-(img/09.ApacheIniciado.png)
+![Evidencia9](img/09.ApacheIniciado.png)
 
 http://localhost:8081 → debe mostrar Nginx →  http://192.168.249.128:8081
 
-(img/10.nginx_iniciado.png)
+![Evidencia10](img/10.nginx_iniciado.png)
 
 debe mostrar Nginx con el puerto que fue automatico →  http://192.168.249.128:32768
 
-(img/11.Nginx_Auto.png)
+![Evidencia11](img/11.Nginx_Auto.png)
 
 Detener solo uno de los contenedores y verificar que el otro sigue funcionando.
 
@@ -184,8 +184,8 @@ docker stop nginx-auto
 
 vemos con docker ps -a que nginx-auto se encuentra en estado Exited y las demas maquinas en estado update
 
-(img/12.NginxAutoStop.png)
+![Evidencia12](img/12.NginxAutoStop.png)
 
 Estado de nginx-auto desde la pagina web http://192.168.249.128:32768 con error ERR_CONNECTION_REFUSED
 
-(img/12.NginxAutoStopWeb.png)
+![Evidencia13](img/13.NginxAutoStopWeb.png)
