@@ -117,14 +117,6 @@ docker run -d -p 8080:80 --name apache-reto httpd
 <strong>Captura 2.</strong> Ingreso al contenedor apache-reto.
 </p>
 
-<p align="center">
-<img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Apache-reto.png" width="600">
-</p>
-<p align="center">
-<strong>Captura 3.</strong> Inspección de puertos con docker port al contenedor apache-reto.
-</p>
-
-
 ##### Resultado
 
 El contenedor quedó ejecutándose correctamente y el servicio Apache se hizo accesible desde el navegador mediante:
@@ -137,7 +129,7 @@ http://localhost:8080
 <img src="../../OWASP/GRUPO R/IMAGENES/Visualisacion Apache.png" width="600">
 </p>
 <p align="center">
-<strong>Captura 4.</strong> Navegador mostrando Apache en http://localhost:8080
+<strong>Captura 3.</strong> Navegador mostrando Apache en http://localhost:8080
 </p>
 ---
 
@@ -267,6 +259,12 @@ Posteriormente se inspeccionó cada contenedor utilizando el comando `docker por
 ```bash
 docker port apache-reto
 ```
+<p align="center">
+<img src="../../OWASP/GRUPO R/IMAGENES/Inspección de puertos Apache-reto.png" width="600">
+</p>
+<p align="center">
+<strong>Captura .</strong> Inspección de puertos con docker port al contenedor apache-reto.
+</p>
 
 Salida esperada:
 
