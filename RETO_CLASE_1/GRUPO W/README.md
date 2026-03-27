@@ -6,7 +6,13 @@
     Juan Diaz
     Jonathan Garzon
 
-# Investigación de mediana complejidad (obligatoria)
+  *## Marzo 20 de 2026*  
+
+# Objetivo
+
+Configurar varios contenedores web (Apache y Nginx) para que funcionen al mismo tiempo, utilizando diferentes formas de publicar sus puertos en Docker, de modo que se pueda acceder a cada servicio sin conflictos.
+
+# Investigación de mediana complejidad 
 
 - [¿Diferencia entre -p y -P?](./Preguntas/Pregunta%201/)
 - [¿Qué significa 0.0.0.0:8080->80/tcp?](./Preguntas/Pregunta%202/)
