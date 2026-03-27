@@ -334,9 +334,6 @@ Salida esperada:
 
 Con esto se comprobó de forma individual la asociación entre puertos internos y puertos publicados en el host.
 
-**Captura 8.** Salida de `docker port apache-reto`.  
-**Captura 9.** Salida de `docker port nginx-reto`.  
-**Captura 10.** Salida de `docker port nginx-auto`.
 
 ---
 ## 5. Detener un contenedor y validar continuidad del otro
