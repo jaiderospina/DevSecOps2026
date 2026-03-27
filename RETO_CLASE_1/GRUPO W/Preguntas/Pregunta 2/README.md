@@ -2,24 +2,41 @@
 
 # ¿Qué significa 0.0.0.0:8080->80/tcp en docker ps?
 
-Se utilizó el comando:
-docker ps
+**Significa:**
+
+-   **0.0.0.0** → El servicio está disponible en todas las interfaces de red del host, permitiendo el acceso desde cualquier red.
+-   **8080** → Es el puerto del **host** donde se recibe la conexión.
+-   **80** → Es el puerto interno del **contenedor** donde está escuchando la aplicación.
+-   **tcp** → Es el protocolo de comunicación utilizado.
+-   **→** → Indica la redirección del tráfico desde el host hacia el contenedor.
 
 # Donde se evidenció:
 
 0.0.0.0:8080->80/tcp
-Esto indica que el servicio web está disponible en el puerto 8080 del host.
 
-# Acceso desde navegador:
+Indica que el servicio se encuentra disponible a través del puerto 8080 del host, ya que el tráfico entrante es redirigido hacia el puerto 80 del contenedor mediante el protocolo TCP.
 
-Se accedió al servicio mediante:
-http://localhost:8080
+# Se verifica que el contenedor se encuentre en ejecución.:
+
+<p align="center">
+<img src="../../image/docker_run_ngnix.png">
+</p
 
 # Al acceder a la URL:
 
-http://localhost:8080
+http://localhost:8081 "Puerto Estático"
 
-Se obtiene la siguiente respuesta:
+# Acceso desde navegador:
+
+Se realizó el acceso al servicio a través del navegador web mediante la URL
+
+<p align="center">
+<img src="../../image/nginx-local.png">
+</p
+
+Validación de respuesta del servicio:
+
+Al acceder a la URL http://localhost:8080
 "It works!"
 
 <p align="center">
