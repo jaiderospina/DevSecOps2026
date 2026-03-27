@@ -116,7 +116,6 @@ apt update
 <p align="center">
   <img src="img/1.Docker_Run_Apache.png" width="600"/>
 </p>
-
 <p align="center">
   <b>Figura 1.</b> Mapear puerto 8080 del host a TCP 80 del contenedor. <code></code>.
 </p>
@@ -129,7 +128,6 @@ exit
 <p align="center">
   <img src="img/2.Start_Apache.png" width="600"/>
 </p>
-
 <p align="center">
   <b>Figura 2.</b> Instalacion apache2. <code></code>.
 </p>
@@ -142,11 +140,21 @@ Mapea el puerto 8081 del host al 80 del contenedor. Usa nombre --name nginx-reto
 Realizamos la instalación de nginx con el comando:
 docker run -d -p 8081:80 --name nginx-reto nginx
 
-![Evidencia3](img/3.nginx.png)
+<p align="center">
+  <img src="img/3.nginx.png="600"/>
+</p>
+<p align="center">
+  <b>Figura 2.</b> instalación de nginx. <code></code>.
+</p>
 
 Después de la instalación vemos dos contenedores activos:
 
-![Evidencia4](img/04.img_reto.png)
+<p align="center">
+  <img src="img/04.img_reto.png="600"/>
+</p>
+<p align="center">
+  <b>Figura 2.</b> contenedores activos. <code></code>.
+</p>
 
 Probar la opción automática -P (publicar todos los puertos expuestos) con un tercer contenedor (puedes usar la misma imagen nginx o httpd). Observa qué puerto aleatorio te asigna Docker.
 
