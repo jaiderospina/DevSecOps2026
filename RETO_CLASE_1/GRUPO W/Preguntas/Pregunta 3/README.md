@@ -24,6 +24,10 @@ Este enfoque permite:
 
 <img src="../../image/docker-apache-star.png" width="400" height="400">
 
+### En el navegador
+
+<img src="../../image/1.png" width="400" height="400">
+
 ---
 
 ## 2. Contenedor Nginx
@@ -45,6 +49,10 @@ Por esta razón:
 - No es necesario realizar instalaciones adicionales.
 - Se reduce el tiempo de configuración.
 - Se facilita una puesta en marcha rápida del servicio.
+
+<img src="../../image/nginx-up.png" width="600" height="400">
+
+---
 
 ## 3 Tomcat
 Probar la opción automática -P (publicar todos los puertos expuestos) con un tercer contenedor (puedes usar la misma imagen nginx o httpd). Observa qué puerto aleatorio te asigna Docker.
