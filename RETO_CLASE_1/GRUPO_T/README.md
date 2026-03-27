@@ -141,16 +141,16 @@ Realizamos la instalación de nginx con el comando:
 docker run -d -p 8081:80 --name nginx-reto nginx
 
 <p align="center">
-  <img src="img/3.nginx.png width="600"/>
+  <img src="img/03.nginx.png " width="600"/>
 </p>
 <p align="center">
-  <b>Figura 3.</b> instalación de nginx. <code></code>.
+  <b>Figura 3.</b> Instalacion de ngnix <code></code>.
 </p>
 
 Después de la instalación vemos dos contenedores activos:
 
 <p align="center">
-  <img src="img/04.img_reto.png="600"/>
+  <img src="img/04.img_reto.png windth="600"/>
 </p>
 <p align="center">
   <b>Figura 4.</b> contenedores activos. <code></code>.
