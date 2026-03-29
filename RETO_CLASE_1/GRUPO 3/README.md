@@ -162,7 +162,10 @@ En las imagenes oficiales, los puertos del servicio suelen venir definidos por `
 
 <p align="center">
    <figure>
-  <img src="Images/1.png" width="600">
+  <img src="Images/8.jpg" width="600">
+   <img src="Images/9.jpg" width="600">
+      <img src="Images/10.jpg" width="600">
+      <img src="Images/11.jpg" width="600">
    <figcaption>Figura # 6: Listado de contenedores en ejecución, se muestra en pantalla información del ID, la imagen usada, comando en ejecución, tiempo de actividad, estado y puertos expuestos.</figcaption>
    </figure>
 </p>
