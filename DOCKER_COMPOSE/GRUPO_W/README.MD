@@ -58,9 +58,3 @@ D:\
 
 
 
-
-
-<p align="center">
-  <img src="imagenes/4.png" width="600">
-</p
-
