@@ -30,11 +30,22 @@ D:\
     └── logs\
 
 
-#PASO 1 Crear la estructura de carpetas
+# PASO 1 Crear la estructura de carpetas
 
 <p align="center">
   <img src="imagenes/2.png" width="600">
 </p
 
+# PASO 2 CREAR ARCHIVO .ENV
 
+
+<p align="center">
+  <img src="imagenes/3.png" width="600">
+</p
+
+# VERIFICACION 
+
+<p align="center">
+  <img src="imagenes/4.png" width="600">
+</p
 
