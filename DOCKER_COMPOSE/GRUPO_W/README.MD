@@ -79,5 +79,13 @@ D:\
 
 # PASO 6 Validación de persistencia (en Kali)
 
+Cambio de tema WordPress
+
+<p align="center">
+  <img src="imagenes/10.png" width="600">
+</p
+
+
+
 
 
