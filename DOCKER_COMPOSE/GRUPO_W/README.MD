@@ -38,12 +38,27 @@ D:\
 
 ## PASO 2 CREAR ARCHIVO .ENV
 
-
 <p align="center">
   <img src="imagenes/3.png" width="600">
 </p
 
-# VERIFICACION 
+## VERIFICACION 
+
+<p align="center">
+  <img src="imagenes/4.png" width="600">
+</p
+
+
+## PASO 3 Crear docker-compose.yml en Kali
+
+<p align="center">
+  <img src="imagenes/5.png" width="600">
+</p
+
+
+
+
+
 
 <p align="center">
   <img src="imagenes/4.png" width="600">
