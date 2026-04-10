@@ -62,7 +62,17 @@ D:\
 </p
 
 
+# Acceso WordPress
+
+<p align="center">
+  <img src="imagenes/8.png" width="600">
+</p
+
+# Acceso phpMyAdmin
 
 
+<p align="center">
+  <img src="imagenes/9.png" width="600">
+</p
 
 
