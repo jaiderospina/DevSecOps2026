@@ -98,9 +98,14 @@ Cambio de tema WordPress
 
 # PASO 7: Comandos útiles (Kali)
 
-
 <p align="center">
   <img src="imagenes/12.png" width="600">
+</p
+
+# PASO 8: Backups y restauración en Kali
+
+<p align="center">
+  <img src="imagenes/13.png" width="600">
 </p
 
 
