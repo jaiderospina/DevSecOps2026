@@ -85,6 +85,12 @@ Cambio de tema WordPress
   <img src="imagenes/10.png" width="600">
 </p
 
+# Se detienen contenedores para verificar si los cambios quedaron alli todavia 
+
+<p align="center">
+  <img src="imagenes/11.png" width="600">
+</p
+
 
 
 
