@@ -32,7 +32,9 @@ D:\
 
 #PASO 1 Crear la estructura de carpetas
 
-
+<p align="center">
+  <img src="imagenes/2.png" width="600">
+</p
 
 
 
