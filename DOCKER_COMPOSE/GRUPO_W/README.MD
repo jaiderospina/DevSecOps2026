@@ -17,7 +17,7 @@ Windows 10/11 con virtualización habilitada (Claramente se peuede realizar el l
 Docker Desktop instalado y funcionando (configurado para usar WSL2).
 PowerShell (ejecutado como Administrador).
 
-#Estructura del propyecto 
+# Estructura del propyecto 
 
 D:\
 └── DevSecOps\
