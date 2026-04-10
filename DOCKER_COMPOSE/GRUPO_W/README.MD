@@ -29,3 +29,10 @@ D:\
     ├── backups\
     └── logs\
 
+
+#PASO 1 Crear la estructura de carpetas
+
+
+
+
+
