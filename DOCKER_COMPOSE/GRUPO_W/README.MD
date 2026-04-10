@@ -52,11 +52,13 @@ D:\
 # PASO 3 Crear docker-compose.yml en Kali
 
 <p align="center">
-  <img src="imagenes/5.png" width="600">
+  <img src="imagenes/6.png" width="600">
 </p
 
+# PASO 4 Construcción y despliegue
+
 <p align="center">
-  <img src="imagenes/6.png" width="600">
+  <img src="imagenes/7.png" width="600">
 </p
 
 
