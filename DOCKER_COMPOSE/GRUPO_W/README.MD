@@ -62,6 +62,8 @@ D:\
 </p
 
 
+# PASO 5 VERIFICACION 
+
 # Acceso WordPress
 
 <p align="center">
@@ -74,5 +76,8 @@ D:\
 <p align="center">
   <img src="imagenes/9.png" width="600">
 </p
+
+# PASO 6 Validación de persistencia (en Kali)
+
 
 
