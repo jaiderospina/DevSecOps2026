@@ -91,6 +91,12 @@ Cambio de tema WordPress
   <img src="imagenes/11.png" width="600">
 </p
 
+# PASO 7: Comandos útiles (Kali)
+
+<p align="center">
+  <img src="imagenes/12.png" width="600">
+</p
+
 
 
 
