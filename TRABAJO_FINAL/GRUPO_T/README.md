@@ -111,9 +111,6 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
 | Visualización       | Grafana                                     | AGPL 3.0                |
 | Logs de red         | Syslog (UDP 514)                            | Estándar (RFC)          |
 | Monitoreo           | Grafana Dashboards                          | AGPL 3.0                |
-| Seguridad (SAST)    | Semgrep / Bandit                            | LGPL / Apache 2.0       |
-| Escaneo contenedores| Trivy                                       | Apache 2.0              |
-| Infraestructura     | IaC (Terraform opcional)                    | MPL 2.0                 |
 | CI/CD               | GitHub Actions                              | Gratis (FOSS projects)  |
 -----------------------------------------------------------------------------------------------
 
