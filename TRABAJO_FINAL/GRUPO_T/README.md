@@ -14,7 +14,29 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 <p align="center">
 <b>Figura 2.</b> diagrama_de_flujo.png. <code></code>.
 </p>
+## Funcionalidades Principales
 
+#Gestión y Control de Tráfico Perimetral
+
+Esta funcionalidad reside en el FortiGate y es la fuente primaria de datos para todo el proyecto.
+ - Inspección de Tráfico LAN-to-WAN: Análisis en tiempo real de los paquetes que salen de la red local hacia internet.
+ - Filtrado de Dominios (DNS Filter): Capacidad de interceptar y registrar cada solicitud DNS, permitiendo o bloqueando el acceso según categorías de seguridad o listas negras.
+ - Generación de Logs: Traducción de la actividad de red en registros de eventos compatibles con el estándar Syslog para su posterior análisis.
+ 
+# Centralización y Procesamiento de Logs (Syslog + Loki + Promtail)
+Es el motor que transforma los datos crudos en información útil.
+
+- Ingesta de Datos Multifuente: Recolección centralizada mediante rsyslog de los eventos provenientes del firewall.
+- Indexación y Etiquetado Eficiente: Uso de Promtail para leer, etiquetar (por IP de origen, tipo de evento o severidad) y enviar los logs hacia Loki.
+- Persistencia de Datos: Almacenamiento de los registros de navegación para permitir consultas históricas y análisis forense ante posibles incidentes.
+
+# Visualización y Análisis de Dominios en Tiempo Real (Grafana)
+Es la interfaz donde se cumple el propósito principal de monitoreo.
+- Dashboards de Tráfico DNS: Representación visual de las consultas de dominio realizadas en la LAN, permitiendo ver qué sitios son los más visitados.
+- Monitoreo de Anomalías: Gráficos de series temporales que muestran picos inusuales de tráfico, lo que podría indicar la presencia de malware o exfiltración de datos.
+
+
+# Gestión y Control de Tráfico Perimetral
 
 ## Tecnologías empleadas
 
