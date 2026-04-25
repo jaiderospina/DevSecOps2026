@@ -96,6 +96,27 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
         │     :3000          │
         └────────────────────┘
 
+## Stack Tecnológico
+----------------------------------------------------------------------------------------------
+| Capa                | Tecnología                                   | Licencia               |
+|---------------------|---------------------------------------------|-------------------------|
+| Firewall / Perímetro| FortiGate                                   | Propietaria             |
+| MFA                 | Duo Security (Duo Cloud + Auth Proxy)       | Propietaria             |
+| Sistema Operativo   | Ubuntu Server (Linux)                       | GPL                     |
+| Contenerización     | Docker + Docker Compose                     | Apache 2.0              |
+| Proxy MFA           | Duo Authentication Proxy (RADIUS)           | Propietaria             |
+| Logging (ingesta)   | rsyslog                                     | GPL                     |
+| Recolección Logs    | Promtail                                    | Apache 2.0              |
+| Almacenamiento Logs | Loki                                        | AGPL 3.0                |
+| Visualización       | Grafana                                     | AGPL 3.0                |
+| Logs de red         | Syslog (UDP 514)                            | Estándar (RFC)          |
+| Monitoreo           | Grafana Dashboards                          | AGPL 3.0                |
+| Seguridad (SAST)    | Semgrep / Bandit                            | LGPL / Apache 2.0       |
+| Escaneo contenedores| Trivy                                       | Apache 2.0              |
+| Infraestructura     | IaC (Terraform opcional)                    | MPL 2.0                 |
+| CI/CD               | GitHub Actions                              | Gratis (FOSS projects)  |
+-----------------------------------------------------------------------------------------------
+
 
 ## Tecnologías empleadas
 
