@@ -39,50 +39,62 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
 
 ## Arquitectura de Microservicios
 
-graph TD
-    subgraph LAN_Network [Red Local LAN]
-        Users[Usuarios/Clientes]
-    end
+                         ┌──────────────────────────────┐
+                         │       USUARIOS / ADMIN       │
+                         │   Navegador / Duo Mobile     │
+                         └──────────────┬───────────────┘
+                                        │ HTTPS (443)
+                                        ▼
+                         ┌──────────────────────────────┐
+                         │        FORTIGATE FW          │
+                         │   / Firewall / RADIUS        │
+                         │      192.168.249.120         │
+                         └──────────────┬───────────────┘
+                                        │ RADIUS (UDP 1812)
+                                        ▼
+                ┌────────────────────────────────────────────┐
+                │         DUO AUTH PROXY (Docker)            │
+                │         RADIUS Listener (1812)             │
+                │         Validación MFA (Duo Cloud)         │
+                └──────────────┬─────────────────────────────┘
+                               │ HTTPS (443 API)
+                               ▼
+                      ┌──────────────────────┐
+                      │     DUO CLOUD        │
+                      │ api-xxxx.duo.com     │
+                      └──────────────────────┘
 
-    subgraph External_Cloud [Servicios en la Nube]
-        DuoCloud((Cisco Duo Cloud))
-    end
+==================== STACK DE LOGS Y MONITOREO ====================
 
-    subgraph Docker_Host [Servidor Docker - 192.168.249.121]
-        
-        subgraph Auth_Microservice [Microservicio de Seguridad]
-            DuoProxy[Duo Auth Proxy Container]
-        end
-
-        subgraph Logging_Pipeline [Pipeline de Observabilidad]
-            Rsyslog[Rsyslog Container]
-            Promtail[Promtail Container]
-            Loki[Grafana Loki Container]
-        end
-
-        subgraph Visualization_Service [Microservicio de Inteligencia]
-            Grafana[Grafana Dashboard]
-        end
-    end
-
-    %% Flujo de Autenticación
-    FortiGate[FortiGate Firewall] -- 1. RADIUS UDP 1812 --> DuoProxy
-    DuoProxy -- 2. HTTPS/API 443 --> DuoCloud
-    DuoCloud -. 3. Push MFA .-> Admin((Administrador))
-
-    %% Flujo de Logs de Dominios
-    FortiGate -- 4. Syslog UDP 514 --> Rsyslog
-    Rsyslog -- 5. Lectura de Archivos --> Promtail
-    Promtail -- 6. Push Logs HTTP 3100 --> Loki
-    Loki -- 7. Query LogQL --> Grafana
-
-    %% Estilos
-    style FortiGate fill:#f96,stroke:#333,stroke-width:2px
-    style DuoProxy fill:#9f9,stroke:#333
-    style Grafana fill:#f9f,stroke:#333
-    style Loki fill:#69f,stroke:#333
-	
-
+        ┌────────────────────┐
+        │     FORTIGATE      │
+        │     DOCKER LOGS    │
+        └─────────┬──────────┘
+                  │ Syslog (UDP 514)
+                  ▼
+        ┌────────────────────┐
+        │      RSYSLOG       │
+        │   Centralizador    │
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │      PROMTAIL      │
+        │ Recolección Logs   │
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │        LOKI        │
+        │ Almacenamiento     │
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │      GRAFANA       │
+        │ Dashboards / Query │
+        │     :3000          │
+        └────────────────────┘
 
 
 ## Tecnologías empleadas
