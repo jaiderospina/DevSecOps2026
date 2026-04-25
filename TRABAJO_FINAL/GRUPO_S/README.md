@@ -1,0 +1,336 @@
+# ASM — Attack Surface Manager
+
+[![CI Pipeline](https://github.com/TU_USUARIO/asm-devsecops/actions/workflows/ci.yml/badge.svg)](https://github.com/TU_USUARIO/asm-devsecops/actions/workflows/ci.yml)
+[![Deploy](https://github.com/TU_USUARIO/asm-devsecops/actions/workflows/deploy.yml/badge.svg)](https://github.com/TU_USUARIO/asm-devsecops/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-asm--devsecops-blue?logo=docker)](https://hub.docker.com/u/TU_USUARIO)
+
+**Plataforma de gestión de superficie de ataque externa basada en microservicios, con pipeline DevSecOps completo que integra análisis estático, dinámico, autenticación automática y validación en entorno de ejecución real.**
+
+> Evalúa dominios, detecta subdominios expuestos, analiza puertos, certificados TLS, cabeceras HTTP y configuración de correo. Genera informes técnicos automatizados en DOCX y PDF.
+
+---
+
+## Descripción
+
+ASM es una plataforma OSINT/ASM (Attack Surface Management) de código abierto que permite:
+
+- **Descubrimiento de subdominios** activos e inactivos (huérfanos)
+- **Análisis de puertos** expuestos con clasificación de riesgo
+- **Evaluación de certificados** SSL/TLS y configuraciones criptográficas
+- **Revisión de cabeceras HTTP** de seguridad (HSTS, CSP, X-Frame-Options)
+- **Auditoría de correo** (SPF, DKIM, DMARC)
+- **Detección de tecnologías** expuestas y versiones EOL
+- **Generación de informes** técnicos automatizados (DOCX + PDF)
+- **Vista consolidada** multientidad para análisis organizacional
+
+---
+
+## Arquitectura
+
+```
+┌───────────────────────┐
+│   Frontend SPA         │
+│   React + Vite :3000  │
+└──────────┬────────────┘
+           │ HTTP/HTTPS
+┌──────────▼────────────┐
+│   API Gateway          │
+│   FastAPI + JWT :8000 │
+└──────────┬────────────┘
+           │ AMQP
+┌──────────▼────────────┐
+│   RabbitMQ Broker      │
+└──┬──────────────┬──────┘
+   │              │
+┌──▼──────┐  ┌───▼──────┐
+│ Worker   │  │ Worker   │
+│ Scanner  │  │ Report   │
+│ (Celery) │  │ (Celery) │
+└──┬───────┘  └───┬──────┘
+   │              │
+┌──▼──────────────▼──────┐
+│      PostgreSQL         │
+│  (usuarios + escaneos) │
+└─────────────────────────┘
+```
+
+Componente | Tecnología | Puerto
+-----------|-----------|-------
+Frontend | React 18 + Vite + Tailwind | 3000
+API Gateway | FastAPI + JWT | 8000
+Worker Scanner | Python + Celery | —
+Worker Report | Python + Celery | —
+Base de datos | PostgreSQL 16 | 5432
+Message Broker | RabbitMQ 3 | 5672 / 15672
+
+---
+
+## Pipeline DevSecOps
+
+El proyecto implementa un pipeline DevSecOps automatizado en GitHub Actions que valida múltiples capas de seguridad en cada ejecución.
+
+### Flujo del pipeline
+
+1. Escaneo de secretos (Gitleaks)
+2. Análisis estático de código (SAST - Bandit, Semgrep)
+3. Análisis de dependencias (SCA - Trivy)
+4. Build de imágenes Docker por microservicio
+5. Pruebas unitarias (pytest y Jest)
+6. Levantamiento de entorno de staging con Docker Compose
+7. Creación automática de usuario administrador
+8. Autenticación contra API (`/api/auth/token`)
+9. Obtención de token JWT dinámico
+10. Ejecución de análisis ASM desde la API
+11. Análisis dinámico (DAST - OWASP ZAP)
+12. Escaneo de infraestructura como código (Checkov)
+13. Apagado automático del entorno
+
+### Características clave
+
+- Ejecución completamente automatizada
+- Entorno efímero en cada pipeline
+- Validación en runtime (no solo código)
+- Autenticación real antes de pruebas dinámicas
+- Integración de múltiples herramientas de seguridad
+
+## Diferencial del Proyecto
+
+Este proyecto no se limita a análisis estático o teórico. Implementa un enfoque práctico de seguridad que incluye:
+
+- Autenticación automática mediante JWT en pipeline
+- Ejecución de pruebas dinámicas sobre endpoints protegidos
+- Levantamiento de entorno real con Docker Compose en CI
+- Integración de análisis ASM desde la propia API
+- Validación de seguridad en múltiples capas (código, dependencias, infraestructura y runtime)
+
+Esto permite simular condiciones reales de operación y evaluar el sistema de forma más cercana a un entorno productivo.
+
+## Quick Start
+
+### Requisitos previos
+
+- Docker >= 24.x
+- Docker Compose >= 2.x
+- Git
+
+## Ejecución en entorno limpio
+
+Para validar el despliegue del proyecto en una máquina nueva, seguir los siguientes pasos.
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/danca0224/asm-devsecops.git
+cd asm-devsecops
+```
+
+### 2. Crear archivo de variables de entorno
+
+```bash
+cp .env.example .env
+```
+
+### 3. Configurar variables mínimas
+
+Editar el archivo `.env` y reemplazar los valores de ejemplo:
+
+```env
+POSTGRES_PASSWORD=postgres123
+JWT_SECRET_KEY=supersecretkey123
+RABBITMQ_PASSWORD=rabbit123
+CELERY_BROKER_URL=amqp://asm:rabbit123@rabbitmq:5672//
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin123
+DOCKER_HUB_USERNAME=danca0224
+```
+
+### 4. Levantar los servicios
+
+Con Docker Compose clásico:
+
+```bash
+docker-compose up --build
+```
+
+O con Docker Compose plugin:
+
+```bash
+docker compose up --build
+```
+
+### 5. Crear usuario administrador inicial
+
+Este paso es obligatorio para poder iniciar sesión por primera vez.
+
+Con los contenedores activos, abrir otra terminal y ejecutar:
+
+```bash
+docker exec -it asm-devsecops-api-gateway-1 python -m app.scripts.create_admin
+```
+
+Si el sistema requiere permisos elevados:
+
+```bash
+sudo docker exec -it asm-devsecops-api-gateway-1 python -m app.scripts.create_admin
+```
+
+Este comando crea el usuario administrador usando las variables definidas en `.env`:
+
+```env
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin123
+```
+
+### 6. Acceder a la aplicación
+
+Frontend:
+
+```text
+http://localhost:3000
+```
+
+API Gateway:
+
+```text
+http://localhost:8000
+```
+
+Swagger UI:
+
+```text
+http://localhost:8000/docs
+```
+
+Healthcheck:
+
+```text
+http://localhost:8000/health
+```
+
+RabbitMQ Management:
+
+```text
+http://localhost:15672
+```
+
+### 7. Credenciales iniciales
+
+```text
+Usuario: admin
+Contraseña: admin123
+```
+
+---
+
+## ⚠Poblemas comunes
+
+### Docker no está instalado
+
+Instalar Docker y Docker Compose:
+
+```bash
+sudo apt update
+sudo apt install docker.io docker-compose -y
+```
+
+### Docker daemon no está activo
+
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+### Error de permisos sobre Docker
+
+Si aparece un error como:
+
+```text
+permission denied while trying to connect to the Docker daemon socket
+```
+
+Ejecutar:
+
+```bash
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+Validar con:
+
+```bash
+docker ps
+```
+
+### Error al iniciar sesión
+
+Si la aplicación muestra credenciales incorrectas, verificar que el usuario administrador haya sido creado:
+
+```bash
+docker exec -it asm-devsecops-api-gateway-1 python -m app.scripts.create_admin
+```
+
+Si requiere permisos elevados:
+
+```bash
+sudo docker exec -it asm-devsecops-api-gateway-1 python -m app.scripts.create_admin
+```
+
+### Reiniciar completamente el entorno
+
+Si se requiere limpiar la base de datos y recrear el entorno:
+
+```bash
+docker-compose down -v
+docker-compose up --build
+```
+
+Luego crear nuevamente el usuario administrador:
+
+```bash
+docker exec -it asm-devsecops-api-gateway-1 python -m app.scripts.create_admin
+```
+
+---
+
+## Variables de entorno
+
+Ver [.env.example](.env.example) para la lista completa. Las variables sensibles **nunca** se commiten al repositorio.
+
+---
+
+## Tecnologías
+
+| Capa | Tecnología | Licencia |
+|---|---|---|
+| Frontend | React 18 + Vite + Tailwind CSS | MIT |
+| API Gateway | FastAPI 0.111 (Python 3.11+) | MIT |
+| Workers | Python 3.11 + Celery 5 | BSD |
+| Broker | RabbitMQ 3 | MPL 2.0 |
+| Base de datos | PostgreSQL 16 + SQLAlchemy | PostgreSQL |
+| Auth | JWT (python-jose) + bcrypt | MIT |
+| Contenerización | Docker + Docker Compose | Apache 2.0 |
+| Orquestación | K3s / Docker Swarm | Apache 2.0 |
+| CI/CD | GitHub Actions | Gratis (FOSS) |
+| SAST | Semgrep + Bandit | Apache 2.0 |
+| Imagen scan | Trivy | Apache 2.0 |
+| DAST | OWASP ZAP | Apache 2.0 |
+| Secrets scan | Gitleaks | MIT |
+| IaC scan | Checkov | Apache 2.0 |
+| IaC | Terraform + Ansible | MPL 2.0 / GPL |
+
+---
+
+## Documentación
+
+- [Manual de Arquitectura](docs/architecture/README.md)
+- [Manual de Desarrollo](docs/development-manual.md)
+- [Manual de Despliegue](docs/deployment-manual.md)
+- [Manual de Seguridad](docs/security-manual.md)
+- [Manual de Usuario](docs/user-manual.md)
+
+---
+
+## Licencia
+
+MIT — ver [LICENSE](LICENSE)
