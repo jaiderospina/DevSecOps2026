@@ -9,7 +9,7 @@ La arquitectura integra un cortafuegos perimetral (FortiGate) con un sistema de 
 El objetivo primordial de esta implementación es establecer un sistema de observabilidad granular sobre la actividad de red en la LAN, centrándose específicamente en el monitoreo, registro y visualización de todas las consultas de dominios (DNS) realizadas por los usuarios.
 
 <p align="center">
-<img src="img/diagrama_de_flujo.png" width="800"/>
+<img src="img/diagrama_de_flujo.png" width="900"/>
 </p>
 <p align="center">
 <b>Figura 2.</b> diagrama_de_flujo.png. <code></code>.
