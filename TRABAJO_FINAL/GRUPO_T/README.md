@@ -37,7 +37,53 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
 - Monitoreo de Anomalías: Gráficos de series temporales que muestran picos inusuales de tráfico, lo que podría indicar la presencia de malware o exfiltración de datos.
 
 
-# Gestión y Control de Tráfico Perimetral
+## Arquitectura de Microservicios
+
+graph TD
+    subgraph LAN_Network [Red Local LAN]
+        Users[Usuarios/Clientes]
+    end
+
+    subgraph External_Cloud [Servicios en la Nube]
+        DuoCloud((Cisco Duo Cloud))
+    end
+
+    subgraph Docker_Host [Servidor Docker - 192.168.249.121]
+        
+        subgraph Auth_Microservice [Microservicio de Seguridad]
+            DuoProxy[Duo Auth Proxy Container]
+        end
+
+        subgraph Logging_Pipeline [Pipeline de Observabilidad]
+            Rsyslog[Rsyslog Container]
+            Promtail[Promtail Container]
+            Loki[Grafana Loki Container]
+        end
+
+        subgraph Visualization_Service [Microservicio de Inteligencia]
+            Grafana[Grafana Dashboard]
+        end
+    end
+
+    %% Flujo de Autenticación
+    FortiGate[FortiGate Firewall] -- 1. RADIUS UDP 1812 --> DuoProxy
+    DuoProxy -- 2. HTTPS/API 443 --> DuoCloud
+    DuoCloud -. 3. Push MFA .-> Admin((Administrador))
+
+    %% Flujo de Logs de Dominios
+    FortiGate -- 4. Syslog UDP 514 --> Rsyslog
+    Rsyslog -- 5. Lectura de Archivos --> Promtail
+    Promtail -- 6. Push Logs HTTP 3100 --> Loki
+    Loki -- 7. Query LogQL --> Grafana
+
+    %% Estilos
+    style FortiGate fill:#f96,stroke:#333,stroke-width:2px
+    style DuoProxy fill:#9f9,stroke:#333
+    style Grafana fill:#f9f,stroke:#333
+    style Loki fill:#69f,stroke:#333
+	
+
+
 
 ## Tecnologías empleadas
 
