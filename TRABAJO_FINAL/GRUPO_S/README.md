@@ -1,3 +1,12 @@
+# GRUPO S — ASM DevSecOps
+
+Proyecto final de la asignatura DevSecOps.
+
+Integrantes:
+Marcelo Desalvador Restrepo
+Damian Gonzalez Castillo
+Roger Daniel Cardenas Ramos
+
 # ASM — Attack Surface Manager
 
 [![CI Pipeline](https://github.com/TU_USUARIO/asm-devsecops/actions/workflows/ci.yml/badge.svg)](https://github.com/TU_USUARIO/asm-devsecops/actions/workflows/ci.yml)
