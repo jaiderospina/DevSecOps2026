@@ -14,9 +14,10 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 <p align="center">
 <b>Figura 2.</b> diagrama_de_flujo.png. <code></code>.
 </p>
-## Funcionalidades Principales
 
-#Gestión y Control de Tráfico Perimetral
+##  Funcionalidades Principales
+
+# Gestión y Control de Tráfico Perimetral
 
 Esta funcionalidad reside en el FortiGate y es la fuente primaria de datos para todo el proyecto.
  - Inspección de Tráfico LAN-to-WAN: Análisis en tiempo real de los paquetes que salen de la red local hacia internet.
