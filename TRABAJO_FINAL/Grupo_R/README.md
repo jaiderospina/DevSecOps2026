@@ -54,6 +54,8 @@ Despliega SecureVault completo en menos de 5 minutos. Solo necesitas tener **Doc
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) >= 24
 - Docker Compose >= 2.20
 - Conexión a internet (para descargar las imágenes la primera vez)
+- Puertos que deben estar libre:
+   3000, 8000, 15672
 
 ---
 
