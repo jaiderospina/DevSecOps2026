@@ -192,10 +192,10 @@ FASE 5 — DEPLOY    Ansible playbook                               (workflow_ru
 | Manual | Contenido |
 |---|---|
 | [Arquitectura](https://github.com/Angels1104/Manuales/blob/main/arquitectura.md) | Diagramas de componentes, secuencia, datos y casos de uso |
-| [Desarrollo]([docs/development-manual.md](https://github.com/Angels1104/Manuales/blob/main/development-manual.md)) | Setup local, tests, variables de entorno |
-| [Despliegue]([docs/deployment-manual.md](https://github.com/Angels1104/Manuales/blob/main/deployment-manual.md)) | Despliegue desde cero con Docker y Ansible |
-| [Seguridad]([docs/security-manual.md](https://github.com/Angels1104/Manuales/blob/main/security-manual.md)) | Modelo de amenazas, controles implementados |
-| [Usuario]([docs/user-manual.md](https://github.com/Angels1104/Manuales/blob/main/user-manual.md)) | Guía de uso de la aplicación |
+| [Desarrollo](https://github.com/Angels1104/Manuales/blob/main/development-manual.md) | Setup local, tests, variables de entorno |
+| [Despliegue](https://github.com/Angels1104/Manuales/blob/main/deployment-manual.md) | Despliegue desde cero con Docker y Ansible |
+| [Seguridad](https://github.com/Angels1104/Manuales/blob/main/security-manual.md) | Modelo de amenazas, controles implementados |
+| [Usuario](https://github.com/Angels1104/Manuales/blob/main/user-manual.md) | Guía de uso de la aplicación |
 
 
 
