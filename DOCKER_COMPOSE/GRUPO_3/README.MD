@@ -55,8 +55,13 @@ D:\
 ## ⚙️ **Paso 2: Crear archivo `.env`**
 
 <p align="center">
-     <img src="IMAGES/3.compose.png" width="600">
+     <img src="IMAGES/node.png" width="600">
 </p>
+
+<p align="center">
+     <img src="IMAGES/node2.png" width="600">
+</p>
+
 
 ---
 
