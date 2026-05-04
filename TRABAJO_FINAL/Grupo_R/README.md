@@ -191,7 +191,7 @@ FASE 5 — DEPLOY    Ansible playbook                               (workflow_ru
 
 | Manual | Contenido |
 |---|---|
-| [Arquitectura]([docs/architecture/README.md](https://github.com/Angels1104/Manuales/blob/main/arquitectura.md)) | Diagramas de componentes, secuencia, datos y casos de uso |
+| [Arquitectura](https://github.com/Angels1104/Manuales/blob/main/arquitectura.md) | Diagramas de componentes, secuencia, datos y casos de uso |
 | [Desarrollo]([docs/development-manual.md](https://github.com/Angels1104/Manuales/blob/main/development-manual.md)) | Setup local, tests, variables de entorno |
 | [Despliegue]([docs/deployment-manual.md](https://github.com/Angels1104/Manuales/blob/main/deployment-manual.md)) | Despliegue desde cero con Docker y Ansible |
 | [Seguridad]([docs/security-manual.md](https://github.com/Angels1104/Manuales/blob/main/security-manual.md)) | Modelo de amenazas, controles implementados |
