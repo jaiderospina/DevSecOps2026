@@ -1,15 +1,5 @@
 # ⬡ SecureVault
 
-[![CI — DevSecOps Pipeline](https://github.com/Angels1104/securevault/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Angels1104/securevault/actions/workflows/ci.yml)
-[![CD — Deploy](https://github.com/Angels1104/securevault/actions/workflows/deploy.yml/badge.svg)](https://github.com/Angels1104/securevault/actions/workflows/deploy.yml)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)](https://github.com/Angels1104/securevault/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.11-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
-[![DevSecOps](https://img.shields.io/badge/DevSecOps-enabled-0ea5e9?style=flat-square)](https://github.com/Angels1104/securevault/actions)
-
 > Plataforma de gestión segura de credenciales y secretos para equipos de desarrollo, con control de acceso por roles, cifrado en reposo y auditoría completa.
 
 ---
