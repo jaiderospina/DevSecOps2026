@@ -17,7 +17,7 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 
 ## Tabla de Contenidos
 
-1. [Gestión y Control de Tráfico Perimetral] (#1-Gestión-y-Control de Tráfico Perimetral)
+1. [Gestión y Control de Tráfico Perimetral](#1-Gestión-y-Control de Tráfico Perimetral)
 
 #  Funcionalidades Principales
 
