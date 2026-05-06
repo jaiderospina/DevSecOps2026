@@ -14,7 +14,9 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 <p align="center">
 <b>Figura 2.</b> diagrama_de_flujo.png. <code></code>.
 </p>
+
 ---
+
 ## Tabla de Contenidos
 
 1. [Gestión y Control de Tráfico Perimetral](#1-Gestión-y-Control-de-Tráfico-Perimetral)
