@@ -176,31 +176,31 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
 
 El proyecto de monitoreo y centralización de logs está basado en un stack orientado a observabilidad, contenedorización y seguridad.
 
-🔹 Recolección de logs
+- Recolección de logs
 rsyslog
 Actúa como servidor Syslog central. Recibe logs desde dispositivos como el firewall FortiGate mediante protocolo UDP 514.
 Promtail
 Agente de recolección de logs de Grafana Loki. Se encarga de leer logs desde archivos del sistema (como /var/log/syslog o logs de contenedores Docker) y enviarlos a Loki.
-🔹 Almacenamiento y procesamiento
+- Almacenamiento y procesamiento
 Grafana Loki
 Sistema de almacenamiento de logs optimizado para indexar metadata en lugar del contenido completo. Permite consultas eficientes y escalables. Expone servicio en TCP 3100.
-🔹 Visualización y monitoreo
+- Visualización y monitoreo
 Grafana
 Plataforma de visualización que permite crear dashboards en tiempo real para analizar logs. Se conecta a Loki como datasource. Disponible en TCP 3000.
-🔹 Contenerización
+- Contenerización
 Docker
 Todos los componentes (Promtail, Loki, Grafana, rsyslog) se ejecutan como contenedores, facilitando despliegue, aislamiento y portabilidad.
-🔹 Seguridad / Autenticación (integración adicional)
+- Seguridad / Autenticación (integración adicional)
 Duo Authentication Proxy (RADIUS)
 Implementado en contenedor Docker. Permite autenticación multifactor (MFA) integrándose con:
 FortiGate (Firewall) mediante RADIUS (UDP 1812)
 Duo Security Cloud mediante API HTTPS (TCP 443)
-🔹 Infraestructura de red
+- Infraestructura de red
 FortiGate Firewall
 Controla acceso administrativo (HTTPS 443)
 Envía solicitudes de autenticación al proxy Duo (RADIUS)
 Genera logs que son enviados al sistema de monitoreo
-🔹 Servicios externos
+- Servicios externos
 Duo Security Cloud
 Servicio en la nube que valida la autenticación MFA mediante API segura (HTTPS 443).
 
