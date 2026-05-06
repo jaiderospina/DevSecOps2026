@@ -1,0 +1,2 @@
+-e ../../packages/vulncentral-db
+pytest>=8.0.0,<9
