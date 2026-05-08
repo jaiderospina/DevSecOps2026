@@ -315,7 +315,7 @@ El entorno debe permitir:
 
 ####  4. Descarga de Firewall y Máquina host de pruebas
 
-En el siguiente enlace (https://uniminuto0-my.sharepoint.com/my?id=%2Fpersonal%2Fbmedinad%5Funiminuto%5Fedu%5Fco%2FDocuments%2FMaquinas%20Virtuales&viewid=76ff8308%2Dde02%2D4470%2D8431%2Df1375049f52a)
+En el siguiente enlace (https://uniminuto0-my.sharepoint.com/:f:/g/personal/bmedinad_uniminuto_edu_co/IgDkzzw180L_TJLMkIU6kx27AR_FCYYkY73nmIxJkqB3vSA?e=EmRqSB)
 Se encuentra el Firewall (Fortigate del fabricante Fortinet) y una máquina host (Ubuntu Desktop) que se conectará a la LAN.
 Conectar el servidor al Firewall para que los logs lleguen de manera correcta
 
