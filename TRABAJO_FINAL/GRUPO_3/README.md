@@ -1,4 +1,18 @@
-﻿# SecureVault Pro
+# GRUPO 3
+
+**Ultima actualización:** 25 de marzo 2026
+
+|#|Integrantes|
+|---|--------|
+|  1  |Leidy Dayana Avendaño Moreno|
+|  2 |Jeisson Andres Hernandez Martinez|
+|  3  |Michael Giovanny Sierra Leon|
+| 4 |John Edilvar Gutierrez Rojas|
+
+
+ 
+ 
+ # SecureVault Pro
 
 [![CI DevSecOps](https://github.com/johngutierrez80/Securevault-pro/actions/workflows/ci-devsecops.yml/badge.svg)](https://github.com/johngutierrez80/Securevault-pro/actions/workflows/ci-devsecops.yml)
 [![DAST ZAP](https://github.com/johngutierrez80/Securevault-pro/actions/workflows/dast-zap.yml/badge.svg)](https://github.com/johngutierrez80/Securevault-pro/actions/workflows/dast-zap.yml)
