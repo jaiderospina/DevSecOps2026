@@ -24,11 +24,10 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 3. [Visualización y Análisis de Dominios en Tiempo Real ](#3-Visualización-y-Análisis-de-Dominios-en-Tiempo-Real)
 4. [Arquitectura de Microservicios](#4-Arquitectura-de-Microservicios)
 5. [Stack Tecnológico](#5-Stack-Tecnológico)
-6. [Flujo del Pipeline CI/CD](#6-Flujo-del-Pipeline-CI-/-CD)
-7. [Gestión y Control de Tráfico Perimetral](#7-Gestión-y-Control-de-Tráfico-Perimetral)
-8. [Gestión y Control de Tráfico Perimetral](#8-Gestión-y-Control-de-Tráfico-Perimetral)
-9. [Gestión y Control de Tráfico Perimetral](#9-Gestión-y-Control-de-Tráfico-Perimetral)
-10. [Gestión y Control de Tráfico Perimetral](#10-Gestión-y-Control-de-Tráfico-Perimetral)
+6. [Flujo del Pipeline CI/CD](#6-Flujo-del-Pipeline)
+7. [Tecnologías empleadas](#7-Tecnologías-empleadas)
+8. [Instrucciones de inicio rápido](#8-Instrucciones-de-inicio-rápido)
+
 ---
 #  Funcionalidades Principales
 
@@ -134,7 +133,7 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
 -----------------------------------------------------------------------------------------------
 
 
-## 6. Flujo del Pipeline CI/CD
+## 6. Flujo del Pipeline
 
 ```
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
@@ -229,14 +228,12 @@ Genera logs que son enviados al sistema de monitoreo
 Duo Security Cloud
 Servicio en la nube que valida la autenticación MFA mediante API segura (HTTPS 443).
 
-## 8. Insignias (badges) del pipeline: build status, cobertura de pruebas, versión
 
+## 8. Instrucciones de inicio rápido
 
-## 9. Instrucciones de inicio rápido (quick start)
+###  Quick Start
 
-#  Quick Start
-
-##  ¿Qué es esta sección?
+####  ¿Qué es esta sección?
 
 La sección **Quick Start** tiene como objetivo proporcionar una guía rápida para desplegar el entorno del proyecto en un servidor Ubuntu utilizando Docker.
 
@@ -251,7 +248,7 @@ La arquitectura implementada utiliza:
 
 ---
 
-#  1. Verificar Docker
+####  1. Verificar Docker
 
 Validar que Docker se encuentre instalado:
 
@@ -270,28 +267,28 @@ sudo systemctl start docker
 
 ---
 
-#  2. Descargar las Imágenes Docker
+#####  2. Descargar las Imágenes Docker
 
-##  Grafana Seguro
+#####  Grafana Seguro
 
 ```bash
 docker pull r4cg/grafana-secure:1.1
 ```
 
-##  Promtail Seguro
+#####  Promtail Seguro
 
 ```bash
 docker pull r4cg/promtail-secure:1.0
 ```
 
-##  Loki
+#####  Loki
 
 ```bash
 docker pull grafana/loki:2.9.0
 ```
 ---
 
-#  3. Verificar Contenedores
+####  3. Verificar Contenedores
 
 ```bash
 docker ps
@@ -305,7 +302,7 @@ Deben visualizarse los siguientes servicios:
 
 ---
 
-# Resultado Esperado
+#### Resultado Esperado
 
 El entorno debe permitir:
 
