@@ -27,6 +27,7 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 6. [Flujo del Pipeline CI/CD](#6-Flujo-del-Pipeline)
 7. [Tecnologías empleadas](#7-Tecnologías-empleadas)
 8. [Instrucciones de inicio rápido](#8-Instrucciones-de-inicio-rápido)
+9. [Conclusiones](#9-Conclusiones)
 
 ---
 #  Funcionalidades Principales
@@ -241,7 +242,7 @@ Estas instrucciones permiten descargar las imágenes previamente publicadas en D
 
 La arquitectura implementada utiliza:
 
-* **Grafana** → Visualización de dashboards y logs.
+* **Grafana** → Visualización de dashboards.
 * **Loki** → Almacenamiento y consulta de logs.
 * **Promtail** → Recolección y envío de logs hacia Loki.
 * **Rsyslog** → Centralización de eventos Syslog.
@@ -311,3 +312,21 @@ El entorno debe permitir:
 * Visualización de dashboards en Grafana.
 * Ejecución de imágenes Docker remediadas y endurecidas.
 
+
+####  4. Descarga de Firewall y Máquina host de pruebas
+
+En el siguiente enlace (https://uniminuto0-my.sharepoint.com/my?id=%2Fpersonal%2Fbmedinad%5Funiminuto%5Fedu%5Fco%2FDocuments%2FMaquinas%20Virtuales&viewid=76ff8308%2Dde02%2D4470%2D8431%2Df1375049f52a)
+Se encuentra el Firewall (Fortigate del fabricante Fortinet) y una máquina host (Ubuntu Desktop) que se conectará a la LAN.
+Conectar el servidor al Firewall para que los logs lleguen de manera correcta
+
+Seguir las instrucciones de configuración en el Manual detallado de instalación.
+
+## 9. Conclusiones
+
+-	Durante el desarrollo del proyecto SecureLog Stack se logró implementar una plataforma centralizada para la recolección, almacenamiento y visualización de logs utilizando tecnologías de observabilidad y contenerización. La integración de herramientas como Grafana, Loki, Promtail, rsyslog y Docker permitió construir un entorno funcional capaz de monitorear eventos en tiempo real de todas las consultas de una red local que tienen un firewall como perimetral y facilitar el análisis de información proveniente de estas fuentes.
+
+-	Uno de los principales desafíos encontrados fue la configuración e integración entre los distintos servicios del stack, especialmente en la comunicación entre Promtail, Loki y Grafana, así como en la correcta recepción de logs mediante Syslog, además de configurar los paneles en Grafana para obtener información de valor.
+
+-	Como limitaciones del proyecto, se identifica que el entorno fue desarrollado principalmente con fines académicos y de laboratorio, por lo que no incluye mecanismos avanzados de alta disponibilidad, limitaciones en la licencia del Firewall para activar la categorización de dominios por lo cual los bloqueos se debían hacer manuales a los destinos que se consideraran maliciosos, balanceo de carga o almacenamiento distribuido para grandes volúmenes de logs. Asimismo, las pruebas realizadas se enfocaron en escenarios controlados y no en ambientes de producción con alta concurrencia o múltiples nodos de monitoreo.
+
+-	Entre las principales lecciones aprendidas se destaca la importancia de la observabilidad en infraestructuras comunes de las empresas y cómo la centralización de logs facilita la detección de incidentes, auditoría y monitoreo continuo de servicios. Además, El análisis de vulnerabilidades realizado sobre las imágenes Docker utilizadas en el proyecto permitió identificar la importancia de mantener un entorno de contenedores actualizado y seguro. Durante el proceso se evidenció que muchas imágenes base pueden contener vulnerabilidades conocidas asociadas a paquetes del sistema operativo, librerías desactualizadas o dependencias incluidas por defecto en las distribuciones utilizadas. Esto demuestra que, incluso utilizando imágenes oficiales, es necesario realizar validaciones de seguridad de manera periódica.
