@@ -1,1 +1,320 @@
+name: CI — DevSecOps Pipeline
 
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: docker.io
+  IMAGE_PREFIX: ${{ secrets.DOCKERHUB_USERNAME }}/securevault
+
+jobs:
+
+  # ─────────────────────────────────────────────
+  # FASE 2 — CODE: Detección de secretos
+  # ─────────────────────────────────────────────
+  secrets-scan:
+    name: "🔍 Secrets Scan (Gitleaks)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ─────────────────────────────────────────────
+  # FASE 2 — CODE: Análisis estático (SAST)
+  # ─────────────────────────────────────────────
+  sast-scan:
+    name: "🛡️ SAST (Bandit + Semgrep)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Run Bandit (Python SAST)
+        run: |
+          bandit -r api-gateway/app/ -f json -o bandit-report.json -ll || true
+          bandit -r worker-audit/ -f json -o bandit-worker-report.json -ll || true
+          echo "=== Bandit Summary ==="
+          bandit -r api-gateway/app/ -ll || true
+
+      - name: Run Semgrep
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: >-
+            p/python
+            p/owasp-top-ten
+            p/jwt
+            p/secrets
+        continue-on-error: true
+
+      - name: Upload SAST reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: sast-reports
+          path: |
+            bandit-report.json
+            bandit-worker-report.json
+
+  # ─────────────────────────────────────────────
+  # FASE 2 — CODE: Análisis de dependencias (SCA)
+  # ─────────────────────────────────────────────
+  dependency-scan:
+    name: "📦 Dependency Scan (Trivy SCA)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trivy — API Gateway dependencies
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: api-gateway/requirements.txt
+          severity: HIGH,CRITICAL
+          exit-code: 0   # warn only, don't block on deps
+          format: table
+
+      - name: Trivy — Frontend dependencies
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: frontend/package.json
+          severity: HIGH,CRITICAL
+          exit-code: 0
+          format: table
+
+  # ─────────────────────────────────────────────
+  # FASE 3 — BUILD: Build + escaneo de imágenes
+  # ─────────────────────────────────────────────
+  build-and-scan:
+    name: "🐳 Build & Image Scan (Trivy)"
+    runs-on: ubuntu-latest
+    needs: [secrets-scan, sast-scan, dependency-scan]
+    strategy:
+      matrix:
+        service:
+          - name: api-gateway
+            context: ./api-gateway
+          - name: worker-audit
+            context: ./worker-audit
+          - name: frontend
+            context: ./frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image — ${{ matrix.service.name }}
+        run: |
+          docker build \
+            -t securevault/${{ matrix.service.name }}:${{ github.sha }} \
+            ${{ matrix.service.context }}
+
+      - name: Trivy — Scan image for CVEs
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: securevault/${{ matrix.service.name }}:${{ github.sha }}
+          severity: CRITICAL
+          exit-code: 1   # ❌ FAIL on CRITICAL CVEs
+          format: table
+        continue-on-error: false
+
+      - name: Trivy — Full report (HIGH+CRITICAL)
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: securevault/${{ matrix.service.name }}:${{ github.sha }}
+          severity: HIGH,CRITICAL
+          exit-code: 0
+          format: json
+          output: trivy-${{ matrix.service.name }}.json
+        continue-on-error: true
+
+      - name: Upload Trivy report
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-${{ matrix.service.name }}
+          path: trivy-${{ matrix.service.name }}.json
+
+  # ─────────────────────────────────────────────
+  # FASE 4 — TEST: Pruebas unitarias
+  # ─────────────────────────────────────────────
+  unit-tests-backend:
+    name: "🧪 Unit Tests — Backend (Pytest)"
+    runs-on: ubuntu-latest
+    needs: [build-and-scan]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r api-gateway/requirements.txt
+          pip install pytest pytest-cov httpx
+
+      - name: Run Pytest with coverage
+        env:
+          DATABASE_URL: sqlite:///./test.db
+          SECRET_KEY: test-secret-key-which-is-long-enough-123456
+          FERNET_KEY: TlgmqrgYgDKS7jKdLdZEJn-4RzLMKqy0LqJKJLWqoaA=
+          RABBITMQ_URL: amqp://guest:guest@localhost:5672/
+        run: |
+          cd api-gateway
+          pytest tests/ --cov=app --cov-report=xml --cov-report=term-missing -v
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-backend
+          path: api-gateway/coverage.xml
+
+  unit-tests-frontend:
+    name: "🧪 Unit Tests — Frontend (Jest)"
+    runs-on: ubuntu-latest
+    needs: [build-and-scan]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: cd frontend && npm install
+
+      - name: Run Jest
+        run: cd frontend && npm test -- --watchAll=false
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-frontend
+          path: frontend/coverage/
+
+  # ─────────────────────────────────────────────
+  # FASE 4 — TEST: DAST con OWASP ZAP
+  # ─────────────────────────────────────────────
+  dast-scan:
+    name: "⚡ DAST (OWASP ZAP)"
+    runs-on: ubuntu-latest
+    needs: [unit-tests-backend, unit-tests-frontend]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Start staging environment
+        run: |
+          docker compose up -d --build
+          echo "Waiting for services to be healthy..."
+          sleep 30
+
+      - name: Wait for API health
+        run: |
+          for i in $(seq 1 12); do
+            if curl -sf http://localhost:8000/health; then
+              echo "API is healthy"
+              break
+            fi
+            echo "Waiting... ($i/12)"
+            sleep 5
+          done
+
+      - name: OWASP ZAP — Baseline Scan
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          target: "http://localhost:8000"
+          rules_file_name: ".zap/rules.tsv"
+          fail_action: warn
+          artifact_name: zap-report
+        continue-on-error: true
+
+      - name: Tear down staging
+        if: always()
+        run: docker compose down -v
+
+  # ─────────────────────────────────────────────
+  # FASE 5 — RELEASE: IaC scan + Push a Docker Hub
+  # ─────────────────────────────────────────────
+  release:
+    name: "🚀 Release — IaC Scan + Docker Hub Push"
+    runs-on: ubuntu-latest
+    needs: [dast-scan]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkov — IaC Security Scan
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: infrastructure/terraform
+          framework: terraform
+          soft_fail: true
+          output_format: cli
+
+      - name: Checkov — Docker Compose Scan
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          file: docker-compose.yml
+          framework: docker_compose
+          soft_fail: true
+
+      - name: Set image tag
+        id: tag
+        run: |
+          SHORT_SHA=${GITHUB_SHA::8}
+          echo "tag=v1.0.0-${SHORT_SHA}" >> $GITHUB_OUTPUT
+          echo "latest=latest" >> $GITHUB_OUTPUT
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push all images
+        run: |
+          TAG=${{ steps.tag.outputs.tag }}
+          REGISTRY=${{ secrets.DOCKERHUB_USERNAME }}
+
+          for service in api-gateway worker-audit frontend; do
+            echo "Building and pushing $service..."
+            docker build -t $REGISTRY/securevault-$service:$TAG \
+                         -t $REGISTRY/securevault-$service:latest \
+                         ./$service
+            docker push $REGISTRY/securevault-$service:$TAG
+            docker push $REGISTRY/securevault-$service:latest
+          done
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: "SecureVault ${{ steps.tag.outputs.tag }}"
+          body: |
+            ## Cambios en esta versión
+            - Commit: ${{ github.sha }}
+            - Pipeline DevSecOps ejecutado exitosamente
+            - Imágenes publicadas en Docker Hub
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
