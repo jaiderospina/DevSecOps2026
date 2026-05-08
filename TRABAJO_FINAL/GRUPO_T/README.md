@@ -222,3 +222,84 @@ Servicio en la nube que valida la autenticación MFA mediante API segura (HTTPS 
 
 
 ## Instrucciones de inicio rápido (quick start)
+
+#  Quick Start
+
+##  ¿Qué es esta sección?
+
+La sección **Quick Start** tiene como objetivo proporcionar una guía rápida para desplegar el entorno del proyecto en un servidor Ubuntu utilizando Docker.
+
+Estas instrucciones permiten descargar las imágenes previamente publicadas en Docker Hub y ejecutar los contenedores necesarios para el funcionamiento de la arquitectura de monitoreo y centralización de logs.
+
+La arquitectura implementada utiliza:
+
+* **Grafana** → Visualización de dashboards y logs.
+* **Loki** → Almacenamiento y consulta de logs.
+* **Promtail** → Recolección y envío de logs hacia Loki.
+* **Rsyslog** → Centralización de eventos Syslog.
+
+---
+
+#  1. Verificar Docker
+
+Validar que Docker se encuentre instalado:
+
+```bash
+docker --version
+```
+
+Si Docker no está instalado:
+
+```bash
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+---
+
+#  2. Descargar las Imágenes Docker
+
+##  Grafana Seguro
+
+```bash
+docker pull r4cg/grafana-secure:1.1
+```
+
+##  Promtail Seguro
+
+```bash
+docker pull r4cg/promtail-secure:1.0
+```
+
+##  Loki
+
+```bash
+docker pull grafana/loki:2.9.0
+```
+---
+
+#  3. Verificar Contenedores
+
+```bash
+docker ps
+```
+
+Deben visualizarse los siguientes servicios:
+
+* grafana-secure
+* promtail-secure
+* loki
+
+---
+
+# Resultado Esperado
+
+El entorno debe permitir:
+
+* Recolección de logs mediante Promtail.
+* Almacenamiento centralizado en Loki.
+* Visualización de dashboards en Grafana.
+* Ejecución de imágenes Docker remediadas y endurecidas.
+
