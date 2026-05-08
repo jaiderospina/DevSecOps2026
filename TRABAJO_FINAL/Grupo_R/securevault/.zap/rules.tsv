@@ -1,1 +1,7 @@
-
+# ZAP rules configuration
+# Format: rule_id	IGNORE/WARN/FAIL	optional description
+10016	IGNORE	Web Browser XSS Protection Not Enabled
+10017	IGNORE	Cross-Domain JavaScript Source File Inclusion
+10019	IGNORE	Content-Type Header Missing
+10021	IGNORE	X-Content-Type-Options Header Missing (dev only)
+90022	WARN	Application Error Disclosure
