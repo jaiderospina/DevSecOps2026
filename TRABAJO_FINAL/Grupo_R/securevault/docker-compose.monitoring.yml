@@ -1,0 +1,64 @@
+version: "3.9"
+
+# Extend base compose with monitoring
+# Usage: docker compose -f docker-compose.yml -f docker-compose.monitoring.yml up -d
+
+services:
+
+  prometheus:
+    image: prom/prometheus:v2.51.0
+    container_name: sv_prometheus
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - sv_network
+
+  grafana:
+    image: grafana/grafana:10.4.0
+    container_name: sv_grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - sv_network
+
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: sv_loki
+    volumes:
+      - ./monitoring/loki/loki-config.yml:/etc/loki/local-config.yaml:ro
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - sv_network
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: sv_promtail
+    volumes:
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+    networks:
+      - sv_network
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  sv_network:
+    external: true

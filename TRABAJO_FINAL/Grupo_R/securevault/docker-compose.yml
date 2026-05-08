@@ -1,0 +1,111 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sv_postgres
+    environment:
+      POSTGRES_DB: securevault
+      POSTGRES_USER: securevault
+      POSTGRES_PASSWORD: securevault
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U securevault"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sv_network
+
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    container_name: sv_rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+    networks:
+      - sv_network
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    container_name: sv_api
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://securevault:securevault@postgres:5432/securevault}
+      RABBITMQ_URL: ${RABBITMQ_URL:-amqp://guest:guest@rabbitmq:5672/}
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-key-change-in-production-123456789}
+      FERNET_KEY: ${FERNET_KEY:-TlgmqrgYgDKS7jKdLdZEJn-4RzLMKqy0LqJKJLWqoaA=}
+      DEBUG: ${DEBUG:-true}
+      ALLOW_SELF_REGISTER_ADMIN: ${ALLOW_SELF_REGISTER_ADMIN:-false}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@securevault.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-Admin123!ChangeMe}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    networks:
+      - sv_network
+    restart: unless-stopped
+
+  worker-audit:
+    build:
+      context: ./worker-audit
+      dockerfile: Dockerfile
+    container_name: sv_worker
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://securevault:securevault@postgres:5432/securevault}
+      RABBITMQ_URL: ${RABBITMQ_URL:-amqp://guest:guest@rabbitmq:5672/}
+      SECRET_ROTATION_DAYS: ${SECRET_ROTATION_DAYS:-90}
+      CHECK_INTERVAL_SECONDS: ${CHECK_INTERVAL_SECONDS:-30}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      api-gateway:
+        condition: service_healthy
+    networks:
+      - sv_network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sv_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      api-gateway:
+        condition: service_healthy
+    networks:
+      - sv_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  sv_network:
+    driver: bridge
