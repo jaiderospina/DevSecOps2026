@@ -1,0 +1,558 @@
+{
+  "version": "2.0.0",
+  "summary": {
+    "title": "SecureVault Threat Model",
+    "owner": "SecureVault Team",
+    "description": "Modelo de amenazas STRIDE completo para la plataforma SecureVault. Cubre los flujos críticos: autenticación JWT, gestión de secretos cifrados, comunicación asíncrona con RabbitMQ y auditoría de eventos.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "reviewer": "",
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "SecureVault — DFD Nivel 0",
+        "diagramType": "STRIDE",
+        "placeholder": "Diagrama de contexto: flujo global entre el usuario y el sistema SecureVault",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.0.0",
+        "cells": [
+          {
+            "type": "process",
+            "label": "SecureVault\nSistema",
+            "id": "proc-sv-system",
+            "x": 340,
+            "y": 200,
+            "width": 120,
+            "height": 60,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Process",
+              "name": "SecureVault Sistema",
+              "description": "Plataforma completa de gestión segura de credenciales y secretos para equipos de desarrollo.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "type": "actor",
+            "label": "Usuario\n(Admin/Editor/Viewer)",
+            "id": "actor-user",
+            "x": 80,
+            "y": 200,
+            "width": 120,
+            "height": 60,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Usuario",
+              "description": "Usuario humano autenticado con rol admin, editor o viewer.",
+              "outOfScope": false,
+              "reasonOutOfScope": ""
+            }
+          },
+          {
+            "type": "store",
+            "label": "PostgreSQL",
+            "id": "store-postgres-l0",
+            "x": 580,
+            "y": 120,
+            "width": 120,
+            "height": 60,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Store",
+              "name": "PostgreSQL",
+              "description": "Base de datos principal. Almacena usuarios, secretos cifrados y audit logs.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": false,
+              "storesCredentials": true,
+              "isEncrypted": true,
+              "isSigned": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "store",
+            "label": "RabbitMQ",
+            "id": "store-rmq-l0",
+            "x": 580,
+            "y": 280,
+            "width": 120,
+            "height": 60,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Store",
+              "name": "RabbitMQ",
+              "description": "Broker de mensajes AMQP. Colas: secret_events, secret_alerts.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "Credenciales / Secretos",
+            "id": "flow-user-sv",
+            "source": { "id": "actor-user" },
+            "target": { "id": "proc-sv-system" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Credenciales / Secretos",
+              "description": "El usuario envía credenciales para autenticarse y datos de secretos para gestionar.",
+              "isEncrypted": true,
+              "protocol": "HTTPS",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "JWT / Secretos cifrados",
+            "id": "flow-sv-user",
+            "source": { "id": "proc-sv-system" },
+            "target": { "id": "actor-user" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "JWT / Secretos cifrados",
+              "description": "El sistema devuelve tokens JWT y secretos descifrados bajo demanda.",
+              "isEncrypted": true,
+              "protocol": "HTTPS",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "CRUD cifrado",
+            "id": "flow-sv-postgres",
+            "source": { "id": "proc-sv-system" },
+            "target": { "id": "store-postgres-l0" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "CRUD cifrado",
+              "description": "Lectura y escritura de usuarios, secretos (cifrados con Fernet) y audit logs.",
+              "isEncrypted": true,
+              "protocol": "PostgreSQL wire protocol",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "Eventos async",
+            "id": "flow-sv-rmq",
+            "source": { "id": "proc-sv-system" },
+            "target": { "id": "store-rmq-l0" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Eventos async",
+              "description": "Publicación y consumo de eventos de secretos y alertas de expiración.",
+              "isEncrypted": false,
+              "protocol": "AMQP",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "title": "SecureVault — DFD Nivel 1 (Flujos Internos)",
+        "diagramType": "STRIDE",
+        "placeholder": "Diagrama detallado con todos los componentes internos y amenazas STRIDE",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.0.0",
+        "cells": [
+          {
+            "type": "actor",
+            "label": "Usuario",
+            "id": "actor-user-l1",
+            "x": 30,
+            "y": 300,
+            "width": 100,
+            "height": 60,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Usuario",
+              "description": "Actor humano con rol admin, editor o viewer.",
+              "outOfScope": false,
+              "reasonOutOfScope": ""
+            }
+          },
+          {
+            "type": "process",
+            "label": "Frontend\nReact SPA\n:3000",
+            "id": "proc-frontend",
+            "x": 180,
+            "y": 290,
+            "width": 110,
+            "height": 80,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Process",
+              "name": "Frontend React SPA",
+              "description": "Interfaz de usuario SPA construida con React 18 + Vite + Tailwind. Servida por nginx-unprivileged.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "none (nginx non-root)",
+              "threats": [
+                {
+                  "id": "t-fe-xss",
+                  "title": "Cross-Site Scripting (XSS)",
+                  "type": "Tampering",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "Inyección de scripts maliciosos en la SPA mediante inputs de usuario no sanitizados.",
+                  "mitigation": "React escapa por defecto el contenido del DOM. Cabeceras X-XSS-Protection y X-Content-Type-Options configuradas en nginx.conf. Política CSP planificada para v1.1.",
+                  "modelType": "STRIDE"
+                },
+                {
+                  "id": "t-fe-token-storage",
+                  "title": "Robo de JWT desde localStorage",
+                  "type": "Information Disclosure",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "Los tokens JWT almacenados en localStorage son accesibles por cualquier script de la página.",
+                  "mitigation": "Access token con TTL de 30 minutos. Refresh token rotado. Implementar httpOnly cookies en v1.1 para mayor seguridad.",
+                  "modelType": "STRIDE"
+                }
+              ]
+            }
+          },
+          {
+            "type": "process",
+            "label": "API Gateway\nFastAPI + JWT\n:8000",
+            "id": "proc-api",
+            "x": 360,
+            "y": 140,
+            "width": 130,
+            "height": 80,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Process",
+              "name": "API Gateway FastAPI",
+              "description": "Backend principal. Maneja autenticación JWT, gestión de secretos con cifrado Fernet, y auditoría de eventos.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "non-root (UID 1000)",
+              "threats": [
+                {
+                  "id": "t-api-spoofing-jwt",
+                  "title": "Suplantación mediante JWT manipulado",
+                  "type": "Spoofing",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "Atacante forja o manipula un token JWT para suplantar la identidad de otro usuario o elevar privilegios.",
+                  "mitigation": "Verificación de firma HMAC-SHA256 en cada request. Clave secreta gestionada como variable de entorno (GitHub Secret en CI). Expiración de 30 min. Token refresh rotado con TTL de 7 días.",
+                  "modelType": "STRIDE"
+                },
+                {
+                  "id": "t-api-sqli",
+                  "title": "Inyección SQL",
+                  "type": "Tampering",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "Inyección de SQL malicioso en parámetros de búsqueda o filtros de secretos.",
+                  "mitigation": "SQLAlchemy ORM con parámetros enlazados (parameterized queries) en todas las consultas. Ninguna consulta concatena strings de usuario directamente. Bandit (SAST) detecta patrones de inyección SQL.",
+                  "modelType": "STRIDE"
+                },
+                {
+                  "id": "t-api-priv-esc",
+                  "title": "Escalada de privilegios horizontal",
+                  "type": "Elevation of Privilege",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "Un usuario editor accede o modifica secretos que pertenecen a otro usuario.",
+                  "mitigation": "Validación explícita de owner_id en cada endpoint sensible. Solo el rol admin puede ver todos los secretos. 403 Forbidden para accesos no autorizados.",
+                  "modelType": "STRIDE"
+                },
+                {
+                  "id": "t-api-dos-login",
+                  "title": "Fuerza bruta / DoS en endpoint de login",
+                  "type": "Denial of Service",
+                  "status": "Accepted",
+                  "severity": "Medium",
+                  "description": "Atacante realiza miles de intentos de login para bloquear cuentas o consumir recursos.",
+                  "mitigation": "Riesgo aceptado en v1.0 dado contexto de equipo interno pequeño. Rate limiting con slowapi planificado para v1.1. Ingress con nginx limit-rps=10 en despliegue K8s.",
+                  "modelType": "STRIDE"
+                },
+                {
+                  "id": "t-api-info-logs",
+                  "title": "Filtración de secretos en texto plano en logs",
+                  "type": "Information Disclosure",
+                  "status": "Mitigated",
+                  "severity": "Critical",
+                  "description": "Los valores de los secretos se loguean accidentalmente en texto plano durante operaciones de debug.",
+                  "mitigation": "Los valores cifrados NUNCA se incluyen en logs. Solo se registran IDs y nombres de secretos. Gitleaks en pre-commit y en CI detecta secretos en código fuente.",
+                  "modelType": "STRIDE"
+                },
+                {
+                  "id": "t-api-audit-repudiation",
+                  "title": "Negación de acciones sobre secretos",
+                  "type": "Repudiation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "Un usuario niega haber revelado, rotado o eliminado un secreto.",
+                  "mitigation": "Audit log inmutable (INSERT only, sin UPDATE/DELETE sobre audit_logs). Cada acción registra user_id, IP, timestamp y detalles de la operación.",
+                  "modelType": "STRIDE"
+                }
+              ]
+            }
+          },
+          {
+            "type": "process",
+            "label": "Worker Audit\nPython async",
+            "id": "proc-worker",
+            "x": 360,
+            "y": 420,
+            "width": 130,
+            "height": 80,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Process",
+              "name": "Worker Audit",
+              "description": "Proceso asíncrono independiente. Consume secret_events de RabbitMQ y ejecuta check periódico de expiración cada 30 segundos.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "non-root (UID 1000)",
+              "threats": [
+                {
+                  "id": "t-worker-poison",
+                  "title": "Mensaje malicioso en cola RabbitMQ",
+                  "type": "Tampering",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "Un actor con acceso a RabbitMQ inyecta mensajes maliciosos en secret_events para corromper el estado de secretos.",
+                  "mitigation": "Validación de estructura JSON en on_event_received. Mensajes mal formados son descartados con basic_nack requeue=False. Acceso a RabbitMQ restringido a la red interna sv_network.",
+                  "modelType": "STRIDE"
+                },
+                {
+                  "id": "t-worker-sqli-update",
+                  "title": "Inyección SQL en UPDATE de expiración",
+                  "type": "Tampering",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "Parámetro cutoff manipulado en la query de expiración.",
+                  "mitigation": "Query con parámetros enlazados mediante SQLAlchemy text() y diccionario de parámetros. No hay concatenación de strings.",
+                  "modelType": "STRIDE"
+                }
+              ]
+            }
+          },
+          {
+            "type": "store",
+            "label": "PostgreSQL\n(cifrado en reposo)",
+            "id": "store-postgres",
+            "x": 580,
+            "y": 140,
+            "width": 140,
+            "height": 70,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Store",
+              "name": "PostgreSQL",
+              "description": "Base de datos relacional. Tablas: users, secrets (valores cifrados con Fernet AES-128), audit_logs.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": false,
+              "storesCredentials": true,
+              "isEncrypted": true,
+              "isSigned": false,
+              "threats": [
+                {
+                  "id": "t-db-direct-access",
+                  "title": "Acceso directo a la base de datos",
+                  "type": "Tampering",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "Atacante con acceso a la red interna conecta directamente a PostgreSQL y lee o modifica secretos.",
+                  "mitigation": "Puerto 5432 no expuesto al exterior (solo ClusterIP en K8s / red Docker interna). Contraseña gestionada como variable de entorno. Secretos cifrados con Fernet incluso si se accede directamente a la DB.",
+                  "modelType": "STRIDE"
+                },
+                {
+                  "id": "t-db-backup-disclosure",
+                  "title": "Filtración de datos en backups",
+                  "type": "Information Disclosure",
+                  "status": "Accepted",
+                  "severity": "Medium",
+                  "description": "Backups de PostgreSQL exponen datos sensibles si el storage no está cifrado.",
+                  "mitigation": "Los valores de secretos están cifrados con Fernet en reposo. Un backup expone cifrado, no texto plano. Cifrado del storage de backups recomendado en producción real.",
+                  "modelType": "STRIDE"
+                }
+              ]
+            }
+          },
+          {
+            "type": "store",
+            "label": "RabbitMQ\nAMQP Broker",
+            "id": "store-rmq",
+            "x": 580,
+            "y": 380,
+            "width": 140,
+            "height": 70,
+            "zIndex": 10,
+            "data": {
+              "type": "tm.Store",
+              "name": "RabbitMQ",
+              "description": "Broker AMQP. Colas durables: secret_events (API→Worker) y secret_alerts (Worker→futuras integraciones).",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "threats": [
+                {
+                  "id": "t-rmq-anon-access",
+                  "title": "Acceso no autenticado al broker",
+                  "type": "Spoofing",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "Actor externo publica o consume mensajes en las colas sin autenticación.",
+                  "mitigation": "Credenciales de RabbitMQ gestionadas como variable de entorno. Puerto 5672 no expuesto al exterior. En K8s solo accesible vía ClusterIP dentro del namespace securevault.",
+                  "modelType": "STRIDE"
+                }
+              ]
+            }
+          },
+          {
+            "type": "boundary",
+            "label": "Red interna sv_network\n(Docker / Kubernetes namespace)",
+            "id": "boundary-internal",
+            "x": 150,
+            "y": 80,
+            "width": 620,
+            "height": 480,
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Red interna"
+            }
+          },
+          {
+            "type": "flow",
+            "label": "HTTP (login/secretos)",
+            "id": "flow-user-fe",
+            "source": { "id": "actor-user-l1" },
+            "target": { "id": "proc-frontend" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "HTTP usuario → frontend",
+              "description": "Peticiones del navegador al frontend servido por nginx.",
+              "isEncrypted": true,
+              "protocol": "HTTPS",
+              "isPublicNetwork": true,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "REST API / JWT",
+            "id": "flow-fe-api",
+            "source": { "id": "proc-frontend" },
+            "target": { "id": "proc-api" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Frontend → API Gateway",
+              "description": "Llamadas REST con Authorization: Bearer JWT.",
+              "isEncrypted": true,
+              "protocol": "HTTP (interno) / HTTPS (producción)",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "SQL (ORM parameterizado)",
+            "id": "flow-api-db",
+            "source": { "id": "proc-api" },
+            "target": { "id": "store-postgres" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "API → PostgreSQL",
+              "description": "Queries SQLAlchemy con parámetros enlazados. Valores de secretos cifrados antes de INSERT.",
+              "isEncrypted": false,
+              "protocol": "PostgreSQL wire protocol",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "AMQP publish (secret_events)",
+            "id": "flow-api-rmq",
+            "source": { "id": "proc-api" },
+            "target": { "id": "store-rmq" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "API → RabbitMQ",
+              "description": "Publicación de eventos de creación/rotación/eliminación de secretos.",
+              "isEncrypted": false,
+              "protocol": "AMQP",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "AMQP consume (secret_events)",
+            "id": "flow-rmq-worker",
+            "source": { "id": "store-rmq" },
+            "target": { "id": "proc-worker" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "RabbitMQ → Worker",
+              "description": "Consumo de mensajes de la cola secret_events por el Worker Audit.",
+              "isEncrypted": false,
+              "protocol": "AMQP",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "SQL UPDATE expiración",
+            "id": "flow-worker-db",
+            "source": { "id": "proc-worker" },
+            "target": { "id": "store-postgres" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Worker → PostgreSQL",
+              "description": "UPDATE periódico de secretos expirados (status = 'expired'). Queries con parámetros enlazados.",
+              "isEncrypted": false,
+              "protocol": "PostgreSQL wire protocol",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          },
+          {
+            "type": "flow",
+            "label": "AMQP publish (secret_alerts)",
+            "id": "flow-worker-rmq",
+            "source": { "id": "proc-worker" },
+            "target": { "id": "store-rmq" },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Worker → RabbitMQ alerts",
+              "description": "Publicación de alertas de expiración en la cola secret_alerts.",
+              "isEncrypted": false,
+              "protocol": "AMQP",
+              "isPublicNetwork": false,
+              "threats": []
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
