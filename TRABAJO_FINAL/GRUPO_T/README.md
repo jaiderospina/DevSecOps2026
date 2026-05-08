@@ -20,6 +20,15 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 ## Tabla de Contenidos
 
 1. [Gestión y Control de Tráfico Perimetral](#1-Gestión-y-Control-de-Tráfico-Perimetral)
+2. [Centralización y Procesamiento de Logs](#2-Centralización-y-Procesamiento-de-Logs)
+3. [Gestión y Control de Tráfico Perimetral](#3-Gestión-y-Control-de-Tráfico-Perimetral)
+4. [Gestión y Control de Tráfico Perimetral](#4-Gestión-y-Control-de-Tráfico-Perimetral)
+5. [Gestión y Control de Tráfico Perimetral](#5-Gestión-y-Control-de-Tráfico-Perimetral)
+6. [Gestión y Control de Tráfico Perimetral](#6-Gestión-y-Control-de-Tráfico-Perimetral)
+7. [Gestión y Control de Tráfico Perimetral](#7-Gestión-y-Control-de-Tráfico-Perimetral)
+8. [Gestión y Control de Tráfico Perimetral](#8-Gestión-y-Control-de-Tráfico-Perimetral)
+9. [Gestión y Control de Tráfico Perimetral](#9-Gestión-y-Control-de-Tráfico-Perimetral)
+10. [Gestión y Control de Tráfico Perimetral](#10-Gestión-y-Control-de-Tráfico-Perimetral)
 ---
 #  Funcionalidades Principales
 
@@ -32,20 +41,20 @@ Esta funcionalidad reside en el FortiGate y es la fuente primaria de datos para 
  
 ---
  
-## Centralización y Procesamiento de Logs (Syslog + Loki + Promtail)
+##  2. Centralización y Procesamiento de Logs (Syslog + Loki + Promtail)
 Es el motor que transforma los datos crudos en información útil.
 
 - Ingesta de Datos Multifuente: Recolección centralizada mediante rsyslog de los eventos provenientes del firewall.
 - Indexación y Etiquetado Eficiente: Uso de Promtail para leer, etiquetar (por IP de origen, tipo de evento o severidad) y enviar los logs hacia Loki.
 - Persistencia de Datos: Almacenamiento de los registros de navegación para permitir consultas históricas y análisis forense ante posibles incidentes.
 
-## Visualización y Análisis de Dominios en Tiempo Real (Grafana)
+## 3. Visualización y Análisis de Dominios en Tiempo Real (Grafana)
 Es la interfaz donde se cumple el propósito principal de monitoreo.
 - Dashboards de Tráfico DNS: Representación visual de las consultas de dominio realizadas en la LAN, permitiendo ver qué sitios son los más visitados.
 - Monitoreo de Anomalías: Gráficos de series temporales que muestran picos inusuales de tráfico, lo que podría indicar la presencia de malware o exfiltración de datos.
 
 
-## Arquitectura de Microservicios
+## 4. Arquitectura de Microservicios
 
                          ┌──────────────────────────────┐
                          │       USUARIOS / ADMIN       │
@@ -104,7 +113,7 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
         │     :3000          │
         └────────────────────┘
 
-## Stack Tecnológico
+## 5. Stack Tecnológico
 ----------------------------------------------------------------------------------------------
 | Capa                | Tecnología                                   | Licencia               |
 |---------------------|---------------------------------------------|-------------------------|
@@ -123,7 +132,7 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
 -----------------------------------------------------------------------------------------------
 
 
-## Flujo del Pipeline CI/CD
+## 6. Flujo del Pipeline CI/CD
 
 ```
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
@@ -180,7 +189,7 @@ Es la interfaz donde se cumple el propósito principal de monitoreo.
                └──────────────────────────────────────────────┘
 ```
 ---
-## Tecnologías empleadas
+## 7. Tecnologías empleadas
 
 El proyecto de monitoreo y centralización de logs está basado en un stack orientado a observabilidad, contenedorización y seguridad.
 
@@ -218,10 +227,10 @@ Genera logs que son enviados al sistema de monitoreo
 Duo Security Cloud
 Servicio en la nube que valida la autenticación MFA mediante API segura (HTTPS 443).
 
-## Insignias (badges) del pipeline: build status, cobertura de pruebas, versión
+## 8. Insignias (badges) del pipeline: build status, cobertura de pruebas, versión
 
 
-## Instrucciones de inicio rápido (quick start)
+## 9. Instrucciones de inicio rápido (quick start)
 
 #  Quick Start
 
