@@ -41,7 +41,8 @@ Esta funcionalidad reside en el FortiGate y es la fuente primaria de datos para 
  
 ---
  
-##  2. Centralización y Procesamiento de Logs (Syslog + Loki + Promtail)
+##  2. Centralización y Procesamiento de Logs
+(Syslog + Loki + Promtail)
 Es el motor que transforma los datos crudos en información útil.
 
 - Ingesta de Datos Multifuente: Recolección centralizada mediante rsyslog de los eventos provenientes del firewall.
