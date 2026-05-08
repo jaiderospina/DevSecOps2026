@@ -9,6 +9,12 @@ Proyecto final de Especializacion en Ciberseguridad con enfasis DevSecOps.
 
 SecureVault Pro implementa una plataforma para gestion segura de secretos con arquitectura de microservicios y pipeline DevSecOps de ciclo completo.
 
+## Ubicación Proyecto
+
+https://github.com/johngutierrez80/Securevault-pro
+
+https://hub.docker.com/repositories/necromanoger
+
 ## 1. Objetivo
 
 Demostrar integracion end-to-end de practicas DevSecOps:
@@ -141,3 +147,12 @@ Observacion: el video  evidencia el despliegue del proyecto en Windows y Linux.
 ## 8. Licencia
 
 Este proyecto usa licencia MIT. Ver LICENSE.
+
+#	Integrantes
+1	Leidy Dayana Avendaño Moreno
+
+2	Jeisson Andres Hernandez Martinez
+
+3	Michael Giovanny Sierra Leon
+
+4	John Edilvar Guitierrez Rojas
