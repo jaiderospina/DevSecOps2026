@@ -21,10 +21,10 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 
 1. [Gestión y Control de Tráfico Perimetral](#1-Gestión-y-Control-de-Tráfico-Perimetral)
 2. [Centralización y Procesamiento de Logs](#2-Centralización-y-Procesamiento-de-Logs)
-3. [Gestión y Control de Tráfico Perimetral](#3-Gestión-y-Control-de-Tráfico-Perimetral)
-4. [Gestión y Control de Tráfico Perimetral](#4-Gestión-y-Control-de-Tráfico-Perimetral)
-5. [Gestión y Control de Tráfico Perimetral](#5-Gestión-y-Control-de-Tráfico-Perimetral)
-6. [Gestión y Control de Tráfico Perimetral](#6-Gestión-y-Control-de-Tráfico-Perimetral)
+3. [Visualización y Análisis de Dominios en Tiempo Real ](#3-Visualización-y-Análisis-de-Dominios-en-Tiempo-Real)
+4. [Arquitectura de Microservicios](#4-Arquitectura-de-Microservicios)
+5. [Stack Tecnológico](#5-Stack-Tecnológico)
+6. [Flujo del Pipeline CI/CD](#6-Flujo-del-Pipeline-CI/CD)
 7. [Gestión y Control de Tráfico Perimetral](#7-Gestión-y-Control-de-Tráfico-Perimetral)
 8. [Gestión y Control de Tráfico Perimetral](#8-Gestión-y-Control-de-Tráfico-Perimetral)
 9. [Gestión y Control de Tráfico Perimetral](#9-Gestión-y-Control-de-Tráfico-Perimetral)
@@ -49,7 +49,8 @@ Es el motor que transforma los datos crudos en información útil.
 - Indexación y Etiquetado Eficiente: Uso de Promtail para leer, etiquetar (por IP de origen, tipo de evento o severidad) y enviar los logs hacia Loki.
 - Persistencia de Datos: Almacenamiento de los registros de navegación para permitir consultas históricas y análisis forense ante posibles incidentes.
 
-## 3. Visualización y Análisis de Dominios en Tiempo Real (Grafana)
+## 3. Visualización y Análisis de Dominios en Tiempo Real 
+### (Grafana)
 Es la interfaz donde se cumple el propósito principal de monitoreo.
 - Dashboards de Tráfico DNS: Representación visual de las consultas de dominio realizadas en la LAN, permitiendo ver qué sitios son los más visitados.
 - Monitoreo de Anomalías: Gráficos de series temporales que muestran picos inusuales de tráfico, lo que podría indicar la presencia de malware o exfiltración de datos.
