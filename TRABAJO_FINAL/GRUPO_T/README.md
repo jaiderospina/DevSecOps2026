@@ -24,7 +24,7 @@ El objetivo primordial de esta implementación es establecer un sistema de obser
 3. [Visualización y Análisis de Dominios en Tiempo Real ](#3-Visualización-y-Análisis-de-Dominios-en-Tiempo-Real)
 4. [Arquitectura de Microservicios](#4-Arquitectura-de-Microservicios)
 5. [Stack Tecnológico](#5-Stack-Tecnológico)
-6. [Flujo del Pipeline CI/CD](#6-Flujo-del-Pipeline-CI/CD)
+6. [Flujo del Pipeline CI/CD](#6-Flujo-del-Pipeline-CI-/-CD)
 7. [Gestión y Control de Tráfico Perimetral](#7-Gestión-y-Control-de-Tráfico-Perimetral)
 8. [Gestión y Control de Tráfico Perimetral](#8-Gestión-y-Control-de-Tráfico-Perimetral)
 9. [Gestión y Control de Tráfico Perimetral](#9-Gestión-y-Control-de-Tráfico-Perimetral)
