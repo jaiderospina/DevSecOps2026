@@ -1,1 +1,276 @@
+---
+# =============================================================================
+# SecureVault — Ansible Deployment Playbook
+# =============================================================================
+# Soporta dos modos de ejecución:
+#
+# 1) Despliegue LOCAL (demo / CI):
+#      ansible-playbook site.yml
+#
+# 2) Despliegue REMOTO a servidor de producción:
+#      ansible-playbook site.yml \
+#        -i inventories/production.ini \
+#        --private-key ~/.ssh/id_ed25519
+#
+# Variables requeridas (pasar con -e o en group_vars/all.yml):
+#   docker_registry   — DockerHub username (ej: miusuario)
+#   image_tag         — Tag de imagen (ej: v1.0.0-abc12345 o latest)
+#   secret_key        — Clave JWT (mín. 32 chars)
+#   fernet_key        — Clave Fernet para cifrado de secretos
+#   db_password       — Contraseña de PostgreSQL
+#   rmq_password      — Contraseña de RabbitMQ
+# =============================================================================
+
+# ─────────────────────────────────────────────
+# PLAY 1: Preparación del servidor remoto
+# Instala Docker y Docker Compose si no están presentes
+# ─────────────────────────────────────────────
+- name: Preparar servidor — Instalar Docker
+  hosts: "{{ target_hosts | default('securevault_servers') }}"
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Verificar sistema operativo compatible
+      assert:
+        that:
+          - ansible_os_family in ["Debian", "RedHat"]
+        fail_msg: "Solo soportado en Ubuntu/Debian o RHEL/CentOS"
+
+    - name: Instalar dependencias previas (Debian/Ubuntu)
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+          - python3-pip
+        state: present
+        update_cache: true
+      when: ansible_os_family == "Debian"
+
+    - name: Agregar clave GPG de Docker (Debian/Ubuntu)
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Agregar repositorio Docker (Debian/Ubuntu)
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Instalar Docker Engine y Docker Compose plugin
+      package:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
+        state: present
+
+    - name: Asegurar que el servicio Docker está habilitado e iniciado
+      systemd:
+        name: docker
+        enabled: true
+        state: started
+
+    - name: Agregar usuario de despliegue al grupo docker
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: true
+
+    - name: Instalar docker SDK para Python (necesario para módulos community.docker)
+      pip:
+        name: docker
+        state: present
+
+# ─────────────────────────────────────────────
+# PLAY 2: Desplegar SecureVault
+# ─────────────────────────────────────────────
+- name: Desplegar SecureVault
+  hosts: "{{ target_hosts | default('localhost') }}"
+  connection: "{{ 'local' if target_hosts is not defined else 'ssh' }}"
+  become: false
+  gather_facts: true
+
+  vars:
+    # ── Valores por defecto (sobreescribir en producción) ──
+    project_dir: "{{ playbook_dir }}/../.."
+    compose_file: "{{ project_dir }}/docker-compose.yml"
+    image_tag: "{{ lookup('env', 'IMAGE_TAG') | default('latest', true) }}"
+    docker_registry: "{{ lookup('env', 'DOCKER_REGISTRY') | default('securevault', true) }}"
+    app_port_api: "8000"
+    app_port_frontend: "3000"
+    deploy_user: "{{ ansible_user | default('root') }}"
+    remote_project_dir: "/opt/securevault"
+
+  tasks:
+
+    # ── Verificaciones previas ──────────────────────────────
+
+    - name: Verificar que Docker está disponible
+      command: docker --version
+      register: docker_version
+      changed_when: false
+      failed_when: docker_version.rc != 0
+
+    - name: Mostrar versión de Docker
+      debug:
+        msg: "Docker: {{ docker_version.stdout }}"
+
+    - name: Verificar que docker compose está disponible
+      command: docker compose version
+      register: compose_version
+      changed_when: false
+      failed_when: compose_version.rc != 0
+
+    - name: Mostrar versión de Docker Compose
+      debug:
+        msg: "Docker Compose: {{ compose_version.stdout }}"
+
+    # ── Transferir proyecto al servidor remoto (solo si es remoto) ──
+
+    - name: Crear directorio del proyecto en el servidor
+      file:
+        path: "{{ remote_project_dir }}"
+        state: directory
+        owner: "{{ deploy_user }}"
+        mode: "0750"
+      when: target_hosts is defined
+
+    - name: Sincronizar código fuente al servidor remoto
+      synchronize:
+        src: "{{ project_dir }}/"
+        dest: "{{ remote_project_dir }}/"
+        delete: true
+        recursive: true
+        rsync_opts:
+          - "--exclude=.git"
+          - "--exclude=__pycache__"
+          - "--exclude=*.pyc"
+          - "--exclude=node_modules"
+          - "--exclude=.env"      # NUNCA sincronizar .env
+      when: target_hosts is defined
+
+    # ── Generar archivo .env seguro en el servidor ──────────
+
+    - name: Generar archivo .env de producción en el servidor
+      template:
+        src: templates/env.j2
+        dest: "{{ remote_project_dir if target_hosts is defined else project_dir }}/.env"
+        owner: "{{ deploy_user }}"
+        mode: "0600"          # Solo el propietario puede leer
+      vars:
+        effective_project_dir: "{{ remote_project_dir if target_hosts is defined else project_dir }}"
+      when: secret_key is defined and fernet_key is defined
+
+    - name: Advertencia — usando .env existente (sin sobrescribir)
+      debug:
+        msg: "ADVERTENCIA: No se pasaron secret_key/fernet_key. Se usará el .env existente en el servidor."
+      when: secret_key is not defined or fernet_key is not defined
+
+    # ── Operaciones Docker ──────────────────────────────────
+
+    - name: Hacer pull de las últimas imágenes desde Docker Hub
+      command: >
+        docker compose -f {{ effective_compose }}
+        pull
+      args:
+        chdir: "{{ effective_dir }}"
+      vars:
+        effective_dir: "{{ remote_project_dir if target_hosts is defined else project_dir }}"
+        effective_compose: "{{ remote_project_dir if target_hosts is defined else project_dir }}/docker-compose.yml"
+      register: pull_result
+      ignore_errors: true    # Continúa si las imágenes no están en Hub (build local)
+
+    - name: Mostrar resultado del pull
+      debug:
+        msg: "{{ pull_result.stdout_lines | default(['Pull omitido o sin cambios']) }}"
+
+    - name: Detener contenedores existentes (si los hay)
+      command: >
+        docker compose -f {{ effective_compose }} down --remove-orphans
+      args:
+        chdir: "{{ effective_dir }}"
+      vars:
+        effective_dir: "{{ remote_project_dir if target_hosts is defined else project_dir }}"
+        effective_compose: "{{ remote_project_dir if target_hosts is defined else project_dir }}/docker-compose.yml"
+      ignore_errors: true
+
+    - name: Construir y desplegar todos los contenedores
+      command: >
+        docker compose -f {{ effective_compose }}
+        up -d --build --force-recreate
+      args:
+        chdir: "{{ effective_dir }}"
+      vars:
+        effective_dir: "{{ remote_project_dir if target_hosts is defined else project_dir }}"
+        effective_compose: "{{ remote_project_dir if target_hosts is defined else project_dir }}/docker-compose.yml"
+      environment:
+        IMAGE_TAG: "{{ image_tag }}"
+        DOCKER_REGISTRY: "{{ docker_registry }}"
+      register: deploy_result
+
+    - name: Mostrar resultado del despliegue
+      debug:
+        msg: "{{ deploy_result.stdout_lines }}"
+
+    # ── Verificación de salud ───────────────────────────────
+
+    - name: Esperar a que el API Gateway esté disponible
+      uri:
+        url: "http://{{ ansible_host | default('localhost') }}:{{ app_port_api }}/health"
+        method: GET
+        status_code: 200
+        timeout: 10
+      register: health_check
+      retries: 15
+      delay: 8
+      until: health_check.status == 200
+      ignore_errors: false
+
+    - name: Verificar que el frontend responde
+      uri:
+        url: "http://{{ ansible_host | default('localhost') }}:{{ app_port_frontend }}/"
+        method: GET
+        status_code: 200
+        timeout: 10
+      register: frontend_check
+      retries: 10
+      delay: 5
+      until: frontend_check.status == 200
+
+    - name: Mostrar estado de los contenedores
+      command: >
+        docker compose -f {{ effective_compose }} ps
+      args:
+        chdir: "{{ effective_dir }}"
+      vars:
+        effective_dir: "{{ remote_project_dir if target_hosts is defined else project_dir }}"
+        effective_compose: "{{ remote_project_dir if target_hosts is defined else project_dir }}/docker-compose.yml"
+      register: ps_output
+      changed_when: false
+
+    - name: Estado de los contenedores
+      debug:
+        msg: "{{ ps_output.stdout_lines }}"
+
+    # ── Resumen final ───────────────────────────────────────
+
+    - name: Resumen de despliegue exitoso
+      debug:
+        msg:
+          - "============================================"
+          - "  SecureVault desplegado correctamente"
+          - "============================================"
+          - "  Frontend  : http://{{ ansible_host | default('localhost') }}:{{ app_port_frontend }}"
+          - "  API       : http://{{ ansible_host | default('localhost') }}:{{ app_port_api }}"
+          - "  API Docs  : http://{{ ansible_host | default('localhost') }}:{{ app_port_api }}/docs"
+          - "  RabbitMQ  : http://{{ ansible_host | default('localhost') }}:15672"
+          - "  Imagen tag: {{ image_tag }}"
+          - "============================================"
 
