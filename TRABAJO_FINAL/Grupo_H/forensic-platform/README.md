@@ -35,6 +35,54 @@ ForensiLog es una plataforma web de análisis forense de logs y detección de am
 | Cola de Mensajes | RabbitMQ         | 5672 / 15672 |
 | Orquestación     | Docker Compose   | —            |
 
+## Arquitectura de Microservicios
+
+```mermaid
+flowchart TD
+    Browser("🌐 Usuario / Admin\nBrowser")
+
+    subgraph FRONT["⚛️ Capa de Presentación"]
+        FE["Frontend SPA\nReact 19 + Vite · :5173"]
+    end
+
+    subgraph BACK["⚙️ Capa de Lógica de Negocio"]
+        API["Backend API\nFastAPI + Uvicorn · :8000"]
+        WORKER["Log Worker\nPython · Pika"]
+        SCANNER["Vuln Scanner\nNmap · Nikto · SSLyze"]
+    end
+
+    subgraph INFRA["🗄️ Infraestructura"]
+        MQ["RabbitMQ\n:5672 / :15672\ncola log_processing\ncola vuln_scanning"]
+        DB["PostgreSQL 15\n:5433\nusers · log_files · log_events\nfindings · scans · cve_data"]
+    end
+
+    subgraph EXT["🌍 APIs Externas"]
+        ABUSE["AbuseIPDB\nReputación de IPs"]
+        NVD["NVD / NIST\nFeed de CVEs"]
+    end
+
+    subgraph CICD["🔐 Pipeline DevSecOps · GitHub Actions"]
+        direction LR
+        GL["Gitleaks\nSecret Scan"]
+        BA["Bandit\nSAST Python"]
+        SE["Semgrep\nSAST Multi-lang"]
+        TR["Trivy\nContainer Scan"]
+        DH["Docker Hub\nRegistry"]
+    end
+
+    Browser -->|"HTTPS"| FE
+    FE -->|"REST · JWT · :8000"| API
+    API -->|"AMQP · :5672"| MQ
+    MQ -->|"log_processing"| WORKER
+    MQ -->|"vuln_scanning"| SCANNER
+    API -->|"SQL"| DB
+    WORKER -->|"SQL"| DB
+    SCANNER -->|"SQL"| DB
+    WORKER -->|"HTTPS API"| ABUSE
+    API -->|"HTTPS"| NVD
+    GL & BA & SE & TR -->|"on push/PR"| DH
+```
+
 ## 2. Requisitos del Sistema
 
 ⚠️ NO instalar Python ni PostgreSQL directamente en Windows. Todo corre dentro de Docker.
