@@ -130,7 +130,7 @@ Controles implementados:
 Documentos principales en docs/:
 
 - 01_Manual_Usuario.md
- → **[Manual Usuario](Securevault-pro-main/docs.md)**
+ → **[Manual Usuario](Securevault-pro-main/docs/01_Manual_Usuario.md)**
 
 
 - 02_Manual_Tecnico.md
