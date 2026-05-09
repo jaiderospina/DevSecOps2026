@@ -133,7 +133,7 @@ Documentos principales en docs/:
 - 01_Manual_Usuario.md
  → **[Manual Usuario](Securevault-pro-main/docs/01_Manual_Usuario.md)**
 - 02_Manual_Tecnico.md
- → **[Manual Usuario](Securevault-pro-main/docs/02_Manual_Tecnico.md)**
+ → **[Manual Tecnico](Securevault-pro-main/docs/02_Manual_Tecnico.md)**
 - 03_Manual_Operacion_DevOps.md
  → **[Manual Usuario](Securevault-pro-main/docs/03_Manual_Operacion_DevOps.md)**
 - 04_Seguridad_y_Riesgos.md
