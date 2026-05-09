@@ -232,6 +232,12 @@ Servicio en la nube que valida la autenticación MFA mediante API segura (HTTPS 
 
 ## 8. Instrucciones de inicio rápido
 
+###  Guía audiovisual de instalación y configuración de proyecto
+
+```
+https://youtu.be/sTPduml2Kyo
+```
+
 ###  Quick Start
 
 ####  ¿Qué es esta sección?
