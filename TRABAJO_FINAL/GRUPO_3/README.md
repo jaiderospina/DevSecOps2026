@@ -27,6 +27,11 @@ SecureVault Pro implementa una plataforma para gestion segura de secretos con ar
 
 Demostrar integracion end-to-end de practicas DevSecOps:
 
+# Ubicación Proyecto
+https://github.com/johngutierrez80/Securevault-pro
+hub.docker.com/repositories/necromanoger
+
+
 - Arquitectura de microservicios contenerizada.
 - Automatizacion CI/CD con controles de seguridad en cada fase.
 - Infraestructura como codigo para despliegue.
@@ -125,6 +130,9 @@ Controles implementados:
 Documentos principales en docs/:
 
 - 01_Manual_Usuario.md
+ → **[Manual Usuario](Securevault-pro-main/docs.md)**
+
+
 - 02_Manual_Tecnico.md
 - 03_Manual_Operacion_DevOps.md
 - 04_Seguridad_y_Riesgos.md
