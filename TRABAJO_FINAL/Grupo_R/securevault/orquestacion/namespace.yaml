@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: securevault
+  labels:
+    name: securevault
+---
+# ─────────────────────────────────────────────────────────────
+# Secret de Kubernetes — SecureVault
+#
+# INSTRUCCIONES:
+#   Reemplaza cada valor CHANGE_ME con el valor real codificado en base64:
+#     echo -n "mi_valor_secreto" | base64
+#
+#   O usa kubectl directamente para no manejar base64 a mano:
+#     kubectl create secret generic securevault-secrets \
+#       --namespace securevault \
+#       --from-literal=database-url="postgresql://securevault:PASS@postgres:5432/securevault" \
+#       --from-literal=secret-key="$(openssl rand -hex 32)" \
+#       --from-literal=fernet-key="$(python3 -c 'from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())')" \
+#       --from-literal=rabbitmq-url="amqp://svuser:PASS@rabbitmq:5672/" \
+#       --from-literal=db-password="CHANGE_ME_DB_PASS" \
+#       --from-literal=rabbitmq-user="svuser" \
+#       --from-literal=rabbitmq-password="CHANGE_ME_RMQ_PASS"
+# ─────────────────────────────────────────────────────────────
+apiVersion: v1
+kind: Secret
+metadata:
+  name: securevault-secrets
+  namespace: securevault
+type: Opaque
+stringData:
+  # Cadena de conexión completa para la API y el Worker
+  database-url: "postgresql://securevault:CHANGE_ME_DB_PASS@postgres:5432/securevault"
+
+  # Solo la contraseña, usada por el Deployment de PostgreSQL
+  db-password: "CHANGE_ME_DB_PASS"
+
+  # Clave de firma JWT — mínimo 32 caracteres aleatorios
+  # Generar: openssl rand -hex 32
+  secret-key: "CHANGE_ME_VERY_LONG_SECRET_KEY_MIN_32_CHARS"
+
+  # Clave de cifrado Fernet para valores de secretos en reposo
+  # Generar: python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+  fernet-key: "CHANGE_ME_FERNET_KEY"
+
+  # Cadena de conexión AMQP para la API y el Worker
+  rabbitmq-url: "amqp://svuser:CHANGE_ME_RMQ_PASS@rabbitmq:5672/"
+
+  # Credenciales de RabbitMQ usadas por el Deployment del broker
+  rabbitmq-user: "svuser"
+  rabbitmq-password: "CHANGE_ME_RMQ_PASS"
