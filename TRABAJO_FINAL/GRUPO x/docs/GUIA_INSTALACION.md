@@ -27,7 +27,7 @@
 Si no quieres usar la terminal ni escribir comandos, haz esto:
 
 1. Asegúrate de tener **Docker Desktop** abierto.
-2. Descarga el proyecto desde "Code" -> Download ZIP.
+2. Descarga el proyecto desde "Code" -> Download ZIP desde https://github.com/ROBERT0024/sevwork/tree/main
 3. Entra a la carpeta donde descargaste del proyecto y descomprimelo (`sevwork`).
 4. Busca el archivo correspondiente a tu sistema:
    - **En Windows:** Haz doble clic en el archivo `setup.bat`.
