@@ -134,7 +134,7 @@ Contraseña: Admin123!ChangeMe
 docker compose down
 ```
 ```
-Restaurar Datos 
+#Restaurar Datos 
 docker compose up -d postgres
 docker exec -i sv_postgres psql -U securevault securevault
 ```
