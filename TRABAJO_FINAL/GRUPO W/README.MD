@@ -1,14 +1,14 @@
 <h2>INTEGRANTES:</h2>
 
-*. Jonathan Garzon soto
+* Jonathan Garzon soto
 <br></br>
-Juan Carlos Murcia
+* Juan Carlos Murcia
 <br></br>
-Juan David Diaz
+* Juan David Diaz
 <br></br>
-Lady Mariana Bautista
+* Lady Mariana Bautista
 <br></br>
-Vicente Rueda
+* Vicente Rueda
 <br></br>
 <h2>REPOSITORIO DE PROYECTO NETWATCH:</h2>
 https://github.com/AlexGarzonSoto/netwatch-deploy.git
