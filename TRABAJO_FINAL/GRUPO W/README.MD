@@ -1,4 +1,4 @@
-INTEGRANTES:
+<h2>INTEGRANTES:</h2>
 
 Jonathan Garzon soto
 <br></br>
