@@ -133,7 +133,11 @@ Contraseña: Admin123!ChangeMe
 ```powershell
 docker compose down
 ```
-
+```
+Restaurar Datos 
+docker compose up -d postgres
+docker exec -i sv_postgres psql -U securevault securevault
+```
 Si también quieres eliminar los datos almacenados:
 
 ```powershell
