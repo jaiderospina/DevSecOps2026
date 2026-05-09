@@ -1,6 +1,6 @@
 <h2>INTEGRANTES:</h2>
 
-Jonathan Garzon soto
+*. Jonathan Garzon soto
 <br></br>
 Juan Carlos Murcia
 <br></br>
